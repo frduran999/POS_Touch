@@ -1,0 +1,437 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6144D22F-6605-407F-B3AD-23E800725A18}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>delevery.My.MyApplication</StartupObject>
+    <RootNamespace>delevery</RootNamespace>
+    <AssemblyName>delevery</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>delevery.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>delevery.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>paso.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ReportMan, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\delivery\code\ReportMan\bin\Debug\ReportMan.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Telerik.WinControls, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+    <Reference Include="Telerik.WinControls.GridView, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.Themes.Office2010Black, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
+    <Reference Include="Telerik.WinControls.UI, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+    <Reference Include="TelerikCommon, Version=2015.3.1104.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
+    <Reference Include="WindowsControlLibrary1">
+      <HintPath>..\boton\WindowsControlLibrary1\bin\Debug\WindowsControlLibrary1.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbrirCaja.Designer.vb">
+      <DependentUpon>AbrirCaja.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AbrirCaja.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BC\RUTman.vb" />
+    <Compile Include="BE\compra.vb" />
+    <Compile Include="BE\Fpago.vb" />
+    <Compile Include="BE\Oferta.vb" />
+    <Compile Include="BE\Parametros.vb" />
+    <Compile Include="BE\producto.vb" />
+    <Compile Include="BE\ticket.vb" />
+    <Compile Include="BE\validador.vb" />
+    <Compile Include="DATASET\deliveryDataSet1.vb">
+      <DependentUpon>deliveryDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenedores\Buscar_producto.Designer.vb">
+      <DependentUpon>Buscar_producto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenedores\Buscar_producto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="compras.Designer.vb">
+      <DependentUpon>compras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="compras.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras_diario.Designer.vb">
+      <DependentUpon>Compras_diario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Compras_diario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DAC\compra.vb" />
+    <Compile Include="DAC\conexion.vb" />
+    <Compile Include="DAC\Licencia.vb" />
+    <Compile Include="DAC\MovCaja.vb" />
+    <Compile Include="DAC\myhelper2.vb" />
+    <Compile Include="DAC\myMSSQL.vb" />
+    <Compile Include="DAC\O_ferta.vb" />
+    <Compile Include="DAC\produc.vb" />
+    <Compile Include="DAC\runnerScript.vb" />
+    <Compile Include="DAC\vale.vb" />
+    <Compile Include="DATASET\deliveryDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>deliveryDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DATASET\deliveryDataSet1.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>deliveryDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GeneraKey.Designer.vb">
+      <DependentUpon>GeneraKey.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GeneraKey.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenedores\Parametros.Designer.vb">
+      <DependentUpon>Parametros.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenedores\Parametros.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="diario.Designer.vb">
+      <DependentUpon>diario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="diario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenedores\FamiliaProducto.Designer.vb">
+      <DependentUpon>FamiliaProducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenedores\FamiliaProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenedores\formapago.Designer.vb">
+      <DependentUpon>formapago.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenedores\formapago.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formaPago_dateset.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>formaPago_dateset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm1.Designer.vb">
+      <DependentUpon>LoginForm1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="delivery.Designer.vb">
+      <DependentUpon>delivery.vb</DependentUpon>
+    </Compile>
+    <Compile Include="delivery.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Mantenedores\Productos.Designer.vb">
+      <DependentUpon>Productos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenedores\Productos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Promocion.Designer.vb">
+      <DependentUpon>Promocion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Promocion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Retiro.Designer.vb">
+      <DependentUpon>Retiro.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Retiro.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tipo_doc_DataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>tipo_doc_DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl1.designer.vb">
+      <DependentUpon>UserControl1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl1.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Mantenedores\usuario.Designer.vb">
+      <DependentUpon>usuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenedores\usuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AbrirCaja.resx">
+      <DependentUpon>AbrirCaja.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenedores\Buscar_producto.resx">
+      <DependentUpon>Buscar_producto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="compras.resx">
+      <DependentUpon>compras.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras_diario.resx">
+      <DependentUpon>Compras_diario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GeneraKey.resx">
+      <DependentUpon>GeneraKey.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="Mantenedores\Parametros.resx">
+      <DependentUpon>Parametros.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="diario.resx">
+      <DependentUpon>diario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenedores\FamiliaProducto.resx">
+      <DependentUpon>FamiliaProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenedores\formapago.resx">
+      <DependentUpon>formapago.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm1.resx">
+      <DependentUpon>LoginForm1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="delivery.resx">
+      <DependentUpon>delivery.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenedores\Productos.resx">
+      <DependentUpon>Productos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Promocion.resx">
+      <DependentUpon>Promocion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Retiro.resx">
+      <DependentUpon>Retiro.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl1.resx">
+      <DependentUpon>UserControl1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenedores\usuario.resx">
+      <DependentUpon>usuario.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="DATASET\deliveryDataSet.xsc">
+      <DependentUpon>deliveryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DATASET\deliveryDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>deliveryDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DATASET\deliveryDataSet.xss">
+      <DependentUpon>deliveryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DATASET\deliveryDataSet1.xsc">
+      <DependentUpon>deliveryDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DATASET\deliveryDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>deliveryDataSet1.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DATASET\deliveryDataSet1.xss">
+      <DependentUpon>deliveryDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="formaPago_dateset.xsc">
+      <DependentUpon>formaPago_dateset.xsd</DependentUpon>
+    </None>
+    <None Include="formaPago_dateset.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>formaPago_dateset.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="formaPago_dateset.xss">
+      <DependentUpon>formaPago_dateset.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="tipo_doc_DataSet.xsc">
+      <DependentUpon>tipo_doc_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="tipo_doc_DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>tipo_doc_DataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="tipo_doc_DataSet.xss">
+      <DependentUpon>tipo_doc_DataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\paso.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\note_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\product2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\book_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\disk_blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\export1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\find.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Modify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\address_book2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="paso.ico" />
+    <None Include="Resources\Exit1.png" />
+    <None Include="Resources\Refresh.png" />
+    <None Include="Resources\Refresh.jpg" />
+    <None Include="Resources\20_lukas.jpg" />
+    <None Include="Resources\10_luka.jpg" />
+    <None Include="Resources\5_lukas.jpg" />
+    <None Include="Resources\2_lukas.jpg" />
+    <None Include="Resources\luka3.jpg" />
+    <None Include="Resources\luka2.jpg" />
+    <None Include="Resources\luka1.jpg" />
+    <None Include="Resources\luka.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProyectoNegocio\ProyectoNegocio.vbproj">
+      <Project>{6f8cacc2-ff3a-40a2-8efd-c3c8d9b85b0f}</Project>
+      <Name>ProyectoNegocio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
