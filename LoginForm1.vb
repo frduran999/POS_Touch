@@ -22,11 +22,12 @@
                     Case 1
                         delivery.es_supervisor = True
 
-                    Case 3
+                    Case 2
                         delivery.es_supervisor = False
                         Me.Hide()
+                        AbrirCaja.ShowDialog()
                         Form1.ShowDialog()
-
+                        System.Diagnostics.Process.GetCurrentProcess().Kill()
                 End Select
                 'If IsDBNull(DeliveryDataSet1.Tables("usuarios").Rows(Me.cbo_usuario.SelectedIndex).Item("supervisor")) OrElse DeliveryDataSet1.Tables("usuarios").Rows(Me.cbo_usuario.SelectedIndex).Item("supervisor") = 0 Then
                 '    delivery.es_supervisor = False
@@ -42,6 +43,10 @@
 
     Private Sub Cancel_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Cancel.Click
         Application.Exit()
+    End Sub
+
+    Private Sub LoginForm1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        'System.Diagnostics.Process.GetCurrentProcess().Kill()
     End Sub
 
     Private Sub LoginForm1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load

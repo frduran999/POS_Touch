@@ -49,7 +49,8 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>paso.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ReportMan, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
@@ -248,15 +249,18 @@
   <ItemGroup>
     <EmbeddedResource Include="AbrirCaja.resx">
       <DependentUpon>AbrirCaja.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenedores\Buscar_producto.resx">
       <DependentUpon>Buscar_producto.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="compras.resx">
       <DependentUpon>compras.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Compras_diario.resx">
       <DependentUpon>Compras_diario.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="GeneraKey.resx">
       <DependentUpon>GeneraKey.vb</DependentUpon>
@@ -421,7 +425,7 @@
     <None Include="Resources\luka.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ProyectoNegocio\ProyectoNegocio.vbproj">
+    <ProjectReference Include="ProyectoNegocio\ProyectoNegocio.vbproj">
       <Project>{6f8cacc2-ff3a-40a2-8efd-c3c8d9b85b0f}</Project>
       <Name>ProyectoNegocio</Name>
     </ProjectReference>

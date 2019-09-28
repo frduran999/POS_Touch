@@ -145,7 +145,7 @@ Partial Class FamiliaProducto
         Me.RadGridView1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.RadGridView1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.RadGridView1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.RadGridView1.Location = New System.Drawing.Point(25, 64)
+        Me.RadGridView1.Location = New System.Drawing.Point(56, 64)
         '
         '
         '
@@ -157,7 +157,7 @@ Partial Class FamiliaProducto
         Me.RadGridView1.ReadOnly = True
         Me.RadGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.RadGridView1.ShowGroupPanel = False
-        Me.RadGridView1.Size = New System.Drawing.Size(350, 393)
+        Me.RadGridView1.Size = New System.Drawing.Size(289, 393)
         Me.RadGridView1.TabIndex = 25
         Me.RadGridView1.Text = "RadGridView1"
         Me.RadGridView1.ThemeName = "Office2010Black"

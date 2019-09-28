@@ -138,6 +138,7 @@ Partial Class formapago
         Me.Controls.Add(Me.btn_salir)
         Me.Controls.Add(Me.btn_grabar)
         Me.Name = "formapago"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Forma de Pago"
         CType(Me.FormapagoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.FormaPago_dateset, System.ComponentModel.ISupportInitialize).EndInit()

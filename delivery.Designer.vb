@@ -182,8 +182,7 @@ Partial Class delivery
         '
         Me.uic_versionApp.BackColor = System.Drawing.SystemColors.Control
         Me.uic_versionApp.Name = "uic_versionApp"
-        Me.uic_versionApp.Size = New System.Drawing.Size(56, 17)
-        Me.uic_versionApp.Text = "App:3.3.0"
+        Me.uic_versionApp.Size = New System.Drawing.Size(0, 17)
         '
         'delivery
         '
@@ -195,6 +194,7 @@ Partial Class delivery
         Me.Controls.Add(Me.ToolStrip1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "delivery"
+        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "menu"
         Me.ToolStrip1.ResumeLayout(False)

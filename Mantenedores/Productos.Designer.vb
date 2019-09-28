@@ -23,7 +23,7 @@ Partial Class Productos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim TableViewDefinition4 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -38,6 +38,7 @@ Partial Class Productos
         Me.FamiliaProductoTableAdapter = New delevery.deliveryDataSetTableAdapters.FamiliaProductoTableAdapter()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.RadGroupBox1 = New Telerik.WinControls.UI.RadGroupBox()
+        Me.btnLimpiar = New Telerik.WinControls.UI.RadButton()
         Me.btn_eliminar = New System.Windows.Forms.Button()
         Me.btn_modificar = New System.Windows.Forms.Button()
         Me.btn_grabar = New System.Windows.Forms.Button()
@@ -46,19 +47,18 @@ Partial Class Productos
         Me.uic_Minimizar = New Telerik.WinControls.UI.RadMenuItem()
         Me.Office2010BlackTheme1 = New Telerik.WinControls.Themes.Office2010BlackTheme()
         Me.RadGroupBox4 = New Telerik.WinControls.UI.RadGroupBox()
-        Me.RadGridView1 = New Telerik.WinControls.UI.RadGridView()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.btnLimpiar = New Telerik.WinControls.UI.RadButton()
+        Me.RadGridView1 = New Telerik.WinControls.UI.RadGridView()
         CType(Me.FamiliaProductoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DeliveryDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox1.SuspendLayout()
+        CType(Me.btnLimpiar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGroupBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox4.SuspendLayout()
         CType(Me.RadGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGridView1.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnLimpiar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -188,6 +188,19 @@ Partial Class Productos
         Me.RadGroupBox1.Size = New System.Drawing.Size(255, 60)
         Me.RadGroupBox1.TabIndex = 19
         '
+        'btnLimpiar
+        '
+        Me.btnLimpiar.DisplayStyle = Telerik.WinControls.DisplayStyle.Image
+        Me.btnLimpiar.Image = Global.delevery.My.Resources.Resources.Refresh1
+        Me.btnLimpiar.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btnLimpiar.Location = New System.Drawing.Point(169, 12)
+        Me.btnLimpiar.Name = "btnLimpiar"
+        Me.btnLimpiar.Size = New System.Drawing.Size(45, 37)
+        Me.btnLimpiar.TabIndex = 81
+        Me.btnLimpiar.Text = "RadButton4"
+        Me.btnLimpiar.ThemeName = "Office2010Black"
+        Me.ToolTip1.SetToolTip(Me.btnLimpiar, "Limpiar pantalla")
+        '
         'btn_eliminar
         '
         Me.btn_eliminar.Image = Global.delevery.My.Resources.Resources.Delete
@@ -263,26 +276,13 @@ Partial Class Productos
         '
         '
         Me.RadGridView1.MasterTemplate.AllowAddNewRow = False
-        Me.RadGridView1.MasterTemplate.ViewDefinition = TableViewDefinition4
+        Me.RadGridView1.MasterTemplate.ViewDefinition = TableViewDefinition1
         Me.RadGridView1.Name = "RadGridView1"
         Me.RadGridView1.ReadOnly = True
         Me.RadGridView1.Size = New System.Drawing.Size(462, 487)
         Me.RadGridView1.TabIndex = 0
         Me.RadGridView1.Text = "RadGridView1"
         Me.RadGridView1.ThemeName = "Office2010Black"
-        '
-        'btnLimpiar
-        '
-        Me.btnLimpiar.DisplayStyle = Telerik.WinControls.DisplayStyle.Image
-        Me.btnLimpiar.Image = Global.delevery.My.Resources.Resources.Refresh1
-        Me.btnLimpiar.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.btnLimpiar.Location = New System.Drawing.Point(169, 12)
-        Me.btnLimpiar.Name = "btnLimpiar"
-        Me.btnLimpiar.Size = New System.Drawing.Size(45, 37)
-        Me.btnLimpiar.TabIndex = 81
-        Me.btnLimpiar.Text = "RadButton4"
-        Me.btnLimpiar.ThemeName = "Office2010Black"
-        Me.ToolTip1.SetToolTip(Me.btnLimpiar, "Limpiar pantalla")
         '
         'Productos
         '
@@ -312,12 +312,12 @@ Partial Class Productos
         CType(Me.DeliveryDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadGroupBox1.ResumeLayout(False)
+        CType(Me.btnLimpiar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadMenu1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadGroupBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadGroupBox4.ResumeLayout(False)
         CType(Me.RadGridView1.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnLimpiar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -345,6 +345,6 @@ Partial Class Productos
     Friend WithEvents btn_eliminar As System.Windows.Forms.Button
     Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
     Friend WithEvents RadGroupBox4 As Telerik.WinControls.UI.RadGroupBox
-    Friend WithEvents RadGridView1 As Telerik.WinControls.UI.RadGridView
     Friend WithEvents btnLimpiar As Telerik.WinControls.UI.RadButton
+    Friend WithEvents RadGridView1 As Telerik.WinControls.UI.RadGridView
 End Class
