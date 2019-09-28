@@ -232,7 +232,7 @@ Public Class Form1
         End Try
 
         limpiar()
-        Me.GrBillete.Visible = False
+        'Me.GrBillete.Visible = False
     End Sub
 
     Private Sub limpiar()
@@ -242,16 +242,17 @@ Public Class Form1
         Me.txt_vuelto.Text = ""
         Me.DataGridView1.Rows.Clear()
         Me.cbo_formapago.SelectedIndex = -1
+        Me.txt_efectivo.Enabled = False
     End Sub
 
     Private Sub cbo_formapago_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_formapago.SelectedIndexChanged
         If Me.cbo_formapago.Text.ToUpper <> "CONTADO" Then
             Me.txt_efectivo.Text = Me.txt_Total.Text
             Me.txt_vuelto.Text = "0"
-            Me.GrBillete.Visible = False
+            ' Me.GrBillete.Visible = False
         Else
             Me.txt_efectivo.Text = "0"
-            Me.GrBillete.Visible = True
+            ' Me.GrBillete.Visible = True
             Me.txt_vuelto.Text = Val(Me.txt_efectivo.Text) - Val(Me.txt_Total.Text)
         End If
     End Sub
@@ -320,34 +321,34 @@ Public Class Form1
         Me.txt_vuelto.Text = Val(Me.txt_efectivo.Text) - Val(Me.txt_Total.Text)
     End Sub
 
-    Private Sub uic_luka_Click(sender As Object, e As EventArgs) Handles uic_luka.Click
+    Private Sub uic_luka_Click(sender As Object, e As EventArgs)
         Dim lukas As Integer
         lukas = Val(Me.txt_efectivo.Text) + 1000
 
         Me.txt_efectivo.Text = CStr(lukas)
     End Sub
-    Private Sub uic_dosluka_Click(sender As Object, e As EventArgs) Handles uic_dosluka.Click
+    Private Sub uic_dosluka_Click(sender As Object, e As EventArgs)
         Dim doslukas As Integer
         doslukas = Val(Me.txt_efectivo.Text) + 2000
 
         Me.txt_efectivo.Text = CStr(doslukas)
     End Sub
 
-    Private Sub uic_cincoluka_Click(sender As Object, e As EventArgs) Handles uic_cincoluka.Click
+    Private Sub uic_cincoluka_Click(sender As Object, e As EventArgs)
         Dim cincolukas As Integer
         cincolukas = Val(Me.txt_efectivo.Text) + 5000
 
         Me.txt_efectivo.Text = CStr(cincolukas)
     End Sub
 
-    Private Sub uic_diezluka_Click(sender As Object, e As EventArgs) Handles uic_diezluka.Click
+    Private Sub uic_diezluka_Click(sender As Object, e As EventArgs)
         Dim diezlukas As Integer
         diezlukas = Val(Me.txt_efectivo.Text) + 10000
 
         Me.txt_efectivo.Text = CStr(diezlukas)
     End Sub
 
-    Private Sub uic_veinteluka_Click(sender As Object, e As EventArgs) Handles uic_veinteluka.Click
+    Private Sub uic_veinteluka_Click(sender As Object, e As EventArgs)
         Dim veintelukas As Integer
         veintelukas = Val(Me.txt_efectivo.Text) + 20000
 
@@ -358,7 +359,20 @@ Public Class Form1
         limpiar()
     End Sub
 
-    Private Sub uic_limpiaEfectivo_Click(sender As Object, e As EventArgs) Handles uic_limpiaEfectivo.Click
+    Private Sub uic_limpiaEfectivo_Click(sender As Object, e As EventArgs)
         Me.txt_efectivo.Text = "0"
+    End Sub
+
+    Private Sub btn_Efectivo_Click(sender As Object, e As EventArgs) Handles btn_Efectivo.Click
+        txt_efectivo.Enabled = True
+        Me.txt_efectivo.Text = ""
+        Me.txt_efectivo.Focus()
+        Me.txt_vuelto.Text = Val(Me.txt_efectivo.Text) - Val(Me.txt_Total.Text)
+    End Sub
+
+    Private Sub btn_Tarjeta_Click(sender As Object, e As EventArgs) Handles btn_Tarjeta.Click
+        Me.txt_efectivo.Enabled = False
+        Me.txt_efectivo.Text = Me.txt_Total.Text
+        Me.txt_vuelto.Text = "0"
     End Sub
 End Class

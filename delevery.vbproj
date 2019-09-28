@@ -216,10 +216,10 @@
     <Compile Include="Mantenedores\Productos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Promocion.Designer.vb">
+    <Compile Include="Mantenedores\Promocion.Designer.vb">
       <DependentUpon>Promocion.vb</DependentUpon>
     </Compile>
-    <Compile Include="Promocion.vb">
+    <Compile Include="Mantenedores\Promocion.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Retiro.Designer.vb">
@@ -296,7 +296,7 @@
     <EmbeddedResource Include="Mantenedores\Productos.resx">
       <DependentUpon>Productos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Promocion.resx">
+    <EmbeddedResource Include="Mantenedores\Promocion.resx">
       <DependentUpon>Promocion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Retiro.resx">
@@ -412,6 +412,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="paso.ico" />
+    <None Include="Resources\Refresh1.png" />
+    <None Include="Resources\Delete1.png" />
+    <None Include="Resources\Notes.png" />
+    <None Include="Resources\Save.png" />
     <None Include="Resources\Exit1.png" />
     <None Include="Resources\Refresh.png" />
     <None Include="Resources\Refresh.jpg" />

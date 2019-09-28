@@ -40,7 +40,6 @@ Partial Class Form1
         Me.cbo_formapago = New System.Windows.Forms.ComboBox()
         Me.FormapagoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.FormaPago_dateset = New delevery.formaPago_dateset()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -54,20 +53,14 @@ Partial Class Form1
         Me.uicEstado = New System.Windows.Forms.ToolStripStatusLabel()
         Me.uic_FechaHora = New System.Windows.Forms.ToolStripStatusLabel()
         Me.uic_reloj = New System.Windows.Forms.Timer(Me.components)
-        Me.GrBillete = New System.Windows.Forms.GroupBox()
-        Me.uic_veinteluka = New System.Windows.Forms.Button()
-        Me.uic_diezluka = New System.Windows.Forms.Button()
-        Me.uic_cincoluka = New System.Windows.Forms.Button()
-        Me.uic_dosluka = New System.Windows.Forms.Button()
-        Me.uic_luka = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.btn_limpiar = New System.Windows.Forms.Button()
-        Me.uic_limpiaEfectivo = New System.Windows.Forms.Button()
+        Me.btn_Efectivo = New System.Windows.Forms.Button()
+        Me.btn_Tarjeta = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FormapagoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FormaPago_dateset, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusStrip1.SuspendLayout()
-        Me.GrBillete.SuspendLayout()
         Me.SuspendLayout()
         '
         'FlowLayoutPanel1
@@ -80,7 +73,7 @@ Partial Class Form1
         Me.FlowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.FlowLayoutPanel1.Location = New System.Drawing.Point(461, 235)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(425, 348)
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(425, 285)
         Me.FlowLayoutPanel1.TabIndex = 0
         '
         'ImageList1
@@ -158,7 +151,7 @@ Partial Class Form1
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersVisible = False
-        Me.DataGridView1.Size = New System.Drawing.Size(437, 368)
+        Me.DataGridView1.Size = New System.Drawing.Size(437, 407)
         Me.DataGridView1.TabIndex = 0
         '
         'codigo
@@ -211,7 +204,7 @@ Partial Class Form1
         Me.txt_vuelto.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.txt_vuelto.Enabled = False
         Me.txt_vuelto.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_vuelto.Location = New System.Drawing.Point(351, 447)
+        Me.txt_vuelto.Location = New System.Drawing.Point(351, 485)
         Me.txt_vuelto.Name = "txt_vuelto"
         Me.txt_vuelto.Size = New System.Drawing.Size(100, 21)
         Me.txt_vuelto.TabIndex = 6
@@ -222,7 +215,7 @@ Partial Class Form1
         Me.txt_efectivo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.txt_efectivo.Enabled = False
         Me.txt_efectivo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_efectivo.Location = New System.Drawing.Point(351, 417)
+        Me.txt_efectivo.Location = New System.Drawing.Point(351, 455)
         Me.txt_efectivo.Name = "txt_efectivo"
         Me.txt_efectivo.Size = New System.Drawing.Size(100, 21)
         Me.txt_efectivo.TabIndex = 7
@@ -233,7 +226,7 @@ Partial Class Form1
         Me.txt_Total.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.txt_Total.Enabled = False
         Me.txt_Total.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_Total.Location = New System.Drawing.Point(351, 387)
+        Me.txt_Total.Location = New System.Drawing.Point(351, 425)
         Me.txt_Total.Name = "txt_Total"
         Me.txt_Total.Size = New System.Drawing.Size(100, 21)
         Me.txt_Total.TabIndex = 8
@@ -245,7 +238,7 @@ Partial Class Form1
         Me.cbo_formapago.DataSource = Me.FormapagoBindingSource
         Me.cbo_formapago.DisplayMember = "formapago"
         Me.cbo_formapago.FormattingEnabled = True
-        Me.cbo_formapago.Location = New System.Drawing.Point(260, 501)
+        Me.cbo_formapago.Location = New System.Drawing.Point(130, 537)
         Me.cbo_formapago.Name = "cbo_formapago"
         Me.cbo_formapago.Size = New System.Drawing.Size(189, 21)
         Me.cbo_formapago.TabIndex = 9
@@ -261,24 +254,12 @@ Partial Class Form1
         Me.FormaPago_dateset.DataSetName = "formaPago_dateset"
         Me.FormaPago_dateset.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'Label2
-        '
-        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(260, 475)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(189, 23)
-        Me.Label2.TabIndex = 11
-        Me.Label2.Text = "Forma de Pago"
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'Label3
         '
         Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(258, 387)
+        Me.Label3.Location = New System.Drawing.Point(258, 425)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(87, 23)
         Me.Label3.TabIndex = 12
@@ -290,7 +271,7 @@ Partial Class Form1
         Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(258, 417)
+        Me.Label4.Location = New System.Drawing.Point(258, 455)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(87, 23)
         Me.Label4.TabIndex = 13
@@ -302,7 +283,7 @@ Partial Class Form1
         Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(258, 447)
+        Me.Label5.Location = New System.Drawing.Point(258, 485)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(87, 23)
         Me.Label5.TabIndex = 14
@@ -313,7 +294,7 @@ Partial Class Form1
         '
         Me.btn_aceptar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btn_aceptar.Image = Global.delevery.My.Resources.Resources.check
-        Me.btn_aceptar.Location = New System.Drawing.Point(370, 528)
+        Me.btn_aceptar.Location = New System.Drawing.Point(351, 520)
         Me.btn_aceptar.Name = "btn_aceptar"
         Me.btn_aceptar.Size = New System.Drawing.Size(43, 41)
         Me.btn_aceptar.TabIndex = 15
@@ -323,9 +304,9 @@ Partial Class Form1
         '
         Me.btn_salir.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btn_salir.Image = Global.delevery.My.Resources.Resources._Exit
-        Me.btn_salir.Location = New System.Drawing.Point(258, 529)
+        Me.btn_salir.Location = New System.Drawing.Point(709, 526)
         Me.btn_salir.Name = "btn_salir"
-        Me.btn_salir.Size = New System.Drawing.Size(34, 41)
+        Me.btn_salir.Size = New System.Drawing.Size(46, 41)
         Me.btn_salir.TabIndex = 1
         Me.ToolTip1.SetToolTip(Me.btn_salir, "Salir")
         Me.btn_salir.UseVisualStyleBackColor = True
@@ -389,98 +370,50 @@ Partial Class Form1
         Me.uic_reloj.Enabled = True
         Me.uic_reloj.Interval = 1000
         '
-        'GrBillete
-        '
-        Me.GrBillete.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.GrBillete.Controls.Add(Me.uic_limpiaEfectivo)
-        Me.GrBillete.Controls.Add(Me.uic_veinteluka)
-        Me.GrBillete.Controls.Add(Me.uic_diezluka)
-        Me.GrBillete.Controls.Add(Me.uic_cincoluka)
-        Me.GrBillete.Controls.Add(Me.uic_dosluka)
-        Me.GrBillete.Controls.Add(Me.uic_luka)
-        Me.GrBillete.Location = New System.Drawing.Point(18, 382)
-        Me.GrBillete.Name = "GrBillete"
-        Me.GrBillete.Size = New System.Drawing.Size(234, 190)
-        Me.GrBillete.TabIndex = 23
-        Me.GrBillete.TabStop = False
-        Me.GrBillete.Visible = False
-        '
-        'uic_veinteluka
-        '
-        Me.uic_veinteluka.Image = Global.delevery.My.Resources.Resources._20_lukas
-        Me.uic_veinteluka.Location = New System.Drawing.Point(74, 130)
-        Me.uic_veinteluka.Name = "uic_veinteluka"
-        Me.uic_veinteluka.Size = New System.Drawing.Size(84, 47)
-        Me.uic_veinteluka.TabIndex = 4
-        Me.uic_veinteluka.UseVisualStyleBackColor = True
-        '
-        'uic_diezluka
-        '
-        Me.uic_diezluka.Image = Global.delevery.My.Resources.Resources._10_luka
-        Me.uic_diezluka.Location = New System.Drawing.Point(120, 72)
-        Me.uic_diezluka.Name = "uic_diezluka"
-        Me.uic_diezluka.Size = New System.Drawing.Size(84, 53)
-        Me.uic_diezluka.TabIndex = 3
-        Me.uic_diezluka.UseVisualStyleBackColor = True
-        '
-        'uic_cincoluka
-        '
-        Me.uic_cincoluka.Image = Global.delevery.My.Resources.Resources._5_lukas
-        Me.uic_cincoluka.Location = New System.Drawing.Point(30, 72)
-        Me.uic_cincoluka.Name = "uic_cincoluka"
-        Me.uic_cincoluka.Size = New System.Drawing.Size(84, 53)
-        Me.uic_cincoluka.TabIndex = 2
-        Me.uic_cincoluka.UseVisualStyleBackColor = True
-        '
-        'uic_dosluka
-        '
-        Me.uic_dosluka.Image = Global.delevery.My.Resources.Resources._2_lukas
-        Me.uic_dosluka.Location = New System.Drawing.Point(120, 13)
-        Me.uic_dosluka.Name = "uic_dosluka"
-        Me.uic_dosluka.Size = New System.Drawing.Size(84, 53)
-        Me.uic_dosluka.TabIndex = 1
-        Me.uic_dosluka.UseVisualStyleBackColor = True
-        '
-        'uic_luka
-        '
-        Me.uic_luka.Image = Global.delevery.My.Resources.Resources.luka3
-        Me.uic_luka.Location = New System.Drawing.Point(30, 13)
-        Me.uic_luka.Name = "uic_luka"
-        Me.uic_luka.Size = New System.Drawing.Size(84, 53)
-        Me.uic_luka.TabIndex = 0
-        Me.uic_luka.UseVisualStyleBackColor = True
-        '
         'btn_limpiar
         '
         Me.btn_limpiar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btn_limpiar.Image = Global.delevery.My.Resources.Resources.Refresh1
-        Me.btn_limpiar.Location = New System.Drawing.Point(297, 529)
+        Me.btn_limpiar.Location = New System.Drawing.Point(657, 526)
         Me.btn_limpiar.Name = "btn_limpiar"
-        Me.btn_limpiar.Size = New System.Drawing.Size(34, 41)
+        Me.btn_limpiar.Size = New System.Drawing.Size(46, 41)
         Me.btn_limpiar.TabIndex = 24
         Me.btn_limpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.ToolTip1.SetToolTip(Me.btn_limpiar, "Limpia pantalla")
         Me.btn_limpiar.UseVisualStyleBackColor = True
         '
-        'uic_limpiaEfectivo
+        'btn_Efectivo
         '
-        Me.uic_limpiaEfectivo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.uic_limpiaEfectivo.Image = Global.delevery.My.Resources.Resources.Refresh1
-        Me.uic_limpiaEfectivo.Location = New System.Drawing.Point(167, 131)
-        Me.uic_limpiaEfectivo.Name = "uic_limpiaEfectivo"
-        Me.uic_limpiaEfectivo.Size = New System.Drawing.Size(35, 41)
-        Me.uic_limpiaEfectivo.TabIndex = 25
-        Me.uic_limpiaEfectivo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.ToolTip1.SetToolTip(Me.uic_limpiaEfectivo, "Limpia Valor Efectivo")
-        Me.uic_limpiaEfectivo.UseVisualStyleBackColor = True
+        Me.btn_Efectivo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btn_Efectivo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_Efectivo.Location = New System.Drawing.Point(461, 526)
+        Me.btn_Efectivo.Name = "btn_Efectivo"
+        Me.btn_Efectivo.Size = New System.Drawing.Size(86, 41)
+        Me.btn_Efectivo.TabIndex = 25
+        Me.btn_Efectivo.Text = "EFECTIVO"
+        Me.ToolTip1.SetToolTip(Me.btn_Efectivo, "Efectivo")
+        Me.btn_Efectivo.UseVisualStyleBackColor = True
+        '
+        'btn_Tarjeta
+        '
+        Me.btn_Tarjeta.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btn_Tarjeta.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_Tarjeta.Location = New System.Drawing.Point(554, 526)
+        Me.btn_Tarjeta.Name = "btn_Tarjeta"
+        Me.btn_Tarjeta.Size = New System.Drawing.Size(86, 41)
+        Me.btn_Tarjeta.TabIndex = 26
+        Me.btn_Tarjeta.Text = "TARJETA"
+        Me.ToolTip1.SetToolTip(Me.btn_Tarjeta, "Tarjeta")
+        Me.btn_Tarjeta.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(898, 595)
+        Me.Controls.Add(Me.btn_Tarjeta)
+        Me.Controls.Add(Me.btn_Efectivo)
         Me.Controls.Add(Me.btn_limpiar)
-        Me.Controls.Add(Me.GrBillete)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.FlowLayoutFamilia)
         Me.Controls.Add(Me.txt_cantidad)
@@ -489,7 +422,6 @@ Partial Class Form1
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.cbo_formapago)
         Me.Controls.Add(Me.txt_Total)
         Me.Controls.Add(Me.txt_efectivo)
@@ -506,7 +438,6 @@ Partial Class Form1
         CType(Me.FormaPago_dateset, System.ComponentModel.ISupportInitialize).EndInit()
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
-        Me.GrBillete.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -519,7 +450,6 @@ Partial Class Form1
     Friend WithEvents txt_efectivo As System.Windows.Forms.TextBox
     Friend WithEvents txt_Total As System.Windows.Forms.TextBox
     Friend WithEvents cbo_formapago As System.Windows.Forms.ComboBox
-    Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
@@ -540,14 +470,9 @@ Partial Class Form1
     Friend WithEvents uicEstado As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents uic_FechaHora As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents uic_reloj As System.Windows.Forms.Timer
-    Friend WithEvents GrBillete As System.Windows.Forms.GroupBox
-    Friend WithEvents uic_luka As System.Windows.Forms.Button
-    Friend WithEvents uic_diezluka As System.Windows.Forms.Button
-    Friend WithEvents uic_cincoluka As System.Windows.Forms.Button
-    Friend WithEvents uic_dosluka As System.Windows.Forms.Button
-    Friend WithEvents uic_veinteluka As System.Windows.Forms.Button
     Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
     Friend WithEvents btn_limpiar As System.Windows.Forms.Button
-    Friend WithEvents uic_limpiaEfectivo As System.Windows.Forms.Button
+    Friend WithEvents btn_Efectivo As System.Windows.Forms.Button
+    Friend WithEvents btn_Tarjeta As System.Windows.Forms.Button
 
 End Class
