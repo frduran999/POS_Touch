@@ -58,3 +58,15 @@ D:\Sistem_Duran\POS_Touch\POS_Touch\ProyectoNegocio\bin\Debug\ProyectoNegocio.xm
 D:\Sistem_Duran\POS_Touch\POS_Touch\ProyectoNegocio\bin\Debug\ProyectoService.dll
 D:\Sistem_Duran\POS_Touch\POS_Touch\ProyectoNegocio\bin\Debug\ProyectoService.pdb
 D:\Sistem_Duran\POS_Touch\POS_Touch\ProyectoNegocio\bin\Debug\ProyectoService.xml
+D:\Sistem_Duran\POS_Touch - copia (2)\POS_Touch\ProyectoNegocio\bin\Debug\ProyectoNegocio.dll
+D:\Sistem_Duran\POS_Touch - copia (2)\POS_Touch\ProyectoNegocio\bin\Debug\ProyectoNegocio.pdb
+D:\Sistem_Duran\POS_Touch - copia (2)\POS_Touch\ProyectoNegocio\bin\Debug\ProyectoNegocio.xml
+D:\Sistem_Duran\POS_Touch - copia (2)\POS_Touch\ProyectoNegocio\bin\Debug\ProyectoService.dll
+D:\Sistem_Duran\POS_Touch - copia (2)\POS_Touch\ProyectoNegocio\bin\Debug\ProyectoService.pdb
+D:\Sistem_Duran\POS_Touch - copia (2)\POS_Touch\ProyectoNegocio\bin\Debug\ProyectoService.xml
+D:\Sistem_Duran\POS_Touch - copia (2)\POS_Touch\ProyectoNegocio\obj\Debug\ProyectoNegocio.vbprojResolveAssemblyReference.cache
+D:\Sistem_Duran\POS_Touch - copia (2)\POS_Touch\ProyectoNegocio\obj\Debug\ProyectoNegocio.Resources.resources
+D:\Sistem_Duran\POS_Touch - copia (2)\POS_Touch\ProyectoNegocio\obj\Debug\ProyectoNegocio.vbproj.GenerateResource.Cache
+D:\Sistem_Duran\POS_Touch - copia (2)\POS_Touch\ProyectoNegocio\obj\Debug\ProyectoNegocio.dll
+D:\Sistem_Duran\POS_Touch - copia (2)\POS_Touch\ProyectoNegocio\obj\Debug\ProyectoNegocio.xml
+D:\Sistem_Duran\POS_Touch - copia (2)\POS_Touch\ProyectoNegocio\obj\Debug\ProyectoNegocio.pdb

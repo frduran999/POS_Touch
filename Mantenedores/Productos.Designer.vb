@@ -38,6 +38,7 @@ Partial Class Productos
         Me.FamiliaProductoTableAdapter = New delevery.deliveryDataSetTableAdapters.FamiliaProductoTableAdapter()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.RadGroupBox1 = New Telerik.WinControls.UI.RadGroupBox()
+        Me.RadButton1 = New Telerik.WinControls.UI.RadButton()
         Me.btnLimpiar = New Telerik.WinControls.UI.RadButton()
         Me.btn_eliminar = New System.Windows.Forms.Button()
         Me.btn_modificar = New System.Windows.Forms.Button()
@@ -49,18 +50,17 @@ Partial Class Productos
         Me.RadGroupBox4 = New Telerik.WinControls.UI.RadGroupBox()
         Me.RadGridView1 = New Telerik.WinControls.UI.RadGridView()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.RadButton1 = New Telerik.WinControls.UI.RadButton()
         CType(Me.FamiliaProductoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DeliveryDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox1.SuspendLayout()
+        CType(Me.RadButton1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnLimpiar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGroupBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox4.SuspendLayout()
         CType(Me.RadGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGridView1.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadButton1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -191,6 +191,19 @@ Partial Class Productos
         Me.RadGroupBox1.Size = New System.Drawing.Size(284, 60)
         Me.RadGroupBox1.TabIndex = 19
         '
+        'RadButton1
+        '
+        Me.RadButton1.DisplayStyle = Telerik.WinControls.DisplayStyle.Image
+        Me.RadButton1.Image = Global.delevery.My.Resources.Resources.print
+        Me.RadButton1.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.RadButton1.Location = New System.Drawing.Point(169, 12)
+        Me.RadButton1.Name = "RadButton1"
+        Me.RadButton1.Size = New System.Drawing.Size(45, 37)
+        Me.RadButton1.TabIndex = 82
+        Me.RadButton1.Text = "RadButton4"
+        Me.RadButton1.ThemeName = "Office2010Black"
+        Me.ToolTip1.SetToolTip(Me.RadButton1, "Limpiar pantalla")
+        '
         'btnLimpiar
         '
         Me.btnLimpiar.DisplayStyle = Telerik.WinControls.DisplayStyle.Image
@@ -287,19 +300,6 @@ Partial Class Productos
         Me.RadGridView1.Text = "RadGridView1"
         Me.RadGridView1.ThemeName = "Office2010Black"
         '
-        'RadButton1
-        '
-        Me.RadButton1.DisplayStyle = Telerik.WinControls.DisplayStyle.Image
-        Me.RadButton1.Image = Global.delevery.My.Resources.Resources.print
-        Me.RadButton1.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.RadButton1.Location = New System.Drawing.Point(169, 12)
-        Me.RadButton1.Name = "RadButton1"
-        Me.RadButton1.Size = New System.Drawing.Size(45, 37)
-        Me.RadButton1.TabIndex = 82
-        Me.RadButton1.Text = "RadButton4"
-        Me.RadButton1.ThemeName = "Office2010Black"
-        Me.ToolTip1.SetToolTip(Me.RadButton1, "Limpiar pantalla")
-        '
         'Productos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -328,13 +328,13 @@ Partial Class Productos
         CType(Me.DeliveryDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadGroupBox1.ResumeLayout(False)
+        CType(Me.RadButton1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnLimpiar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadMenu1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadGroupBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadGroupBox4.ResumeLayout(False)
         CType(Me.RadGridView1.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadButton1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

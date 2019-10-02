@@ -6,66 +6,7 @@ delevery
 </name>
 </assembly>
 <members>
-<member name="T:delevery.formaPago_dateset.forma_pagoDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:delevery.formaPago_dateset.forma_pagoRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:delevery.formaPago_dateset.forma_pagoRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:delevery.formaPago_dateset">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:delevery.formaPago_datesetTableAdapters.forma_pagoTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="M:delevery.formaPago_datesetTableAdapters.TableAdapterManager.UpdateUpdatedRows(delevery.formaPago_dateset,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Update rows in top-down order.
-</summary>
-</member><member name="M:delevery.formaPago_datesetTableAdapters.TableAdapterManager.UpdateInsertedRows(delevery.formaPago_dateset,System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Insert rows in top-down order.
-</summary>
-</member><member name="M:delevery.formaPago_datesetTableAdapters.TableAdapterManager.UpdateDeletedRows(delevery.formaPago_dateset,System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Delete rows in bottom-up order.
-</summary>
-</member><member name="M:delevery.formaPago_datesetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
-</summary>
-</member><member name="M:delevery.formaPago_datesetTableAdapters.TableAdapterManager.UpdateAll(delevery.formaPago_dateset)">
-	<summary>
-Update all changes to the dataset.
-</summary>
-</member><member name="T:delevery.formaPago_datesetTableAdapters.TableAdapterManager.UpdateOrderOption">
-	<summary>
-Update Order Option
-</summary>
-</member><member name="T:delevery.formaPago_datesetTableAdapters.TableAdapterManager.SelfReferenceComparer">
-	<summary>
-Used to sort self-referenced table's rows
-</summary>
-</member><member name="T:delevery.formaPago_datesetTableAdapters.TableAdapterManager">
-	<summary>
-TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
-</summary>
-</member><member name="M:delevery.POS.MovCaja.Cierre(System.String)">
-	<summary>
- Retorna el nummero de NumSec en Tabla MovCaja
- </summary>
-	<param name="Nota"></param>
-	<returns></returns>
-	<remarks></remarks>
-</member><member name="T:delevery.tipo_doc_DataSet.tipo_docDataTable">
+<member name="T:delevery.tipo_doc_DataSet.tipo_docDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
@@ -117,6 +58,13 @@ Used to sort self-referenced table's rows
 	<summary>
 TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
 </summary>
+</member><member name="M:delevery.POS.MovCaja.Cierre(System.String)">
+	<summary>
+ Retorna el nummero de NumSec en Tabla MovCaja
+ </summary>
+	<param name="Nota"></param>
+	<returns></returns>
+	<remarks></remarks>
 </member><member name="T:delevery.deliveryDataSet1.usuariosDataTable">
 	<summary>
 Represents the strongly named DataTable class.
@@ -168,6 +116,74 @@ Used to sort self-referenced table's rows
 </member><member name="T:delevery.deliveryDataSet1TableAdapters.TableAdapterManager">
 	<summary>
 TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member><member name="T:delevery.formaPago_dateset.forma_pagoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:delevery.formaPago_dateset.forma_pagoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:delevery.formaPago_dateset.forma_pagoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:delevery.formaPago_dateset">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:delevery.formaPago_datesetTableAdapters.forma_pagoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:delevery.formaPago_datesetTableAdapters.TableAdapterManager.UpdateUpdatedRows(delevery.formaPago_dateset,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:delevery.formaPago_datesetTableAdapters.TableAdapterManager.UpdateInsertedRows(delevery.formaPago_dateset,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:delevery.formaPago_datesetTableAdapters.TableAdapterManager.UpdateDeletedRows(delevery.formaPago_dateset,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:delevery.formaPago_datesetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:delevery.formaPago_datesetTableAdapters.TableAdapterManager.UpdateAll(delevery.formaPago_dateset)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:delevery.formaPago_datesetTableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:delevery.formaPago_datesetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:delevery.formaPago_datesetTableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member><member name="T:delevery.dts_mantenedor.ProductoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:delevery.dts_mantenedor.ProductoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:delevery.dts_mantenedor.ProductoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:delevery.dts_mantenedor">
+	<summary>
+Represents a strongly typed in-memory cache of data.
 </summary>
 </member><member name="T:delevery.deliveryDataSet.usuariosDataTable">
 	<summary>
@@ -359,6 +375,10 @@ TableAdapterManager is used to coordinate TableAdapters in the dataset to enable
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member><member name="P:delevery.My.Resources.Resources.paso2">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:delevery.My.Resources.Resources.print">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
