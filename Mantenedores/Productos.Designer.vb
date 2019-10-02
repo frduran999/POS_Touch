@@ -38,6 +38,7 @@ Partial Class Productos
         Me.FamiliaProductoTableAdapter = New delevery.deliveryDataSetTableAdapters.FamiliaProductoTableAdapter()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.RadGroupBox1 = New Telerik.WinControls.UI.RadGroupBox()
+        Me.RadButton1 = New Telerik.WinControls.UI.RadButton()
         Me.btnLimpiar = New Telerik.WinControls.UI.RadButton()
         Me.btn_eliminar = New System.Windows.Forms.Button()
         Me.btn_modificar = New System.Windows.Forms.Button()
@@ -47,12 +48,13 @@ Partial Class Productos
         Me.uic_Minimizar = New Telerik.WinControls.UI.RadMenuItem()
         Me.Office2010BlackTheme1 = New Telerik.WinControls.Themes.Office2010BlackTheme()
         Me.RadGroupBox4 = New Telerik.WinControls.UI.RadGroupBox()
-        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.RadGridView1 = New Telerik.WinControls.UI.RadGridView()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         CType(Me.FamiliaProductoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DeliveryDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox1.SuspendLayout()
+        CType(Me.RadButton1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnLimpiar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGroupBox4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -178,6 +180,7 @@ Partial Class Productos
         'RadGroupBox1
         '
         Me.RadGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
+        Me.RadGroupBox1.Controls.Add(Me.RadButton1)
         Me.RadGroupBox1.Controls.Add(Me.btnLimpiar)
         Me.RadGroupBox1.Controls.Add(Me.btn_eliminar)
         Me.RadGroupBox1.Controls.Add(Me.btn_modificar)
@@ -185,15 +188,28 @@ Partial Class Productos
         Me.RadGroupBox1.HeaderText = ""
         Me.RadGroupBox1.Location = New System.Drawing.Point(12, 31)
         Me.RadGroupBox1.Name = "RadGroupBox1"
-        Me.RadGroupBox1.Size = New System.Drawing.Size(255, 60)
+        Me.RadGroupBox1.Size = New System.Drawing.Size(284, 60)
         Me.RadGroupBox1.TabIndex = 19
+        '
+        'RadButton1
+        '
+        Me.RadButton1.DisplayStyle = Telerik.WinControls.DisplayStyle.Image
+        Me.RadButton1.Image = Global.delevery.My.Resources.Resources.print
+        Me.RadButton1.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.RadButton1.Location = New System.Drawing.Point(169, 12)
+        Me.RadButton1.Name = "RadButton1"
+        Me.RadButton1.Size = New System.Drawing.Size(45, 37)
+        Me.RadButton1.TabIndex = 82
+        Me.RadButton1.Text = "RadButton4"
+        Me.RadButton1.ThemeName = "Office2010Black"
+        Me.ToolTip1.SetToolTip(Me.RadButton1, "Limpiar pantalla")
         '
         'btnLimpiar
         '
         Me.btnLimpiar.DisplayStyle = Telerik.WinControls.DisplayStyle.Image
         Me.btnLimpiar.Image = Global.delevery.My.Resources.Resources.Refresh1
         Me.btnLimpiar.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.btnLimpiar.Location = New System.Drawing.Point(169, 12)
+        Me.btnLimpiar.Location = New System.Drawing.Point(225, 12)
         Me.btnLimpiar.Name = "btnLimpiar"
         Me.btnLimpiar.Size = New System.Drawing.Size(45, 37)
         Me.btnLimpiar.TabIndex = 81
@@ -312,6 +328,7 @@ Partial Class Productos
         CType(Me.DeliveryDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadGroupBox1.ResumeLayout(False)
+        CType(Me.RadButton1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnLimpiar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadMenu1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadGroupBox4, System.ComponentModel.ISupportInitialize).EndInit()
@@ -347,4 +364,5 @@ Partial Class Productos
     Friend WithEvents RadGroupBox4 As Telerik.WinControls.UI.RadGroupBox
     Friend WithEvents btnLimpiar As Telerik.WinControls.UI.RadButton
     Friend WithEvents RadGridView1 As Telerik.WinControls.UI.RadGridView
+    Friend WithEvents RadButton1 As Telerik.WinControls.UI.RadButton
 End Class

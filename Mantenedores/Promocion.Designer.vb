@@ -24,8 +24,7 @@ Partial Class Promocion
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.uic_CodigoPromocion = New System.Windows.Forms.TextBox()
+        Me.btn_buscar = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.uic_precio = New System.Windows.Forms.TextBox()
@@ -33,7 +32,6 @@ Partial Class Promocion
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Chk_productos = New System.Windows.Forms.CheckBox()
         Me.GridProducto = New System.Windows.Forms.DataGridView()
-        Me.Agregar = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.IdproductoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DescripcionproductoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PrecioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -41,6 +39,7 @@ Partial Class Promocion
         Me.CodigoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CodigoFamiliaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FamiliaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Agregar = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.PromocionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DeliveryDataSet = New delevery.deliveryDataSet()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
@@ -55,19 +54,18 @@ Partial Class Promocion
         Me.Eliminar = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.PromocionTableAdapter = New delevery.deliveryDataSetTableAdapters.PromocionTableAdapter()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.Btn_Modificar = New Telerik.WinControls.UI.RadButton()
+        Me.btnLimpiar = New Telerik.WinControls.UI.RadButton()
+        Me.btnEliminar = New Telerik.WinControls.UI.RadButton()
+        Me.btnGrabar = New Telerik.WinControls.UI.RadButton()
         Me.RadGroupBox4 = New Telerik.WinControls.UI.RadGroupBox()
         Me.uic_Oferta = New System.Windows.Forms.ComboBox()
         Me.RadLabel2 = New Telerik.WinControls.UI.RadLabel()
         Me.Office2010BlackTheme1 = New Telerik.WinControls.Themes.Office2010BlackTheme()
         Me.RadPanel2 = New Telerik.WinControls.UI.RadPanel()
         Me.uic_Volver = New Telerik.WinControls.UI.RadButton()
-        Me.Btn_Modificar = New Telerik.WinControls.UI.RadButton()
-        Me.btnLimpiar = New Telerik.WinControls.UI.RadButton()
-        Me.btnEliminar = New Telerik.WinControls.UI.RadButton()
-        Me.btnGrabar = New Telerik.WinControls.UI.RadButton()
         Me.btn_salir = New System.Windows.Forms.Button()
         Me.btn_grabar = New System.Windows.Forms.Button()
-        Me.btn_buscar = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.GridProducto, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -75,16 +73,16 @@ Partial Class Promocion
         CType(Me.DeliveryDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
         CType(Me.GridPromocion, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Btn_Modificar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnLimpiar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnEliminar, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btnGrabar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGroupBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox4.SuspendLayout()
         CType(Me.RadLabel2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadPanel2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadPanel2.SuspendLayout()
         CType(Me.uic_Volver, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Btn_Modificar, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnLimpiar, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnEliminar, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btnGrabar, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -92,8 +90,6 @@ Partial Class Promocion
         Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.Controls.Add(Me.btn_buscar)
-        Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.uic_CodigoPromocion)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.uic_precio)
@@ -105,26 +101,20 @@ Partial Class Promocion
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos Promocion"
         '
-        'Label3
+        'btn_buscar
         '
-        Me.Label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label3.Location = New System.Drawing.Point(6, 21)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(52, 19)
-        Me.Label3.TabIndex = 6
-        Me.Label3.Text = "Codigo"
-        '
-        'uic_CodigoPromocion
-        '
-        Me.uic_CodigoPromocion.Location = New System.Drawing.Point(64, 21)
-        Me.uic_CodigoPromocion.Name = "uic_CodigoPromocion"
-        Me.uic_CodigoPromocion.Size = New System.Drawing.Size(72, 20)
-        Me.uic_CodigoPromocion.TabIndex = 0
+        Me.btn_buscar.Image = Global.delevery.My.Resources.Resources.find
+        Me.btn_buscar.Location = New System.Drawing.Point(561, 16)
+        Me.btn_buscar.Name = "btn_buscar"
+        Me.btn_buscar.Size = New System.Drawing.Size(37, 37)
+        Me.btn_buscar.TabIndex = 8
+        Me.ToolTip1.SetToolTip(Me.btn_buscar, "Buscar oferta por codigo")
+        Me.btn_buscar.UseVisualStyleBackColor = True
         '
         'Label2
         '
         Me.Label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label2.Location = New System.Drawing.Point(406, 21)
+        Me.Label2.Location = New System.Drawing.Point(406, 26)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(52, 19)
         Me.Label2.TabIndex = 4
@@ -133,24 +123,24 @@ Partial Class Promocion
         'Label1
         '
         Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label1.Location = New System.Drawing.Point(143, 21)
+        Me.Label1.Location = New System.Drawing.Point(12, 27)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(52, 19)
+        Me.Label1.Size = New System.Drawing.Size(82, 18)
         Me.Label1.TabIndex = 3
-        Me.Label1.Text = "Nombre"
+        Me.Label1.Text = "Nombre Oferta"
         '
         'uic_precio
         '
-        Me.uic_precio.Location = New System.Drawing.Point(464, 21)
+        Me.uic_precio.Location = New System.Drawing.Point(464, 26)
         Me.uic_precio.Name = "uic_precio"
         Me.uic_precio.Size = New System.Drawing.Size(64, 20)
         Me.uic_precio.TabIndex = 2
         '
         'uic_Promocion
         '
-        Me.uic_Promocion.Location = New System.Drawing.Point(201, 21)
+        Me.uic_Promocion.Location = New System.Drawing.Point(94, 27)
         Me.uic_Promocion.Name = "uic_Promocion"
-        Me.uic_Promocion.Size = New System.Drawing.Size(177, 20)
+        Me.uic_Promocion.Size = New System.Drawing.Size(225, 20)
         Me.uic_Promocion.TabIndex = 1
         '
         'GroupBox2
@@ -191,15 +181,6 @@ Partial Class Promocion
         Me.GridProducto.RowHeadersVisible = False
         Me.GridProducto.Size = New System.Drawing.Size(308, 361)
         Me.GridProducto.TabIndex = 1
-        '
-        'Agregar
-        '
-        Me.Agregar.HeaderText = "Agregar"
-        Me.Agregar.Name = "Agregar"
-        Me.Agregar.ReadOnly = True
-        Me.Agregar.Text = "Agregar"
-        Me.Agregar.UseColumnTextForButtonValue = True
-        Me.Agregar.Width = 50
         '
         'IdproductoDataGridViewTextBoxColumn
         '
@@ -256,6 +237,15 @@ Partial Class Promocion
         Me.FamiliaDataGridViewTextBoxColumn.Name = "FamiliaDataGridViewTextBoxColumn"
         Me.FamiliaDataGridViewTextBoxColumn.ReadOnly = True
         Me.FamiliaDataGridViewTextBoxColumn.Visible = False
+        '
+        'Agregar
+        '
+        Me.Agregar.HeaderText = "Agregar"
+        Me.Agregar.Name = "Agregar"
+        Me.Agregar.ReadOnly = True
+        Me.Agregar.Text = "Agregar"
+        Me.Agregar.UseColumnTextForButtonValue = True
+        Me.Agregar.Width = 50
         '
         'PromocionBindingSource
         '
@@ -362,6 +352,59 @@ Partial Class Promocion
         '
         Me.PromocionTableAdapter.ClearBeforeFill = True
         '
+        'Btn_Modificar
+        '
+        Me.Btn_Modificar.DisplayStyle = Telerik.WinControls.DisplayStyle.Image
+        Me.Btn_Modificar.Image = Global.delevery.My.Resources.Resources.Notes
+        Me.Btn_Modificar.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Btn_Modificar.Location = New System.Drawing.Point(83, 10)
+        Me.Btn_Modificar.Name = "Btn_Modificar"
+        Me.Btn_Modificar.Size = New System.Drawing.Size(40, 35)
+        Me.Btn_Modificar.TabIndex = 84
+        Me.Btn_Modificar.Text = "RadButton1"
+        Me.Btn_Modificar.ThemeName = "Office2010Black"
+        Me.ToolTip1.SetToolTip(Me.Btn_Modificar, "Modificar Oferta")
+        '
+        'btnLimpiar
+        '
+        Me.btnLimpiar.DisplayStyle = Telerik.WinControls.DisplayStyle.Image
+        Me.btnLimpiar.Image = Global.delevery.My.Resources.Resources.Refresh2
+        Me.btnLimpiar.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btnLimpiar.Location = New System.Drawing.Point(167, 10)
+        Me.btnLimpiar.Name = "btnLimpiar"
+        Me.btnLimpiar.Size = New System.Drawing.Size(40, 35)
+        Me.btnLimpiar.TabIndex = 83
+        Me.btnLimpiar.Text = "RadButton4"
+        Me.btnLimpiar.ThemeName = "Office2010Black"
+        Me.ToolTip1.SetToolTip(Me.btnLimpiar, "Limpiar Oferta")
+        '
+        'btnEliminar
+        '
+        Me.btnEliminar.DisplayStyle = Telerik.WinControls.DisplayStyle.Image
+        Me.btnEliminar.Image = Global.delevery.My.Resources.Resources.Delete1
+        Me.btnEliminar.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btnEliminar.Location = New System.Drawing.Point(125, 10)
+        Me.btnEliminar.Name = "btnEliminar"
+        Me.btnEliminar.Size = New System.Drawing.Size(40, 35)
+        Me.btnEliminar.TabIndex = 82
+        Me.btnEliminar.Text = "RadButton3"
+        Me.btnEliminar.ThemeName = "Office2010Black"
+        Me.ToolTip1.SetToolTip(Me.btnEliminar, "Eliminar Oferta")
+        Me.btnEliminar.Visible = False
+        '
+        'btnGrabar
+        '
+        Me.btnGrabar.DisplayStyle = Telerik.WinControls.DisplayStyle.Image
+        Me.btnGrabar.Image = Global.delevery.My.Resources.Resources.Save
+        Me.btnGrabar.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.btnGrabar.Location = New System.Drawing.Point(41, 10)
+        Me.btnGrabar.Name = "btnGrabar"
+        Me.btnGrabar.Size = New System.Drawing.Size(40, 35)
+        Me.btnGrabar.TabIndex = 81
+        Me.btnGrabar.Text = "RadButton1"
+        Me.btnGrabar.ThemeName = "Office2010Black"
+        Me.ToolTip1.SetToolTip(Me.btnGrabar, "Grabar Oferta")
+        '
         'RadGroupBox4
         '
         Me.RadGroupBox4.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
@@ -416,59 +459,6 @@ Partial Class Promocion
         Me.uic_Volver.Text = "RadButton4"
         Me.uic_Volver.ThemeName = "Office2010Black"
         '
-        'Btn_Modificar
-        '
-        Me.Btn_Modificar.DisplayStyle = Telerik.WinControls.DisplayStyle.Image
-        Me.Btn_Modificar.Image = Global.delevery.My.Resources.Resources.Notes
-        Me.Btn_Modificar.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Btn_Modificar.Location = New System.Drawing.Point(83, 10)
-        Me.Btn_Modificar.Name = "Btn_Modificar"
-        Me.Btn_Modificar.Size = New System.Drawing.Size(40, 35)
-        Me.Btn_Modificar.TabIndex = 84
-        Me.Btn_Modificar.Text = "RadButton1"
-        Me.Btn_Modificar.ThemeName = "Office2010Black"
-        Me.ToolTip1.SetToolTip(Me.Btn_Modificar, "Modificar Oferta")
-        '
-        'btnLimpiar
-        '
-        Me.btnLimpiar.DisplayStyle = Telerik.WinControls.DisplayStyle.Image
-        Me.btnLimpiar.Image = Global.delevery.My.Resources.Resources.Refresh2
-        Me.btnLimpiar.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.btnLimpiar.Location = New System.Drawing.Point(167, 10)
-        Me.btnLimpiar.Name = "btnLimpiar"
-        Me.btnLimpiar.Size = New System.Drawing.Size(40, 35)
-        Me.btnLimpiar.TabIndex = 83
-        Me.btnLimpiar.Text = "RadButton4"
-        Me.btnLimpiar.ThemeName = "Office2010Black"
-        Me.ToolTip1.SetToolTip(Me.btnLimpiar, "Limpiar Oferta")
-        '
-        'btnEliminar
-        '
-        Me.btnEliminar.DisplayStyle = Telerik.WinControls.DisplayStyle.Image
-        Me.btnEliminar.Image = Global.delevery.My.Resources.Resources.Delete1
-        Me.btnEliminar.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.btnEliminar.Location = New System.Drawing.Point(125, 10)
-        Me.btnEliminar.Name = "btnEliminar"
-        Me.btnEliminar.Size = New System.Drawing.Size(40, 35)
-        Me.btnEliminar.TabIndex = 82
-        Me.btnEliminar.Text = "RadButton3"
-        Me.btnEliminar.ThemeName = "Office2010Black"
-        Me.ToolTip1.SetToolTip(Me.btnEliminar, "Eliminar Oferta")
-        Me.btnEliminar.Visible = False
-        '
-        'btnGrabar
-        '
-        Me.btnGrabar.DisplayStyle = Telerik.WinControls.DisplayStyle.Image
-        Me.btnGrabar.Image = Global.delevery.My.Resources.Resources.Save
-        Me.btnGrabar.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.btnGrabar.Location = New System.Drawing.Point(41, 10)
-        Me.btnGrabar.Name = "btnGrabar"
-        Me.btnGrabar.Size = New System.Drawing.Size(40, 35)
-        Me.btnGrabar.TabIndex = 81
-        Me.btnGrabar.Text = "RadButton1"
-        Me.btnGrabar.ThemeName = "Office2010Black"
-        Me.ToolTip1.SetToolTip(Me.btnGrabar, "Grabar Oferta")
-        '
         'btn_salir
         '
         Me.btn_salir.Image = Global.delevery.My.Resources.Resources._Exit
@@ -486,16 +476,6 @@ Partial Class Promocion
         Me.btn_grabar.Size = New System.Drawing.Size(37, 37)
         Me.btn_grabar.TabIndex = 10
         Me.btn_grabar.UseVisualStyleBackColor = True
-        '
-        'btn_buscar
-        '
-        Me.btn_buscar.Image = Global.delevery.My.Resources.Resources.find
-        Me.btn_buscar.Location = New System.Drawing.Point(561, 16)
-        Me.btn_buscar.Name = "btn_buscar"
-        Me.btn_buscar.Size = New System.Drawing.Size(37, 37)
-        Me.btn_buscar.TabIndex = 8
-        Me.ToolTip1.SetToolTip(Me.btn_buscar, "Buscar oferta por codigo")
-        Me.btn_buscar.UseVisualStyleBackColor = True
         '
         'Promocion
         '
@@ -522,6 +502,10 @@ Partial Class Promocion
         CType(Me.DeliveryDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         CType(Me.GridPromocion, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Btn_Modificar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnLimpiar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnEliminar, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnGrabar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadGroupBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadGroupBox4.ResumeLayout(False)
         Me.RadGroupBox4.PerformLayout()
@@ -529,10 +513,6 @@ Partial Class Promocion
         CType(Me.RadPanel2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadPanel2.ResumeLayout(False)
         CType(Me.uic_Volver, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Btn_Modificar, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnLimpiar, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnEliminar, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btnGrabar, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -565,8 +545,6 @@ Partial Class Promocion
     Friend WithEvents codigofamillia As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents familia As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Eliminar As System.Windows.Forms.DataGridViewButtonColumn
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents uic_CodigoPromocion As System.Windows.Forms.TextBox
     Friend WithEvents btn_salir As System.Windows.Forms.Button
     Friend WithEvents btn_grabar As System.Windows.Forms.Button
     Friend WithEvents btn_buscar As System.Windows.Forms.Button

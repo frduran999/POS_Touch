@@ -58,6 +58,65 @@ Used to sort self-referenced table's rows
 	<summary>
 TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
 </summary>
+</member><member name="M:delevery.POS.MovCaja.Cierre(System.String)">
+	<summary>
+ Retorna el nummero de NumSec en Tabla MovCaja
+ </summary>
+	<param name="Nota"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:delevery.deliveryDataSet1.usuariosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:delevery.deliveryDataSet1.usuariosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:delevery.deliveryDataSet1.usuariosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:delevery.deliveryDataSet1">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:delevery.deliveryDataSet1TableAdapters.usuariosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:delevery.deliveryDataSet1TableAdapters.TableAdapterManager.UpdateUpdatedRows(delevery.deliveryDataSet1,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:delevery.deliveryDataSet1TableAdapters.TableAdapterManager.UpdateInsertedRows(delevery.deliveryDataSet1,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:delevery.deliveryDataSet1TableAdapters.TableAdapterManager.UpdateDeletedRows(delevery.deliveryDataSet1,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:delevery.deliveryDataSet1TableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:delevery.deliveryDataSet1TableAdapters.TableAdapterManager.UpdateAll(delevery.deliveryDataSet1)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:delevery.deliveryDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:delevery.deliveryDataSet1TableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:delevery.deliveryDataSet1TableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
 </member><member name="T:delevery.formaPago_dateset.forma_pagoDataTable">
 	<summary>
 Represents the strongly named DataTable class.
@@ -109,6 +168,22 @@ Used to sort self-referenced table's rows
 </member><member name="T:delevery.formaPago_datesetTableAdapters.TableAdapterManager">
 	<summary>
 TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member><member name="T:delevery.dts_mantenedor.ProductoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:delevery.dts_mantenedor.ProductoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:delevery.dts_mantenedor.ProductoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:delevery.dts_mantenedor">
+	<summary>
+Represents a strongly typed in-memory cache of data.
 </summary>
 </member><member name="T:delevery.deliveryDataSet.usuariosDataTable">
 	<summary>
@@ -194,58 +269,6 @@ Used to sort self-referenced table's rows
 	<summary>
 TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
 </summary>
-</member><member name="T:delevery.deliveryDataSet1.usuariosDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:delevery.deliveryDataSet1.usuariosRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:delevery.deliveryDataSet1.usuariosRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:delevery.deliveryDataSet1">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
-</member><member name="T:delevery.deliveryDataSet1TableAdapters.usuariosTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="M:delevery.deliveryDataSet1TableAdapters.TableAdapterManager.UpdateUpdatedRows(delevery.deliveryDataSet1,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Update rows in top-down order.
-</summary>
-</member><member name="M:delevery.deliveryDataSet1TableAdapters.TableAdapterManager.UpdateInsertedRows(delevery.deliveryDataSet1,System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Insert rows in top-down order.
-</summary>
-</member><member name="M:delevery.deliveryDataSet1TableAdapters.TableAdapterManager.UpdateDeletedRows(delevery.deliveryDataSet1,System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Delete rows in bottom-up order.
-</summary>
-</member><member name="M:delevery.deliveryDataSet1TableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
-	<summary>
-Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
-</summary>
-</member><member name="M:delevery.deliveryDataSet1TableAdapters.TableAdapterManager.UpdateAll(delevery.deliveryDataSet1)">
-	<summary>
-Update all changes to the dataset.
-</summary>
-</member><member name="T:delevery.deliveryDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption">
-	<summary>
-Update Order Option
-</summary>
-</member><member name="T:delevery.deliveryDataSet1TableAdapters.TableAdapterManager.SelfReferenceComparer">
-	<summary>
-Used to sort self-referenced table's rows
-</summary>
-</member><member name="T:delevery.deliveryDataSet1TableAdapters.TableAdapterManager">
-	<summary>
-TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
-</summary>
 </member><member name="P:delevery.My.Resources.Resources.ResourceManager">
 	<summary>
   Returns the cached ResourceManager instance used by this class.
@@ -288,6 +311,10 @@ TableAdapterManager is used to coordinate TableAdapters in the dataset to enable
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member><member name="P:delevery.My.Resources.Resources.Delete">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:delevery.My.Resources.Resources.Delete1">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
@@ -335,6 +362,10 @@ TableAdapterManager is used to coordinate TableAdapters in the dataset to enable
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
+</member><member name="P:delevery.My.Resources.Resources.Notes">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
 </member><member name="P:delevery.My.Resources.Resources.paso">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -344,6 +375,10 @@ TableAdapterManager is used to coordinate TableAdapters in the dataset to enable
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
 </member><member name="P:delevery.My.Resources.Resources.paso2">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:delevery.My.Resources.Resources.print">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
@@ -359,6 +394,14 @@ TableAdapterManager is used to coordinate TableAdapters in the dataset to enable
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
+</member><member name="P:delevery.My.Resources.Resources.Refresh2">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:delevery.My.Resources.Resources.Save">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
 </member><member name="P:delevery.My.Resources.Resources.user1">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
@@ -371,13 +414,6 @@ TableAdapterManager is used to coordinate TableAdapters in the dataset to enable
 	<summary>
   A strongly-typed resource class, for looking up localized strings, etc.
 </summary>
-</member><member name="M:delevery.POS.MovCaja.Cierre(System.String)">
-	<summary>
- Retorna el nummero de NumSec en Tabla MovCaja
- </summary>
-	<param name="Nota"></param>
-	<returns></returns>
-	<remarks></remarks>
 </member>
 </members>
 </doc>

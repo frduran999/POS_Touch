@@ -14,7 +14,8 @@
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -53,6 +54,13 @@
     </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="ReportMan, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\delivery\code\ReportMan\bin\Debug\ReportMan.dll</HintPath>
@@ -61,6 +69,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -102,6 +112,11 @@
     <Compile Include="BE\validador.vb" />
     <Compile Include="DATASET\deliveryDataSet1.vb">
       <DependentUpon>deliveryDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DATASET\dts_mantenedor.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dts_mantenedor.xsd</DependentUpon>
     </Compile>
     <Compile Include="Mantenedores\Buscar_producto.Designer.vb">
       <DependentUpon>Buscar_producto.vb</DependentUpon>
@@ -195,6 +210,18 @@
     <Compile Include="delivery.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Mantenedores\Reporte\InfoProducto.Designer.vb">
+      <DependentUpon>InfoProducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenedores\Reporte\InfoProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenedores\Reporte\RPT_Producto.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPT_Producto.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -265,6 +292,13 @@
     <EmbeddedResource Include="GeneraKey.resx">
       <DependentUpon>GeneraKey.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mantenedores\Reporte\InfoProducto.resx">
+      <DependentUpon>InfoProducto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenedores\Reporte\RPT_Producto.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPT_Producto.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="Mantenedores\Parametros.resx">
       <DependentUpon>Parametros.vb</DependentUpon>
@@ -332,6 +366,17 @@
     </None>
     <None Include="DATASET\deliveryDataSet1.xss">
       <DependentUpon>deliveryDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DATASET\dts_mantenedor.xsc">
+      <DependentUpon>dts_mantenedor.xsd</DependentUpon>
+    </None>
+    <None Include="DATASET\dts_mantenedor.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dts_mantenedor.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DATASET\dts_mantenedor.xss">
+      <DependentUpon>dts_mantenedor.xsd</DependentUpon>
     </None>
     <None Include="formaPago_dateset.xsc">
       <DependentUpon>formaPago_dateset.xsd</DependentUpon>
@@ -412,6 +457,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="paso.ico" />
+    <None Include="Resources\print.ico" />
     <None Include="Resources\Refresh1.png" />
     <None Include="Resources\Delete1.png" />
     <None Include="Resources\Notes.png" />
@@ -433,6 +479,9 @@
       <Project>{6f8cacc2-ff3a-40a2-8efd-c3c8d9b85b0f}</Project>
       <Name>ProyectoNegocio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

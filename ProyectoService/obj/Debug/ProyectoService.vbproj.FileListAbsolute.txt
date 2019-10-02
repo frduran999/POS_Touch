@@ -14,3 +14,19 @@ C:\Users\Francisco\Desktop\Sistem_Duran\sushi\delevery\ProyectoService\obj\Debug
 C:\Users\Francisco\Desktop\Sistem_Duran\sushi\delevery\ProyectoService\obj\Debug\ProyectoService.dll
 C:\Users\Francisco\Desktop\Sistem_Duran\sushi\delevery\ProyectoService\obj\Debug\ProyectoService.xml
 C:\Users\Francisco\Desktop\Sistem_Duran\sushi\delevery\ProyectoService\obj\Debug\ProyectoService.pdb
+D:\Sistem_Duran\POS_Touch\POS_Touch\ProyectoService\bin\Debug\ProyectoService.dll
+D:\Sistem_Duran\POS_Touch\POS_Touch\ProyectoService\bin\Debug\ProyectoService.pdb
+D:\Sistem_Duran\POS_Touch\POS_Touch\ProyectoService\bin\Debug\ProyectoService.xml
+D:\Sistem_Duran\POS_Touch\POS_Touch\ProyectoService\obj\Debug\ProyectoService.Resources.resources
+D:\Sistem_Duran\POS_Touch\POS_Touch\ProyectoService\obj\Debug\ProyectoService.vbproj.GenerateResource.Cache
+D:\Sistem_Duran\POS_Touch\POS_Touch\ProyectoService\obj\Debug\ProyectoService.dll
+D:\Sistem_Duran\POS_Touch\POS_Touch\ProyectoService\obj\Debug\ProyectoService.xml
+D:\Sistem_Duran\POS_Touch\POS_Touch\ProyectoService\obj\Debug\ProyectoService.pdb
+D:\Sistem_Duran\POS_Touch - copia (2)\POS_Touch\ProyectoService\bin\Debug\ProyectoService.dll
+D:\Sistem_Duran\POS_Touch - copia (2)\POS_Touch\ProyectoService\bin\Debug\ProyectoService.pdb
+D:\Sistem_Duran\POS_Touch - copia (2)\POS_Touch\ProyectoService\bin\Debug\ProyectoService.xml
+D:\Sistem_Duran\POS_Touch - copia (2)\POS_Touch\ProyectoService\obj\Debug\ProyectoService.Resources.resources
+D:\Sistem_Duran\POS_Touch - copia (2)\POS_Touch\ProyectoService\obj\Debug\ProyectoService.vbproj.GenerateResource.Cache
+D:\Sistem_Duran\POS_Touch - copia (2)\POS_Touch\ProyectoService\obj\Debug\ProyectoService.dll
+D:\Sistem_Duran\POS_Touch - copia (2)\POS_Touch\ProyectoService\obj\Debug\ProyectoService.xml
+D:\Sistem_Duran\POS_Touch - copia (2)\POS_Touch\ProyectoService\obj\Debug\ProyectoService.pdb

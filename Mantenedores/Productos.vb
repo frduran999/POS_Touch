@@ -234,4 +234,9 @@
 
         CargarGrilla()
     End Sub
+
+    Private Sub RadButton1_Click(sender As Object, e As EventArgs) Handles RadButton1.Click
+        Dim frm As New InfoProducto
+        frm.Show()
+    End Sub
 End Class
