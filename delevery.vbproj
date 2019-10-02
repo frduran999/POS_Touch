@@ -53,6 +53,8 @@
     </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="ReportMan, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\delivery\code\ReportMan\bin\Debug\ReportMan.dll</HintPath>
@@ -61,6 +63,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -102,6 +105,11 @@
     <Compile Include="BE\validador.vb" />
     <Compile Include="DATASET\deliveryDataSet1.vb">
       <DependentUpon>deliveryDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DATASET\dts_mantenedor.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dts_mantenedor.xsd</DependentUpon>
     </Compile>
     <Compile Include="Mantenedores\Buscar_producto.Designer.vb">
       <DependentUpon>Buscar_producto.vb</DependentUpon>
@@ -195,6 +203,12 @@
     <Compile Include="delivery.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Mantenedores\Reporte\InfoProducto.Designer.vb">
+      <DependentUpon>InfoProducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenedores\Reporte\InfoProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -265,6 +279,9 @@
     <EmbeddedResource Include="GeneraKey.resx">
       <DependentUpon>GeneraKey.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mantenedores\Reporte\InfoProducto.resx">
+      <DependentUpon>InfoProducto.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="Mantenedores\Parametros.resx">
       <DependentUpon>Parametros.vb</DependentUpon>
@@ -332,6 +349,17 @@
     </None>
     <None Include="DATASET\deliveryDataSet1.xss">
       <DependentUpon>deliveryDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DATASET\dts_mantenedor.xsc">
+      <DependentUpon>dts_mantenedor.xsd</DependentUpon>
+    </None>
+    <None Include="DATASET\dts_mantenedor.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dts_mantenedor.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DATASET\dts_mantenedor.xss">
+      <DependentUpon>dts_mantenedor.xsd</DependentUpon>
     </None>
     <None Include="formaPago_dateset.xsc">
       <DependentUpon>formaPago_dateset.xsd</DependentUpon>
@@ -412,6 +440,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="paso.ico" />
+    <None Include="Resources\print.ico" />
     <None Include="Resources\Refresh1.png" />
     <None Include="Resources\Delete1.png" />
     <None Include="Resources\Notes.png" />
@@ -434,6 +463,7 @@
       <Name>ProyectoNegocio</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

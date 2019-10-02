@@ -66,6 +66,7 @@
     <Compile Include="BC\CadenaMan.vb" />
     <Compile Include="BC\Codificador.vb" />
     <Compile Include="BC\RUTman.vb" />
+    <Compile Include="CombosServices.vb" />
     <Compile Include="Conexion.vb" />
     <Compile Include="DAC\myhelper3.vb" />
     <Compile Include="DAC\myMSSQL.vb" />

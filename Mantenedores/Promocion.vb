@@ -1,11 +1,20 @@
-﻿Public Class Promocion
+﻿Imports ProyectoNegocio
+Public Class Promocion
 
     Private Sub Promocion_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'DeliveryDataSet.Promocion' table. You can move, or remove it, as needed.
         Me.PromocionTableAdapter.Fill(Me.DeliveryDataSet.Promocion)
-
+        cargacombo()
     End Sub
-
+    Private Sub cargacombo()
+        Dim neg As New combos
+        Try
+            Me.uic_Oferta.DataSource = neg.getOfertas
+            Me.uic_Oferta.DisplayMember = "nombre"
+            Me.uic_Oferta.ValueMember = "id"
+        Catch ex As Exception
+        End Try
+    End Sub
     Private Sub Chk_productos_CheckedChanged(sender As Object, e As EventArgs) Handles Chk_productos.CheckedChanged
         If Me.Chk_productos.CheckState = CheckState.Checked Then
             'todos
@@ -53,11 +62,11 @@
     End Sub
 
     Private Sub btn_grabar_Click(sender As Object, e As EventArgs) Handles btn_grabar.Click
-        If Me.uic_CodigoPromocion.Text = "" Then
-            MsgBox("Debe ingresar código promoción", vbInformation, "Aviso")
-            Me.uic_CodigoPromocion.Focus()
-            Exit Sub
-        End If
+        'If Me.uic_CodigoPromocion.Text = "" Then
+        '    MsgBox("Debe ingresar código promoción", vbInformation, "Aviso")
+        '    Me.uic_CodigoPromocion.Focus()
+        '    Exit Sub
+        'End If
         If Me.uic_Promocion.Text = "" Then
             MsgBox("Debe ingresar nombre promoción", vbInformation, "Aviso")
             Me.uic_Promocion.Focus()
@@ -76,7 +85,7 @@
         Dim dts As New Oferta
         Dim func As New dac.O_ferta
 
-        dts.get_codigoOferta = Trim(Me.uic_CodigoPromocion.Text)
+        'dts.get_codigoOferta = Trim(Me.uic_CodigoPromocion.Text)
         dts.get_nombreOferta = Trim(Me.uic_Promocion.Text)
         dts.get_precioOferta = Me.uic_precio.Text
 
@@ -110,8 +119,8 @@
         Me.uic_Promocion.CharacterCasing = CharacterCasing.Upper
     End Sub
 
-    Private Sub uic_CodigoPromocion_TextChanged(sender As Object, e As EventArgs) Handles uic_CodigoPromocion.TextChanged
-        Me.uic_CodigoPromocion.CharacterCasing = CharacterCasing.Upper
+    Private Sub uic_CodigoPromocion_TextChanged(sender As Object, e As EventArgs)
+        ' Me.uic_CodigoPromocion.CharacterCasing = CharacterCasing.Upper
     End Sub
 
     Private Sub uic_precio_KeyPress(sender As Object, e As KeyPressEventArgs) Handles uic_precio.KeyPress
@@ -128,22 +137,22 @@
     End Sub
 
     Private Sub limpiar()
-        Me.uic_CodigoPromocion.Text = ""
+        'Me.uic_CodigoPromocion.Text = ""
         Me.uic_Promocion.Text = ""
         Me.uic_precio.Text = ""
         Me.GridPromocion.Rows.Clear()
     End Sub
 
     Private Sub btn_buscar_Click(sender As Object, e As EventArgs) Handles btn_buscar.Click
-        If Me.uic_CodigoPromocion.Text = "" Then
-            MsgBox("Debe ingresar codigo promocion", vbInformation, "Aviso")
-            Me.uic_CodigoPromocion.Focus()
-            Exit Sub
-        End If
+        'If Me.uic_CodigoPromocion.Text = "" Then
+        '    MsgBox("Debe ingresar codigo promocion", vbInformation, "Aviso")
+        '    Me.uic_CodigoPromocion.Focus()
+        '    Exit Sub
+        'End If
         Dim dts As New Oferta
         Dim func As New dac.O_ferta
 
-        dts.get_codigoOferta = Me.uic_CodigoPromocion.Text.Trim
+        ' dts.get_codigoOferta = Me.uic_CodigoPromocion.Text.Trim
         Dim datos As DataTable
         datos = func.buscoOferta(dts)
         For Each dr In datos.Rows
@@ -155,4 +164,9 @@
 
 
     End Sub
+
+    Private Sub uic_Volver_Click(sender As Object, e As EventArgs) Handles uic_Volver.Click
+        Me.Close()
+    End Sub
+
 End Class
