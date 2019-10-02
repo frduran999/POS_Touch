@@ -30,3 +30,11 @@ D:\Sistem_Duran\POS_Touch - copia (2)\POS_Touch\ProyectoService\obj\Debug\Proyec
 D:\Sistem_Duran\POS_Touch - copia (2)\POS_Touch\ProyectoService\obj\Debug\ProyectoService.dll
 D:\Sistem_Duran\POS_Touch - copia (2)\POS_Touch\ProyectoService\obj\Debug\ProyectoService.xml
 D:\Sistem_Duran\POS_Touch - copia (2)\POS_Touch\ProyectoService\obj\Debug\ProyectoService.pdb
+D:\Sistem_Duran\POS_Touch\ProyectoService\bin\Debug\ProyectoService.dll
+D:\Sistem_Duran\POS_Touch\ProyectoService\bin\Debug\ProyectoService.pdb
+D:\Sistem_Duran\POS_Touch\ProyectoService\bin\Debug\ProyectoService.xml
+D:\Sistem_Duran\POS_Touch\ProyectoService\obj\Debug\ProyectoService.Resources.resources
+D:\Sistem_Duran\POS_Touch\ProyectoService\obj\Debug\ProyectoService.vbproj.GenerateResource.Cache
+D:\Sistem_Duran\POS_Touch\ProyectoService\obj\Debug\ProyectoService.dll
+D:\Sistem_Duran\POS_Touch\ProyectoService\obj\Debug\ProyectoService.xml
+D:\Sistem_Duran\POS_Touch\ProyectoService\obj\Debug\ProyectoService.pdb

@@ -4,7 +4,7 @@ Imports System.ComponentModel
 Public Class Form1
     Dim myhelper As New dac.myhelper2
     Dim obc_RM As New ReportMan.RMan
-
+    Private IdPago As String = 0
 
     Private Sub lawea2(ByVal sender As Object, ByVal e As EventArgs)
         Me.FlowLayoutPanel1.Controls.Clear()
@@ -171,9 +171,13 @@ Public Class Form1
             MsgBox("No se puede crear Ticket sin detalle o Total = 0", vbCritical)
             Exit Sub
         End If
-        If Me.cbo_formapago.Text = "" Then
+        'If Me.cbo_formapago.Text = "" Then
+        '    MsgBox("Debe ingresar forma de pago", vbCritical)
+        '    Me.cbo_formapago.Focus()
+        '    Exit Sub
+        'End If
+        If Me.IdPago = 0 Then
             MsgBox("Debe ingresar forma de pago", vbCritical)
-            Me.cbo_formapago.Focus()
             Exit Sub
         End If
         If Me.DataGridView1.RowCount = 0 Then
@@ -364,6 +368,7 @@ Public Class Form1
     End Sub
 
     Private Sub btn_Efectivo_Click(sender As Object, e As EventArgs) Handles btn_Efectivo.Click
+        Me.IdPago = 1  'Efectivo
         txt_efectivo.Enabled = True
         Me.txt_efectivo.Text = ""
         Me.txt_efectivo.Focus()
@@ -371,6 +376,7 @@ Public Class Form1
     End Sub
 
     Private Sub btn_Tarjeta_Click(sender As Object, e As EventArgs) Handles btn_Tarjeta.Click
+        Me.IdPago = 2 'tarjeta
         Me.txt_efectivo.Enabled = False
         Me.txt_efectivo.Text = Me.txt_Total.Text
         Me.txt_vuelto.Text = "0"
