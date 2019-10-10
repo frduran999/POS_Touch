@@ -30,21 +30,21 @@
 
         ' End Sub
 
-        Public Function Apertura(Monto As Long, Nota As String) As String
-            'Dim osql As New dac.myMSSQL(Me.oConfig.conexDB, Me.oConfig.TimeOutSQL)
-            'osql.paramQUERY.Add("Sucursal", Me.oSucursal.DatoSucursal.IDSucursal)
-            'osql.paramQUERY.Add("Estacion", Me.oEstacion.DatoEstacion.IDEstacion)
-            'osql.paramQUERY.Add("Fecha", Now.ToString("yyyy-MM-dd"))
-            'osql.paramQUERY.Add("Hora", Now.ToString("HH:mm"))
-            'osql.paramQUERY.Add("Usuario", Me.vIDUsuario)
-            'osql.paramQUERY.Add("Nota", Nota)
-            'osql.paramQUERY.Add("Monto", Monto)
-            'Dim vresp As String = osql.GetValorNoNull("crea_Apertura")
-            'If osql.DioError Then
-            '    Return osql.MsgError
-            'End If
-            'Return vresp
-        End Function
+        'Public Function Apertura(Monto As Long, Nota As String) As String
+        '    'Dim osql As New dac.myMSSQL(Me.oConfig.conexDB, Me.oConfig.TimeOutSQL)
+        '    'osql.paramQUERY.Add("Sucursal", Me.oSucursal.DatoSucursal.IDSucursal)
+        '    'osql.paramQUERY.Add("Estacion", Me.oEstacion.DatoEstacion.IDEstacion)
+        '    'osql.paramQUERY.Add("Fecha", Now.ToString("yyyy-MM-dd"))
+        '    'osql.paramQUERY.Add("Hora", Now.ToString("HH:mm"))
+        '    'osql.paramQUERY.Add("Usuario", Me.vIDUsuario)
+        '    'osql.paramQUERY.Add("Nota", Nota)
+        '    'osql.paramQUERY.Add("Monto", Monto)
+        '    'Dim vresp As String = osql.GetValorNoNull("crea_Apertura")
+        '    'If osql.DioError Then
+        '    '    Return osql.MsgError
+        '    'End If
+        '    'Return vresp
+        'End Function
 
         Public Function SaldoEfectivoActual() As Long
             'Dim osql As New dac.myMSSQL(Me.oConfig.conexDB, Me.oConfig.TimeOutSQL)

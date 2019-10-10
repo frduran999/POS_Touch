@@ -65,22 +65,45 @@ Public Class Form1
         Dim total_linea As Integer = 0
         Dim codigo_item As String = ""
         Dim db_precio As DataTable
-
+        Dim repetido As Boolean = False
+        Dim linea As Integer = 0
+        Dim CantidadLinea As Integer = 0
+        
         db_precio = myhelper.ExecuteDataSet(My.Settings.deliveryConnectionString, CommandType.Text, "select precio,codigo from productos where id_producto=" & id, Nothing, 60).Tables(0)
         For Each valor As DataRow In db_precio.Rows
             precio = Val(valor("precio"))
             codigo_item = valor("codigo")
         Next
-        If Me.txt_cantidad.Text = "" Then
+
+        For index = 0 To DataGridView1.Rows.Count - 1
+            If (DataGridView1.Rows(index).Cells(0).Value.ToString.Trim = codigo_item.Trim) Then
+                repetido = True
+                linea = index
+                CantidadLinea = DataGridView1.Rows(index).Cells(1).Value.ToString
+                precio = DataGridView1.Rows(index).Cells(3).Value.ToString
+                Exit For
+            End If
+        Next
+
+
+        If Me.txt_cantidad.Text = "" And repetido = False Then
             Me.DataGridView1.Rows.Add(codigo_item.Trim, 1, articulo, precio, precio)
-        Else
+        ElseIf Me.txt_cantidad.Text <> "" And repetido = False Then
             cantidad = Val(Me.txt_cantidad.Text)
             total_linea = Val(Me.txt_cantidad.Text) * precio
             Me.DataGridView1.Rows.Add(codigo_item.Trim, cantidad, articulo, precio, total_linea)
             Me.txt_cantidad.Text = ""
+        ElseIf Me.txt_cantidad.Text <> "" And repetido Then
+            Me.DataGridView1.Rows(linea).Cells(1).Value = CantidadLinea + Integer.Parse(Me.txt_cantidad.Text)
+        Else
+            CantidadLinea = CantidadLinea + 1
+            Me.DataGridView1.Rows(linea).Cells(1).Value = CantidadLinea
+            Me.DataGridView1.Rows(linea).Cells(4).Value = CantidadLinea * precio
         End If
 
     End Sub
+
+    
 
     Private Sub btn_salir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_salir.Click
         Me.Dispose()

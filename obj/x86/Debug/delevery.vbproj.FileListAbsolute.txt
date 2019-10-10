@@ -339,3 +339,73 @@ D:\Sistem_Duran\POS_Touch\obj\x86\Debug\delevery.UserControl1.resources
 D:\Sistem_Duran\POS_Touch\obj\x86\Debug\delevery.usuario.resources
 D:\Sistem_Duran\POS_Touch\obj\x86\Debug\delevery.vbproj.GenerateResource.Cache
 D:\Sistem_Duran\POS_Touch\obj\x86\Debug\delevery.exe.licenses
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\POS_Touch\obj\x86\Debug\delevery.exe
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\POS_Touch\obj\x86\Debug\delevery.vbprojResolveAssemblyReference.cache
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\POS_Touch\obj\x86\Debug\delevery.AbrirCaja.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\POS_Touch\obj\x86\Debug\delevery.Buscar_producto.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\POS_Touch\obj\x86\Debug\delevery.compras.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\POS_Touch\obj\x86\Debug\delevery.Compras_diario.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\POS_Touch\obj\x86\Debug\delevery.GeneraKey.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\POS_Touch\obj\x86\Debug\delevery.InfoProducto.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\POS_Touch\obj\x86\Debug\delevery.DatosGral.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\POS_Touch\obj\x86\Debug\delevery.diario.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\POS_Touch\obj\x86\Debug\delevery.FamiliaProducto.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\POS_Touch\obj\x86\Debug\delevery.Form1.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\POS_Touch\obj\x86\Debug\delevery.formapago.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\POS_Touch\obj\x86\Debug\delevery.LoginForm1.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\POS_Touch\obj\x86\Debug\delevery.delivery.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\POS_Touch\obj\x86\Debug\delevery.Resources.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\POS_Touch\obj\x86\Debug\delevery.Productos.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\POS_Touch\obj\x86\Debug\delevery.Promocion.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\POS_Touch\obj\x86\Debug\delevery.Retiro.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\POS_Touch\obj\x86\Debug\delevery.UserControl1.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\POS_Touch\obj\x86\Debug\delevery.usuario.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\POS_Touch\obj\x86\Debug\delevery.vbproj.GenerateResource.Cache
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\POS_Touch\obj\x86\Debug\delevery.exe.licenses
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\POS_Touch\obj\x86\Debug\delevery.pdb
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\POS_Touch\bin\Debug\delevery.exe.config
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\POS_Touch\bin\Debug\delevery.exe
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\POS_Touch\bin\Debug\delevery.pdb
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\POS_Touch\bin\Debug\delevery.xml
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\POS_Touch\bin\Debug\ProyectoNegocio.dll
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\POS_Touch\bin\Debug\ProyectoService.dll
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\POS_Touch\bin\Debug\ProyectoNegocio.pdb
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\POS_Touch\bin\Debug\ProyectoNegocio.xml
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\POS_Touch\bin\Debug\ProyectoService.pdb
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\POS_Touch\bin\Debug\ProyectoService.xml
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\POS_Touch\obj\x86\Debug\delevery.xml
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\Nueva carpeta\POS_Touch\bin\Debug\delevery.exe.config
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\Nueva carpeta\POS_Touch\obj\x86\Debug\delevery.exe
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\Nueva carpeta\POS_Touch\obj\x86\Debug\delevery.xml
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\Nueva carpeta\POS_Touch\obj\x86\Debug\delevery.pdb
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\Nueva carpeta\POS_Touch\bin\Debug\delevery.exe
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\Nueva carpeta\POS_Touch\bin\Debug\delevery.pdb
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\Nueva carpeta\POS_Touch\bin\Debug\delevery.xml
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\Nueva carpeta\POS_Touch\bin\Debug\ProyectoNegocio.dll
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\Nueva carpeta\POS_Touch\bin\Debug\ProyectoService.dll
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\Nueva carpeta\POS_Touch\bin\Debug\ProyectoNegocio.pdb
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\Nueva carpeta\POS_Touch\bin\Debug\ProyectoNegocio.xml
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\Nueva carpeta\POS_Touch\bin\Debug\ProyectoService.pdb
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\Nueva carpeta\POS_Touch\bin\Debug\ProyectoService.xml
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\Nueva carpeta\POS_Touch\obj\x86\Debug\delevery.vbprojResolveAssemblyReference.cache
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\Nueva carpeta\POS_Touch\obj\x86\Debug\delevery.AbrirCaja.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\Nueva carpeta\POS_Touch\obj\x86\Debug\delevery.Buscar_producto.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\Nueva carpeta\POS_Touch\obj\x86\Debug\delevery.compras.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\Nueva carpeta\POS_Touch\obj\x86\Debug\delevery.Compras_diario.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\Nueva carpeta\POS_Touch\obj\x86\Debug\delevery.GeneraKey.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\Nueva carpeta\POS_Touch\obj\x86\Debug\delevery.InfoProducto.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\Nueva carpeta\POS_Touch\obj\x86\Debug\delevery.DatosGral.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\Nueva carpeta\POS_Touch\obj\x86\Debug\delevery.diario.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\Nueva carpeta\POS_Touch\obj\x86\Debug\delevery.FamiliaProducto.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\Nueva carpeta\POS_Touch\obj\x86\Debug\delevery.Form1.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\Nueva carpeta\POS_Touch\obj\x86\Debug\delevery.formapago.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\Nueva carpeta\POS_Touch\obj\x86\Debug\delevery.LoginForm1.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\Nueva carpeta\POS_Touch\obj\x86\Debug\delevery.delivery.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\Nueva carpeta\POS_Touch\obj\x86\Debug\delevery.Resources.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\Nueva carpeta\POS_Touch\obj\x86\Debug\delevery.Productos.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\Nueva carpeta\POS_Touch\obj\x86\Debug\delevery.Promocion.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\Nueva carpeta\POS_Touch\obj\x86\Debug\delevery.Retiro.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\Nueva carpeta\POS_Touch\obj\x86\Debug\delevery.UserControl1.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\Nueva carpeta\POS_Touch\obj\x86\Debug\delevery.usuario.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\Nueva carpeta\POS_Touch\obj\x86\Debug\delevery.vbproj.GenerateResource.Cache
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\Nueva carpeta\POS_Touch\obj\x86\Debug\delevery.exe.licenses

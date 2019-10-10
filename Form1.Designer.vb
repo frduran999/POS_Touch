@@ -28,12 +28,6 @@ Partial Class Form1
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Eliminar = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.txt_vuelto = New System.Windows.Forms.TextBox()
         Me.txt_efectivo = New System.Windows.Forms.TextBox()
         Me.txt_Total = New System.Windows.Forms.TextBox()
@@ -57,6 +51,12 @@ Partial Class Form1
         Me.btn_limpiar = New System.Windows.Forms.Button()
         Me.btn_Efectivo = New System.Windows.Forms.Button()
         Me.btn_Tarjeta = New System.Windows.Forms.Button()
+        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Desc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Eliminar = New System.Windows.Forms.DataGridViewButtonColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FormapagoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FormaPago_dateset, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -146,58 +146,13 @@ Partial Class Form1
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(136, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(220, Byte), Integer))
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.cantidad, Me.Column2, Me.precio, Me.Column3, Me.Eliminar})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.cantidad, Me.Desc, Me.precio, Me.Column3, Me.Eliminar})
         Me.DataGridView1.Location = New System.Drawing.Point(18, 12)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.Size = New System.Drawing.Size(437, 407)
         Me.DataGridView1.TabIndex = 0
-        '
-        'codigo
-        '
-        Me.codigo.HeaderText = "codigo"
-        Me.codigo.Name = "codigo"
-        Me.codigo.ReadOnly = True
-        Me.codigo.Visible = False
-        Me.codigo.Width = 50
-        '
-        'cantidad
-        '
-        Me.cantidad.HeaderText = "Cant."
-        Me.cantidad.Name = "cantidad"
-        Me.cantidad.ReadOnly = True
-        Me.cantidad.Width = 50
-        '
-        'Column2
-        '
-        Me.Column2.HeaderText = "Descripcion"
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        Me.Column2.Width = 190
-        '
-        'precio
-        '
-        Me.precio.HeaderText = "Precio"
-        Me.precio.Name = "precio"
-        Me.precio.ReadOnly = True
-        Me.precio.Width = 70
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Valor"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        Me.Column3.Width = 70
-        '
-        'Eliminar
-        '
-        Me.Eliminar.HeaderText = "Eliminar"
-        Me.Eliminar.Name = "Eliminar"
-        Me.Eliminar.ReadOnly = True
-        Me.Eliminar.Text = "Eliminar"
-        Me.Eliminar.UseColumnTextForButtonValue = True
-        Me.Eliminar.Width = 50
         '
         'txt_vuelto
         '
@@ -407,6 +362,51 @@ Partial Class Form1
         Me.ToolTip1.SetToolTip(Me.btn_Tarjeta, "Tarjeta")
         Me.btn_Tarjeta.UseVisualStyleBackColor = True
         '
+        'codigo
+        '
+        Me.codigo.HeaderText = "codigo"
+        Me.codigo.Name = "codigo"
+        Me.codigo.ReadOnly = True
+        Me.codigo.Visible = False
+        Me.codigo.Width = 50
+        '
+        'cantidad
+        '
+        Me.cantidad.HeaderText = "Cant."
+        Me.cantidad.Name = "cantidad"
+        Me.cantidad.ReadOnly = True
+        Me.cantidad.Width = 50
+        '
+        'Desc
+        '
+        Me.Desc.HeaderText = "Descripcion"
+        Me.Desc.Name = "Desc"
+        Me.Desc.ReadOnly = True
+        Me.Desc.Width = 190
+        '
+        'precio
+        '
+        Me.precio.HeaderText = "Precio"
+        Me.precio.Name = "precio"
+        Me.precio.ReadOnly = True
+        Me.precio.Width = 70
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "Valor"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        Me.Column3.Width = 70
+        '
+        'Eliminar
+        '
+        Me.Eliminar.HeaderText = "Eliminar"
+        Me.Eliminar.Name = "Eliminar"
+        Me.Eliminar.ReadOnly = True
+        Me.Eliminar.Text = "Eliminar"
+        Me.Eliminar.UseColumnTextForButtonValue = True
+        Me.Eliminar.Width = 50
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -461,12 +461,6 @@ Partial Class Form1
     Friend WithEvents FormapagoBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents Forma_pagoTableAdapter As delevery.formaPago_datesetTableAdapters.forma_pagoTableAdapter
     Friend WithEvents FlowLayoutFamilia As System.Windows.Forms.FlowLayoutPanel
-    Friend WithEvents codigo As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents cantidad As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column2 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents precio As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Column3 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Eliminar As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents StatusStrip1 As System.Windows.Forms.StatusStrip
     Friend WithEvents uicEstado As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents uic_FechaHora As System.Windows.Forms.ToolStripStatusLabel
@@ -475,5 +469,11 @@ Partial Class Form1
     Friend WithEvents btn_limpiar As System.Windows.Forms.Button
     Friend WithEvents btn_Efectivo As System.Windows.Forms.Button
     Friend WithEvents btn_Tarjeta As System.Windows.Forms.Button
+    Friend WithEvents codigo As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents cantidad As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Desc As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents precio As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Eliminar As System.Windows.Forms.DataGridViewButtonColumn
 
 End Class
