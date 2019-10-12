@@ -213,10 +213,10 @@
     <Compile Include="delivery.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Mantenedores\Reporte\CrystalReport1.vb">
+    <Compile Include="Mantenedores\Reporte\RPT_VentasDiarias.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <DependentUpon>RPT_VentasDiarias.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Mantenedores\Reporte\InfoVentasDiarias.Designer.vb">
@@ -307,9 +307,9 @@
     <EmbeddedResource Include="GeneraKey.resx">
       <DependentUpon>GeneraKey.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Mantenedores\Reporte\CrystalReport1.rpt">
+    <EmbeddedResource Include="Mantenedores\Reporte\RPT_VentasDiarias.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport1.vb</LastGenOutput>
+      <LastGenOutput>RPT_VentasDiarias.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenedores\Reporte\InfoVentasDiarias.resx">
       <DependentUpon>InfoVentasDiarias.vb</DependentUpon>

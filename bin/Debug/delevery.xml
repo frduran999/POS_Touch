@@ -146,11 +146,23 @@ TableAdapterManager is used to coordinate TableAdapters in the dataset to enable
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
+</member><member name="T:delevery.dts_mantenedor.VentasDiariasDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
 </member><member name="T:delevery.dts_mantenedor.ProductoRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
+</member><member name="T:delevery.dts_mantenedor.VentasDiariasRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
 </member><member name="T:delevery.dts_mantenedor.ProductoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:delevery.dts_mantenedor.VentasDiariasRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
