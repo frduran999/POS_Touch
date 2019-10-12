@@ -24,6 +24,19 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="VentaasDiarias" msprop:Generator_TableClassName="VentaasDiariasDataTable" msprop:Generator_TableVarName="tableVentaasDiarias" msprop:Generator_RowChangedName="VentaasDiariasRowChanged" msprop:Generator_TablePropName="VentaasDiarias" msprop:Generator_RowDeletingName="VentaasDiariasRowDeleting" msprop:Generator_RowChangingName="VentaasDiariasRowChanging" msprop:Generator_RowEvHandlerName="VentaasDiariasRowChangeEventHandler" msprop:Generator_RowDeletedName="VentaasDiariasRowDeleted" msprop:Generator_RowClassName="VentaasDiariasRow" msprop:Generator_UserTableName="VentaasDiarias" msprop:Generator_RowEvArgName="VentaasDiariasRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_doc" msprop:Generator_ColumnVarNameInTable="columnid_doc" msprop:Generator_ColumnPropNameInRow="id_doc" msprop:Generator_ColumnPropNameInTable="id_docColumn" msprop:Generator_UserColumnName="id_doc" type="xs:string" minOccurs="0" />
+              <xs:element name="forma_pago" msprop:Generator_ColumnVarNameInTable="columnforma_pago" msprop:Generator_ColumnPropNameInRow="forma_pago" msprop:Generator_ColumnPropNameInTable="forma_pagoColumn" msprop:Generator_UserColumnName="forma_pago" type="xs:string" minOccurs="0" />
+              <xs:element name="fecha_emision" msprop:Generator_ColumnVarNameInTable="columnfecha_emision" msprop:Generator_ColumnPropNameInRow="fecha_emision" msprop:Generator_ColumnPropNameInTable="fecha_emisionColumn" msprop:Generator_UserColumnName="fecha_emision" type="xs:string" minOccurs="0" />
+              <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" type="xs:string" minOccurs="0" />
+              <xs:element name="total" msprop:Generator_ColumnVarNameInTable="columntotal" msprop:Generator_ColumnPropNameInRow="total" msprop:Generator_ColumnPropNameInTable="totalColumn" msprop:Generator_UserColumnName="total" type="xs:string" minOccurs="0" />
+              <xs:element name="efectivo" msprop:Generator_ColumnVarNameInTable="columnefectivo" msprop:Generator_ColumnPropNameInRow="efectivo" msprop:Generator_ColumnPropNameInTable="efectivoColumn" msprop:Generator_UserColumnName="efectivo" type="xs:string" minOccurs="0" />
+              <xs:element name="DataColumn7" msprop:Generator_ColumnVarNameInTable="columnDataColumn7" msprop:Generator_ColumnPropNameInRow="DataColumn7" msprop:Generator_ColumnPropNameInTable="DataColumn7Column" msprop:Generator_UserColumnName="DataColumn7" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>

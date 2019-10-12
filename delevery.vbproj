@@ -118,6 +118,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dts_mantenedor.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DATASET\dts_mantenedor.vb">
+      <DependentUpon>dts_mantenedor.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Mantenedores\Buscar_producto.Designer.vb">
       <DependentUpon>Buscar_producto.vb</DependentUpon>
     </Compile>
@@ -210,6 +213,18 @@
     <Compile Include="delivery.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Mantenedores\Reporte\CrystalReport1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Mantenedores\Reporte\InfoVentasDiarias.Designer.vb">
+      <DependentUpon>InfoVentasDiarias.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenedores\Reporte\InfoVentasDiarias.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Mantenedores\Reporte\InfoProducto.Designer.vb">
       <DependentUpon>InfoProducto.vb</DependentUpon>
     </Compile>
@@ -291,6 +306,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GeneraKey.resx">
       <DependentUpon>GeneraKey.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenedores\Reporte\CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenedores\Reporte\InfoVentasDiarias.resx">
+      <DependentUpon>InfoVentasDiarias.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenedores\Reporte\InfoProducto.resx">
       <DependentUpon>InfoProducto.vb</DependentUpon>
