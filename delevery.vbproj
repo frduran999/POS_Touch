@@ -457,6 +457,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="paso.ico" />
+    <None Include="Resources\magnifier.png" />
     <None Include="Resources\print.ico" />
     <None Include="Resources\Refresh1.png" />
     <None Include="Resources\Delete1.png" />
