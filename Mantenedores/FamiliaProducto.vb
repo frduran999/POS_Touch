@@ -1,4 +1,7 @@
-﻿Public Class FamiliaProducto
+﻿Imports System.IO
+Imports System.Drawing.Imaging
+
+Public Class FamiliaProducto
     Private Linea As Integer
     Private Sub FamiliaProducto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         carga_grilla()
@@ -6,7 +9,7 @@
     End Sub
 
     Private Sub btn_grabar_Click(sender As Object, e As EventArgs) Handles btn_grabar.Click
-       
+
         If Me.uic_FamiliaProducto.Text = "" Then
             MsgBox("Debe agregar Familia")
             Me.uic_FamiliaProducto.Focus()
@@ -100,4 +103,64 @@
         btn_modificar.Enabled = False
         Me.btn_grabar.Enabled = True
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim openfile = New OpenFileDialog
+        openfile.Filter = "Jpg files (*.jpg)|*.jpg"
+        'openfile.Filter = 1
+        If openfile.ShowDialog = Windows.Forms.DialogResult.OK Then
+
+            Dim ExtensionArchivo As String = My.Computer.FileSystem.GetFileInfo(openfile.FileName).Extension.ToString
+            If ExtensionArchivo.ToUpper = ".JPG" Then
+                Me.PictureBox1.Visible = True
+                Me.PictureBox1.Image = ByteArrayToImage(ImageToByteArray(Image.FromFile(openfile.FileName)), True)
+
+            Else
+                Telerik.WinControls.RadMessageBox.Show(Me, "El archivo debe ser con extension JPG", "Aviso")
+            End If
+        End If
+    End Sub
+    Public Function ByteArrayToImage(ByVal byteArrayIn As Byte(), ByVal red As Boolean) As Image
+        Dim ms As New MemoryStream(byteArrayIn)
+        Return redimensionarImagen(ms, red)
+    End Function
+    Public Function ImageToByteArray(ByVal imageIn As Image) As Byte()
+        Dim ms As New MemoryStream()
+        imageIn.Save(ms, ImageFormat.Jpeg)
+        Return ms.ToArray()
+    End Function
+    Private Function redimensionarImagen(ByVal Stream As Stream, ByVal red As Boolean) As Image
+        If red Then
+            Dim img As Image = Image.FromStream(Stream)
+            Dim max As Integer = 140
+            Dim h As Integer = img.Height
+            Dim w As Integer = img.Width
+            Dim newH As Integer
+            Dim newW As Integer
+
+            If h > w And h > max Then
+                newH = max
+                newW = (w * max) / h
+            ElseIf (w > h And w > max) Then
+                newW = max
+                newH = (h * max) / w
+            Else
+                newH = h
+                newW = w
+            End If
+
+            If (h <> newH And w <> newW) Then
+                Dim newImg As Bitmap = New Bitmap(img, newW, newH)
+                Dim g As Graphics = Graphics.FromImage(newImg)
+                g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear
+                g.DrawImage(img, 0, 0, newImg.Width, newImg.Height)
+                Return newImg
+            Else
+                Return img
+            End If
+        Else
+            Dim img As Image = Image.FromStream(Stream)
+            Return img
+        End If
+    End Function
 End Class

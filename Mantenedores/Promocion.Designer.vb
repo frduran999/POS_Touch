@@ -39,7 +39,6 @@ Partial Class Promocion
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.GridOferta = New Telerik.WinControls.UI.RadGridView()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.uic_Buscar = New Telerik.WinControls.UI.RadButton()
         Me.Btn_Modificar = New Telerik.WinControls.UI.RadButton()
         Me.btnLimpiar = New Telerik.WinControls.UI.RadButton()
         Me.btnEliminar = New Telerik.WinControls.UI.RadButton()
@@ -59,11 +58,11 @@ Partial Class Promocion
         Me.uic_Producto = New Telerik.WinControls.UI.RadTextBox()
         Me.RadLabel3 = New Telerik.WinControls.UI.RadLabel()
         Me.GridProductos = New Telerik.WinControls.UI.RadGridView()
+        Me.uic_Activo = New Telerik.WinControls.UI.RadCheckBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.GridOferta, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridOferta.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.uic_Buscar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Btn_Modificar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnLimpiar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnEliminar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -84,12 +83,14 @@ Partial Class Promocion
         CType(Me.RadLabel3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridProductos.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.uic_Activo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
         Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GroupBox1.Controls.Add(Me.uic_Activo)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.uic_precio)
@@ -196,16 +197,6 @@ Partial Class Promocion
         Me.GridOferta.TabIndex = 1
         Me.GridOferta.Text = "RadGridView2"
         Me.GridOferta.ThemeName = "Office2010Black"
-        '
-        'uic_Buscar
-        '
-        Me.uic_Buscar.Image = Global.delevery.My.Resources.Resources.magnifier
-        Me.uic_Buscar.Location = New System.Drawing.Point(267, 54)
-        Me.uic_Buscar.Name = "uic_Buscar"
-        Me.uic_Buscar.Size = New System.Drawing.Size(30, 26)
-        Me.uic_Buscar.TabIndex = 2
-        Me.uic_Buscar.ThemeName = "Office2010Black"
-        Me.ToolTip1.SetToolTip(Me.uic_Buscar, "Buscar Producto")
         '
         'Btn_Modificar
         '
@@ -320,7 +311,6 @@ Partial Class Promocion
         Me.RadGroupBox1.Controls.Add(Me.uic_Familia)
         Me.RadGroupBox1.Controls.Add(Me.RadLabel8)
         Me.RadGroupBox1.Controls.Add(Me.uic_Cantidad)
-        Me.RadGroupBox1.Controls.Add(Me.uic_Buscar)
         Me.RadGroupBox1.Controls.Add(Me.RadLabel5)
         Me.RadGroupBox1.Controls.Add(Me.RadLabel6)
         Me.RadGroupBox1.Controls.Add(Me.uic_Producto)
@@ -338,13 +328,13 @@ Partial Class Promocion
         Me.uic_Familia.FormattingEnabled = True
         Me.uic_Familia.Location = New System.Drawing.Point(94, 30)
         Me.uic_Familia.Name = "uic_Familia"
-        Me.uic_Familia.Size = New System.Drawing.Size(152, 21)
+        Me.uic_Familia.Size = New System.Drawing.Size(225, 21)
         Me.uic_Familia.TabIndex = 97
         '
         'RadLabel8
         '
         Me.RadLabel8.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.RadLabel8.Location = New System.Drawing.Point(20, 86)
+        Me.RadLabel8.Location = New System.Drawing.Point(20, 57)
         Me.RadLabel8.Name = "RadLabel8"
         Me.RadLabel8.Size = New System.Drawing.Size(59, 19)
         Me.RadLabel8.TabIndex = 96
@@ -352,7 +342,7 @@ Partial Class Promocion
         '
         'uic_Cantidad
         '
-        Me.uic_Cantidad.Location = New System.Drawing.Point(94, 86)
+        Me.uic_Cantidad.Location = New System.Drawing.Point(94, 57)
         Me.uic_Cantidad.MaxLength = 3
         Me.uic_Cantidad.Name = "uic_Cantidad"
         Me.uic_Cantidad.Size = New System.Drawing.Size(60, 20)
@@ -371,19 +361,21 @@ Partial Class Promocion
         'RadLabel6
         '
         Me.RadLabel6.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.RadLabel6.Location = New System.Drawing.Point(20, 61)
+        Me.RadLabel6.Location = New System.Drawing.Point(197, 57)
         Me.RadLabel6.Name = "RadLabel6"
         Me.RadLabel6.Size = New System.Drawing.Size(60, 19)
         Me.RadLabel6.TabIndex = 91
         Me.RadLabel6.Text = "Producto"
+        Me.RadLabel6.Visible = False
         '
         'uic_Producto
         '
-        Me.uic_Producto.Location = New System.Drawing.Point(94, 60)
+        Me.uic_Producto.Location = New System.Drawing.Point(271, 56)
         Me.uic_Producto.Name = "uic_Producto"
-        Me.uic_Producto.Size = New System.Drawing.Size(152, 20)
+        Me.uic_Producto.Size = New System.Drawing.Size(106, 20)
         Me.uic_Producto.TabIndex = 1
         Me.uic_Producto.ThemeName = "ControlDefault"
+        Me.uic_Producto.Visible = False
         '
         'RadLabel3
         '
@@ -404,7 +396,7 @@ Partial Class Promocion
         Me.GridProductos.Font = New System.Drawing.Font("Segoe UI", 8.25!)
         Me.GridProductos.ForeColor = System.Drawing.SystemColors.ControlText
         Me.GridProductos.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.GridProductos.Location = New System.Drawing.Point(10, 112)
+        Me.GridProductos.Location = New System.Drawing.Point(10, 98)
         '
         '
         '
@@ -415,10 +407,21 @@ Partial Class Promocion
         Me.GridProductos.ReadOnly = True
         Me.GridProductos.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.GridProductos.ShowGroupPanel = False
-        Me.GridProductos.Size = New System.Drawing.Size(364, 338)
+        Me.GridProductos.Size = New System.Drawing.Size(364, 352)
         Me.GridProductos.TabIndex = 0
         Me.GridProductos.Text = "RadGridView1"
         Me.GridProductos.ThemeName = "Office2010Black"
+        '
+        'uic_Activo
+        '
+        Me.uic_Activo.CheckAlignment = System.Drawing.ContentAlignment.MiddleRight
+        Me.uic_Activo.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.uic_Activo.Location = New System.Drawing.Point(588, 26)
+        Me.uic_Activo.Name = "uic_Activo"
+        Me.uic_Activo.Size = New System.Drawing.Size(67, 18)
+        Me.uic_Activo.TabIndex = 5
+        Me.uic_Activo.Text = "Activo    "
+        Me.uic_Activo.Visible = False
         '
         'Promocion
         '
@@ -439,7 +442,6 @@ Partial Class Promocion
         Me.GroupBox3.ResumeLayout(False)
         CType(Me.GridOferta.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridOferta, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.uic_Buscar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Btn_Modificar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnLimpiar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnEliminar, System.ComponentModel.ISupportInitialize).EndInit()
@@ -462,6 +464,7 @@ Partial Class Promocion
         CType(Me.RadLabel3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridProductos.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridProductos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.uic_Activo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -487,10 +490,10 @@ Partial Class Promocion
     Friend WithEvents uic_Familia As System.Windows.Forms.ComboBox
     Friend WithEvents RadLabel8 As Telerik.WinControls.UI.RadLabel
     Friend WithEvents uic_Cantidad As Telerik.WinControls.UI.RadTextBox
-    Friend WithEvents uic_Buscar As Telerik.WinControls.UI.RadButton
     Friend WithEvents RadLabel5 As Telerik.WinControls.UI.RadLabel
     Friend WithEvents RadLabel6 As Telerik.WinControls.UI.RadLabel
     Friend WithEvents uic_Producto As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents RadLabel3 As Telerik.WinControls.UI.RadLabel
     Friend WithEvents GridProductos As Telerik.WinControls.UI.RadGridView
+    Friend WithEvents uic_Activo As Telerik.WinControls.UI.RadCheckBox
 End Class

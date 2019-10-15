@@ -95,32 +95,9 @@ Public Class Promocion
     End Sub
 
     Private Sub limpiar()
-        'Me.uic_CodigoPromocion.Text = ""
         Me.uic_Promocion.Text = ""
         Me.uic_precio.Text = ""
     End Sub
-
-    'Private Sub btn_buscar_Click(sender As Object, e As EventArgs)
-    '    'If Me.uic_CodigoPromocion.Text = "" Then
-    '    '    MsgBox("Debe ingresar codigo promocion", vbInformation, "Aviso")
-    '    '    Me.uic_CodigoPromocion.Focus()
-    '    '    Exit Sub
-    '    'End If
-    '    Dim dts As New Oferta
-    '    Dim func As New dac.O_ferta
-
-    '    ' dts.get_codigoOferta = Me.uic_CodigoPromocion.Text.Trim
-    '    Dim datos As DataTable
-    '    datos = func.buscoOferta(dts)
-    '    For Each dr In datos.Rows
-    '        Me.uic_Promocion.Text = dr("NombreOferta")
-    '        Me.uic_precio.Text = dr("PrecioOferta")
-
-    '        Me.GridPromocion.Rows.Add(dr("idproducto"), dr("Descripcion_Producto"), dr("Precio"), dr("Codigo_interno"), dr("Codigo"), dr("CodigoFamilia"), dr("Familia"))
-    '    Next
-
-
-    'End Sub
 
     Private Sub uic_Volver_Click(sender As Object, e As EventArgs) Handles uic_Volver.Click
         Me.Close()
@@ -256,5 +233,60 @@ Public Class Promocion
             End If
         Catch ex As Exception
         End Try
+    End Sub
+
+    Private Sub uic_Buscar_Click(sender As Object, e As EventArgs)
+        BuscarProductos()
+    End Sub
+    Private Sub BuscarProductos()
+        Dim categoria As Integer = 0
+        If Me.uic_Familia.SelectedValue = 0 Then
+            categoria = 0
+        Else
+            categoria = Me.uic_Familia.SelectedValue
+        End If
+        Dim buscar As String = Me.uic_Producto.Text
+
+        Dim dt As New DataTable
+        Dim Neg As New ProyectoNegocio.Productos
+        '  dt = Neg.GetProductoOferta_IdCat_Producto(categoria, buscar)
+        If dt.Rows.Count > 0 Then
+            Me.GridProductos.DataSource = dt
+            ConfiguraGrillaProducto()
+        Else
+            Me.GridProductos.DataSource = Nothing
+        End If
+    End Sub
+
+    Private Sub btnGrabar_Click(sender As Object, e As EventArgs) Handles btnGrabar.Click
+        If Me.uic_Promocion.Text = "" Then
+            Me.uic_Promocion.Focus()
+            Exit Sub
+        End If
+        If Me.uic_precio.Text = "" Then
+            Me.uic_precio.Focus()
+            Exit Sub
+        End If
+        Dim Neg As New ProyectoNegocio.Productos
+        Dim resp As Integer = 0
+        resp = Neg.GrabaOFerta(Me.uic_Promocion.Text, CInt(Me.uic_precio.Text))
+        Dim resp2 As String = ""
+        If resp > 0 Then
+            Dim numlineas As Integer = Me.GridOferta.Rows.Count - 1
+            For i = 0 To numlineas
+                Dim IdOferta As Integer = resp
+                Dim linea As Integer = i + 1
+                Dim IdProducto As Integer = Me.GridOferta.Rows(i).Cells(0).Value
+                Dim cantidad As Integer = Me.GridOferta.Rows(i).Cells(2).Value
+                Dim precio As Integer = Me.GridOferta.Rows(i).Cells(3).Value
+
+                resp2 = Neg.GrabaDetalleOferta(IdOferta, linea, IdProducto, cantidad, precio)
+            Next
+            Telerik.WinControls.RadMessageBox.Show("Registro grabado correctamente", "Ofertas")
+            'CargarCombo()
+            limpiar()
+        Else
+            Telerik.WinControls.RadMessageBox.Show("A ocurrido un error " & resp, "Aviso")
+        End If
     End Sub
 End Class
