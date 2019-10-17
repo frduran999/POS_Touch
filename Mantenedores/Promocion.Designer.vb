@@ -23,36 +23,21 @@ Partial Class Promocion
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim GridViewTextBoxColumn1 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn2 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn3 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn4 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn5 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewCommandColumn1 As Telerik.WinControls.UI.GridViewCommandColumn = New Telerik.WinControls.UI.GridViewCommandColumn()
+        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.btn_buscar = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.uic_precio = New System.Windows.Forms.TextBox()
         Me.uic_Promocion = New System.Windows.Forms.TextBox()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Chk_productos = New System.Windows.Forms.CheckBox()
-        Me.GridProducto = New System.Windows.Forms.DataGridView()
-        Me.IdproductoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DescripcionproductoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PrecioDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CodigointernoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CodigoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CodigoFamiliaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FamiliaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Agregar = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.PromocionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DeliveryDataSet = New delevery.deliveryDataSet()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.GridPromocion = New System.Windows.Forms.DataGridView()
-        Me.id_producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.descripcion_producto = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.codigo_interno = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.codigofamillia = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.familia = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Eliminar = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.PromocionTableAdapter = New delevery.deliveryDataSetTableAdapters.PromocionTableAdapter()
+        Me.GridOferta = New Telerik.WinControls.UI.RadGridView()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Btn_Modificar = New Telerik.WinControls.UI.RadButton()
         Me.btnLimpiar = New Telerik.WinControls.UI.RadButton()
@@ -64,15 +49,20 @@ Partial Class Promocion
         Me.Office2010BlackTheme1 = New Telerik.WinControls.Themes.Office2010BlackTheme()
         Me.RadPanel2 = New Telerik.WinControls.UI.RadPanel()
         Me.uic_Volver = New Telerik.WinControls.UI.RadButton()
-        Me.btn_salir = New System.Windows.Forms.Button()
-        Me.btn_grabar = New System.Windows.Forms.Button()
+        Me.RadGroupBox1 = New Telerik.WinControls.UI.RadGroupBox()
+        Me.uic_Familia = New System.Windows.Forms.ComboBox()
+        Me.RadLabel8 = New Telerik.WinControls.UI.RadLabel()
+        Me.uic_Cantidad = New Telerik.WinControls.UI.RadTextBox()
+        Me.RadLabel5 = New Telerik.WinControls.UI.RadLabel()
+        Me.RadLabel6 = New Telerik.WinControls.UI.RadLabel()
+        Me.uic_Producto = New Telerik.WinControls.UI.RadTextBox()
+        Me.RadLabel3 = New Telerik.WinControls.UI.RadLabel()
+        Me.GridProductos = New Telerik.WinControls.UI.RadGridView()
+        Me.uic_Activo = New Telerik.WinControls.UI.RadCheckBox()
         Me.GroupBox1.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
-        CType(Me.GridProducto, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PromocionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DeliveryDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
-        CType(Me.GridPromocion, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridOferta, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridOferta.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Btn_Modificar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnLimpiar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnEliminar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -83,33 +73,34 @@ Partial Class Promocion
         CType(Me.RadPanel2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadPanel2.SuspendLayout()
         CType(Me.uic_Volver, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RadGroupBox1.SuspendLayout()
+        CType(Me.RadLabel8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.uic_Cantidad, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadLabel5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadLabel6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.uic_Producto, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadLabel3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridProductos, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.GridProductos.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.uic_Activo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
         '
         Me.GroupBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox1.Controls.Add(Me.btn_buscar)
+        Me.GroupBox1.Controls.Add(Me.uic_Activo)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.uic_precio)
         Me.GroupBox1.Controls.Add(Me.uic_Promocion)
         Me.GroupBox1.Location = New System.Drawing.Point(23, 74)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(696, 68)
+        Me.GroupBox1.Size = New System.Drawing.Size(824, 68)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos Promocion"
-        '
-        'btn_buscar
-        '
-        Me.btn_buscar.Image = Global.delevery.My.Resources.Resources.find
-        Me.btn_buscar.Location = New System.Drawing.Point(561, 16)
-        Me.btn_buscar.Name = "btn_buscar"
-        Me.btn_buscar.Size = New System.Drawing.Size(37, 37)
-        Me.btn_buscar.TabIndex = 8
-        Me.ToolTip1.SetToolTip(Me.btn_buscar, "Buscar oferta por codigo")
-        Me.btn_buscar.UseVisualStyleBackColor = True
         '
         'Label2
         '
@@ -143,214 +134,69 @@ Partial Class Promocion
         Me.uic_Promocion.Size = New System.Drawing.Size(225, 20)
         Me.uic_Promocion.TabIndex = 1
         '
-        'GroupBox2
-        '
-        Me.GroupBox2.Controls.Add(Me.Chk_productos)
-        Me.GroupBox2.Controls.Add(Me.GridProducto)
-        Me.GroupBox2.Location = New System.Drawing.Point(23, 148)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(324, 424)
-        Me.GroupBox2.TabIndex = 2
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Productos"
-        '
-        'Chk_productos
-        '
-        Me.Chk_productos.AutoSize = True
-        Me.Chk_productos.Location = New System.Drawing.Point(12, 19)
-        Me.Chk_productos.Name = "Chk_productos"
-        Me.Chk_productos.Size = New System.Drawing.Size(122, 17)
-        Me.Chk_productos.TabIndex = 2
-        Me.Chk_productos.Text = "Todos los productos"
-        Me.Chk_productos.UseVisualStyleBackColor = True
-        '
-        'GridProducto
-        '
-        Me.GridProducto.AllowUserToAddRows = False
-        Me.GridProducto.AllowUserToDeleteRows = False
-        Me.GridProducto.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GridProducto.AutoGenerateColumns = False
-        Me.GridProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.GridProducto.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdproductoDataGridViewTextBoxColumn, Me.DescripcionproductoDataGridViewTextBoxColumn, Me.PrecioDataGridViewTextBoxColumn, Me.CodigointernoDataGridViewTextBoxColumn, Me.CodigoDataGridViewTextBoxColumn, Me.CodigoFamiliaDataGridViewTextBoxColumn, Me.FamiliaDataGridViewTextBoxColumn, Me.Agregar})
-        Me.GridProducto.DataSource = Me.PromocionBindingSource
-        Me.GridProducto.Location = New System.Drawing.Point(8, 51)
-        Me.GridProducto.Name = "GridProducto"
-        Me.GridProducto.ReadOnly = True
-        Me.GridProducto.RowHeadersVisible = False
-        Me.GridProducto.Size = New System.Drawing.Size(308, 361)
-        Me.GridProducto.TabIndex = 1
-        '
-        'IdproductoDataGridViewTextBoxColumn
-        '
-        Me.IdproductoDataGridViewTextBoxColumn.DataPropertyName = "id_producto"
-        Me.IdproductoDataGridViewTextBoxColumn.HeaderText = "id_producto"
-        Me.IdproductoDataGridViewTextBoxColumn.Name = "IdproductoDataGridViewTextBoxColumn"
-        Me.IdproductoDataGridViewTextBoxColumn.ReadOnly = True
-        Me.IdproductoDataGridViewTextBoxColumn.Visible = False
-        '
-        'DescripcionproductoDataGridViewTextBoxColumn
-        '
-        Me.DescripcionproductoDataGridViewTextBoxColumn.DataPropertyName = "descripcion_producto"
-        Me.DescripcionproductoDataGridViewTextBoxColumn.HeaderText = "descripcion_producto"
-        Me.DescripcionproductoDataGridViewTextBoxColumn.Name = "DescripcionproductoDataGridViewTextBoxColumn"
-        Me.DescripcionproductoDataGridViewTextBoxColumn.ReadOnly = True
-        Me.DescripcionproductoDataGridViewTextBoxColumn.Width = 170
-        '
-        'PrecioDataGridViewTextBoxColumn
-        '
-        Me.PrecioDataGridViewTextBoxColumn.DataPropertyName = "precio"
-        Me.PrecioDataGridViewTextBoxColumn.HeaderText = "precio"
-        Me.PrecioDataGridViewTextBoxColumn.Name = "PrecioDataGridViewTextBoxColumn"
-        Me.PrecioDataGridViewTextBoxColumn.ReadOnly = True
-        Me.PrecioDataGridViewTextBoxColumn.Width = 80
-        '
-        'CodigointernoDataGridViewTextBoxColumn
-        '
-        Me.CodigointernoDataGridViewTextBoxColumn.DataPropertyName = "codigo_interno"
-        Me.CodigointernoDataGridViewTextBoxColumn.HeaderText = "codigo_interno"
-        Me.CodigointernoDataGridViewTextBoxColumn.Name = "CodigointernoDataGridViewTextBoxColumn"
-        Me.CodigointernoDataGridViewTextBoxColumn.ReadOnly = True
-        Me.CodigointernoDataGridViewTextBoxColumn.Visible = False
-        '
-        'CodigoDataGridViewTextBoxColumn
-        '
-        Me.CodigoDataGridViewTextBoxColumn.DataPropertyName = "codigo"
-        Me.CodigoDataGridViewTextBoxColumn.HeaderText = "codigo"
-        Me.CodigoDataGridViewTextBoxColumn.Name = "CodigoDataGridViewTextBoxColumn"
-        Me.CodigoDataGridViewTextBoxColumn.ReadOnly = True
-        Me.CodigoDataGridViewTextBoxColumn.Visible = False
-        '
-        'CodigoFamiliaDataGridViewTextBoxColumn
-        '
-        Me.CodigoFamiliaDataGridViewTextBoxColumn.DataPropertyName = "CodigoFamilia"
-        Me.CodigoFamiliaDataGridViewTextBoxColumn.HeaderText = "CodigoFamilia"
-        Me.CodigoFamiliaDataGridViewTextBoxColumn.Name = "CodigoFamiliaDataGridViewTextBoxColumn"
-        Me.CodigoFamiliaDataGridViewTextBoxColumn.ReadOnly = True
-        Me.CodigoFamiliaDataGridViewTextBoxColumn.Visible = False
-        '
-        'FamiliaDataGridViewTextBoxColumn
-        '
-        Me.FamiliaDataGridViewTextBoxColumn.DataPropertyName = "Familia"
-        Me.FamiliaDataGridViewTextBoxColumn.HeaderText = "Familia"
-        Me.FamiliaDataGridViewTextBoxColumn.Name = "FamiliaDataGridViewTextBoxColumn"
-        Me.FamiliaDataGridViewTextBoxColumn.ReadOnly = True
-        Me.FamiliaDataGridViewTextBoxColumn.Visible = False
-        '
-        'Agregar
-        '
-        Me.Agregar.HeaderText = "Agregar"
-        Me.Agregar.Name = "Agregar"
-        Me.Agregar.ReadOnly = True
-        Me.Agregar.Text = "Agregar"
-        Me.Agregar.UseColumnTextForButtonValue = True
-        Me.Agregar.Width = 50
-        '
-        'PromocionBindingSource
-        '
-        Me.PromocionBindingSource.DataMember = "Promocion"
-        Me.PromocionBindingSource.DataSource = Me.DeliveryDataSet
-        '
-        'DeliveryDataSet
-        '
-        Me.DeliveryDataSet.DataSetName = "deliveryDataSet"
-        Me.DeliveryDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'GroupBox3
         '
         Me.GroupBox3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GroupBox3.Controls.Add(Me.GridPromocion)
-        Me.GroupBox3.Location = New System.Drawing.Point(399, 148)
+        Me.GroupBox3.Controls.Add(Me.GridOferta)
+        Me.GroupBox3.Location = New System.Drawing.Point(427, 148)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(320, 424)
+        Me.GroupBox3.Size = New System.Drawing.Size(426, 467)
         Me.GroupBox3.TabIndex = 3
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Productos en Promocion"
         '
-        'GridPromocion
+        'GridOferta
         '
-        Me.GridPromocion.AllowUserToAddRows = False
-        Me.GridPromocion.AllowUserToDeleteRows = False
-        Me.GridPromocion.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.GridOferta.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GridPromocion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.GridPromocion.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id_producto, Me.descripcion_producto, Me.precio, Me.codigo_interno, Me.codigo, Me.codigofamillia, Me.familia, Me.Eliminar})
-        Me.GridPromocion.Location = New System.Drawing.Point(7, 51)
-        Me.GridPromocion.Name = "GridPromocion"
-        Me.GridPromocion.ReadOnly = True
-        Me.GridPromocion.RowHeadersVisible = False
-        Me.GridPromocion.Size = New System.Drawing.Size(307, 357)
-        Me.GridPromocion.TabIndex = 0
+        Me.GridOferta.BackColor = System.Drawing.SystemColors.Control
+        Me.GridOferta.Cursor = System.Windows.Forms.Cursors.Default
+        Me.GridOferta.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.GridOferta.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.GridOferta.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.GridOferta.Location = New System.Drawing.Point(6, 28)
         '
-        'id_producto
         '
-        Me.id_producto.HeaderText = "id_producto"
-        Me.id_producto.Name = "id_producto"
-        Me.id_producto.ReadOnly = True
-        Me.id_producto.Visible = False
         '
-        'descripcion_producto
-        '
-        Me.descripcion_producto.HeaderText = "descripcion_producto"
-        Me.descripcion_producto.Name = "descripcion_producto"
-        Me.descripcion_producto.ReadOnly = True
-        Me.descripcion_producto.Width = 170
-        '
-        'precio
-        '
-        Me.precio.HeaderText = "precio"
-        Me.precio.Name = "precio"
-        Me.precio.ReadOnly = True
-        Me.precio.Width = 80
-        '
-        'codigo_interno
-        '
-        Me.codigo_interno.HeaderText = "codigo_interno"
-        Me.codigo_interno.Name = "codigo_interno"
-        Me.codigo_interno.ReadOnly = True
-        Me.codigo_interno.Visible = False
-        '
-        'codigo
-        '
-        Me.codigo.HeaderText = "codigo"
-        Me.codigo.Name = "codigo"
-        Me.codigo.ReadOnly = True
-        Me.codigo.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.codigo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.codigo.Visible = False
-        '
-        'codigofamillia
-        '
-        Me.codigofamillia.HeaderText = "codigofamillia"
-        Me.codigofamillia.Name = "codigofamillia"
-        Me.codigofamillia.ReadOnly = True
-        Me.codigofamillia.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.codigofamillia.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.codigofamillia.Visible = False
-        '
-        'familia
-        '
-        Me.familia.HeaderText = "familia"
-        Me.familia.Name = "familia"
-        Me.familia.ReadOnly = True
-        Me.familia.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.familia.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
-        Me.familia.Visible = False
-        '
-        'Eliminar
-        '
-        Me.Eliminar.HeaderText = "Eliminar"
-        Me.Eliminar.Name = "Eliminar"
-        Me.Eliminar.ReadOnly = True
-        Me.Eliminar.Text = "Eliminar"
-        Me.Eliminar.UseColumnTextForButtonValue = True
-        Me.Eliminar.Width = 50
-        '
-        'PromocionTableAdapter
-        '
-        Me.PromocionTableAdapter.ClearBeforeFill = True
+        Me.GridOferta.MasterTemplate.AllowAddNewRow = False
+        Me.GridOferta.MasterTemplate.AllowColumnReorder = False
+        GridViewTextBoxColumn1.EnableExpressionEditor = False
+        GridViewTextBoxColumn1.HeaderText = "IdProducto"
+        GridViewTextBoxColumn1.IsVisible = False
+        GridViewTextBoxColumn1.Name = "IdProducto"
+        GridViewTextBoxColumn1.Width = 63
+        GridViewTextBoxColumn2.EnableExpressionEditor = False
+        GridViewTextBoxColumn2.HeaderText = "Producto"
+        GridViewTextBoxColumn2.Name = "Producto"
+        GridViewTextBoxColumn2.Width = 190
+        GridViewTextBoxColumn3.EnableExpressionEditor = False
+        GridViewTextBoxColumn3.HeaderText = "Cantidad"
+        GridViewTextBoxColumn3.Name = "Cantidad"
+        GridViewTextBoxColumn3.Width = 80
+        GridViewTextBoxColumn4.EnableExpressionEditor = False
+        GridViewTextBoxColumn4.HeaderText = "Precio"
+        GridViewTextBoxColumn4.IsVisible = False
+        GridViewTextBoxColumn4.Name = "Precio"
+        GridViewTextBoxColumn5.EnableExpressionEditor = False
+        GridViewTextBoxColumn5.HeaderText = "LineaOferta"
+        GridViewTextBoxColumn5.IsVisible = False
+        GridViewTextBoxColumn5.Name = "LineaOferta"
+        GridViewTextBoxColumn5.Width = 47
+        GridViewCommandColumn1.EnableExpressionEditor = False
+        GridViewCommandColumn1.HeaderText = "Eliminar"
+        GridViewCommandColumn1.Name = "Eliminar"
+        GridViewCommandColumn1.Width = 80
+        Me.GridOferta.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewTextBoxColumn4, GridViewTextBoxColumn5, GridViewCommandColumn1})
+        Me.GridOferta.MasterTemplate.ViewDefinition = TableViewDefinition1
+        Me.GridOferta.Name = "GridOferta"
+        Me.GridOferta.ReadOnly = True
+        Me.GridOferta.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.GridOferta.ShowGroupPanel = False
+        Me.GridOferta.Size = New System.Drawing.Size(413, 422)
+        Me.GridOferta.TabIndex = 1
+        Me.GridOferta.Text = "RadGridView2"
+        Me.GridOferta.ThemeName = "Office2010Black"
         '
         'Btn_Modificar
         '
@@ -459,49 +305,143 @@ Partial Class Promocion
         Me.uic_Volver.Text = "RadButton4"
         Me.uic_Volver.ThemeName = "Office2010Black"
         '
-        'btn_salir
+        'RadGroupBox1
         '
-        Me.btn_salir.Image = Global.delevery.My.Resources.Resources._Exit
-        Me.btn_salir.Location = New System.Drawing.Point(610, 503)
-        Me.btn_salir.Name = "btn_salir"
-        Me.btn_salir.Size = New System.Drawing.Size(37, 37)
-        Me.btn_salir.TabIndex = 11
-        Me.btn_salir.UseVisualStyleBackColor = True
+        Me.RadGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
+        Me.RadGroupBox1.Controls.Add(Me.uic_Familia)
+        Me.RadGroupBox1.Controls.Add(Me.RadLabel8)
+        Me.RadGroupBox1.Controls.Add(Me.uic_Cantidad)
+        Me.RadGroupBox1.Controls.Add(Me.RadLabel5)
+        Me.RadGroupBox1.Controls.Add(Me.RadLabel6)
+        Me.RadGroupBox1.Controls.Add(Me.uic_Producto)
+        Me.RadGroupBox1.Controls.Add(Me.RadLabel3)
+        Me.RadGroupBox1.Controls.Add(Me.GridProductos)
+        Me.RadGroupBox1.HeaderText = ""
+        Me.RadGroupBox1.Location = New System.Drawing.Point(23, 148)
+        Me.RadGroupBox1.Name = "RadGroupBox1"
+        Me.RadGroupBox1.Size = New System.Drawing.Size(385, 467)
+        Me.RadGroupBox1.TabIndex = 141
+        Me.RadGroupBox1.ThemeName = "Office2010Black"
         '
-        'btn_grabar
+        'uic_Familia
         '
-        Me.btn_grabar.Image = Global.delevery.My.Resources.Resources.disk_blue
-        Me.btn_grabar.Location = New System.Drawing.Point(487, 503)
-        Me.btn_grabar.Name = "btn_grabar"
-        Me.btn_grabar.Size = New System.Drawing.Size(37, 37)
-        Me.btn_grabar.TabIndex = 10
-        Me.btn_grabar.UseVisualStyleBackColor = True
+        Me.uic_Familia.FormattingEnabled = True
+        Me.uic_Familia.Location = New System.Drawing.Point(94, 30)
+        Me.uic_Familia.Name = "uic_Familia"
+        Me.uic_Familia.Size = New System.Drawing.Size(225, 21)
+        Me.uic_Familia.TabIndex = 97
+        '
+        'RadLabel8
+        '
+        Me.RadLabel8.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.RadLabel8.Location = New System.Drawing.Point(20, 57)
+        Me.RadLabel8.Name = "RadLabel8"
+        Me.RadLabel8.Size = New System.Drawing.Size(59, 19)
+        Me.RadLabel8.TabIndex = 96
+        Me.RadLabel8.Text = "Cantidad"
+        '
+        'uic_Cantidad
+        '
+        Me.uic_Cantidad.Location = New System.Drawing.Point(94, 57)
+        Me.uic_Cantidad.MaxLength = 3
+        Me.uic_Cantidad.Name = "uic_Cantidad"
+        Me.uic_Cantidad.Size = New System.Drawing.Size(60, 20)
+        Me.uic_Cantidad.TabIndex = 3
+        Me.uic_Cantidad.ThemeName = "ControlDefault"
+        '
+        'RadLabel5
+        '
+        Me.RadLabel5.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.RadLabel5.Location = New System.Drawing.Point(20, 31)
+        Me.RadLabel5.Name = "RadLabel5"
+        Me.RadLabel5.Size = New System.Drawing.Size(48, 19)
+        Me.RadLabel5.TabIndex = 93
+        Me.RadLabel5.Text = "Familia"
+        '
+        'RadLabel6
+        '
+        Me.RadLabel6.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.RadLabel6.Location = New System.Drawing.Point(197, 57)
+        Me.RadLabel6.Name = "RadLabel6"
+        Me.RadLabel6.Size = New System.Drawing.Size(60, 19)
+        Me.RadLabel6.TabIndex = 91
+        Me.RadLabel6.Text = "Producto"
+        Me.RadLabel6.Visible = False
+        '
+        'uic_Producto
+        '
+        Me.uic_Producto.Location = New System.Drawing.Point(271, 56)
+        Me.uic_Producto.Name = "uic_Producto"
+        Me.uic_Producto.Size = New System.Drawing.Size(106, 20)
+        Me.uic_Producto.TabIndex = 1
+        Me.uic_Producto.ThemeName = "ControlDefault"
+        Me.uic_Producto.Visible = False
+        '
+        'RadLabel3
+        '
+        Me.RadLabel3.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.RadLabel3.Location = New System.Drawing.Point(160, 6)
+        Me.RadLabel3.Name = "RadLabel3"
+        Me.RadLabel3.Size = New System.Drawing.Size(65, 19)
+        Me.RadLabel3.TabIndex = 89
+        Me.RadLabel3.Text = "Productos"
+        '
+        'GridProductos
+        '
+        Me.GridProductos.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GridProductos.BackColor = System.Drawing.SystemColors.Control
+        Me.GridProductos.Cursor = System.Windows.Forms.Cursors.Default
+        Me.GridProductos.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.GridProductos.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.GridProductos.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.GridProductos.Location = New System.Drawing.Point(10, 98)
+        '
+        '
+        '
+        Me.GridProductos.MasterTemplate.AllowAddNewRow = False
+        Me.GridProductos.MasterTemplate.AllowColumnReorder = False
+        Me.GridProductos.MasterTemplate.ViewDefinition = TableViewDefinition2
+        Me.GridProductos.Name = "GridProductos"
+        Me.GridProductos.ReadOnly = True
+        Me.GridProductos.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.GridProductos.ShowGroupPanel = False
+        Me.GridProductos.Size = New System.Drawing.Size(364, 352)
+        Me.GridProductos.TabIndex = 0
+        Me.GridProductos.Text = "RadGridView1"
+        Me.GridProductos.ThemeName = "Office2010Black"
+        '
+        'uic_Activo
+        '
+        Me.uic_Activo.CheckAlignment = System.Drawing.ContentAlignment.MiddleRight
+        Me.uic_Activo.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.uic_Activo.Location = New System.Drawing.Point(588, 26)
+        Me.uic_Activo.Name = "uic_Activo"
+        Me.uic_Activo.Size = New System.Drawing.Size(67, 18)
+        Me.uic_Activo.TabIndex = 5
+        Me.uic_Activo.Text = "Activo    "
+        Me.uic_Activo.Visible = False
         '
         'Promocion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(731, 552)
+        Me.ClientSize = New System.Drawing.Size(859, 619)
         Me.ControlBox = False
+        Me.Controls.Add(Me.RadGroupBox1)
         Me.Controls.Add(Me.RadPanel2)
         Me.Controls.Add(Me.RadGroupBox4)
-        Me.Controls.Add(Me.btn_salir)
-        Me.Controls.Add(Me.btn_grabar)
         Me.Controls.Add(Me.GroupBox3)
-        Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "Promocion"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Promocion"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
-        CType(Me.GridProducto, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PromocionBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DeliveryDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
-        CType(Me.GridPromocion, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridOferta.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridOferta, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Btn_Modificar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnLimpiar, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btnEliminar, System.ComponentModel.ISupportInitialize).EndInit()
@@ -513,41 +453,27 @@ Partial Class Promocion
         CType(Me.RadPanel2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadPanel2.ResumeLayout(False)
         CType(Me.uic_Volver, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RadGroupBox1.ResumeLayout(False)
+        Me.RadGroupBox1.PerformLayout()
+        CType(Me.RadLabel8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.uic_Cantidad, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadLabel5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadLabel6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.uic_Producto, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadLabel3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridProductos.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.GridProductos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.uic_Activo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
-    Friend WithEvents GridProducto As System.Windows.Forms.DataGridView
-    Friend WithEvents GridPromocion As System.Windows.Forms.DataGridView
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents uic_precio As System.Windows.Forms.TextBox
     Friend WithEvents uic_Promocion As System.Windows.Forms.TextBox
-    Friend WithEvents Chk_productos As System.Windows.Forms.CheckBox
-    Friend WithEvents DeliveryDataSet As delevery.deliveryDataSet
-    Friend WithEvents PromocionBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents PromocionTableAdapter As delevery.deliveryDataSetTableAdapters.PromocionTableAdapter
-    Friend WithEvents Agregar As System.Windows.Forms.DataGridViewButtonColumn
-    Friend WithEvents IdproductoDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DescripcionproductoDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents PrecioDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents CodigointernoDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents CodigoDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents CodigoFamiliaDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents FamiliaDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents id_producto As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents descripcion_producto As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents precio As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents codigo_interno As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents codigo As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents codigofamillia As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents familia As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Eliminar As System.Windows.Forms.DataGridViewButtonColumn
-    Friend WithEvents btn_salir As System.Windows.Forms.Button
-    Friend WithEvents btn_grabar As System.Windows.Forms.Button
-    Friend WithEvents btn_buscar As System.Windows.Forms.Button
     Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
     Friend WithEvents RadGroupBox4 As Telerik.WinControls.UI.RadGroupBox
     Friend WithEvents uic_Oferta As System.Windows.Forms.ComboBox
@@ -559,4 +485,15 @@ Partial Class Promocion
     Friend WithEvents btnLimpiar As Telerik.WinControls.UI.RadButton
     Friend WithEvents btnEliminar As Telerik.WinControls.UI.RadButton
     Friend WithEvents btnGrabar As Telerik.WinControls.UI.RadButton
+    Friend WithEvents GridOferta As Telerik.WinControls.UI.RadGridView
+    Friend WithEvents RadGroupBox1 As Telerik.WinControls.UI.RadGroupBox
+    Friend WithEvents uic_Familia As System.Windows.Forms.ComboBox
+    Friend WithEvents RadLabel8 As Telerik.WinControls.UI.RadLabel
+    Friend WithEvents uic_Cantidad As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents RadLabel5 As Telerik.WinControls.UI.RadLabel
+    Friend WithEvents RadLabel6 As Telerik.WinControls.UI.RadLabel
+    Friend WithEvents uic_Producto As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents RadLabel3 As Telerik.WinControls.UI.RadLabel
+    Friend WithEvents GridProductos As Telerik.WinControls.UI.RadGridView
+    Friend WithEvents uic_Activo As Telerik.WinControls.UI.RadCheckBox
 End Class
