@@ -28,7 +28,9 @@ Partial Class diario
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btn_aceptar = New System.Windows.Forms.Button()
+        Me.RadButton1 = New Telerik.WinControls.UI.RadButton()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadButton1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DataGridView1
@@ -36,8 +38,8 @@ Partial Class diario
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
         Me.DataGridView1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(12, 73)
         Me.DataGridView1.Name = "DataGridView1"
@@ -90,11 +92,24 @@ Partial Class diario
         Me.btn_aceptar.TabIndex = 0
         Me.btn_aceptar.UseVisualStyleBackColor = True
         '
+        'RadButton1
+        '
+        Me.RadButton1.DisplayStyle = Telerik.WinControls.DisplayStyle.Image
+        Me.RadButton1.Image = Global.delevery.My.Resources.Resources.print
+        Me.RadButton1.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.RadButton1.Location = New System.Drawing.Point(354, 13)
+        Me.RadButton1.Name = "RadButton1"
+        Me.RadButton1.Size = New System.Drawing.Size(45, 37)
+        Me.RadButton1.TabIndex = 83
+        Me.RadButton1.Text = "RadButton4"
+        Me.RadButton1.ThemeName = "Office2010Black"
+        '
         'diario
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(712, 419)
+        Me.Controls.Add(Me.RadButton1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.DateTimePicker2)
@@ -105,6 +120,7 @@ Partial Class diario
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "diario"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadButton1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -114,4 +130,5 @@ Partial Class diario
     Friend WithEvents DateTimePicker2 As System.Windows.Forms.DateTimePicker
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents RadButton1 As Telerik.WinControls.UI.RadButton
 End Class
