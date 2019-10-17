@@ -23,7 +23,7 @@ Partial Class FamiliaProducto
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.uic_CodigoFamilia = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.uic_FamiliaProducto = New System.Windows.Forms.TextBox()
@@ -38,10 +38,17 @@ Partial Class FamiliaProducto
         Me.RadGridView1 = New Telerik.WinControls.UI.RadGridView()
         Me.Office2010BlackTheme1 = New Telerik.WinControls.Themes.Office2010BlackTheme()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.uic_RutaImagen = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         CType(Me.FamiliaProductoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DeliveryDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGridView1.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'uic_CodigoFamilia
@@ -84,7 +91,7 @@ Partial Class FamiliaProducto
         '
         Me.btn_eliminar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.btn_eliminar.Image = Global.delevery.My.Resources.Resources.Delete
-        Me.btn_eliminar.Location = New System.Drawing.Point(209, 463)
+        Me.btn_eliminar.Location = New System.Drawing.Point(362, 345)
         Me.btn_eliminar.Name = "btn_eliminar"
         Me.btn_eliminar.Size = New System.Drawing.Size(37, 37)
         Me.btn_eliminar.TabIndex = 19
@@ -145,22 +152,63 @@ Partial Class FamiliaProducto
         Me.RadGridView1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.RadGridView1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.RadGridView1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.RadGridView1.Location = New System.Drawing.Point(56, 64)
+        Me.RadGridView1.Location = New System.Drawing.Point(25, 107)
         '
         '
         '
         Me.RadGridView1.MasterTemplate.AllowAddNewRow = False
         Me.RadGridView1.MasterTemplate.AllowColumnReorder = False
         Me.RadGridView1.MasterTemplate.EnableAlternatingRowColor = True
-        Me.RadGridView1.MasterTemplate.ViewDefinition = TableViewDefinition1
+        Me.RadGridView1.MasterTemplate.ViewDefinition = TableViewDefinition2
         Me.RadGridView1.Name = "RadGridView1"
         Me.RadGridView1.ReadOnly = True
         Me.RadGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.RadGridView1.ShowGroupPanel = False
-        Me.RadGridView1.Size = New System.Drawing.Size(289, 393)
+        Me.RadGridView1.Size = New System.Drawing.Size(236, 393)
         Me.RadGridView1.TabIndex = 25
         Me.RadGridView1.Text = "RadGridView1"
         Me.RadGridView1.ThemeName = "Office2010Black"
+        '
+        'uic_RutaImagen
+        '
+        Me.uic_RutaImagen.Location = New System.Drawing.Point(81, 73)
+        Me.uic_RutaImagen.Name = "uic_RutaImagen"
+        Me.uic_RutaImagen.Size = New System.Drawing.Size(264, 20)
+        Me.uic_RutaImagen.TabIndex = 26
+        '
+        'Label3
+        '
+        Me.Label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Label3.Location = New System.Drawing.Point(25, 71)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(50, 23)
+        Me.Label3.TabIndex = 27
+        Me.Label3.Text = "Imagen"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Button1
+        '
+        Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Button1.Image = Global.delevery.My.Resources.Resources.magnifier
+        Me.Button1.Location = New System.Drawing.Point(351, 67)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(32, 33)
+        Me.Button1.TabIndex = 28
+        Me.ToolTip1.SetToolTip(Me.Button1, "Buscar imagen")
+        Me.Button1.UseCompatibleTextRendering = True
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Location = New System.Drawing.Point(283, 107)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(100, 75)
+        Me.PictureBox1.TabIndex = 29
+        Me.PictureBox1.TabStop = False
         '
         'FamiliaProducto
         '
@@ -168,6 +216,10 @@ Partial Class FamiliaProducto
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(401, 512)
         Me.ControlBox = False
+        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.uic_RutaImagen)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.RadGridView1)
         Me.Controls.Add(Me.uic_FamiliaProducto)
         Me.Controls.Add(Me.Label2)
@@ -186,6 +238,7 @@ Partial Class FamiliaProducto
         CType(Me.DeliveryDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadGridView1.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -204,4 +257,10 @@ Partial Class FamiliaProducto
     Friend WithEvents RadGridView1 As Telerik.WinControls.UI.RadGridView
     Friend WithEvents Office2010BlackTheme1 As Telerik.WinControls.Themes.Office2010BlackTheme
     Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
+    Friend WithEvents uic_RutaImagen As System.Windows.Forms.TextBox
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents SaveFileDialog1 As System.Windows.Forms.SaveFileDialog
+    Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
+    Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
 End Class
