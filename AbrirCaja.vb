@@ -1,8 +1,20 @@
-﻿Public Class AbrirCaja
+﻿Imports ProyectoNegocio
 
+Public Class AbrirCaja
+    Private _IdUsuario As Integer
+
+    Public Property IdUsuario As Integer
+        Get
+            Return _IdUsuario
+        End Get
+        Set(value As Integer)
+            _IdUsuario = value
+        End Set
+    End Property
     Private Sub uic_cancelar_Click(sender As Object, e As EventArgs) Handles uic_cancelar.Click
         limpiar()
         Me.Close()
+        System.Diagnostics.Process.GetCurrentProcess().Kill()
     End Sub
     Private Sub uic_monto_KeyPress(sender As Object, e As KeyPressEventArgs) Handles uic_monto.KeyPress
         If Char.IsDigit(e.KeyChar) Then
@@ -25,27 +37,24 @@
     End Sub
     Private Sub uic_aceptar_Click(sender As Object, e As EventArgs) Handles uic_aceptar.Click
         If Not validador.validoNumero(Me.uic_monto.Text.Trim, 0) Then
-            Me.uic_monto.Focus()
-            Exit Sub
+            If Me.uic_monto.Text = "" OrElse Me.uic_monto.Text = "0" Then
+                MsgBox("Debe ingresar monto", vbInformation, "Aviso")
+                Me.uic_monto.Text = ""
+                Me.uic_monto.Focus()
+                Exit Sub
+            End If
+
+        Else
+
+            Dim vmonto As Long = IIf(Me.uic_monto.Text = "", 0, CInt(Me.uic_monto.Text))
+            Dim vglosa As String = Me.uic_glosa.Text.Trim
+            Dim dt As New DataTable
+            Dim Neg As New Abrir_Caja
+            dt = Neg.AbrirCaja(IdUsuario, vmonto, vglosa)
+            MsgBox("Apertura registrada exitosamente", vbInformation, "Aviso")
+            limpiar()
+            Me.Close()
         End If
-        If Me.uic_monto.Text = "" OrElse Me.uic_monto.Text = "0" Then
-            MsgBox("Debe ingresar monto", vbInformation, "Aviso")
-            Me.uic_monto.Text = ""
-            Me.uic_monto.Focus()
-            Exit Sub
-        End If
-        Dim vmonto As Long = Val(Me.uic_monto.Text)
-        Dim vglosa As String = Me.uic_glosa.Text.Trim
-        'Dim obc_caja As New POS.MovCaja(Form1.oconfig, Form1.obc_Doc.DatoDoc.Dato_Usuario.IDUsuario)
-        'Dim vresp As String = obc_caja.Apertura(vmonto, vglosa)
-        'If vresp <> "OK" Then
-        '    MsgBox(vresp)
-        '    Exit Sub
-        'End If
-        MsgBox("Apertura registrada exitosamente", vbInformation, "Aviso")
-        'Form1.obc_Doc.ReleerEstacion()
-        limpiar()
-        Me.Close()
     End Sub
     Private Sub limpiar()
         Me.uic_monto.Text = ""

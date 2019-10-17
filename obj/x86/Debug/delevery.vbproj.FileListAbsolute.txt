@@ -409,3 +409,5 @@ C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\Nueva carpeta\POS_To
 C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\Nueva carpeta\POS_Touch\obj\x86\Debug\delevery.usuario.resources
 C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\Nueva carpeta\POS_Touch\obj\x86\Debug\delevery.vbproj.GenerateResource.Cache
 C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\Nueva carpeta\POS_Touch\obj\x86\Debug\delevery.exe.licenses
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\POS_Touch\obj\x86\Debug\delevery.InfoVentasDiarias.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\POS_Touch\obj\x86\Debug\delevery.CerrarCaja.resources

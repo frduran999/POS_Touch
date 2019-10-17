@@ -110,12 +110,21 @@
     <Compile Include="BE\producto.vb" />
     <Compile Include="BE\ticket.vb" />
     <Compile Include="BE\validador.vb" />
+    <Compile Include="CerrarCaja.Designer.vb">
+      <DependentUpon>CerrarCaja.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CerrarCaja.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DATASET\deliveryDataSet1.vb">
       <DependentUpon>deliveryDataSet1.xsd</DependentUpon>
     </Compile>
     <Compile Include="DATASET\dts_mantenedor.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>dts_mantenedor.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DATASET\dts_mantenedor.vb">
       <DependentUpon>dts_mantenedor.xsd</DependentUpon>
     </Compile>
     <Compile Include="Mantenedores\Buscar_producto.Designer.vb">
@@ -210,6 +219,18 @@
     <Compile Include="delivery.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Mantenedores\Reporte\RPT_VentasDiarias.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPT_VentasDiarias.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Mantenedores\Reporte\InfoVentasDiarias.Designer.vb">
+      <DependentUpon>InfoVentasDiarias.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenedores\Reporte\InfoVentasDiarias.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Mantenedores\Reporte\InfoProducto.Designer.vb">
       <DependentUpon>InfoProducto.vb</DependentUpon>
     </Compile>
@@ -278,6 +299,9 @@
       <DependentUpon>AbrirCaja.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="CerrarCaja.resx">
+      <DependentUpon>CerrarCaja.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mantenedores\Buscar_producto.resx">
       <DependentUpon>Buscar_producto.vb</DependentUpon>
     </EmbeddedResource>
@@ -291,6 +315,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GeneraKey.resx">
       <DependentUpon>GeneraKey.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenedores\Reporte\RPT_VentasDiarias.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPT_VentasDiarias.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenedores\Reporte\InfoVentasDiarias.resx">
+      <DependentUpon>InfoVentasDiarias.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenedores\Reporte\InfoProducto.resx">
       <DependentUpon>InfoProducto.vb</DependentUpon>

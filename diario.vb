@@ -18,4 +18,13 @@
         Me.DateTimePicker1.Value = Now
         Me.DateTimePicker2.Value = Now
     End Sub
+
+    Private Sub RadButton1_Click(sender As Object, e As EventArgs) Handles RadButton1.Click
+        Dim fecha_inicio As String = Format(DateTimePicker1.Value, "yyyy-MM-dd").ToString
+        Dim fecha_fin As String = Format(DateTimePicker2.Value, "yyyy-MM-dd").ToString
+        Dim frm As New InfoVentasDiarias
+        frm.FechaIni = fecha_inicio
+        frm.fechafin = fecha_fin
+        frm.Show()
+    End Sub
 End Class
