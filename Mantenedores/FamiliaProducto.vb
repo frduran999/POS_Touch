@@ -29,6 +29,48 @@ Public Class FamiliaProducto
         Me.uic_FamiliaProducto.Text = ""
         Me.uic_CodigoFamilia.Text = ""
         carga_grilla()
+
+
+        'Dim ds As DialogResult
+        Dim Archivo() As Byte
+        Dim Fstream As New System.IO.FileStream(OpenFileDialog1.FileName, IO.FileMode.Open, IO.FileAccess.Read)
+        Dim reader As New BinaryReader(Fstream)
+        Archivo = reader.ReadBytes(Fstream.Length)
+        Fstream.Close()
+        reader.Close()
+        Me.Cursor = Cursors.WaitCursor
+        'Dim valida As String = validaExisteArchivo(Me.uic_empleados.SelectedValue, nombre, Me.uic_TipoDoc.SelectedValue)
+        'If valida <> "OK" Then
+        '    ds = Telerik.WinControls.RadMessageBox.Show(Me, "Existe archivo desea reemplazar", "Aviso", MessageBoxButtons.YesNo)
+        '    If ds = Windows.Forms.DialogResult.Yes Then
+        '        'ActualizaImagen()
+        '        Exit Sub
+        '    End If
+        'End If
+        Dim oconexion As System.Data.SqlClient.SqlConnection = New System.Data.SqlClient.SqlConnection(My.Settings.deliveryConnectionString)
+        Try
+            oconexion.Open()
+            Dim ocomando As System.Data.SqlClient.SqlCommand = New System.Data.SqlClient.SqlCommand
+            ocomando.CommandText = "insert into FamiliaFoto (FamiliaId,Foto,FotoNombre) values (@IdFamilia,@Foto,@FotoNombre)"
+            ocomando.Parameters.Clear()
+            ocomando.Parameters.Add("@IdFamilia", SqlDbType.Int).Value = Me.uic_CodigoFamilia.Text
+            ocomando.Parameters.Add("@Archivo", SqlDbType.VarBinary).Value = Archivo
+            ocomando.Parameters.Add("@FotoNombre", SqlDbType.NVarChar).Value = Me.uic_FamiliaProducto.Text
+            ocomando.Connection = oconexion
+            ocomando.ExecuteNonQuery()
+            oconexion.Close()
+            Me.Cursor = Cursors.Default
+            'traerArchivos()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            oconexion.Close()
+            Me.Cursor = Cursors.Default
+        End Try
+
+        Me.PictureBox1.Visible = False
+        Me.Cursor = Cursors.Default
+
+
     End Sub
 
     Private Sub carga_grilla()
