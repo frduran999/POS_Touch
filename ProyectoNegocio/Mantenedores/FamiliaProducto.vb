@@ -13,4 +13,16 @@ Public Class FamiliaProducto
         resp = bsp.ModificarFamilia(CodigoFamilia, FamiliaProducto)
         Return resp
     End Function
+    Public Function GrabarFamilia(ByVal Familia As String) As String
+        Dim resp As String = ""
+        Dim bsp As New FamiliaProductoService
+        resp = bsp.GrabarFamilia(Familia)
+        Return resp
+    End Function
+    Public Function TraerImagenes(ruta As String) As String
+        Dim resp As String = ""
+        Dim bsp As New FamiliaProductoService
+        resp = bsp.TraerImagenes(ruta)
+        Return resp
+    End Function
 End Class

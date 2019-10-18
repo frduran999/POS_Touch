@@ -144,16 +144,25 @@ Public Class Form1
         Dim familia As DataTable
         familia = myhelper.ExecuteDataSet(My.Settings.deliveryConnectionString, CommandType.Text, "select * from FamiliaProducto", Nothing, 60).Tables(0)
         For Each dr As DataRow In familia.Rows
-            Dim NFamilia As String = dr("Familia")
-            Dim codigoFamilia As String = dr("CodigoFamilia")
-
             Dim obcontrol As New WindowsControlLibrary1.UserControl1
-            obcontrol.Controls(0).Text = NFamilia
-            obcontrol.Controls(0).Name = codigoFamilia
+            Try
+                Dim NFamilia As String = dr("Familia")
+                Dim codigoFamilia As String = dr("CodigoFamilia")
+                Dim ruta As String = "C:\POS\Imagen\" & dr("CodigoFamilia") & ".jpg"
 
-            AddHandler CType(obcontrol.Controls(0), Button).Click, AddressOf lawea2
 
-            Me.FlowLayoutFamilia.Controls.Add(obcontrol)
+                obcontrol.Controls(0).Text = NFamilia
+                obcontrol.Controls(0).Name = codigoFamilia
+                obcontrol.Controls(0).BackgroundImage = Image.FromFile(ruta)
+
+                AddHandler CType(obcontrol.Controls(0), Button).Click, AddressOf lawea2
+
+                Me.FlowLayoutFamilia.Controls.Add(obcontrol)
+            Catch ex As Exception
+                AddHandler CType(obcontrol.Controls(0), Button).Click, AddressOf lawea2
+
+                Me.FlowLayoutFamilia.Controls.Add(obcontrol)
+            End Try
         Next
 
     End Sub

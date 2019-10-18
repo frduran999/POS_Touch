@@ -108,31 +108,6 @@ Namespace dac
             End Try
         End Function
 
-        Public Function GrabaFamiliaProducto(ByVal dts As producto) As Boolean
-            Try
-                conectado()
-                Dim parametro(0) As Data.SqlClient.SqlParameter
-
-                'parametro(0) = New Data.SqlClient.SqlParameter
-                'parametro(0).ParameterName = "@CodigoFamilia"
-                'parametro(0).Value = dts.get_Familia
-
-                parametro(0) = New Data.SqlClient.SqlParameter
-                parametro(0).ParameterName = "@Familia"
-                parametro(0).Value = dts.get_NombreFamilia
-
-                If mysql.FireAndForget(My.Settings.deliveryConnectionString, CommandType.StoredProcedure, "Graba_Familia", parametro, 60) Then
-                    Return True
-                Else
-                    Return False
-                End If
-            Catch ex As Exception
-                MsgBox(ex.Message)
-                Return False
-            Finally
-                desconectado()
-            End Try
-        End Function
 
         Public Function ExisteCodigoProducto(ByVal dts As producto) As String
             Dim respuesta As String = ""
