@@ -413,3 +413,5 @@ C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\POS_Touch\obj\x86\De
 C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\POS_Touch\obj\x86\Debug\delevery.CerrarCaja.resources
 D:\Sistem_Duran\POS_Touch\obj\x86\Debug\delevery.CerrarCaja.resources
 D:\Sistem_Duran\POS_Touch\obj\x86\Debug\delevery.InfoVentasDiarias.resources
+D:\Sistem_Duran\POS_Touch\obj\x86\Debug\delevery.ImpresionCopia.resources
+D:\Sistem_Duran\POS_Touch\obj\x86\Debug\delevery.Impresoras.resources

@@ -144,19 +144,26 @@ Public Class Form1
         'agrego familia al formulario
         Me.FlowLayoutFamilia.Controls.Clear()
         Dim familia As DataTable
-        familia = myhelper.ExecuteDataSet(My.Settings.deliveryConnectionString, CommandType.Text, "select * from FamiliaProducto", Nothing, 60).Tables(0)
+        familia = myhelper.ExecuteDataSet(My.Settings.deliveryConnectionString, CommandType.Text, "SELECT fp.CodigoFamilia, fp.Familia, Ff.FotoNombre FROM FamiliaProducto AS fp LEFT OUTER JOIN FamiliaFoto AS Ff ON fp.CodigoFamilia = Ff.FamiliaId", Nothing, 60).Tables(0)
         For Each dr As DataRow In familia.Rows
             Dim obcontrol As New WindowsControlLibrary1.UserControl1
             Try
                 Dim NFamilia As String = dr("Familia")
                 Dim codigoFamilia As String = dr("CodigoFamilia")
-                Dim ruta As String = "C:\POS\Imagen\" & dr("CodigoFamilia") & ".jpg"
-
+                Dim ruta As String = ""
+                Try
+                    ruta = "C:\POS\Imagen\" & dr("CodigoFamilia") & ".jpg"
+                Catch ex As Exception
+                End Try
 
                 obcontrol.Controls(0).Text = NFamilia
                 obcontrol.Controls(0).Name = codigoFamilia
-                'obcontrol.Controls(0).BackgroundImage = Image.FromFile(ruta)
-                obcontrol.Controls(0).BackgroundImage = ByteArrayToImage(ImageToByteArray(Image.FromFile(ruta)), True)
+                If dr("FotoNombre").ToString.ToUpper = "SINFOTO.JPG" Then
+                    obcontrol.Controls(0).BackgroundImage = My.Resources.SinFoto 'ByteArrayToImage(ImageToByteArray(My.Resources.SinFoto), True)
+                Else
+                    obcontrol.Controls(0).BackgroundImage = ByteArrayToImage(ImageToByteArray(Image.FromFile(ruta)), True)
+                End If
+
 
                 AddHandler CType(obcontrol.Controls(0), Button).Click, AddressOf lawea2
 
@@ -430,7 +437,7 @@ Public Class Form1
     Private Function redimensionarImagen(ByVal Stream As Stream, ByVal red As Boolean) As Image
         If red Then
             Dim img As Image = Image.FromStream(Stream)
-            Dim max As Integer = 100
+            Dim max As Integer = 80
             Dim h As Integer = img.Height
             Dim w As Integer = img.Width
             Dim newH As Integer

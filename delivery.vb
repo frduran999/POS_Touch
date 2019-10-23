@@ -96,4 +96,9 @@
             MsgBox("Opción disponible solamente para el supervisor", MsgBoxStyle.Information, "Aviso")
         End If
     End Sub
+
+    Private Sub ImpresorasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ImpresorasToolStripMenuItem.Click
+        Dim frm As New ImpresionCopia
+        frm.ShowDialog()
+    End Sub
 End Class

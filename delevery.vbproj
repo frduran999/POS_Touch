@@ -66,9 +66,11 @@
       <HintPath>..\..\delivery\code\ReportMan\bin\Debug\ReportMan.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
@@ -169,6 +171,18 @@
       <DependentUpon>GeneraKey.vb</DependentUpon>
     </Compile>
     <Compile Include="GeneraKey.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenedores\ImpresionCopia.Designer.vb">
+      <DependentUpon>ImpresionCopia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenedores\ImpresionCopia.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenedores\Impresoras.Designer.vb">
+      <DependentUpon>Impresoras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenedores\Impresoras.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Mantenedores\Parametros.Designer.vb">
@@ -276,6 +290,7 @@
     <Compile Include="Retiro.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Sel_Impresora.vb" />
     <Compile Include="tipo_doc_DataSet.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -315,6 +330,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GeneraKey.resx">
       <DependentUpon>GeneraKey.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenedores\ImpresionCopia.resx">
+      <DependentUpon>ImpresionCopia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenedores\Impresoras.resx">
+      <DependentUpon>Impresoras.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenedores\Reporte\RPT_VentasDiarias.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -488,6 +509,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="paso.ico" />
+    <None Include="Resources\SinFoto.jpg" />
     <None Include="Resources\magnifier.png" />
     <None Include="Resources\print.ico" />
     <None Include="Resources\Refresh1.png" />

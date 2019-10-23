@@ -23,27 +23,27 @@ Partial Class FamiliaProducto
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim TableViewDefinition3 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.uic_CodigoFamilia = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.uic_FamiliaProducto = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.btn_eliminar = New System.Windows.Forms.Button()
-        Me.btn_modificar = New System.Windows.Forms.Button()
-        Me.btn_salir = New System.Windows.Forms.Button()
-        Me.btn_grabar = New System.Windows.Forms.Button()
         Me.FamiliaProductoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DeliveryDataSet = New delevery.deliveryDataSet()
         Me.FamiliaProductoTableAdapter = New delevery.deliveryDataSetTableAdapters.FamiliaProductoTableAdapter()
         Me.RadGridView1 = New Telerik.WinControls.UI.RadGridView()
         Me.Office2010BlackTheme1 = New Telerik.WinControls.Themes.Office2010BlackTheme()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.uic_RutaImagen = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btn_eliminar = New System.Windows.Forms.Button()
+        Me.btn_modificar = New System.Windows.Forms.Button()
+        Me.btn_salir = New System.Windows.Forms.Button()
+        Me.btn_grabar = New System.Windows.Forms.Button()
         CType(Me.FamiliaProductoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DeliveryDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -87,50 +87,6 @@ Partial Class FamiliaProducto
         Me.Label2.Text = "Familia"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'btn_eliminar
-        '
-        Me.btn_eliminar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btn_eliminar.Image = Global.delevery.My.Resources.Resources.Delete
-        Me.btn_eliminar.Location = New System.Drawing.Point(363, 345)
-        Me.btn_eliminar.Name = "btn_eliminar"
-        Me.btn_eliminar.Size = New System.Drawing.Size(37, 37)
-        Me.btn_eliminar.TabIndex = 19
-        Me.btn_eliminar.UseVisualStyleBackColor = True
-        Me.btn_eliminar.Visible = False
-        '
-        'btn_modificar
-        '
-        Me.btn_modificar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btn_modificar.Image = Global.delevery.My.Resources.Resources.Modify
-        Me.btn_modificar.Location = New System.Drawing.Point(310, 21)
-        Me.btn_modificar.Name = "btn_modificar"
-        Me.btn_modificar.Size = New System.Drawing.Size(37, 37)
-        Me.btn_modificar.TabIndex = 18
-        Me.ToolTip1.SetToolTip(Me.btn_modificar, "Modificar registro")
-        Me.btn_modificar.UseVisualStyleBackColor = True
-        '
-        'btn_salir
-        '
-        Me.btn_salir.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btn_salir.Image = Global.delevery.My.Resources.Resources._Exit
-        Me.btn_salir.Location = New System.Drawing.Point(353, 21)
-        Me.btn_salir.Name = "btn_salir"
-        Me.btn_salir.Size = New System.Drawing.Size(37, 37)
-        Me.btn_salir.TabIndex = 3
-        Me.ToolTip1.SetToolTip(Me.btn_salir, "Salir")
-        Me.btn_salir.UseVisualStyleBackColor = True
-        '
-        'btn_grabar
-        '
-        Me.btn_grabar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btn_grabar.Image = Global.delevery.My.Resources.Resources.disk_blue
-        Me.btn_grabar.Location = New System.Drawing.Point(263, 21)
-        Me.btn_grabar.Name = "btn_grabar"
-        Me.btn_grabar.Size = New System.Drawing.Size(37, 37)
-        Me.btn_grabar.TabIndex = 2
-        Me.ToolTip1.SetToolTip(Me.btn_grabar, "Grabar registro")
-        Me.btn_grabar.UseVisualStyleBackColor = True
-        '
         'FamiliaProductoBindingSource
         '
         Me.FamiliaProductoBindingSource.DataMember = "FamiliaProducto"
@@ -159,7 +115,7 @@ Partial Class FamiliaProducto
         Me.RadGridView1.MasterTemplate.AllowAddNewRow = False
         Me.RadGridView1.MasterTemplate.AllowColumnReorder = False
         Me.RadGridView1.MasterTemplate.EnableAlternatingRowColor = True
-        Me.RadGridView1.MasterTemplate.ViewDefinition = TableViewDefinition3
+        Me.RadGridView1.MasterTemplate.ViewDefinition = TableViewDefinition1
         Me.RadGridView1.Name = "RadGridView1"
         Me.RadGridView1.ReadOnly = True
         Me.RadGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -168,18 +124,6 @@ Partial Class FamiliaProducto
         Me.RadGridView1.TabIndex = 25
         Me.RadGridView1.Text = "RadGridView1"
         Me.RadGridView1.ThemeName = "Office2010Black"
-        '
-        'Button1
-        '
-        Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.Button1.Image = Global.delevery.My.Resources.Resources.magnifier
-        Me.Button1.Location = New System.Drawing.Point(352, 67)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(32, 33)
-        Me.Button1.TabIndex = 28
-        Me.ToolTip1.SetToolTip(Me.Button1, "Buscar imagen")
-        Me.Button1.UseCompatibleTextRendering = True
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'uic_RutaImagen
         '
@@ -204,18 +148,74 @@ Partial Class FamiliaProducto
         '
         'PictureBox1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(464, 345)
+        Me.PictureBox1.Location = New System.Drawing.Point(453, 307)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(21, 20)
         Me.PictureBox1.TabIndex = 29
         Me.PictureBox1.TabStop = False
         Me.PictureBox1.Visible = False
         '
+        'Button1
+        '
+        Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Button1.Image = Global.delevery.My.Resources.Resources.magnifier
+        Me.Button1.Location = New System.Drawing.Point(349, 67)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(32, 33)
+        Me.Button1.TabIndex = 28
+        Me.ToolTip1.SetToolTip(Me.Button1, "Buscar imagen")
+        Me.Button1.UseCompatibleTextRendering = True
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'btn_eliminar
+        '
+        Me.btn_eliminar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btn_eliminar.Image = Global.delevery.My.Resources.Resources.Delete
+        Me.btn_eliminar.Location = New System.Drawing.Point(360, 345)
+        Me.btn_eliminar.Name = "btn_eliminar"
+        Me.btn_eliminar.Size = New System.Drawing.Size(37, 37)
+        Me.btn_eliminar.TabIndex = 19
+        Me.btn_eliminar.UseVisualStyleBackColor = True
+        Me.btn_eliminar.Visible = False
+        '
+        'btn_modificar
+        '
+        Me.btn_modificar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btn_modificar.Image = Global.delevery.My.Resources.Resources.Modify
+        Me.btn_modificar.Location = New System.Drawing.Point(307, 21)
+        Me.btn_modificar.Name = "btn_modificar"
+        Me.btn_modificar.Size = New System.Drawing.Size(37, 37)
+        Me.btn_modificar.TabIndex = 18
+        Me.ToolTip1.SetToolTip(Me.btn_modificar, "Modificar registro")
+        Me.btn_modificar.UseVisualStyleBackColor = True
+        '
+        'btn_salir
+        '
+        Me.btn_salir.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btn_salir.Image = Global.delevery.My.Resources.Resources._Exit
+        Me.btn_salir.Location = New System.Drawing.Point(350, 21)
+        Me.btn_salir.Name = "btn_salir"
+        Me.btn_salir.Size = New System.Drawing.Size(37, 37)
+        Me.btn_salir.TabIndex = 3
+        Me.ToolTip1.SetToolTip(Me.btn_salir, "Salir")
+        Me.btn_salir.UseVisualStyleBackColor = True
+        '
+        'btn_grabar
+        '
+        Me.btn_grabar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btn_grabar.Image = Global.delevery.My.Resources.Resources.disk_blue
+        Me.btn_grabar.Location = New System.Drawing.Point(260, 21)
+        Me.btn_grabar.Name = "btn_grabar"
+        Me.btn_grabar.Size = New System.Drawing.Size(37, 37)
+        Me.btn_grabar.TabIndex = 2
+        Me.ToolTip1.SetToolTip(Me.btn_grabar, "Grabar registro")
+        Me.btn_grabar.UseVisualStyleBackColor = True
+        '
         'FamiliaProducto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(402, 512)
+        Me.ClientSize = New System.Drawing.Size(396, 512)
         Me.ControlBox = False
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Button1)

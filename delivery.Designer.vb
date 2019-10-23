@@ -40,6 +40,7 @@ Partial Class delivery
         Me.ToolStripButton5 = New System.Windows.Forms.ToolStripButton()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.uic_versionApp = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ImpresorasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -120,7 +121,7 @@ Partial Class delivery
         '
         'ToolStripDropDownButton1
         '
-        Me.ToolStripDropDownButton1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.XxToolStripMenuItem, Me.FamiliaProductosToolStripMenuItem, Me.PromocionesToolStripMenuItem, Me.ParametrosToolStripMenuItem, Me.RetiroCajaToolStripMenuItem})
+        Me.ToolStripDropDownButton1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.XxToolStripMenuItem, Me.FamiliaProductosToolStripMenuItem, Me.PromocionesToolStripMenuItem, Me.ParametrosToolStripMenuItem, Me.RetiroCajaToolStripMenuItem, Me.ImpresorasToolStripMenuItem})
         Me.ToolStripDropDownButton1.Image = Global.delevery.My.Resources.Resources.gear
         Me.ToolStripDropDownButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ToolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta
@@ -184,6 +185,12 @@ Partial Class delivery
         Me.uic_versionApp.Name = "uic_versionApp"
         Me.uic_versionApp.Size = New System.Drawing.Size(0, 17)
         '
+        'ImpresorasToolStripMenuItem
+        '
+        Me.ImpresorasToolStripMenuItem.Name = "ImpresorasToolStripMenuItem"
+        Me.ImpresorasToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
+        Me.ImpresorasToolStripMenuItem.Text = "Impresoras"
+        '
         'delivery
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -222,4 +229,5 @@ Partial Class delivery
     Friend WithEvents uic_versionApp As System.Windows.Forms.ToolStripStatusLabel
     Friend WithEvents ParametrosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents RetiroCajaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ImpresorasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

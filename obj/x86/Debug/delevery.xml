@@ -418,6 +418,10 @@ TableAdapterManager is used to coordinate TableAdapters in the dataset to enable
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.
 </summary>
+</member><member name="P:delevery.My.Resources.Resources.SinFoto">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
 </member><member name="P:delevery.My.Resources.Resources.user1">
 	<summary>
   Looks up a localized resource of type System.Drawing.Bitmap.

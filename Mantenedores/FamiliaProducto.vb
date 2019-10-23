@@ -86,6 +86,8 @@ Public Class FamiliaProducto
         Me.RadGridView1.Columns("Familia").IsVisible = True
         Me.RadGridView1.Columns("Familia").ReadOnly = False
         Me.RadGridView1.Columns("Familia").HeaderText = "Familia"
+
+        Me.RadGridView1.Columns("FotoNombre").IsVisible = False
     End Sub
 
     Private Sub btn_salir_Click(sender As Object, e As EventArgs) Handles btn_salir.Click
@@ -108,6 +110,7 @@ Public Class FamiliaProducto
             Linea = Me.RadGridView1.Rows.IndexOf(Me.RadGridView1.CurrentRow)
             Me.uic_CodigoFamilia.Text = Me.RadGridView1.Rows(Linea).Cells(0).Value
             Me.uic_FamiliaProducto.Text = Me.RadGridView1.Rows(Linea).Cells(1).Value
+            Me.uic_RutaImagen.Text = Me.RadGridView1.Rows(Linea).Cells(2).Value
             Me.btn_modificar.Enabled = True
             Me.btn_grabar.Enabled = False
         Catch ex As Exception
@@ -129,10 +132,14 @@ Public Class FamiliaProducto
         Dim neg As New ProyectoNegocio.FamiliaProducto
         resp = neg.ModificarFamilia(Me.uic_CodigoFamilia.Text, Me.uic_FamiliaProducto.Text)
         If resp = "OK" Then
-            GrabarFoto(Me.uic_CodigoFamilia.Text)
-            Telerik.WinControls.RadMessageBox.Show(Me, "Registro modificado exitosamente", "Alerta")
-            carga_grilla()
-            Limpiar()
+            If Not File.Exists("c:\POS\Imagen\" & Me.uic_CodigoFamilia.Text & ".jpg") Then
+                GrabarFoto(Me.uic_CodigoFamilia.Text)
+                Telerik.WinControls.RadMessageBox.Show(Me, "Registro modificado exitosamente", "Alerta")
+                carga_grilla()
+                Limpiar()
+            Else
+                carga_grilla()
+            End If
         Else
             Telerik.WinControls.RadMessageBox.Show(Me, "A ocurrido un error" & vbCrLf & resp, "Alerta")
         End If
