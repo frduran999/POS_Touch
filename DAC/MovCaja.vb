@@ -46,17 +46,17 @@
         '    'Return vresp
         'End Function
 
-        Public Function SaldoEfectivoActual() As Long
-            'Dim osql As New dac.myMSSQL(Me.oConfig.conexDB, Me.oConfig.TimeOutSQL)
-            'osql.paramQUERY.Add("Sucursal", Me.oSucursal.DatoSucursal.IDSucursal)
-            'osql.paramQUERY.Add("Estacion", Me.oEstacion.DatoEstacion.IDEstacion)
-            'osql.paramQUERY.Add("Usuario", Me.vIDUsuario)
-            'Dim vresp As Long = osql.GetValorNoNull("pos.get_efectivo_actual")
-            'If osql.DioError Then
-            '    Return 0
-            'End If
-            'Return vresp
-        End Function
+        'Public Function SaldoEfectivoActual() As Long
+        '    'Dim osql As New dac.myMSSQL(Me.oConfig.conexDB, Me.oConfig.TimeOutSQL)
+        '    'osql.paramQUERY.Add("Sucursal", Me.oSucursal.DatoSucursal.IDSucursal)
+        '    'osql.paramQUERY.Add("Estacion", Me.oEstacion.DatoEstacion.IDEstacion)
+        '    'osql.paramQUERY.Add("Usuario", Me.vIDUsuario)
+        '    'Dim vresp As Long = osql.GetValorNoNull("pos.get_efectivo_actual")
+        '    'If osql.DioError Then
+        '    '    Return 0
+        '    'End If
+        '    'Return vresp
+        'End Function
 
 
         Public Function Retiro(listaDoc As List(Of ListaDOC_Retiro), Nota As String, Banco As String) As String

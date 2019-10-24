@@ -27,7 +27,6 @@
         Return dt
     End Function
 
-<<<<<<< HEAD
     Public Function GrabaOFerta(ByVal Promocion As String, ByVal precio As Integer) As Integer
         Dim resp As Integer = 0
         Dim con As New Conexion
@@ -72,7 +71,4 @@
         End If
         Return dt
     End Function
-=======
-    
->>>>>>> rodrigo
 End Class
