@@ -64,6 +64,8 @@
     <Compile Include="Caja\Abrir_Caja.vb" />
     <Compile Include="Combos.vb" />
     <Compile Include="Mantenedores\FamiliaProducto.vb" />
+    <Compile Include="Mantenedores\Impresoras.vb" />
+    <Compile Include="Mantenedores\Ofertas.vb" />
     <Compile Include="Mantenedores\Productos.vb" />
     <Compile Include="Mantenedores\Ventas.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />

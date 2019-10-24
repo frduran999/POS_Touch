@@ -18,58 +18,8 @@ Public Class Promocion
         Catch ex As Exception
         End Try
     End Sub
-    'Private Sub Chk_productos_CheckedChanged(sender As Object, e As EventArgs)
-    '    If Me.Chk_productos.CheckState = CheckState.Checked Then
-    '        'todos
-    '        Me.PromocionTableAdapter.FillBy_SinPromo(Me.DeliveryDataSet.Promocion)
-    '    Else
-    '        'solo promocion
-    '        Me.PromocionTableAdapter.Fill(Me.DeliveryDataSet.Promocion)
-    '    End If
-    'End Sub
-
-    'Private Sub GridProducto_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
-    '    Dim descripcion As String = ""
-    '    Dim id_producto As String = ""
-    '    Dim codigo_interno As String = ""
-    '    Dim codigo As String = ""
-    '    Dim CodigoFamilia As String = ""
-    '    Dim Familia As String = ""
-    '    If GridProducto.RowCount > 0 Then
-    '        If GridProducto.Columns(e.ColumnIndex).Name = "Agregar" Then
-    '            'paso producto a promocion
-    '            id_producto = Trim(GridProducto(1, GridProducto.CurrentRow.Index).Value)
-    '            descripcion = Trim(GridProducto(2, GridProducto.CurrentRow.Index).Value)
-    '            codigo_interno = Trim(GridProducto(4, GridProducto.CurrentRow.Index).Value)
-    '            codigo = Trim(GridProducto(5, GridProducto.CurrentRow.Index).Value)
-    '            CodigoFamilia = Trim(GridProducto(6, GridProducto.CurrentRow.Index).Value)
-    '            Familia = Trim(GridProducto(7, GridProducto.CurrentRow.Index).Value)
-
-    '            GridPromocion.Rows.Add(id_producto, descripcion, 0, codigo_interno, codigo, CodigoFamilia, Familia)
-
-    '        End If
-    '    End If
-    'End Sub
-
-    'Private Sub GridPromocion_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
-    '    If GridPromocion.RowCount > 0 Then
-    '        If GridPromocion.Columns(e.ColumnIndex).Name = "Eliminar" Then
-    '            'elimina linea
-    '            GridPromocion.Rows.RemoveAt(e.RowIndex)
-    '        End If
-    '    End If
-    'End Sub
 
     Private Sub btn_salir_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub btn_grabar_Click(sender As Object, e As EventArgs)
-        'If Me.uic_CodigoPromocion.Text = "" Then
-        '    MsgBox("Debe ingresar código promoción", vbInformation, "Aviso")
-        '    Me.uic_CodigoPromocion.Focus()
-        '    Exit Sub
-        'End If
 
     End Sub
 
@@ -94,63 +44,9 @@ Public Class Promocion
         End If
     End Sub
 
-    Private Sub limpiar()
-        Me.uic_Promocion.Text = ""
-        Me.uic_precio.Text = ""
-    End Sub
-
     Private Sub uic_Volver_Click(sender As Object, e As EventArgs) Handles uic_Volver.Click
         Me.Close()
     End Sub
-
-    'Private Sub btnGrabar_Click(sender As Object, e As EventArgs) Handles btnGrabar.Click
-    '    If Me.uic_Promocion.Text = "" Then
-    '        MsgBox("Debe ingresar nombre promoción", vbInformation, "Aviso")
-    '        Me.uic_Promocion.Focus()
-    '        Exit Sub
-    '    End If
-    '    If Me.uic_precio.Text = "" Then
-    '        MsgBox("Debe ingresar precio promoción", vbInformation, "Aviso")
-    '        Me.uic_precio.Focus()
-    '        Exit Sub
-    '    End If
-    '    If Me.GridPromocion.RowCount = 0 Then
-    '        MsgBox("Debe ingresar productos para promoción", vbInformation, "Aviso")
-    '        Exit Sub
-    '    End If
-
-    '    Dim dts As New Oferta
-    '    Dim func As New dac.O_ferta
-
-    '    'dts.get_codigoOferta = Trim(Me.uic_CodigoPromocion.Text)
-    '    dts.get_nombreOferta = Trim(Me.uic_Promocion.Text)
-    '    dts.get_precioOferta = Me.uic_precio.Text
-
-    '    If func.grabo_oferta(dts) Then
-    '        ' MsgBox("Oferta Agregado")
-    '    End If
-
-    '    Dim num_linea As Integer = Me.GridPromocion.Rows.Count - 1
-    '    If Me.GridPromocion.Rows.Count >= 0 Then
-    '        For i = 0 To num_linea
-    '            Dim dts2 As New Oferta
-
-    '            dts2.get_idproducto = Me.GridPromocion.Rows(i).Cells(0).Value
-    '            dts2.get_descripcion = Me.GridPromocion.Rows(i).Cells(1).Value
-
-    '            dts2.get_codigoInt = Me.GridPromocion.Rows(i).Cells(3).Value
-    '            dts2.get_codigo = Me.GridPromocion.Rows(i).Cells(4).Value
-    '            dts2.get_Cod_FamiliaProducto = Me.GridPromocion.Rows(i).Cells(5).Value
-    '            dts2.get_NombreFamilia = Me.GridPromocion.Rows(i).Cells(6).Value
-
-    '            If func.detalle_oferta(dts2) Then
-
-    '            End If
-    '        Next
-    '    End If
-    '    MsgBox("Promocion grabada")
-    '    limpiar()
-    'End Sub
 
     Private Sub uic_Familia_SelectedIndexChanged(sender As Object, e As EventArgs) Handles uic_Familia.SelectedIndexChanged
         Me.Cursor = Cursors.WaitCursor
@@ -213,8 +109,6 @@ Public Class Promocion
                 End If
                 Me.uic_Cantidad.Text = ""
                 Me.uic_Producto.Text = ""
-                'Me.uic_Familia.SelectedValue = 0
-                'Me.GridProductos.DataSource = Nothing
             End If
         Catch ex As Exception
 
@@ -249,7 +143,6 @@ Public Class Promocion
 
         Dim dt As New DataTable
         Dim Neg As New ProyectoNegocio.Productos
-        '  dt = Neg.GetProductoOferta_IdCat_Producto(categoria, buscar)
         If dt.Rows.Count > 0 Then
             Me.GridProductos.DataSource = dt
             ConfiguraGrillaProducto()
@@ -267,7 +160,7 @@ Public Class Promocion
             Me.uic_precio.Focus()
             Exit Sub
         End If
-        Dim Neg As New ProyectoNegocio.Productos
+        Dim Neg As New ProyectoNegocio.Ofertas
         Dim resp As Integer = 0
         resp = Neg.GrabaOFerta(Me.uic_Promocion.Text, CInt(Me.uic_precio.Text))
         Dim resp2 As String = ""
@@ -289,4 +182,98 @@ Public Class Promocion
             Telerik.WinControls.RadMessageBox.Show("A ocurrido un error " & resp, "Aviso")
         End If
     End Sub
+    Private Sub Btn_Modificar_Click(sender As Object, e As EventArgs) Handles Btn_Modificar.Click
+        Dim Neg As New ProyectoNegocio.Ofertas
+        Dim Activo As Integer = 0
+        Dim resp As String = ""
+        If Me.uic_Activo.CheckState = CheckState.Checked Then
+            Activo = 1
+        Else
+            Activo = 0
+        End If
+        Dim IdOFerta As Integer = Me.uic_Oferta.SelectedValue
+        resp = Neg.ActualizaOferta(IdOFerta, Me.uic_Promocion.Text, CInt(Me.uic_precio.Text), Activo)
+        Dim resp2 As String = ""
+        If resp = "OK" Then
+            Dim numlineas As Integer = Me.GridOferta.Rows.Count - 1
+            For i = 0 To numlineas
+                If i = 0 Then
+                    resp2 = Neg.BorrarDetalleOferta(IdOFerta)
+                End If
+                Dim linea As Integer = i + 1
+                Dim IdProducto As Integer = Me.GridOferta.Rows(i).Cells(0).Value
+                Dim cantidad As Integer = Me.GridOferta.Rows(i).Cells(2).Value
+                Dim precio As Integer = Me.GridOferta.Rows(i).Cells(3).Value
+                resp2 = Neg.GrabaDetalleOferta(IdOFerta, linea, IdProducto, cantidad, precio)
+            Next
+            Telerik.WinControls.RadMessageBox.Show("Registro modificado correctamente", "Ofertas")
+            Limpiar()
+        Else
+            Telerik.WinControls.RadMessageBox.Show("A ocurrido un error " & resp, "Aviso")
+        End If
+    End Sub
+    Private Sub uic_Oferta_SelectedIndexChanged(sender As Object, e As EventArgs) Handles uic_Oferta.SelectedIndexChanged
+        Me.Cursor = Cursors.WaitCursor
+        Try
+            Dim IdOferta As String = CStr(Me.uic_Oferta.SelectedValue)
+            If Not (IdOferta = 0) Then
+                BuscarOferta(IdOferta)
+            Else
+                limpiar()
+            End If
+        Catch ex As Exception
+        End Try
+        Me.Cursor = Cursors.Default
+    End Sub
+    Private Sub BuscarOferta(ByVal IdOferta As Integer)
+        Dim dt As New DataTable
+        Dim Neg As New Ofertas
+        dt = Neg.BuscarOfertaCompleta(IdOferta)
+        If dt.Rows.Count > 0 Then
+            Me.GridOferta.Rows.Clear()
+            Me.uic_Promocion.Text = dt.Rows(0)("NombreOferta")
+            Me.uic_precio.Text = dt.Rows(0)("PrecioOferta")
+            If dt.Rows(0)("Activo") = 1 Then
+                Me.uic_Activo.CheckState = CheckState.Checked
+            Else
+                Me.uic_Activo.CheckState = CheckState.Unchecked
+            End If
+            For Each d As DataRow In dt.Rows
+                Me.GridOferta.Rows.Add(d("IdProducto"), d("Descripcion_Producto"), d("Cantidad"), d("Precio"), d("Linea"), "Eliminar")
+            Next
+
+            Me.btnGrabar.Enabled = False
+            Me.Btn_Modificar.Enabled = True
+            Me.btnEliminar.Enabled = True
+
+        Else
+
+            Me.btnGrabar.Enabled = True
+            Me.Btn_Modificar.Enabled = False
+            Me.btnEliminar.Enabled = False
+        End If
+    End Sub
+
+    Private Sub btnLimpiar_Click(sender As Object, e As EventArgs) Handles btnLimpiar.Click
+        limpiar()
+    End Sub
+    Private Sub Limpiar()
+        Me.uic_Promocion.Text = ""
+        Me.uic_precio.Text = ""
+        Me.GridOferta.Rows.Clear()
+        Me.btnGrabar.Enabled = True
+        Me.Btn_Modificar.Enabled = False
+        Me.btnEliminar.Enabled = False
+        Me.uic_Activo.CheckState = CheckState.Unchecked
+        Me.uic_Oferta.SelectedValue = 0
+        Me.GridProductos.DataSource = Nothing
+        Try
+            Me.uic_Familia.SelectedValue = 0
+        Catch ex As Exception
+        End Try
+        Me.uic_Producto.Text = ""
+        Me.uic_Cantidad.Text = ""
+    End Sub
+
+    
 End Class

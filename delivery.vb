@@ -23,6 +23,7 @@
             End
         End If
         Me.Text = "  Empresa  " & Me.oconfig.Giro & "   RUT " & Me.oconfig.RUTEmpresa
+        
     End Sub
 
     Private Sub ToolStripButton5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripButton5.Click
@@ -99,5 +100,10 @@
         Else
             MsgBox("Opción disponible solamente para el supervisor", MsgBoxStyle.Information, "Aviso")
         End If
+    End Sub
+
+    Private Sub ImpresorasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ImpresorasToolStripMenuItem.Click
+        Dim frm As New ImpresionCopia
+        frm.ShowDialog()
     End Sub
 End Class

@@ -411,6 +411,7 @@ C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\Nueva carpeta\POS_To
 C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\Nueva carpeta\POS_Touch\obj\x86\Debug\delevery.exe.licenses
 C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\POS_Touch\obj\x86\Debug\delevery.InfoVentasDiarias.resources
 C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Comida-Rapida\POS_Touch\obj\x86\Debug\delevery.CerrarCaja.resources
+<<<<<<< HEAD
 C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Prueba\POS_Touch\bin\Debug\delevery.exe.config
 C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Prueba\POS_Touch\bin\Debug\delevery.exe
 C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Prueba\POS_Touch\bin\Debug\delevery.pdb
@@ -448,3 +449,9 @@ C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Prueba\POS_Touch\obj\x86\Debug\del
 C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Prueba\POS_Touch\obj\x86\Debug\delevery.exe
 C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Prueba\POS_Touch\obj\x86\Debug\delevery.xml
 C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Prueba\POS_Touch\obj\x86\Debug\delevery.pdb
+=======
+D:\Sistem_Duran\POS_Touch\obj\x86\Debug\delevery.CerrarCaja.resources
+D:\Sistem_Duran\POS_Touch\obj\x86\Debug\delevery.InfoVentasDiarias.resources
+D:\Sistem_Duran\POS_Touch\obj\x86\Debug\delevery.ImpresionCopia.resources
+D:\Sistem_Duran\POS_Touch\obj\x86\Debug\delevery.Impresoras.resources
+>>>>>>> rodrigo

@@ -1,5 +1,7 @@
 ﻿Imports System.Drawing
 Imports System.ComponentModel
+Imports System.IO
+Imports System.Drawing.Imaging
 
 Public Class Form1
     Dim myhelper As New dac.myhelper2
@@ -30,7 +32,7 @@ Public Class Form1
             Next
         Else
             Dim oferta As DataTable
-            Dim sql As String = "select CodigoOferta,NombreOferta,PrecioOferta,idOferta from Oferta"
+            Dim sql As String = "select CodigoOferta,NombreOferta,PrecioOferta,idOferta from Oferta WHERE Activo=1"
             oferta = myhelper.ExecuteDataSet(My.Settings.deliveryConnectionString, CommandType.Text, sql, Nothing, 60).Tables(0)
             For Each dto As DataRow In oferta.Rows
                 Dim nombreO As String = dto("NombreOferta").ToString.Trim & vbCrLf & " $" & dto("PrecioOferta")
@@ -43,7 +45,7 @@ Public Class Form1
                 Me.FlowLayoutPanel1.Controls.Add(ocontrol)
             Next
         End If
-       
+
     End Sub
 
     'Paso el detalle a la grilla
@@ -69,7 +71,7 @@ Public Class Form1
         Dim repetido As Boolean = False
         Dim linea As Integer = 0
         Dim CantidadLinea As Integer = 0
-        
+
         db_precio = myhelper.ExecuteDataSet(My.Settings.deliveryConnectionString, CommandType.Text, "select precio,codigo from productos where id_producto=" & id, Nothing, 60).Tables(0)
         For Each valor As DataRow In db_precio.Rows
             precio = Val(valor("precio"))
@@ -104,7 +106,7 @@ Public Class Form1
 
     End Sub
 
-    
+
 
     Private Sub btn_salir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_salir.Click
         Me.Dispose()
@@ -143,18 +145,35 @@ Public Class Form1
         'agrego familia al formulario
         Me.FlowLayoutFamilia.Controls.Clear()
         Dim familia As DataTable
-        familia = myhelper.ExecuteDataSet(My.Settings.deliveryConnectionString, CommandType.Text, "select * from FamiliaProducto", Nothing, 60).Tables(0)
+        familia = myhelper.ExecuteDataSet(My.Settings.deliveryConnectionString, CommandType.Text, "SELECT fp.CodigoFamilia, fp.Familia, Ff.FotoNombre FROM FamiliaProducto AS fp LEFT OUTER JOIN FamiliaFoto AS Ff ON fp.CodigoFamilia = Ff.FamiliaId", Nothing, 60).Tables(0)
         For Each dr As DataRow In familia.Rows
-            Dim NFamilia As String = dr("Familia")
-            Dim codigoFamilia As String = dr("CodigoFamilia")
-
             Dim obcontrol As New WindowsControlLibrary1.UserControl1
-            obcontrol.Controls(0).Text = NFamilia
-            obcontrol.Controls(0).Name = codigoFamilia
+            Try
+                Dim NFamilia As String = dr("Familia")
+                Dim codigoFamilia As String = dr("CodigoFamilia")
+                Dim ruta As String = ""
+                Try
+                    ruta = "C:\POS\Imagen\" & dr("CodigoFamilia") & ".jpg"
+                Catch ex As Exception
+                End Try
 
-            AddHandler CType(obcontrol.Controls(0), Button).Click, AddressOf lawea2
+                obcontrol.Controls(0).Text = NFamilia
+                obcontrol.Controls(0).Name = codigoFamilia
+                If dr("FotoNombre").ToString.ToUpper = "SINFOTO.JPG" Then
+                    obcontrol.Controls(0).BackgroundImage = My.Resources.SinFoto 'ByteArrayToImage(ImageToByteArray(My.Resources.SinFoto), True)
+                Else
+                    obcontrol.Controls(0).BackgroundImage = ByteArrayToImage(ImageToByteArray(Image.FromFile(ruta)), True)
+                End If
 
-            Me.FlowLayoutFamilia.Controls.Add(obcontrol)
+
+                AddHandler CType(obcontrol.Controls(0), Button).Click, AddressOf lawea2
+
+                Me.FlowLayoutFamilia.Controls.Add(obcontrol)
+            Catch ex As Exception
+                AddHandler CType(obcontrol.Controls(0), Button).Click, AddressOf lawea2
+
+                Me.FlowLayoutFamilia.Controls.Add(obcontrol)
+            End Try
         Next
 
     End Sub
@@ -337,7 +356,7 @@ Public Class Form1
             descripcionProducto = dts("Descripcion_Producto")
             Me.DataGridView1.Rows.Add(codigo_item.Trim, 1, descripcionProducto, precio, precio)
         Next
-        
+
     End Sub
 
     Private Sub uic_reloj_Tick(sender As Object, e As EventArgs) Handles uic_reloj.Tick
@@ -407,4 +426,49 @@ Public Class Form1
         Me.txt_efectivo.Text = Me.txt_Total.Text
         Me.txt_vuelto.Text = "0"
     End Sub
+
+
+    Public Function ByteArrayToImage(ByVal byteArrayIn As Byte(), ByVal red As Boolean) As Image
+        Dim ms As New MemoryStream(byteArrayIn)
+        Return redimensionarImagen(ms, red)
+    End Function
+    Public Function ImageToByteArray(ByVal imageIn As Image) As Byte()
+        Dim ms As New MemoryStream()
+        imageIn.Save(ms, ImageFormat.Jpeg)
+        Return ms.ToArray()
+    End Function
+    Private Function redimensionarImagen(ByVal Stream As Stream, ByVal red As Boolean) As Image
+        If red Then
+            Dim img As Image = Image.FromStream(Stream)
+            Dim max As Integer = 80
+            Dim h As Integer = img.Height
+            Dim w As Integer = img.Width
+            Dim newH As Integer
+            Dim newW As Integer
+
+            If h > w And h > max Then
+                newH = max
+                newW = (w * max) / h
+            ElseIf (w > h And w > max) Then
+                newW = max
+                newH = (h * max) / w
+            Else
+                newH = h
+                newW = w
+            End If
+
+            If (h <> newH And w <> newW) Then
+                Dim newImg As Bitmap = New Bitmap(img, newW, newH)
+                Dim g As Graphics = Graphics.FromImage(newImg)
+                g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear
+                g.DrawImage(img, 0, 0, newImg.Width, newImg.Height)
+                Return newImg
+            Else
+                Return img
+            End If
+        Else
+            Dim img As Image = Image.FromStream(Stream)
+            Return img
+        End If
+    End Function
 End Class

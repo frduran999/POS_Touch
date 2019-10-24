@@ -72,6 +72,8 @@
     <Compile Include="DAC\myhelper3.vb" />
     <Compile Include="DAC\myMSSQL.vb" />
     <Compile Include="Mantenedores\FamiliaProductoService.vb" />
+    <Compile Include="Mantenedores\ImpresoraService.vb" />
+    <Compile Include="Mantenedores\OfertaService.vb" />
     <Compile Include="Mantenedores\ProductoService.vb" />
     <Compile Include="Mantenedores\VentasService.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
