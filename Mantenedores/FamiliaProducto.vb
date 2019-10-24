@@ -23,14 +23,8 @@ Public Class FamiliaProducto
             Dim dt As String = ""
             Dim res As String = ""
             dt = Neg.GrabarFamilia(Familia)
-            If dt = "OK" Then
-                Dim dts As New producto
-
-                res = Neg.GrabarFamilia(Me.uic_FamiliaProducto.Text.Trim)
-            End If
-
-            If CInt(res) > 0 Then
-                GrabarFoto(res)
+            If CInt(dt) > 0 Then
+                GrabarFoto(dt)
 
                 MsgBox("Familia Agregada", vbInformation, "Aviso")
                 Me.uic_FamiliaProducto.Text = ""

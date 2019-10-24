@@ -176,7 +176,7 @@ Public Class Promocion
                 resp2 = Neg.GrabaDetalleOferta(IdOferta, linea, IdProducto, cantidad, precio)
             Next
             Telerik.WinControls.RadMessageBox.Show("Registro grabado correctamente", "Ofertas")
-            'CargarCombo()
+            cargacombo()
             limpiar()
         Else
             Telerik.WinControls.RadMessageBox.Show("A ocurrido un error " & resp, "Aviso")
@@ -239,7 +239,7 @@ Public Class Promocion
                 Me.uic_Activo.CheckState = CheckState.Unchecked
             End If
             For Each d As DataRow In dt.Rows
-                Me.GridOferta.Rows.Add(d("IdProducto"), d("Descripcion_Producto"), d("Cantidad"), d("Precio"), d("Linea"), "Eliminar")
+                Me.GridOferta.Rows.Add(d("IdProducto"), d("Descripcion_Producto"), d("Cantidad"), d("Precio"), d("Linea"), ("Eliminar"))
             Next
 
             Me.btnGrabar.Enabled = False
