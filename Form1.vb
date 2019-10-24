@@ -31,7 +31,7 @@ Public Class Form1
             Next
         Else
             Dim oferta As DataTable
-            Dim sql As String = "select CodigoOferta,NombreOferta,PrecioOferta,idOferta from Oferta"
+            Dim sql As String = "select CodigoOferta,NombreOferta,PrecioOferta,idOferta from Oferta WHERE Activo=1"
             oferta = myhelper.ExecuteDataSet(My.Settings.deliveryConnectionString, CommandType.Text, sql, Nothing, 60).Tables(0)
             For Each dto As DataRow In oferta.Rows
                 Dim nombreO As String = dto("NombreOferta").ToString.Trim & vbCrLf & " $" & dto("PrecioOferta")
