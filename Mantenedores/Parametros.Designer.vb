@@ -31,7 +31,6 @@ Partial Class DatosGral
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.uic_telefonos = New System.Windows.Forms.TextBox()
         Me.uic_emailEmpresa = New System.Windows.Forms.TextBox()
         Me.uic_direccion = New System.Windows.Forms.TextBox()
@@ -39,22 +38,17 @@ Partial Class DatosGral
         Me.uic_ciudad = New System.Windows.Forms.TextBox()
         Me.uic_giro = New System.Windows.Forms.TextBox()
         Me.uic_razonSocial = New System.Windows.Forms.TextBox()
-        Me.uic_licencia = New System.Windows.Forms.TextBox()
         Me.uic_rutEmp = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btn_salir = New System.Windows.Forms.Button()
         Me.btn_modificar = New System.Windows.Forms.Button()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.uic_numerocopias = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.uicImpresora = New System.Windows.Forms.TextBox()
         Me.GrpEmpresa.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'GrpEmpresa
         '
+        Me.GrpEmpresa.Controls.Add(Me.btn_salir)
+        Me.GrpEmpresa.Controls.Add(Me.btn_modificar)
         Me.GrpEmpresa.Controls.Add(Me.Label35)
         Me.GrpEmpresa.Controls.Add(Me.Label30)
         Me.GrpEmpresa.Controls.Add(Me.Label12)
@@ -63,7 +57,6 @@ Partial Class DatosGral
         Me.GrpEmpresa.Controls.Add(Me.Label9)
         Me.GrpEmpresa.Controls.Add(Me.Label8)
         Me.GrpEmpresa.Controls.Add(Me.Label7)
-        Me.GrpEmpresa.Controls.Add(Me.Label3)
         Me.GrpEmpresa.Controls.Add(Me.uic_telefonos)
         Me.GrpEmpresa.Controls.Add(Me.uic_emailEmpresa)
         Me.GrpEmpresa.Controls.Add(Me.uic_direccion)
@@ -71,12 +64,11 @@ Partial Class DatosGral
         Me.GrpEmpresa.Controls.Add(Me.uic_ciudad)
         Me.GrpEmpresa.Controls.Add(Me.uic_giro)
         Me.GrpEmpresa.Controls.Add(Me.uic_razonSocial)
-        Me.GrpEmpresa.Controls.Add(Me.uic_licencia)
         Me.GrpEmpresa.Controls.Add(Me.uic_rutEmp)
         Me.GrpEmpresa.Controls.Add(Me.Label1)
         Me.GrpEmpresa.Location = New System.Drawing.Point(12, 12)
         Me.GrpEmpresa.Name = "GrpEmpresa"
-        Me.GrpEmpresa.Size = New System.Drawing.Size(523, 210)
+        Me.GrpEmpresa.Size = New System.Drawing.Size(465, 242)
         Me.GrpEmpresa.TabIndex = 0
         Me.GrpEmpresa.TabStop = False
         '
@@ -152,15 +144,6 @@ Partial Class DatosGral
         Me.Label7.TabIndex = 8
         Me.Label7.Text = "Giro:"
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(260, 180)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(47, 13)
-        Me.Label3.TabIndex = 4
-        Me.Label3.Text = "Licencia"
-        '
         'uic_telefonos
         '
         Me.uic_telefonos.Location = New System.Drawing.Point(96, 180)
@@ -217,13 +200,6 @@ Partial Class DatosGral
         Me.uic_razonSocial.Size = New System.Drawing.Size(362, 20)
         Me.uic_razonSocial.TabIndex = 1
         '
-        'uic_licencia
-        '
-        Me.uic_licencia.Location = New System.Drawing.Point(322, 177)
-        Me.uic_licencia.Name = "uic_licencia"
-        Me.uic_licencia.Size = New System.Drawing.Size(136, 20)
-        Me.uic_licencia.TabIndex = 8
-        '
         'uic_rutEmp
         '
         Me.uic_rutEmp.Location = New System.Drawing.Point(96, 13)
@@ -244,84 +220,32 @@ Partial Class DatosGral
         '
         Me.btn_salir.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.btn_salir.Image = Global.delevery.My.Resources.Resources._Exit
-        Me.btn_salir.Location = New System.Drawing.Point(496, 310)
+        Me.btn_salir.Location = New System.Drawing.Point(385, 184)
         Me.btn_salir.Name = "btn_salir"
-        Me.btn_salir.Size = New System.Drawing.Size(39, 37)
+        Me.btn_salir.Size = New System.Drawing.Size(41, 37)
         Me.btn_salir.TabIndex = 38
         Me.btn_salir.UseVisualStyleBackColor = True
         '
         'btn_modificar
         '
         Me.btn_modificar.Image = Global.delevery.My.Resources.Resources.Modify
-        Me.btn_modificar.Location = New System.Drawing.Point(438, 310)
+        Me.btn_modificar.Location = New System.Drawing.Point(338, 184)
         Me.btn_modificar.Name = "btn_modificar"
         Me.btn_modificar.Size = New System.Drawing.Size(32, 37)
         Me.btn_modificar.TabIndex = 39
         Me.btn_modificar.UseVisualStyleBackColor = True
         '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Controls.Add(Me.uic_numerocopias)
-        Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.uicImpresora)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 224)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(344, 123)
-        Me.GroupBox1.TabIndex = 40
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Impresora Ticket "
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(14, 56)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(59, 13)
-        Me.Label4.TabIndex = 41
-        Me.Label4.Text = "Nro Copias"
-        '
-        'uic_numerocopias
-        '
-        Me.uic_numerocopias.Location = New System.Drawing.Point(95, 53)
-        Me.uic_numerocopias.MaxLength = 20
-        Me.uic_numerocopias.Name = "uic_numerocopias"
-        Me.uic_numerocopias.Size = New System.Drawing.Size(70, 20)
-        Me.uic_numerocopias.TabIndex = 40
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(14, 26)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(56, 13)
-        Me.Label2.TabIndex = 39
-        Me.Label2.Text = "Impresora "
-        '
-        'uicImpresora
-        '
-        Me.uicImpresora.Location = New System.Drawing.Point(96, 23)
-        Me.uicImpresora.MaxLength = 20
-        Me.uicImpresora.Name = "uicImpresora"
-        Me.uicImpresora.Size = New System.Drawing.Size(242, 20)
-        Me.uicImpresora.TabIndex = 38
-        '
         'DatosGral
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(549, 358)
-        Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.btn_modificar)
-        Me.Controls.Add(Me.btn_salir)
+        Me.ClientSize = New System.Drawing.Size(484, 262)
         Me.Controls.Add(Me.GrpEmpresa)
         Me.Name = "DatosGral"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "DatosGral"
         Me.GrpEmpresa.ResumeLayout(False)
         Me.GrpEmpresa.PerformLayout()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -334,7 +258,6 @@ Partial Class DatosGral
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents uic_telefonos As System.Windows.Forms.TextBox
     Friend WithEvents uic_emailEmpresa As System.Windows.Forms.TextBox
     Friend WithEvents uic_direccion As System.Windows.Forms.TextBox
@@ -342,14 +265,8 @@ Partial Class DatosGral
     Friend WithEvents uic_ciudad As System.Windows.Forms.TextBox
     Friend WithEvents uic_giro As System.Windows.Forms.TextBox
     Friend WithEvents uic_razonSocial As System.Windows.Forms.TextBox
-    Friend WithEvents uic_licencia As System.Windows.Forms.TextBox
     Friend WithEvents uic_rutEmp As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents btn_salir As System.Windows.Forms.Button
     Friend WithEvents btn_modificar As System.Windows.Forms.Button
-    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents uic_numerocopias As System.Windows.Forms.TextBox
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents uicImpresora As System.Windows.Forms.TextBox
 End Class

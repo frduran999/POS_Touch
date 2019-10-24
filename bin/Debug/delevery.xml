@@ -6,6 +6,13 @@ delevery
 </name>
 </assembly>
 <members>
+<<<<<<< HEAD
+<member name="T:delevery.tipo_doc_DataSet.tipo_docDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:delevery.tipo_doc_DataSet.tipo_docRow">
+=======
 <member name="T:delevery.dts_mantenedor.ProductoDataTable">
 	<summary>
 Represents the strongly named DataTable class.
@@ -39,52 +46,137 @@ Represents a strongly typed in-memory cache of data.
 Represents the strongly named DataTable class.
 </summary>
 </member><member name="T:delevery.deliveryDataSet1.usuariosRow">
+>>>>>>> rodrigo
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:delevery.deliveryDataSet1.usuariosRowChangeEvent">
+</member><member name="T:delevery.tipo_doc_DataSet.tipo_docRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:delevery.deliveryDataSet1">
+</member><member name="T:delevery.tipo_doc_DataSet">
 	<summary>
 Represents a strongly typed in-memory cache of data.
 </summary>
-</member><member name="T:delevery.deliveryDataSet1TableAdapters.usuariosTableAdapter">
+</member><member name="T:delevery.tipo_doc_DataSetTableAdapters.tipo_docTableAdapter">
 	<summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
-</member><member name="M:delevery.deliveryDataSet1TableAdapters.TableAdapterManager.UpdateUpdatedRows(delevery.deliveryDataSet1,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+</member><member name="M:delevery.tipo_doc_DataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(delevery.tipo_doc_DataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
 	<summary>
 Update rows in top-down order.
 </summary>
-</member><member name="M:delevery.deliveryDataSet1TableAdapters.TableAdapterManager.UpdateInsertedRows(delevery.deliveryDataSet1,System.Collections.Generic.List{System.Data.DataRow})">
+</member><member name="M:delevery.tipo_doc_DataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(delevery.tipo_doc_DataSet,System.Collections.Generic.List{System.Data.DataRow})">
 	<summary>
 Insert rows in top-down order.
 </summary>
-</member><member name="M:delevery.deliveryDataSet1TableAdapters.TableAdapterManager.UpdateDeletedRows(delevery.deliveryDataSet1,System.Collections.Generic.List{System.Data.DataRow})">
+</member><member name="M:delevery.tipo_doc_DataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(delevery.tipo_doc_DataSet,System.Collections.Generic.List{System.Data.DataRow})">
 	<summary>
 Delete rows in bottom-up order.
 </summary>
-</member><member name="M:delevery.deliveryDataSet1TableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+</member><member name="M:delevery.tipo_doc_DataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
 	<summary>
 Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
 </summary>
-</member><member name="M:delevery.deliveryDataSet1TableAdapters.TableAdapterManager.UpdateAll(delevery.deliveryDataSet1)">
+</member><member name="M:delevery.tipo_doc_DataSetTableAdapters.TableAdapterManager.UpdateAll(delevery.tipo_doc_DataSet)">
 	<summary>
 Update all changes to the dataset.
 </summary>
-</member><member name="T:delevery.deliveryDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption">
+</member><member name="T:delevery.tipo_doc_DataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
 	<summary>
 Update Order Option
 </summary>
-</member><member name="T:delevery.deliveryDataSet1TableAdapters.TableAdapterManager.SelfReferenceComparer">
+</member><member name="T:delevery.tipo_doc_DataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
 	<summary>
 Used to sort self-referenced table's rows
 </summary>
-</member><member name="T:delevery.deliveryDataSet1TableAdapters.TableAdapterManager">
+<<<<<<< HEAD
+</member><member name="T:delevery.tipo_doc_DataSetTableAdapters.TableAdapterManager">
 	<summary>
 TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member><member name="T:delevery.formaPago_dateset.forma_pagoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:delevery.formaPago_dateset.forma_pagoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:delevery.formaPago_dateset.forma_pagoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:delevery.formaPago_dateset">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:delevery.formaPago_datesetTableAdapters.forma_pagoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:delevery.formaPago_datesetTableAdapters.TableAdapterManager.UpdateUpdatedRows(delevery.formaPago_dateset,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:delevery.formaPago_datesetTableAdapters.TableAdapterManager.UpdateInsertedRows(delevery.formaPago_dateset,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:delevery.formaPago_datesetTableAdapters.TableAdapterManager.UpdateDeletedRows(delevery.formaPago_dateset,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:delevery.formaPago_datesetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:delevery.formaPago_datesetTableAdapters.TableAdapterManager.UpdateAll(delevery.formaPago_dateset)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:delevery.formaPago_datesetTableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:delevery.formaPago_datesetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:delevery.formaPago_datesetTableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member><member name="T:delevery.dts_mantenedor.ProductoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:delevery.dts_mantenedor.VentasDiariasDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:delevery.dts_mantenedor.ProductoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:delevery.dts_mantenedor.VentasDiariasRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:delevery.dts_mantenedor.ProductoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:delevery.dts_mantenedor.VentasDiariasRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:delevery.dts_mantenedor">
+=======
+</member><member name="T:delevery.deliveryDataSet1TableAdapters.TableAdapterManager">
+>>>>>>> rodrigo
+	<summary>
+Represents a strongly typed in-memory cache of data.
 </summary>
 </member><member name="M:delevery.POS.MovCaja.Cierre(System.String)">
 	<summary>
@@ -177,6 +269,57 @@ Used to sort self-referenced table's rows
 	<summary>
 TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
 </summary>
+<<<<<<< HEAD
+</member><member name="T:delevery.deliveryDataSet1.usuariosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:delevery.deliveryDataSet1.usuariosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:delevery.deliveryDataSet1.usuariosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:delevery.deliveryDataSet1">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:delevery.deliveryDataSet1TableAdapters.usuariosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:delevery.deliveryDataSet1TableAdapters.TableAdapterManager.UpdateUpdatedRows(delevery.deliveryDataSet1,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:delevery.deliveryDataSet1TableAdapters.TableAdapterManager.UpdateInsertedRows(delevery.deliveryDataSet1,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:delevery.deliveryDataSet1TableAdapters.TableAdapterManager.UpdateDeletedRows(delevery.deliveryDataSet1,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:delevery.deliveryDataSet1TableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:delevery.deliveryDataSet1TableAdapters.TableAdapterManager.UpdateAll(delevery.deliveryDataSet1)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:delevery.deliveryDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:delevery.deliveryDataSet1TableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:delevery.deliveryDataSet1TableAdapters.TableAdapterManager">
+=======
 </member><member name="T:delevery.formaPago_dateset.forma_pagoDataTable">
 	<summary>
 Represents the strongly named DataTable class.
@@ -278,6 +421,7 @@ Update Order Option
 Used to sort self-referenced table's rows
 </summary>
 </member><member name="T:delevery.tipo_doc_DataSetTableAdapters.TableAdapterManager">
+>>>>>>> rodrigo
 	<summary>
 TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
 </summary>

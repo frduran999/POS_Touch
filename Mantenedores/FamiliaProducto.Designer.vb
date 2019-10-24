@@ -34,6 +34,7 @@ Partial Class FamiliaProducto
         Me.RadGridView1 = New Telerik.WinControls.UI.RadGridView()
         Me.Office2010BlackTheme1 = New Telerik.WinControls.Themes.Office2010BlackTheme()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.uic_RutaImagen = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
@@ -53,7 +54,7 @@ Partial Class FamiliaProducto
         '
         'uic_CodigoFamilia
         '
-        Me.uic_CodigoFamilia.Location = New System.Drawing.Point(70, 3)
+        Me.uic_CodigoFamilia.Location = New System.Drawing.Point(81, 3)
         Me.uic_CodigoFamilia.Name = "uic_CodigoFamilia"
         Me.uic_CodigoFamilia.Size = New System.Drawing.Size(46, 20)
         Me.uic_CodigoFamilia.TabIndex = 0
@@ -125,6 +126,18 @@ Partial Class FamiliaProducto
         Me.RadGridView1.Text = "RadGridView1"
         Me.RadGridView1.ThemeName = "Office2010Black"
         '
+        'Button1
+        '
+        Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Button1.Image = Global.delevery.My.Resources.Resources.magnifier
+        Me.Button1.Location = New System.Drawing.Point(351, 67)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(32, 33)
+        Me.Button1.TabIndex = 28
+        Me.ToolTip1.SetToolTip(Me.Button1, "Buscar imagen")
+        Me.Button1.UseCompatibleTextRendering = True
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'uic_RutaImagen
         '
         Me.uic_RutaImagen.Location = New System.Drawing.Point(81, 73)
@@ -143,6 +156,8 @@ Partial Class FamiliaProducto
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'OpenFileDialog1
+<<<<<<< HEAD
+=======
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
@@ -168,6 +183,7 @@ Partial Class FamiliaProducto
         Me.Button1.UseVisualStyleBackColor = True
         '
         'btn_eliminar
+>>>>>>> rodrigo
         '
         Me.btn_eliminar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.btn_eliminar.Image = Global.delevery.My.Resources.Resources.Delete

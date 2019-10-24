@@ -27,5 +27,52 @@
         Return dt
     End Function
 
+<<<<<<< HEAD
+    Public Function GrabaOFerta(ByVal Promocion As String, ByVal precio As Integer) As Integer
+        Dim resp As Integer = 0
+        Dim con As New Conexion
+        If con.Conexion Then
+            Dim odac As New dac.myMSSQL(con.con.ConnectionString, 180000)
+            odac.paramQUERY.Add("Nombre", Promocion)
+            odac.paramQUERY.Add("Precio", precio)
+
+            resp = odac.GetValorNoNull("Promocion_Grabar")
+        End If
+        Return resp
+    End Function
+    Public Function GrabaDetalleOferta(Idoferta As Integer, Linea As Integer, IdProducto As Integer, Cantidad As Integer, Precio As Integer) As String
+        Dim resp As String = ""
+        Dim con As New Conexion
+        If con.Conexion Then
+            Dim odac As New dac.myMSSQL(con.con.ConnectionString, 180000)
+            odac.paramQUERY.Add("Idoferta", Idoferta)
+            odac.paramQUERY.Add("Linea", Linea)
+            odac.paramQUERY.Add("IdProducto", IdProducto)
+            odac.paramQUERY.Add("Cantidad", Cantidad)
+            odac.paramQUERY.Add("Precio", Precio)
+
+            resp = odac.GetValorNoNull("OfertaDetalle_Grabar")
+        End If
+        Return resp
+
+    End Function
+
+    Public Function EliminaProducto(ByVal Codigo As String)
+        Dim con As New Conexion
+        Dim dt As String = ""
+
+        If con.Conexion Then
+            Try
+                Dim sql As New dac.myMSSQL(con.con.ConnectionString, 60000)
+                sql.paramQUERY.Add("Codigo", Codigo)
+                dt = sql.GetValorNoNull("EliminarProducto")
+            Catch ex As Exception
+
+            End Try
+        End If
+        Return dt
+    End Function
+=======
     
+>>>>>>> rodrigo
 End Class

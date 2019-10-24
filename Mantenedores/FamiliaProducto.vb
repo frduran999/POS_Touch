@@ -16,6 +16,14 @@ Public Class FamiliaProducto
             Exit Sub
         End If
 
+<<<<<<< HEAD
+        Try
+            Dim Neg As New ProyectoNegocio.FamiliaProducto
+            Dim Familia As String = uic_FamiliaProducto.Text.Trim
+            Dim dt As String = ""
+            dt = Neg.GrabarFamilia(Familia)
+            If dt = "OK" Then
+=======
         Dim dts As New producto
         Dim Neg As New ProyectoNegocio.FamiliaProducto
 
@@ -24,6 +32,7 @@ Public Class FamiliaProducto
         Try
             If CInt(res) > 0 Then
                 GrabarFoto(res)
+>>>>>>> rodrigo
                 MsgBox("Familia Agregada", vbInformation, "Aviso")
                 Me.uic_FamiliaProducto.Text = ""
                 Me.uic_CodigoFamilia.Text = ""
@@ -42,7 +51,10 @@ Public Class FamiliaProducto
         Fstream.Close()
         reader.Close()
         Me.Cursor = Cursors.WaitCursor
+<<<<<<< HEAD
+=======
         
+>>>>>>> rodrigo
         Dim oconexion As System.Data.SqlClient.SqlConnection = New System.Data.SqlClient.SqlConnection(My.Settings.deliveryConnectionString)
         Try
             oconexion.Open()
