@@ -78,20 +78,23 @@ Namespace dac
 
         Public Function buscoOferta(ByVal dts As Oferta) As DataTable
             Dim promocion As DataTable
-            Try
-                conectado()
-                Dim parametros(0) As Data.SqlClient.SqlParameter
+            If conectado() Then
+                Try
+                    Dim parametros(0) As Data.SqlClient.SqlParameter
 
-                parametros(0) = New Data.SqlClient.SqlParameter
-                parametros(0).ParameterName = "@CodigoOferta"
-                parametros(0).Value = dts.get_codigoOferta
+                    parametros(0) = New Data.SqlClient.SqlParameter
+                    parametros(0).ParameterName = "@CodigoOferta"
+                    parametros(0).Value = dts.get_codigoOferta
 
-                promocion = mysql.ExecuteDataSet(My.Settings.deliveryConnectionString, CommandType.StoredProcedure, "BuscoOferta", parametros, 60).Tables(0)
-                Return promocion
-            Catch ex As Exception
-                MsgBox(ex.Message)
-            End Try
+                    promocion = mysql.ExecuteDataSet(My.Settings.deliveryConnectionString, CommandType.StoredProcedure, "BuscoOferta", parametros, 60).Tables(0)
+                    Return promocion
 
+                Catch ex As Exception
+                    MsgBox(ex.Message)
+                    promocion = New DataTable
+                End Try
+            End If
+            'Return promocion
         End Function
 
     End Class

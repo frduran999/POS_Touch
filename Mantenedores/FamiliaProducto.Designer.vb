@@ -156,8 +156,7 @@ Partial Class FamiliaProducto
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'OpenFileDialog1
-<<<<<<< HEAD
-=======
+
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
@@ -183,7 +182,7 @@ Partial Class FamiliaProducto
         Me.Button1.UseVisualStyleBackColor = True
         '
         'btn_eliminar
->>>>>>> rodrigo
+
         '
         Me.btn_eliminar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.btn_eliminar.Image = Global.delevery.My.Resources.Resources.Delete

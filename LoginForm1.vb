@@ -65,15 +65,12 @@ Public Class LoginForm1
                         End If
 
                 End Select
-<<<<<<< HEAD
                 Me.Close()
-=======
                 'If IsDBNull(DeliveryDataSet1.Tables("usuarios").Rows(Me.cbo_usuario.SelectedIndex).Item("supervisor")) OrElse DeliveryDataSet1.Tables("usuarios").Rows(Me.cbo_usuario.SelectedIndex).Item("supervisor") = 0 Then
                 '    delivery.es_supervisor = False
                 'Else
                 '    delivery.es_supervisor = True
                 'End If
->>>>>>> rodrigo
             End If
         Catch ex As Exception
 
