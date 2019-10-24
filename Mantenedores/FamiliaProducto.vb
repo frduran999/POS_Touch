@@ -17,11 +17,11 @@ Public Class FamiliaProducto
         End If
 
         Try
-            Dim dts As New producto
-            Dim func As New dac.produc
-
-            dts.get_NombreFamilia = Me.uic_FamiliaProducto.Text.Trim
-            If func.GrabaFamiliaProducto(dts) Then
+            Dim Neg As New ProyectoNegocio.FamiliaProducto
+            Dim Familia As String = uic_FamiliaProducto.Text.Trim
+            Dim dt As String = ""
+            dt = Neg.GrabarFamilia(Familia)
+            If dt = "OK" Then
                 MsgBox("Familia Agregada", vbInformation, "Aviso")
             End If
         Catch ex As Exception
@@ -39,14 +39,6 @@ Public Class FamiliaProducto
         Fstream.Close()
         reader.Close()
         Me.Cursor = Cursors.WaitCursor
-        'Dim valida As String = validaExisteArchivo(Me.uic_empleados.SelectedValue, nombre, Me.uic_TipoDoc.SelectedValue)
-        'If valida <> "OK" Then
-        '    ds = Telerik.WinControls.RadMessageBox.Show(Me, "Existe archivo desea reemplazar", "Aviso", MessageBoxButtons.YesNo)
-        '    If ds = Windows.Forms.DialogResult.Yes Then
-        '        'ActualizaImagen()
-        '        Exit Sub
-        '    End If
-        'End If
         Dim oconexion As System.Data.SqlClient.SqlConnection = New System.Data.SqlClient.SqlConnection(My.Settings.deliveryConnectionString)
         Try
             oconexion.Open()

@@ -5,6 +5,7 @@ Public Class Form1
     Dim myhelper As New dac.myhelper2
     Dim obc_RM As New ReportMan.RMan
     Private IdPago As String = 0
+    Private tipoPago As String = ""
 
     Private Sub lawea2(ByVal sender As Object, ByVal e As EventArgs)
         Me.FlowLayoutPanel1.Controls.Clear()
@@ -216,8 +217,8 @@ Public Class Form1
         Dim dts As New ticket
         Dim func As New dac.vale
 
-        dts.get_fecha = Format(Now, "yyyy-MM-dd")
-        dts.get_forma_pago = cbo_formapago.Text.Trim
+        dts.get_fecha = Format(Now, "yyyy-dd-MM")
+        dts.get_forma_pago = tipoPago
         dts.get_total = Me.txt_Total.Text.Trim
         dts.get_efectivo = Me.txt_efectivo.Text.Trim
 
@@ -392,6 +393,7 @@ Public Class Form1
 
     Private Sub btn_Efectivo_Click(sender As Object, e As EventArgs) Handles btn_Efectivo.Click
         Me.IdPago = 1  'Efectivo
+        Me.tipoPago = "Efectivo"
         txt_efectivo.Enabled = True
         Me.txt_efectivo.Text = ""
         Me.txt_efectivo.Focus()
@@ -400,6 +402,7 @@ Public Class Form1
 
     Private Sub btn_Tarjeta_Click(sender As Object, e As EventArgs) Handles btn_Tarjeta.Click
         Me.IdPago = 2 'tarjeta
+        Me.tipoPago = "Tarjeta"
         Me.txt_efectivo.Enabled = False
         Me.txt_efectivo.Text = Me.txt_Total.Text
         Me.txt_vuelto.Text = "0"

@@ -23,7 +23,7 @@ Partial Class FamiliaProducto
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.uic_CodigoFamilia = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.uic_FamiliaProducto = New System.Windows.Forms.TextBox()
@@ -38,9 +38,9 @@ Partial Class FamiliaProducto
         Me.RadGridView1 = New Telerik.WinControls.UI.RadGridView()
         Me.Office2010BlackTheme1 = New Telerik.WinControls.Themes.Office2010BlackTheme()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.uic_RutaImagen = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
@@ -53,7 +53,7 @@ Partial Class FamiliaProducto
         '
         'uic_CodigoFamilia
         '
-        Me.uic_CodigoFamilia.Location = New System.Drawing.Point(70, 3)
+        Me.uic_CodigoFamilia.Location = New System.Drawing.Point(81, 3)
         Me.uic_CodigoFamilia.Name = "uic_CodigoFamilia"
         Me.uic_CodigoFamilia.Size = New System.Drawing.Size(46, 20)
         Me.uic_CodigoFamilia.TabIndex = 0
@@ -159,7 +159,7 @@ Partial Class FamiliaProducto
         Me.RadGridView1.MasterTemplate.AllowAddNewRow = False
         Me.RadGridView1.MasterTemplate.AllowColumnReorder = False
         Me.RadGridView1.MasterTemplate.EnableAlternatingRowColor = True
-        Me.RadGridView1.MasterTemplate.ViewDefinition = TableViewDefinition2
+        Me.RadGridView1.MasterTemplate.ViewDefinition = TableViewDefinition1
         Me.RadGridView1.Name = "RadGridView1"
         Me.RadGridView1.ReadOnly = True
         Me.RadGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -168,6 +168,18 @@ Partial Class FamiliaProducto
         Me.RadGridView1.TabIndex = 25
         Me.RadGridView1.Text = "RadGridView1"
         Me.RadGridView1.ThemeName = "Office2010Black"
+        '
+        'Button1
+        '
+        Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Button1.Image = Global.delevery.My.Resources.Resources.magnifier
+        Me.Button1.Location = New System.Drawing.Point(351, 67)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(32, 33)
+        Me.Button1.TabIndex = 28
+        Me.ToolTip1.SetToolTip(Me.Button1, "Buscar imagen")
+        Me.Button1.UseCompatibleTextRendering = True
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'uic_RutaImagen
         '
@@ -185,18 +197,6 @@ Partial Class FamiliaProducto
         Me.Label3.TabIndex = 27
         Me.Label3.Text = "Imagen"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Button1
-        '
-        Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.Button1.Image = Global.delevery.My.Resources.Resources.magnifier
-        Me.Button1.Location = New System.Drawing.Point(351, 67)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(32, 33)
-        Me.Button1.TabIndex = 28
-        Me.ToolTip1.SetToolTip(Me.Button1, "Buscar imagen")
-        Me.Button1.UseCompatibleTextRendering = True
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'OpenFileDialog1
         '

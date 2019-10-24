@@ -35,11 +35,11 @@ Partial Class delivery
         Me.XxToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FamiliaProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PromocionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ParametrosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RetiroCajaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripButton5 = New System.Windows.Forms.ToolStripButton()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.uic_versionApp = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.InformacionTicketToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -120,7 +120,7 @@ Partial Class delivery
         '
         'ToolStripDropDownButton1
         '
-        Me.ToolStripDropDownButton1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.XxToolStripMenuItem, Me.FamiliaProductosToolStripMenuItem, Me.PromocionesToolStripMenuItem, Me.ParametrosToolStripMenuItem, Me.RetiroCajaToolStripMenuItem})
+        Me.ToolStripDropDownButton1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.XxToolStripMenuItem, Me.FamiliaProductosToolStripMenuItem, Me.PromocionesToolStripMenuItem, Me.RetiroCajaToolStripMenuItem, Me.InformacionTicketToolStripMenuItem})
         Me.ToolStripDropDownButton1.Image = Global.delevery.My.Resources.Resources.gear
         Me.ToolStripDropDownButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ToolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta
@@ -132,31 +132,25 @@ Partial Class delivery
         'XxToolStripMenuItem
         '
         Me.XxToolStripMenuItem.Name = "XxToolStripMenuItem"
-        Me.XxToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
+        Me.XxToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
         Me.XxToolStripMenuItem.Text = "Forma Pago"
         '
         'FamiliaProductosToolStripMenuItem
         '
         Me.FamiliaProductosToolStripMenuItem.Name = "FamiliaProductosToolStripMenuItem"
-        Me.FamiliaProductosToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
+        Me.FamiliaProductosToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
         Me.FamiliaProductosToolStripMenuItem.Text = "Familia Productos"
         '
         'PromocionesToolStripMenuItem
         '
         Me.PromocionesToolStripMenuItem.Name = "PromocionesToolStripMenuItem"
-        Me.PromocionesToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
+        Me.PromocionesToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
         Me.PromocionesToolStripMenuItem.Text = "Promociones"
-        '
-        'ParametrosToolStripMenuItem
-        '
-        Me.ParametrosToolStripMenuItem.Name = "ParametrosToolStripMenuItem"
-        Me.ParametrosToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
-        Me.ParametrosToolStripMenuItem.Text = "Parametros"
         '
         'RetiroCajaToolStripMenuItem
         '
         Me.RetiroCajaToolStripMenuItem.Name = "RetiroCajaToolStripMenuItem"
-        Me.RetiroCajaToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
+        Me.RetiroCajaToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
         Me.RetiroCajaToolStripMenuItem.Text = "Retiro Caja"
         '
         'ToolStripButton5
@@ -183,6 +177,12 @@ Partial Class delivery
         Me.uic_versionApp.BackColor = System.Drawing.SystemColors.Control
         Me.uic_versionApp.Name = "uic_versionApp"
         Me.uic_versionApp.Size = New System.Drawing.Size(0, 17)
+        '
+        'InformacionTicketToolStripMenuItem
+        '
+        Me.InformacionTicketToolStripMenuItem.Name = "InformacionTicketToolStripMenuItem"
+        Me.InformacionTicketToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
+        Me.InformacionTicketToolStripMenuItem.Text = "Informacion Ticket"
         '
         'delivery
         '
@@ -220,6 +220,6 @@ Partial Class delivery
     Friend WithEvents PromocionesToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents StatusStrip1 As System.Windows.Forms.StatusStrip
     Friend WithEvents uic_versionApp As System.Windows.Forms.ToolStripStatusLabel
-    Friend WithEvents ParametrosToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents RetiroCajaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents InformacionTicketToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class
