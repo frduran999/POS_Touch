@@ -55,4 +55,20 @@
         Return resp
 
     End Function
+
+    Public Function EliminaProducto(ByVal Codigo As String)
+        Dim con As New Conexion
+        Dim dt As String = ""
+
+        If con.Conexion Then
+            Try
+                Dim sql As New dac.myMSSQL(con.con.ConnectionString, 60000)
+                sql.paramQUERY.Add("Codigo", Codigo)
+                dt = sql.GetValorNoNull("EliminarProducto")
+            Catch ex As Exception
+
+            End Try
+        End If
+        Return dt
+    End Function
 End Class

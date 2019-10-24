@@ -23,4 +23,15 @@
         End If
         Return resp
     End Function
+
+    Public Function GrabarFamilia(ByVal Familia As String)
+        Dim resp As String = ""
+        Dim con As New Conexion
+        If con.Conexion Then
+            Dim sql As New dac.myMSSQL(con.con.ConnectionString, 60000)
+            sql.paramQUERY.Add("@Familia", Familia)
+            resp = sql.GetValorNoNull("GrabaFamilia")
+        End If
+        Return resp
+    End Function
 End Class

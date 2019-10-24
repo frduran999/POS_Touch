@@ -73,6 +73,7 @@
     <Compile Include="DAC\myMSSQL.vb" />
     <Compile Include="Mantenedores\FamiliaProductoService.vb" />
     <Compile Include="Mantenedores\ProductoService.vb" />
+    <Compile Include="Mantenedores\VentasService.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

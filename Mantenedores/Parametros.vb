@@ -22,7 +22,7 @@
         comando_SQL &= "Update parametros set valor_param ='" & Me.uic_comuna.Text.Trim & "'  where nombre_param='ComunaOrigen' " & vbCrLf & "GO" & vbCrLf
         comando_SQL &= "Update parametros set valor_param ='" & Me.uic_emailEmpresa.Text.Trim & "'  where nombre_param='Email_empresa' " & vbCrLf & "GO" & vbCrLf
         comando_SQL &= "Update parametros set valor_param ='" & Me.uic_telefonos.Text.Trim & "'  where nombre_param='Telefonos' " & vbCrLf & "GO" & vbCrLf
-        comando_SQL &= "Update parametros set valor_param ='" & Me.uic_licencia.Text.Trim & "'  where nombre_param='Licencia' " & vbCrLf & "GO" & vbCrLf
+        'comando_SQL &= "Update parametros set valor_param ='" & Me.uic_licencia.Text.Trim & "'  where nombre_param='Licencia' " & vbCrLf & "GO" & vbCrLf
         My.Computer.FileSystem.WriteAllText(file_temp, comando_SQL, False)
         Dim resp As String = runnerscript.ejecuta_file_script(My.Settings.deliveryConnectionString, file_temp)
         If resp = "OK" Then
@@ -51,9 +51,9 @@
         Me.uic_comuna.Text = parametros("ComunaOrigen")
         Me.uic_emailEmpresa.Text = parametros("Email_empresa")
         Me.uic_telefonos.Text = parametros("Telefonos")
-        Me.uic_licencia.Text = parametros("Licencia")
-        Me.uicImpresora.Text = parametros("Impresora")
-        Me.uic_numerocopias.Text = parametros("NroCopias")
+        'Me.uic_licencia.Text = parametros("Licencia")
+        'Me.uicImpresora.Text = parametros("Impresora")
+        'Me.uic_numerocopias.Text = parametros("NroCopias")
     End Sub
 
     Private Sub btn_salir_Click(sender As Object, e As EventArgs) Handles btn_salir.Click
@@ -85,7 +85,7 @@
         uic_comuna.CharacterCasing = CharacterCasing.Upper
     End Sub
 
-    Private Sub uic_numerocopias_KeyPress(sender As Object, e As KeyPressEventArgs) Handles uic_numerocopias.KeyPress
+    Private Sub uic_numerocopias_KeyPress(sender As Object, e As KeyPressEventArgs)
         Dim valida As String = "0123456789" & Convert.ToChar(8)
         If (valida.Contains("" + e.KeyChar)) Then
             e.Handled = False

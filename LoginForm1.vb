@@ -32,8 +32,10 @@ Public Class LoginForm1
             Else
                 Select Case (Perfil)
                     Case 1
-                        delivery.es_supervisor = True
-                        Form1.ShowDialog()
+                        Dim frm As New delivery
+                        frm.es_supervisor = True
+                        Me.Hide()
+                        frm.ShowDialog()
                     Case 2
                         delivery.es_supervisor = False
                         Me.Hide()
@@ -63,11 +65,6 @@ Public Class LoginForm1
                         End If
                         
                 End Select
-                'If IsDBNull(DeliveryDataSet1.Tables("usuarios").Rows(Me.cbo_usuario.SelectedIndex).Item("supervisor")) OrElse DeliveryDataSet1.Tables("usuarios").Rows(Me.cbo_usuario.SelectedIndex).Item("supervisor") = 0 Then
-                '    delivery.es_supervisor = False
-                'Else
-                '    delivery.es_supervisor = True
-                'End If
                 Me.Close()
             End If
         Catch ex As Exception

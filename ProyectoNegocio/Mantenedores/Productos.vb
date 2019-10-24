@@ -25,4 +25,13 @@ Public Class Productos
         resp = bsp.GrabaDetalleOferta(Idoferta, Linea, IdProducto, Cantidad, Precio)
         Return resp
     End Function
+
+    Public Function EliminaProducto(ByVal Codigo As String)
+        Dim dt As String = ""
+        Dim b As New ProductoService
+        dt = b.EliminaProducto(Codigo)
+        Return dt
+    End Function
 End Class
+
+

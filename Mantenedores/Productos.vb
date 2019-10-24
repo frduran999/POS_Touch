@@ -1,4 +1,6 @@
-﻿Public Class Productos
+﻿Imports ProyectoNegocio
+
+Public Class Productos
     Private Linea As Integer
 
     Private Sub txt_descripcion_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txt_descripcion.TextChanged
@@ -180,13 +182,10 @@
         If result = DialogResult.No Then
             limpiar()
         ElseIf result = DialogResult.Yes Then
-            Dim dts As New producto
-            Dim func As New dac.produc
-            dts.get_codigo = Me.txt_codigo.Text
-            dts.get_descripcion = Me.txt_descripcion.Text.Trim
-            If func.elimina_producto(dts) Then
-                MsgBox("Producto eliminado")
-            End If
+            Dim neg As New ProyectoNegocio.Productos
+            Dim codigo As String = Me.txt_codigo.Text
+            Dim vresp As String = neg.EliminaProducto(codigo)
+            MsgBox("Producto Eliminado", vbInformation, "Aviso")
             limpiar()
         End If
     End Sub
