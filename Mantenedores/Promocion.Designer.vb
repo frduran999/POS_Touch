@@ -23,15 +23,16 @@ Partial Class Promocion
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim GridViewTextBoxColumn1 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn2 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn3 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn4 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn5 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewCommandColumn1 As Telerik.WinControls.UI.GridViewCommandColumn = New Telerik.WinControls.UI.GridViewCommandColumn()
-        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
-        Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim GridViewTextBoxColumn31 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn32 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn33 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn34 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn35 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewCommandColumn7 As Telerik.WinControls.UI.GridViewCommandColumn = New Telerik.WinControls.UI.GridViewCommandColumn()
+        Dim TableViewDefinition13 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim TableViewDefinition14 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.uic_Activo = New Telerik.WinControls.UI.RadCheckBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.uic_precio = New System.Windows.Forms.TextBox()
@@ -58,8 +59,8 @@ Partial Class Promocion
         Me.uic_Producto = New Telerik.WinControls.UI.RadTextBox()
         Me.RadLabel3 = New Telerik.WinControls.UI.RadLabel()
         Me.GridProductos = New Telerik.WinControls.UI.RadGridView()
-        Me.uic_Activo = New Telerik.WinControls.UI.RadCheckBox()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.uic_Activo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
         CType(Me.GridOferta, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridOferta.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -83,7 +84,6 @@ Partial Class Promocion
         CType(Me.RadLabel3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridProductos.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.uic_Activo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -101,6 +101,16 @@ Partial Class Promocion
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos Promocion"
+        '
+        'uic_Activo
+        '
+        Me.uic_Activo.CheckAlignment = System.Drawing.ContentAlignment.MiddleRight
+        Me.uic_Activo.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.uic_Activo.Location = New System.Drawing.Point(546, 26)
+        Me.uic_Activo.Name = "uic_Activo"
+        Me.uic_Activo.Size = New System.Drawing.Size(67, 18)
+        Me.uic_Activo.TabIndex = 5
+        Me.uic_Activo.Text = "Activo    "
         '
         'Label2
         '
@@ -161,34 +171,34 @@ Partial Class Promocion
         '
         Me.GridOferta.MasterTemplate.AllowAddNewRow = False
         Me.GridOferta.MasterTemplate.AllowColumnReorder = False
-        GridViewTextBoxColumn1.EnableExpressionEditor = False
-        GridViewTextBoxColumn1.HeaderText = "IdProducto"
-        GridViewTextBoxColumn1.IsVisible = False
-        GridViewTextBoxColumn1.Name = "IdProducto"
-        GridViewTextBoxColumn1.Width = 63
-        GridViewTextBoxColumn2.EnableExpressionEditor = False
-        GridViewTextBoxColumn2.HeaderText = "Producto"
-        GridViewTextBoxColumn2.Name = "Producto"
-        GridViewTextBoxColumn2.Width = 190
-        GridViewTextBoxColumn3.EnableExpressionEditor = False
-        GridViewTextBoxColumn3.HeaderText = "Cantidad"
-        GridViewTextBoxColumn3.Name = "Cantidad"
-        GridViewTextBoxColumn3.Width = 80
-        GridViewTextBoxColumn4.EnableExpressionEditor = False
-        GridViewTextBoxColumn4.HeaderText = "Precio"
-        GridViewTextBoxColumn4.IsVisible = False
-        GridViewTextBoxColumn4.Name = "Precio"
-        GridViewTextBoxColumn5.EnableExpressionEditor = False
-        GridViewTextBoxColumn5.HeaderText = "LineaOferta"
-        GridViewTextBoxColumn5.IsVisible = False
-        GridViewTextBoxColumn5.Name = "LineaOferta"
-        GridViewTextBoxColumn5.Width = 47
-        GridViewCommandColumn1.EnableExpressionEditor = False
-        GridViewCommandColumn1.HeaderText = "Eliminar"
-        GridViewCommandColumn1.Name = "Eliminar"
-        GridViewCommandColumn1.Width = 80
-        Me.GridOferta.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewTextBoxColumn4, GridViewTextBoxColumn5, GridViewCommandColumn1})
-        Me.GridOferta.MasterTemplate.ViewDefinition = TableViewDefinition1
+        GridViewTextBoxColumn31.EnableExpressionEditor = False
+        GridViewTextBoxColumn31.HeaderText = "IdProducto"
+        GridViewTextBoxColumn31.IsVisible = False
+        GridViewTextBoxColumn31.Name = "IdProducto"
+        GridViewTextBoxColumn31.Width = 63
+        GridViewTextBoxColumn32.EnableExpressionEditor = False
+        GridViewTextBoxColumn32.HeaderText = "Producto"
+        GridViewTextBoxColumn32.Name = "Producto"
+        GridViewTextBoxColumn32.Width = 190
+        GridViewTextBoxColumn33.EnableExpressionEditor = False
+        GridViewTextBoxColumn33.HeaderText = "Cantidad"
+        GridViewTextBoxColumn33.Name = "Cantidad"
+        GridViewTextBoxColumn33.Width = 80
+        GridViewTextBoxColumn34.EnableExpressionEditor = False
+        GridViewTextBoxColumn34.HeaderText = "Precio"
+        GridViewTextBoxColumn34.IsVisible = False
+        GridViewTextBoxColumn34.Name = "Precio"
+        GridViewTextBoxColumn35.EnableExpressionEditor = False
+        GridViewTextBoxColumn35.HeaderText = "LineaOferta"
+        GridViewTextBoxColumn35.IsVisible = False
+        GridViewTextBoxColumn35.Name = "LineaOferta"
+        GridViewTextBoxColumn35.Width = 47
+        GridViewCommandColumn7.EnableExpressionEditor = False
+        GridViewCommandColumn7.HeaderText = "Eliminar"
+        GridViewCommandColumn7.Name = "Eliminar"
+        GridViewCommandColumn7.Width = 80
+        Me.GridOferta.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn31, GridViewTextBoxColumn32, GridViewTextBoxColumn33, GridViewTextBoxColumn34, GridViewTextBoxColumn35, GridViewCommandColumn7})
+        Me.GridOferta.MasterTemplate.ViewDefinition = TableViewDefinition13
         Me.GridOferta.Name = "GridOferta"
         Me.GridOferta.ReadOnly = True
         Me.GridOferta.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -402,7 +412,7 @@ Partial Class Promocion
         '
         Me.GridProductos.MasterTemplate.AllowAddNewRow = False
         Me.GridProductos.MasterTemplate.AllowColumnReorder = False
-        Me.GridProductos.MasterTemplate.ViewDefinition = TableViewDefinition2
+        Me.GridProductos.MasterTemplate.ViewDefinition = TableViewDefinition14
         Me.GridProductos.Name = "GridProductos"
         Me.GridProductos.ReadOnly = True
         Me.GridProductos.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -411,17 +421,6 @@ Partial Class Promocion
         Me.GridProductos.TabIndex = 0
         Me.GridProductos.Text = "RadGridView1"
         Me.GridProductos.ThemeName = "Office2010Black"
-        '
-        'uic_Activo
-        '
-        Me.uic_Activo.CheckAlignment = System.Drawing.ContentAlignment.MiddleRight
-        Me.uic_Activo.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.uic_Activo.Location = New System.Drawing.Point(588, 26)
-        Me.uic_Activo.Name = "uic_Activo"
-        Me.uic_Activo.Size = New System.Drawing.Size(67, 18)
-        Me.uic_Activo.TabIndex = 5
-        Me.uic_Activo.Text = "Activo    "
-        Me.uic_Activo.Visible = False
         '
         'Promocion
         '
@@ -439,6 +438,7 @@ Partial Class Promocion
         Me.Text = "Promocion"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.uic_Activo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         CType(Me.GridOferta.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridOferta, System.ComponentModel.ISupportInitialize).EndInit()
@@ -464,7 +464,6 @@ Partial Class Promocion
         CType(Me.RadLabel3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridProductos.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridProductos, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.uic_Activo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

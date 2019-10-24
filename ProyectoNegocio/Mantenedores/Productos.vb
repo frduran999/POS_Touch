@@ -13,6 +13,7 @@ Public Class Productos
         dt = Bsp.GetProductoOferta(IdFamilia)
         Return dt
     End Function
+<<<<<<< HEAD
     Public Function GrabaOFerta(ByVal Promocion As String, ByVal precio As Integer) As String
         Dim resp As String = ""
         Dim b As New ProductoService
@@ -32,6 +33,10 @@ Public Class Productos
         dt = b.EliminaProducto(Codigo)
         Return dt
     End Function
+=======
+    
+    
+>>>>>>> rodrigo
 End Class
 
 

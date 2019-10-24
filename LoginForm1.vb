@@ -63,9 +63,17 @@ Public Class LoginForm1
                             frmCaja.ShowDialog()
                             System.Diagnostics.Process.GetCurrentProcess().Kill()
                         End If
-                        
+
                 End Select
+<<<<<<< HEAD
                 Me.Close()
+=======
+                'If IsDBNull(DeliveryDataSet1.Tables("usuarios").Rows(Me.cbo_usuario.SelectedIndex).Item("supervisor")) OrElse DeliveryDataSet1.Tables("usuarios").Rows(Me.cbo_usuario.SelectedIndex).Item("supervisor") = 0 Then
+                '    delivery.es_supervisor = False
+                'Else
+                '    delivery.es_supervisor = True
+                'End If
+>>>>>>> rodrigo
             End If
         Catch ex As Exception
 
@@ -84,5 +92,17 @@ Public Class LoginForm1
         'TODO: This line of code loads data into the 'DeliveryDataSet1.usuarios' table. You can move, or remove it, as needed.
         Me.UsuariosTableAdapter.Fill(Me.DeliveryDataSet1.usuarios)
         Me.cbo_usuario.SelectedValue = -1
+
+        Dim ruta As String = "C:\POS"
+        If Not System.IO.Directory.Exists(ruta) Then
+            System.IO.Directory.CreateDirectory(ruta)
+        End If
+        ruta &= "\Imagen"
+        If Not System.IO.Directory.Exists(ruta) Then
+            System.IO.Directory.CreateDirectory(ruta)
+        End If
+        Dim neg As New ProyectoNegocio.FamiliaProducto
+        Dim res As String = neg.TraerImagenes(ruta)
     End Sub
+   
 End Class
