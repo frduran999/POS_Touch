@@ -23,7 +23,7 @@ Partial Class Productos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim TableViewDefinition3 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -67,9 +67,9 @@ Partial Class Productos
         '
         Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(12, 112)
+        Me.Label1.Location = New System.Drawing.Point(12, 115)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(84, 23)
+        Me.Label1.Size = New System.Drawing.Size(77, 20)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Codigo"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -81,7 +81,7 @@ Partial Class Productos
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(12, 145)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(86, 23)
+        Me.Label2.Size = New System.Drawing.Size(77, 23)
         Me.Label2.TabIndex = 2
         Me.Label2.Text = "Descripcion"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -90,16 +90,17 @@ Partial Class Productos
         '
         Me.Label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(10, 211)
+        Me.Label3.Location = New System.Drawing.Point(0, 318)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(86, 23)
         Me.Label3.TabIndex = 3
         Me.Label3.Text = "Codigo Interno"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Label3.Visible = False
         '
         'txt_codigo
         '
-        Me.txt_codigo.Location = New System.Drawing.Point(99, 115)
+        Me.txt_codigo.Location = New System.Drawing.Point(101, 115)
         Me.txt_codigo.MaxLength = 30
         Me.txt_codigo.Name = "txt_codigo"
         Me.txt_codigo.Size = New System.Drawing.Size(140, 20)
@@ -108,7 +109,7 @@ Partial Class Productos
         '
         'txt_descripcion
         '
-        Me.txt_descripcion.Location = New System.Drawing.Point(99, 146)
+        Me.txt_descripcion.Location = New System.Drawing.Point(101, 148)
         Me.txt_descripcion.MaxLength = 90
         Me.txt_descripcion.Name = "txt_descripcion"
         Me.txt_descripcion.Size = New System.Drawing.Size(192, 20)
@@ -116,26 +117,27 @@ Partial Class Productos
         '
         'txt_codigoInt
         '
-        Me.txt_codigoInt.Location = New System.Drawing.Point(99, 208)
+        Me.txt_codigoInt.Location = New System.Drawing.Point(89, 315)
         Me.txt_codigoInt.MaxLength = 30
         Me.txt_codigoInt.Name = "txt_codigoInt"
         Me.txt_codigoInt.Size = New System.Drawing.Size(192, 20)
         Me.txt_codigoInt.TabIndex = 4
+        Me.txt_codigoInt.Visible = False
         '
         'Label4
         '
         Me.Label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(12, 178)
+        Me.Label4.Location = New System.Drawing.Point(12, 179)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(86, 23)
+        Me.Label4.Size = New System.Drawing.Size(74, 20)
         Me.Label4.TabIndex = 8
         Me.Label4.Text = "Precio"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'txt_precio
         '
-        Me.txt_precio.Location = New System.Drawing.Point(99, 177)
+        Me.txt_precio.Location = New System.Drawing.Point(101, 179)
         Me.txt_precio.MaxLength = 9
         Me.txt_precio.Name = "txt_precio"
         Me.txt_precio.Size = New System.Drawing.Size(100, 20)
@@ -146,7 +148,7 @@ Partial Class Productos
         Me.uic_Familia.DataSource = Me.FamiliaProductoBindingSource
         Me.uic_Familia.DisplayMember = "Familia"
         Me.uic_Familia.FormattingEnabled = True
-        Me.uic_Familia.Location = New System.Drawing.Point(99, 245)
+        Me.uic_Familia.Location = New System.Drawing.Point(101, 210)
         Me.uic_Familia.Name = "uic_Familia"
         Me.uic_Familia.Size = New System.Drawing.Size(137, 21)
         Me.uic_Familia.TabIndex = 5
@@ -170,9 +172,9 @@ Partial Class Productos
         '
         Me.Label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(10, 243)
+        Me.Label5.Location = New System.Drawing.Point(12, 210)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(86, 23)
+        Me.Label5.Size = New System.Drawing.Size(74, 21)
         Me.Label5.TabIndex = 18
         Me.Label5.Text = "Familia"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -292,7 +294,7 @@ Partial Class Productos
         '
         '
         Me.RadGridView1.MasterTemplate.AllowAddNewRow = False
-        Me.RadGridView1.MasterTemplate.ViewDefinition = TableViewDefinition1
+        Me.RadGridView1.MasterTemplate.ViewDefinition = TableViewDefinition3
         Me.RadGridView1.Name = "RadGridView1"
         Me.RadGridView1.ReadOnly = True
         Me.RadGridView1.Size = New System.Drawing.Size(462, 487)

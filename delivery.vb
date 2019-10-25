@@ -4,7 +4,7 @@
     Public oconfig As New BE.Parametros
 
     Private Sub ToolStripButton1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripButton1.Click
-        Form1.Show()
+        Form1.ShowDialog()
     End Sub
 
     Private Sub menu_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -23,8 +23,10 @@
             End
         End If
         Me.Text = "  Empresa  " & Me.oconfig.Giro & "   RUT " & Me.oconfig.RUTEmpresa
-        
+        Me.WindowState = FormWindowState.Maximized
     End Sub
+
+    
 
     Private Sub ToolStripButton5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripButton5.Click
         Application.Exit()
@@ -32,7 +34,7 @@
 
     Private Sub ToolStripButton4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripButton4.Click
         If es_supervisor Then
-            Productos.Show()
+            Productos.ShowDialog()
         Else
             MsgBox("Opción disponible solamente para el supervisor", MsgBoxStyle.Information, "Aviso")
         End If
@@ -40,7 +42,7 @@
 
     Private Sub ToolStripButton3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripButton3.Click
         If es_supervisor Then
-            usuario.Show()
+            usuario.ShowDialog()
         Else
             MsgBox("Opción disponible solamente para el supervisor", MsgBoxStyle.Information, "Aviso")
         End If
@@ -48,7 +50,7 @@
 
     Private Sub XxToolStripMenuItem_Click(ByVal sender As Object, ByVal e As EventArgs) Handles XxToolStripMenuItem.Click
         If es_supervisor Then
-            formapago.Show()
+            formapago.ShowDialog()
         Else
             MsgBox("Opción disponible solamente para el supervisor", MsgBoxStyle.Information, "Aviso")
         End If
@@ -56,23 +58,23 @@
 
     Private Sub DIARIOToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DIARIOToolStripMenuItem.Click
         If es_supervisor Then
-            diario.Show()
+            diario.ShowDialog()
         Else
             MsgBox("Opción disponible solamente para el supervisor", MsgBoxStyle.Information, "Aviso")
         End If
     End Sub
 
     Private Sub ToolStripButton6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripButton6.Click
-        compras.Show()
+        compras.ShowDialog()
     End Sub
 
     Private Sub COMPRASDIARIOToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles COMPRASDIARIOToolStripMenuItem.Click
-        Compras_diario.Show()
+        Compras_diario.ShowDialog()
     End Sub
 
     Private Sub FamiliaProductosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FamiliaProductosToolStripMenuItem.Click
         If es_supervisor Then
-            FamiliaProducto.Show()
+            FamiliaProducto.ShowDialog()
         Else
             MsgBox("Opción disponible solamente para el supervisor", MsgBoxStyle.Information, "Aviso")
         End If
@@ -88,7 +90,7 @@
 
     Private Sub RetiroCajaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RetiroCajaToolStripMenuItem.Click
         If es_supervisor Then
-            Retiro.Show()
+            Retiro.ShowDialog()
         Else
             MsgBox("Opción disponible solamente para el supervisor", MsgBoxStyle.Information, "Aviso")
         End If
@@ -96,7 +98,7 @@
 
     Private Sub InformacionTicketToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InformacionTicketToolStripMenuItem.Click
         If es_supervisor Then
-            DatosGral.Show()
+            DatosGral.ShowDialog()
         Else
             MsgBox("Opción disponible solamente para el supervisor", MsgBoxStyle.Information, "Aviso")
         End If

@@ -160,6 +160,10 @@ Public Class Promocion
             Me.uic_precio.Focus()
             Exit Sub
         End If
+        If Me.GridOferta.Rows.Count = 0 Then
+            MsgBox("Debe ingresar productos a oferta")
+            Exit Sub
+        End If
         Dim Neg As New ProyectoNegocio.Ofertas
         Dim resp As Integer = 0
         resp = Neg.GrabaOFerta(Me.uic_Promocion.Text, CInt(Me.uic_precio.Text))
@@ -238,9 +242,12 @@ Public Class Promocion
             Else
                 Me.uic_Activo.CheckState = CheckState.Unchecked
             End If
-            For Each d As DataRow In dt.Rows
-                Me.GridOferta.Rows.Add(d("IdProducto"), d("Descripcion_Producto"), d("Cantidad"), d("Precio"), d("Linea"), ("Eliminar"))
-            Next
+            If Not IsDBNull(dt.Rows(0)("Cantidad")) = True Then
+                For Each d As DataRow In dt.Rows
+                    Me.GridOferta.Rows.Add(d("IdProducto"), d("Descripcion_Producto"), d("Cantidad"), d("Precio"), d("Linea"), ("Eliminar"))
+                Next
+            End If
+            
 
             Me.btnGrabar.Enabled = False
             Me.Btn_Modificar.Enabled = True

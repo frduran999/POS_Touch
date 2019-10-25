@@ -24,7 +24,7 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
@@ -56,6 +56,7 @@ Partial Class Form1
         Me.Desc = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_productoGrid = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Eliminar = New System.Windows.Forms.DataGridViewButtonColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FormapagoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -71,9 +72,9 @@ Partial Class Form1
         Me.FlowLayoutPanel1.AutoScroll = True
         Me.FlowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(217, Byte), Integer))
         Me.FlowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(461, 235)
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(388, 234)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(425, 285)
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(648, 218)
         Me.FlowLayoutPanel1.TabIndex = 0
         '
         'ImageList1
@@ -140,18 +141,18 @@ Partial Class Form1
         '
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
         Me.DataGridView1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(136, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(220, Byte), Integer))
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.cantidad, Me.Desc, Me.precio, Me.Column3, Me.Eliminar})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.cantidad, Me.Desc, Me.precio, Me.Column3, Me.id_productoGrid, Me.Eliminar})
         Me.DataGridView1.Location = New System.Drawing.Point(18, 12)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersVisible = False
-        Me.DataGridView1.Size = New System.Drawing.Size(437, 407)
+        Me.DataGridView1.Size = New System.Drawing.Size(364, 393)
         Me.DataGridView1.TabIndex = 0
         '
         'txt_vuelto
@@ -159,7 +160,7 @@ Partial Class Form1
         Me.txt_vuelto.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.txt_vuelto.Enabled = False
         Me.txt_vuelto.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_vuelto.Location = New System.Drawing.Point(351, 485)
+        Me.txt_vuelto.Location = New System.Drawing.Point(282, 467)
         Me.txt_vuelto.Name = "txt_vuelto"
         Me.txt_vuelto.Size = New System.Drawing.Size(100, 21)
         Me.txt_vuelto.TabIndex = 6
@@ -170,7 +171,7 @@ Partial Class Form1
         Me.txt_efectivo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.txt_efectivo.Enabled = False
         Me.txt_efectivo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_efectivo.Location = New System.Drawing.Point(351, 455)
+        Me.txt_efectivo.Location = New System.Drawing.Point(282, 438)
         Me.txt_efectivo.Name = "txt_efectivo"
         Me.txt_efectivo.Size = New System.Drawing.Size(100, 21)
         Me.txt_efectivo.TabIndex = 7
@@ -181,7 +182,7 @@ Partial Class Form1
         Me.txt_Total.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.txt_Total.Enabled = False
         Me.txt_Total.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_Total.Location = New System.Drawing.Point(351, 425)
+        Me.txt_Total.Location = New System.Drawing.Point(282, 411)
         Me.txt_Total.Name = "txt_Total"
         Me.txt_Total.Size = New System.Drawing.Size(100, 21)
         Me.txt_Total.TabIndex = 8
@@ -193,9 +194,9 @@ Partial Class Form1
         Me.cbo_formapago.DataSource = Me.FormapagoBindingSource
         Me.cbo_formapago.DisplayMember = "formapago"
         Me.cbo_formapago.FormattingEnabled = True
-        Me.cbo_formapago.Location = New System.Drawing.Point(130, 537)
+        Me.cbo_formapago.Location = New System.Drawing.Point(37, 469)
         Me.cbo_formapago.Name = "cbo_formapago"
-        Me.cbo_formapago.Size = New System.Drawing.Size(189, 21)
+        Me.cbo_formapago.Size = New System.Drawing.Size(21, 21)
         Me.cbo_formapago.TabIndex = 9
         Me.cbo_formapago.ValueMember = "id"
         Me.cbo_formapago.Visible = False
@@ -215,7 +216,7 @@ Partial Class Form1
         Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(258, 425)
+        Me.Label3.Location = New System.Drawing.Point(189, 411)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(87, 23)
         Me.Label3.TabIndex = 12
@@ -227,7 +228,7 @@ Partial Class Form1
         Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(258, 455)
+        Me.Label4.Location = New System.Drawing.Point(189, 438)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(87, 23)
         Me.Label4.TabIndex = 13
@@ -239,7 +240,7 @@ Partial Class Form1
         Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(258, 485)
+        Me.Label5.Location = New System.Drawing.Point(189, 467)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(87, 23)
         Me.Label5.TabIndex = 14
@@ -250,7 +251,7 @@ Partial Class Form1
         '
         Me.btn_aceptar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btn_aceptar.Image = Global.delevery.My.Resources.Resources.check
-        Me.btn_aceptar.Location = New System.Drawing.Point(351, 520)
+        Me.btn_aceptar.Location = New System.Drawing.Point(623, 471)
         Me.btn_aceptar.Name = "btn_aceptar"
         Me.btn_aceptar.Size = New System.Drawing.Size(43, 41)
         Me.btn_aceptar.TabIndex = 15
@@ -260,7 +261,7 @@ Partial Class Form1
         '
         Me.btn_salir.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btn_salir.Image = Global.delevery.My.Resources.Resources._Exit
-        Me.btn_salir.Location = New System.Drawing.Point(709, 526)
+        Me.btn_salir.Location = New System.Drawing.Point(781, 471)
         Me.btn_salir.Name = "btn_salir"
         Me.btn_salir.Size = New System.Drawing.Size(46, 41)
         Me.btn_salir.TabIndex = 1
@@ -271,7 +272,7 @@ Partial Class Form1
         '
         Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(461, 208)
+        Me.Label1.Location = New System.Drawing.Point(388, 205)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(73, 23)
         Me.Label1.TabIndex = 16
@@ -280,7 +281,7 @@ Partial Class Form1
         '
         'txt_cantidad
         '
-        Me.txt_cantidad.Location = New System.Drawing.Point(540, 208)
+        Me.txt_cantidad.Location = New System.Drawing.Point(472, 205)
         Me.txt_cantidad.Name = "txt_cantidad"
         Me.txt_cantidad.Size = New System.Drawing.Size(100, 20)
         Me.txt_cantidad.TabIndex = 17
@@ -296,17 +297,17 @@ Partial Class Form1
         Me.FlowLayoutFamilia.AutoScroll = True
         Me.FlowLayoutFamilia.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.FlowLayoutFamilia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.FlowLayoutFamilia.Location = New System.Drawing.Point(461, 12)
+        Me.FlowLayoutFamilia.Location = New System.Drawing.Point(388, 12)
         Me.FlowLayoutFamilia.Name = "FlowLayoutFamilia"
-        Me.FlowLayoutFamilia.Size = New System.Drawing.Size(425, 182)
+        Me.FlowLayoutFamilia.Size = New System.Drawing.Size(648, 182)
         Me.FlowLayoutFamilia.TabIndex = 21
         '
         'StatusStrip1
         '
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.uicEstado, Me.uic_FechaHora})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 573)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 515)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(898, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(1048, 22)
         Me.StatusStrip1.TabIndex = 22
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -330,7 +331,7 @@ Partial Class Form1
         '
         Me.btn_limpiar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btn_limpiar.Image = Global.delevery.My.Resources.Resources.Refresh1
-        Me.btn_limpiar.Location = New System.Drawing.Point(657, 526)
+        Me.btn_limpiar.Location = New System.Drawing.Point(702, 471)
         Me.btn_limpiar.Name = "btn_limpiar"
         Me.btn_limpiar.Size = New System.Drawing.Size(46, 41)
         Me.btn_limpiar.TabIndex = 24
@@ -342,7 +343,7 @@ Partial Class Form1
         '
         Me.btn_Efectivo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btn_Efectivo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_Efectivo.Location = New System.Drawing.Point(461, 526)
+        Me.btn_Efectivo.Location = New System.Drawing.Point(388, 471)
         Me.btn_Efectivo.Name = "btn_Efectivo"
         Me.btn_Efectivo.Size = New System.Drawing.Size(86, 41)
         Me.btn_Efectivo.TabIndex = 25
@@ -354,7 +355,7 @@ Partial Class Form1
         '
         Me.btn_Tarjeta.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btn_Tarjeta.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_Tarjeta.Location = New System.Drawing.Point(554, 526)
+        Me.btn_Tarjeta.Location = New System.Drawing.Point(502, 471)
         Me.btn_Tarjeta.Name = "btn_Tarjeta"
         Me.btn_Tarjeta.Size = New System.Drawing.Size(86, 41)
         Me.btn_Tarjeta.TabIndex = 26
@@ -382,7 +383,7 @@ Partial Class Form1
         Me.Desc.HeaderText = "Descripcion"
         Me.Desc.Name = "Desc"
         Me.Desc.ReadOnly = True
-        Me.Desc.Width = 190
+        Me.Desc.Width = 120
         '
         'precio
         '
@@ -398,6 +399,13 @@ Partial Class Form1
         Me.Column3.ReadOnly = True
         Me.Column3.Width = 70
         '
+        'id_productoGrid
+        '
+        Me.id_productoGrid.HeaderText = "idprod"
+        Me.id_productoGrid.Name = "id_productoGrid"
+        Me.id_productoGrid.ReadOnly = True
+        Me.id_productoGrid.Visible = False
+        '
         'Eliminar
         '
         Me.Eliminar.HeaderText = "Eliminar"
@@ -411,7 +419,7 @@ Partial Class Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(898, 595)
+        Me.ClientSize = New System.Drawing.Size(1048, 537)
         Me.Controls.Add(Me.btn_Tarjeta)
         Me.Controls.Add(Me.btn_Efectivo)
         Me.Controls.Add(Me.btn_limpiar)
@@ -432,7 +440,7 @@ Partial Class Form1
         Me.Controls.Add(Me.FlowLayoutPanel1)
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Form1"
+        Me.Text = "rne"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.FormapagoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -474,6 +482,7 @@ Partial Class Form1
     Friend WithEvents Desc As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents precio As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Column3 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents id_productoGrid As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Eliminar As System.Windows.Forms.DataGridViewButtonColumn
 
 End Class
