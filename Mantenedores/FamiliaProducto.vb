@@ -66,6 +66,9 @@ Public Class FamiliaProducto
         End Try
 
         Me.PictureBox1.Visible = False
+        Dim ruta As String = "C:\POS\Imagen"
+        Dim neg As New ProyectoNegocio.FamiliaProducto
+        Dim res As String = neg.TraerImagenes(ruta)
         Me.Cursor = Cursors.Default
     End Sub
     Private Sub carga_grilla()

@@ -17,7 +17,8 @@ Public Class Conexion
         If Not File.Exists(RutaTxt) Then
             fs = File.Create(RutaTxt)
             fs.Close()
-            Dim conexDB As String = "Data Source=DESKTOP-3BK5M8U;Initial Catalog=delivery;Persist Security Info=True;User ID= sa;Password= 1234;"
+            Dim conexDB As String = "Data Source=.;Initial Catalog=delivery;Persist Security Info=True;User ID= sa;Password= 1234;"
+            'Dim conexDB As String = "Data Source=(local);Initial Catalog=delivery;Persist Security Info=True;User ID= sa;Password= Alternativa3;"
             Try
                 Dim escribe As New StreamWriter(RutaTxt)
                 escribe.WriteLine(conexDB)

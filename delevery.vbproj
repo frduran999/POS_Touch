@@ -50,8 +50,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>cash-register-icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
@@ -508,6 +507,7 @@
     <None Include="Resources\address_book2.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="cash-register-icon.ico" />
     <Content Include="paso.ico" />
     <None Include="Resources\SinFoto.jpg" />
     <None Include="Resources\magnifier.png" />
