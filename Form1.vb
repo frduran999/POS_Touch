@@ -16,7 +16,6 @@ Public Class Form1
         'MsgBox(idfamilia)
         If famili.Text <> "PROMOCION" Then
             Dim productos As DataTable
-            'Dim sql As String = "SELECT productos.id_producto, productos.descripcion_producto, productos.precio FROM productos INNER JOIN FamiliaProducto ON productos.CodigoFamilia = FamiliaProducto.CodigoFamilia WHERE (FamiliaProducto.Familia = '" & famili.Text & "')"
             Dim sql As String = "SELECT productos.id_producto, productos.descripcion_producto, productos.precio FROM productos INNER JOIN FamiliaProducto ON productos.CodigoFamilia = FamiliaProducto.CodigoFamilia WHERE (productos.CodigoFamilia = '" & idfamilia & "')"
             productos = myhelper.ExecuteDataSet(My.Settings.deliveryConnectionString, CommandType.Text, sql, Nothing, 60).Tables(0)
             For Each dr As DataRow In productos.Rows
@@ -55,9 +54,9 @@ Public Class Form1
             Exit Sub
         End If
         Dim id As String = sender.name
-        Dim articulo As String = sender.text.trim
-
-        para_grilla(id, articulo)
+        Dim articulo As String = sender.text.ToString
+        Dim dato() As String = articulo.Split("$")
+        para_grilla(id, dato(0))
 
         calculo_total_venta()
 
@@ -72,10 +71,10 @@ Public Class Form1
         Dim linea As Integer = 0
         Dim CantidadLinea As Integer = 0
 
-        db_precio = myhelper.ExecuteDataSet(My.Settings.deliveryConnectionString, CommandType.Text, "select precio,codigo from productos where id_producto=" & id, Nothing, 60).Tables(0)
+        db_precio = myhelper.ExecuteDataSet(My.Settings.deliveryConnectionString, CommandType.Text, "SELECT id_producto,precio FROM productos where id_producto=" & id, Nothing, 60).Tables(0)
         For Each valor As DataRow In db_precio.Rows
             precio = Val(valor("precio"))
-            codigo_item = valor("codigo")
+            codigo_item = valor("id_producto")
         Next
 
         For index = 0 To DataGridView1.Rows.Count - 1

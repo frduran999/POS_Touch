@@ -55,7 +55,7 @@ Public Class Productos
         Me.RadGridView1.Columns("codigo_interno").IsVisible = False
 
         Me.RadGridView1.Columns("codigo").Width = 80
-        Me.RadGridView1.Columns("codigo").IsVisible = True
+        Me.RadGridView1.Columns("codigo").IsVisible = False
         Me.RadGridView1.Columns("codigo").ReadOnly = False
         Me.RadGridView1.Columns("codigo").HeaderText = "Codigo"
 
@@ -98,7 +98,7 @@ Public Class Productos
         If respuesta = "" Then
             Dim dts As New producto
             Dim func As New dac.produc
-            dts.get_codigo = Me.txt_codigo.Text.Trim
+            dts.get_codigo = Me.txt_descripcion.Text
             dts.get_Familia = Me.uic_Familia.SelectedValue
             respuesta &= func.ExisteCodigoProducto(dts)
         End If
@@ -198,9 +198,6 @@ Public Class Productos
         Me.Close()
     End Sub
 
-    Private Sub RadGridView1_Click(sender As Object, e As EventArgs) Handles RadGridView1.Click
-
-    End Sub
 
     Private Sub RadGridView1_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles RadGridView1.MouseDoubleClick
         Try

@@ -35,12 +35,12 @@ Partial Class delivery
         Me.XxToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FamiliaProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PromocionesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.InformacionTicketToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RetiroCajaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ImpresorasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripButton5 = New System.Windows.Forms.ToolStripButton()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.uic_versionApp = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.InformacionTicketToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ImpresorasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -50,27 +50,29 @@ Partial Class delivery
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.ToolStripButton6, Me.ToolStripButton2, Me.ToolStripButton3, Me.ToolStripButton4, Me.ToolStripDropDownButton1, Me.ToolStripButton5})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(506, 70)
+        Me.ToolStrip1.Size = New System.Drawing.Size(623, 76)
         Me.ToolStrip1.TabIndex = 0
         Me.ToolStrip1.Text = "ToolStrip1"
         '
         'ToolStripButton1
         '
+        Me.ToolStripButton1.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.ToolStripButton1.Image = Global.delevery.My.Resources.Resources.note_add
         Me.ToolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.Size = New System.Drawing.Size(52, 67)
+        Me.ToolStripButton1.Size = New System.Drawing.Size(53, 73)
         Me.ToolStripButton1.Text = "Venta"
         Me.ToolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'ToolStripButton6
         '
+        Me.ToolStripButton6.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.ToolStripButton6.Image = Global.delevery.My.Resources.Resources.address_book2
         Me.ToolStripButton6.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ToolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripButton6.Name = "ToolStripButton6"
-        Me.ToolStripButton6.Size = New System.Drawing.Size(59, 67)
+        Me.ToolStripButton6.Size = New System.Drawing.Size(77, 73)
         Me.ToolStripButton6.Text = "Compras"
         Me.ToolStripButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.ToolStripButton6.Visible = False
@@ -78,90 +80,106 @@ Partial Class delivery
         'ToolStripButton2
         '
         Me.ToolStripButton2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DIARIOToolStripMenuItem, Me.COMPRASDIARIOToolStripMenuItem})
+        Me.ToolStripButton2.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.ToolStripButton2.Image = Global.delevery.My.Resources.Resources.book_blue
         Me.ToolStripButton2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ToolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripButton2.Name = "ToolStripButton2"
-        Me.ToolStripButton2.Size = New System.Drawing.Size(66, 67)
+        Me.ToolStripButton2.Size = New System.Drawing.Size(85, 73)
         Me.ToolStripButton2.Text = "Reportes"
         Me.ToolStripButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'DIARIOToolStripMenuItem
         '
         Me.DIARIOToolStripMenuItem.Name = "DIARIOToolStripMenuItem"
-        Me.DIARIOToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
+        Me.DIARIOToolStripMenuItem.Size = New System.Drawing.Size(209, 26)
         Me.DIARIOToolStripMenuItem.Text = "VENTAS DIARIO"
         '
         'COMPRASDIARIOToolStripMenuItem
         '
         Me.COMPRASDIARIOToolStripMenuItem.Name = "COMPRASDIARIOToolStripMenuItem"
-        Me.COMPRASDIARIOToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
+        Me.COMPRASDIARIOToolStripMenuItem.Size = New System.Drawing.Size(209, 26)
         Me.COMPRASDIARIOToolStripMenuItem.Text = "COMPRAS DIARIO"
         Me.COMPRASDIARIOToolStripMenuItem.Visible = False
         '
         'ToolStripButton3
         '
+        Me.ToolStripButton3.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.ToolStripButton3.Image = Global.delevery.My.Resources.Resources.users2
         Me.ToolStripButton3.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ToolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripButton3.Name = "ToolStripButton3"
-        Me.ToolStripButton3.Size = New System.Drawing.Size(56, 67)
+        Me.ToolStripButton3.Size = New System.Drawing.Size(75, 73)
         Me.ToolStripButton3.Text = "Usuarios"
         Me.ToolStripButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'ToolStripButton4
         '
+        Me.ToolStripButton4.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.ToolStripButton4.Image = Global.delevery.My.Resources.Resources.product2
         Me.ToolStripButton4.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ToolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripButton4.Name = "ToolStripButton4"
-        Me.ToolStripButton4.Size = New System.Drawing.Size(65, 67)
+        Me.ToolStripButton4.Size = New System.Drawing.Size(84, 73)
         Me.ToolStripButton4.Text = "Productos"
         Me.ToolStripButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'ToolStripDropDownButton1
         '
-        Me.ToolStripDropDownButton1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.XxToolStripMenuItem, Me.FamiliaProductosToolStripMenuItem, Me.PromocionesToolStripMenuItem, Me.RetiroCajaToolStripMenuItem, Me.InformacionTicketToolStripMenuItem})
         Me.ToolStripDropDownButton1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.XxToolStripMenuItem, Me.FamiliaProductosToolStripMenuItem, Me.PromocionesToolStripMenuItem, Me.InformacionTicketToolStripMenuItem, Me.RetiroCajaToolStripMenuItem, Me.ImpresorasToolStripMenuItem})
+        Me.ToolStripDropDownButton1.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.ToolStripDropDownButton1.Image = Global.delevery.My.Resources.Resources.gear
         Me.ToolStripDropDownButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ToolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripDropDownButton1.Name = "ToolStripDropDownButton1"
-        Me.ToolStripDropDownButton1.Size = New System.Drawing.Size(96, 67)
+        Me.ToolStripDropDownButton1.Size = New System.Drawing.Size(123, 73)
         Me.ToolStripDropDownButton1.Text = "Mantenedores"
         Me.ToolStripDropDownButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
         'XxToolStripMenuItem
         '
         Me.XxToolStripMenuItem.Name = "XxToolStripMenuItem"
-        Me.XxToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
+        Me.XxToolStripMenuItem.Size = New System.Drawing.Size(208, 26)
         Me.XxToolStripMenuItem.Text = "Forma Pago"
         '
         'FamiliaProductosToolStripMenuItem
         '
         Me.FamiliaProductosToolStripMenuItem.Name = "FamiliaProductosToolStripMenuItem"
-        Me.FamiliaProductosToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
+        Me.FamiliaProductosToolStripMenuItem.Size = New System.Drawing.Size(208, 26)
         Me.FamiliaProductosToolStripMenuItem.Text = "Familia Productos"
         '
         'PromocionesToolStripMenuItem
         '
         Me.PromocionesToolStripMenuItem.Name = "PromocionesToolStripMenuItem"
-        Me.PromocionesToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
+        Me.PromocionesToolStripMenuItem.Size = New System.Drawing.Size(208, 26)
         Me.PromocionesToolStripMenuItem.Text = "Promociones"
+        '
+        'InformacionTicketToolStripMenuItem
+        '
+        Me.InformacionTicketToolStripMenuItem.Name = "InformacionTicketToolStripMenuItem"
+        Me.InformacionTicketToolStripMenuItem.Size = New System.Drawing.Size(208, 26)
+        Me.InformacionTicketToolStripMenuItem.Text = "Informacion Ticket"
         '
         'RetiroCajaToolStripMenuItem
         '
         Me.RetiroCajaToolStripMenuItem.Name = "RetiroCajaToolStripMenuItem"
-        Me.RetiroCajaToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
+        Me.RetiroCajaToolStripMenuItem.Size = New System.Drawing.Size(208, 26)
         Me.RetiroCajaToolStripMenuItem.Text = "Retiro Caja"
+        '
+        'ImpresorasToolStripMenuItem
+        '
+        Me.ImpresorasToolStripMenuItem.Name = "ImpresorasToolStripMenuItem"
+        Me.ImpresorasToolStripMenuItem.Size = New System.Drawing.Size(208, 26)
+        Me.ImpresorasToolStripMenuItem.Text = "Impresoras"
         '
         'ToolStripButton5
         '
+        Me.ToolStripButton5.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.ToolStripButton5.Image = Global.delevery.My.Resources.Resources.export1
         Me.ToolStripButton5.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ToolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripButton5.Name = "ToolStripButton5"
-        Me.ToolStripButton5.Size = New System.Drawing.Size(52, 67)
+        Me.ToolStripButton5.Size = New System.Drawing.Size(52, 73)
         Me.ToolStripButton5.Text = "Salir"
         Me.ToolStripButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
@@ -170,7 +188,7 @@ Partial Class delivery
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.uic_versionApp})
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 334)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(506, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(623, 22)
         Me.StatusStrip1.TabIndex = 2
         Me.StatusStrip1.Text = "StatusStrip1"
         '
@@ -180,23 +198,12 @@ Partial Class delivery
         Me.uic_versionApp.Name = "uic_versionApp"
         Me.uic_versionApp.Size = New System.Drawing.Size(0, 17)
         '
-        'InformacionTicketToolStripMenuItem
-        '
-        Me.InformacionTicketToolStripMenuItem.Name = "InformacionTicketToolStripMenuItem"
-        Me.InformacionTicketToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
-        Me.InformacionTicketToolStripMenuItem.Text = "Informacion Ticket"
-        'ImpresorasToolStripMenuItem
-        '
-        Me.ImpresorasToolStripMenuItem.Name = "ImpresorasToolStripMenuItem"
-        Me.ImpresorasToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
-        Me.ImpresorasToolStripMenuItem.Text = "Impresoras"
-        '
         'delivery
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.SteelBlue
-        Me.ClientSize = New System.Drawing.Size(506, 356)
+        Me.ClientSize = New System.Drawing.Size(623, 356)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)

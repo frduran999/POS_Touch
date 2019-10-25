@@ -54,3 +54,11 @@ C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Prueba\POS_Touch\ProyectoService\o
 C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Prueba\POS_Touch\ProyectoService\obj\Debug\ProyectoService.dll
 C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Prueba\POS_Touch\ProyectoService\obj\Debug\ProyectoService.xml
 C:\Users\Francisco\Desktop\Sistem_Duran\sushi\Prueba\POS_Touch\ProyectoService\obj\Debug\ProyectoService.pdb
+C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\ProyectoService\bin\Debug\ProyectoService.dll
+C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\ProyectoService\bin\Debug\ProyectoService.pdb
+C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\ProyectoService\bin\Debug\ProyectoService.xml
+C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\ProyectoService\obj\Debug\ProyectoService.Resources.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\ProyectoService\obj\Debug\ProyectoService.vbproj.GenerateResource.Cache
+C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\ProyectoService\obj\Debug\ProyectoService.dll
+C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\ProyectoService\obj\Debug\ProyectoService.xml
+C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\ProyectoService\obj\Debug\ProyectoService.pdb
