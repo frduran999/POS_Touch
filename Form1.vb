@@ -8,6 +8,16 @@ Public Class Form1
     Dim obc_RM As New ReportMan.RMan
     Private IdPago As String = 0
     Private tipoPago As String = ""
+    Private _usuario As Integer
+    Public Property Usuario As Integer
+        Get
+            Return _usuario
+        End Get
+        Set(value As Integer)
+            _usuario = value
+        End Set
+    End Property
+    
 
     Private Sub lawea2(ByVal sender As Object, ByVal e As EventArgs)
         Me.FlowLayoutPanel1.Controls.Clear()
@@ -16,7 +26,7 @@ Public Class Form1
         'MsgBox(idfamilia)
         If famili.Text <> "PROMOCION" Then
             Dim productos As DataTable
-            Dim sql As String = "SELECT productos.id_producto, productos.descripcion_producto, productos.precio FROM productos INNER JOIN FamiliaProducto ON productos.CodigoFamilia = FamiliaProducto.CodigoFamilia WHERE (productos.CodigoFamilia = '" & idfamilia & "')"
+            Dim sql As String = "SELECT productos.id_producto, productos.descripcion_producto, productos.precio FROM productos INNER JOIN FamiliaProducto ON productos.CodigoFamilia = FamiliaProducto.CodigoFamilia WHERE (productos.CodigoFamilia = '" & idfamilia & "' and productos.Estado = 1)"
             productos = myhelper.ExecuteDataSet(My.Settings.deliveryConnectionString, CommandType.Text, sql, Nothing, 60).Tables(0)
             For Each dr As DataRow In productos.Rows
                 Dim nombre As String = dr("descripcion_producto").ToString.Trim & vbCrLf & " $" & dr("precio")
@@ -108,8 +118,12 @@ Public Class Form1
 
 
     Private Sub btn_salir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_salir.Click
-        Me.Dispose()
-        Me.Close()
+        ' Me.Dispose()
+        'Dim frm As New delivery
+        'frm.IdUsuario = Usuario
+        'frm.Show()
+        Me.Hide()
+
     End Sub
 
     Private Sub DataGridView1_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
@@ -269,9 +283,12 @@ Public Class Form1
             Next
 
         End If
+        Dim frmT As New Rpt_ticket
+        frmT.idventa = id_doc_cab
+        frmT.Show()
+        frmT.Close()
         Try
-            'obc_RM.salida_a_pantalla("c:\delivery\ticket\ticket.rep", "TICKET", My.Settings.deliveryConnectionString, "NRO_TICKET=" & id_doc_cab)
-            'obc_RM.salida_a_impresora("c:\delivery\ticket\ticket.rep", "TICKET", My.Settings.deliveryConnectionString, "NRO_TICKET=" & id_doc_cab, oconfig.Impresora, 1, 1, oconfig.NroCopias)
+            
         Catch ex As Exception
             MsgBox("error" & ex.Message)
             'MsgBox("Reporte no disponible", vbInformation, "Error Reporte")
@@ -348,12 +365,13 @@ Public Class Form1
             End If
         Next
 
-        DetalleOferta = myhelper.ExecuteDataSet(My.Settings.deliveryConnectionString, CommandType.Text, "select Precio,Codigo,Descripcion_Producto from OfertaDetalle where IdOferta=" & idOferta, Nothing, 60).Tables(0)
+        DetalleOferta = myhelper.ExecuteDataSet(My.Settings.deliveryConnectionString, CommandType.Text, "select Precio,Codigo,Descripcion_Producto,Cantidad from OfertaDetalle where IdOferta=" & idOferta, Nothing, 60).Tables(0)
         For Each dts As DataRow In DetalleOferta.Rows
             precio = Val(dts("Precio"))
             codigo_item = dts("Codigo")
             descripcionProducto = dts("Descripcion_Producto")
-            Me.DataGridView1.Rows.Add(codigo_item.Trim, 1, descripcionProducto, precio, precio)
+            cantidad = dts("Cantidad")
+            Me.DataGridView1.Rows.Add(codigo_item.Trim, cantidad, descripcionProducto, precio, precio)
         Next
 
     End Sub
@@ -439,7 +457,7 @@ Public Class Form1
     Private Function redimensionarImagen(ByVal Stream As Stream, ByVal red As Boolean) As Image
         If red Then
             Dim img As Image = Image.FromStream(Stream)
-            Dim max As Integer = 80
+            Dim max As Integer = 70
             Dim h As Integer = img.Height
             Dim w As Integer = img.Width
             Dim newH As Integer

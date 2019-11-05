@@ -39,4 +39,23 @@
         Return dt
     End Function
 
+    Public Function Rpt_Ticket(idventa As Integer) As DataSet
+        Dim dt As New DataSet
+        Dim con As New Conexion
+        Dim sql As New dac.myhelper3
+        If con.Conexion Then
+            Try
+                sql.paramQUERY.Add("idventa", idventa)
+                dt = sql.ExecuteDataSet(con.con.ConnectionString, CommandType.StoredProcedure, "Rpt_VentasTicket", sql.paramQUERY, 60000)
+            Catch ex As Exception
+                dt = New DataSet
+                con.Desconectar()
+            End Try
+            Try
+                con.Desconectar()
+            Catch ex As Exception
+            End Try
+        End If
+        Return dt
+    End Function
 End Class

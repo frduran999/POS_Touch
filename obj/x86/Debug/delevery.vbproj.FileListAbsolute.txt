@@ -76,3 +76,4 @@ C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\obj\x86\Debug\delev
 C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\obj\x86\Debug\delevery.exe
 C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\obj\x86\Debug\delevery.xml
 C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\obj\x86\Debug\delevery.pdb
+C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\obj\x86\Debug\delevery.Rpt_ticket.resources

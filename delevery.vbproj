@@ -283,6 +283,18 @@
     <Compile Include="Mantenedores\Promocion.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ReportesVenta\RptTicket.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptTicket.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportesVenta\Rpt_ticket.Designer.vb">
+      <DependentUpon>Rpt_ticket.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesVenta\Rpt_ticket.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Retiro.Designer.vb">
       <DependentUpon>Retiro.vb</DependentUpon>
     </Compile>
@@ -383,6 +395,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenedores\Promocion.resx">
       <DependentUpon>Promocion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesVenta\RptTicket.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptTicket.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesVenta\Rpt_ticket.resx">
+      <DependentUpon>Rpt_ticket.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Retiro.resx">
       <DependentUpon>Retiro.vb</DependentUpon>

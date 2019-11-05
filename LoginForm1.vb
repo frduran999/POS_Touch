@@ -11,18 +11,12 @@ Public Class LoginForm1
             _IdUsuario = value
         End Set
     End Property
-    ' TODO: Insert code to perform custom authentication using the provided username and password 
-    ' (See http://go.microsoft.com/fwlink/?LinkId=35339).  
-    ' The custom principal can then be attached to the current thread's principal as follows: 
-    '     My.User.CurrentPrincipal = CustomPrincipal
-    ' where CustomPrincipal is the IPrincipal implementation used to perform authentication. 
-    ' Subsequently, My.User will return identity information encapsulated in the CustomPrincipal object
-    ' such as the username, display name, etc.
 
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK.Click
         Dim clave As String
         Dim Perfil As Integer
         Dim IdUsuario As Integer
+        Dim resultado As Boolean
         Try
             IdUsuario = DeliveryDataSet1.Tables("usuarios").Rows(Me.cbo_usuario.SelectedIndex).Item("id")
             Perfil = DeliveryDataSet1.Tables("usuarios").Rows(Me.cbo_usuario.SelectedIndex).Item("Perfil_Id")
@@ -34,6 +28,7 @@ Public Class LoginForm1
                     Case 1
                         Dim frm As New delivery
                         frm.es_supervisor = True
+                        frm.IdUsuario = IdUsuario
                         Me.Hide()
                         frm.ShowDialog()
                     Case 2
@@ -51,26 +46,29 @@ Public Class LoginForm1
                             frmCaja.ShowDialog()
                         Else
                             MsgBox("Caja Abierta", vbInformation, "Aviso")
-                            delivery.es_supervisor = False
-                            Me.Hide()
-                            Dim frmCerrar As New CerrarCaja
-                            frmCerrar.IdUsuario = IdUsuario
-                            frmCerrar.ShowDialog()
-                            Dim frm As New AbrirCaja
-                            frm.IdUsuario = IdUsuario
-                            frm.ShowDialog()
-                            Dim frmCaja As New Form1
-                            frmCaja.ShowDialog()
-                            System.Diagnostics.Process.GetCurrentProcess().Kill()
-                        End If
+                            resultado = MsgBox("Desea Cerrar Caja", vbOKCancel, "Confirmar")
+                            If resultado = True Then
+                                delivery.es_supervisor = False
+                                Me.Hide()
+                                Dim frmCerrar As New CerrarCaja
+                                frmCerrar.IdUsuario = IdUsuario
+                                frmCerrar.ShowDialog()
+                                Dim frm As New AbrirCaja
+                                frm.IdUsuario = IdUsuario
+                                frm.ShowDialog()
+                                Dim frmCaja As New Form1
+                                frmCaja.ShowDialog()
+                                System.Diagnostics.Process.GetCurrentProcess().Kill()
+                            Else
+                                Me.Hide()
+                                Dim frmCaja As New Form1
+                                frmCaja.ShowDialog()
+                                System.Diagnostics.Process.GetCurrentProcess().Kill()
+                            End If
 
+                        End If
                 End Select
-                Me.Close()
-                'If IsDBNull(DeliveryDataSet1.Tables("usuarios").Rows(Me.cbo_usuario.SelectedIndex).Item("supervisor")) OrElse DeliveryDataSet1.Tables("usuarios").Rows(Me.cbo_usuario.SelectedIndex).Item("supervisor") = 0 Then
-                '    delivery.es_supervisor = False
-                'Else
-                '    delivery.es_supervisor = True
-                'End If
+                Me.Hide()
             End If
         Catch ex As Exception
 
@@ -82,7 +80,7 @@ Public Class LoginForm1
     End Sub
 
     Private Sub LoginForm1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
-        System.Diagnostics.Process.GetCurrentProcess().Kill()
+        ' System.Diagnostics.Process.GetCurrentProcess().Kill()
     End Sub
 
     Private Sub LoginForm1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
