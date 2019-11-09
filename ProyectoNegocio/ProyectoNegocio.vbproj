@@ -67,6 +67,7 @@
     <Compile Include="Mantenedores\Impresoras.vb" />
     <Compile Include="Mantenedores\Ofertas.vb" />
     <Compile Include="Mantenedores\Productos.vb" />
+    <Compile Include="Mantenedores\RetiroCaja.vb" />
     <Compile Include="Mantenedores\Ventas.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

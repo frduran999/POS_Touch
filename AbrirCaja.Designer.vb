@@ -108,7 +108,10 @@ Partial Class AbrirCaja
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.uic_cancelar)
         Me.Controls.Add(Me.uic_aceptar)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "AbrirCaja"
+        Me.ShowIcon = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "AbrirCaja"
         Me.GroupBox1.ResumeLayout(False)

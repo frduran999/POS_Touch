@@ -118,12 +118,11 @@ Public Class Form1
 
 
     Private Sub btn_salir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_salir.Click
-        ' Me.Dispose()
+        'Me.Dispose()
         'Dim frm As New delivery
         'frm.IdUsuario = Usuario
         'frm.Show()
         Me.Hide()
-
     End Sub
 
     Private Sub DataGridView1_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
@@ -385,39 +384,39 @@ Public Class Form1
         Me.txt_vuelto.Text = Val(Me.txt_efectivo.Text) - Val(Me.txt_Total.Text)
     End Sub
 
-    Private Sub uic_luka_Click(sender As Object, e As EventArgs)
-        Dim lukas As Integer
-        lukas = Val(Me.txt_efectivo.Text) + 1000
+    'Private Sub uic_luka_Click(sender As Object, e As EventArgs)
+    '    Dim lukas As Integer
+    '    lukas = Val(Me.txt_efectivo.Text) + 1000
 
-        Me.txt_efectivo.Text = CStr(lukas)
-    End Sub
-    Private Sub uic_dosluka_Click(sender As Object, e As EventArgs)
-        Dim doslukas As Integer
-        doslukas = Val(Me.txt_efectivo.Text) + 2000
+    '    Me.txt_efectivo.Text = CStr(lukas)
+    'End Sub
+    'Private Sub uic_dosluka_Click(sender As Object, e As EventArgs)
+    '    Dim doslukas As Integer
+    '    doslukas = Val(Me.txt_efectivo.Text) + 2000
 
-        Me.txt_efectivo.Text = CStr(doslukas)
-    End Sub
+    '    Me.txt_efectivo.Text = CStr(doslukas)
+    'End Sub
 
-    Private Sub uic_cincoluka_Click(sender As Object, e As EventArgs)
-        Dim cincolukas As Integer
-        cincolukas = Val(Me.txt_efectivo.Text) + 5000
+    'Private Sub uic_cincoluka_Click(sender As Object, e As EventArgs)
+    '    Dim cincolukas As Integer
+    '    cincolukas = Val(Me.txt_efectivo.Text) + 5000
 
-        Me.txt_efectivo.Text = CStr(cincolukas)
-    End Sub
+    '    Me.txt_efectivo.Text = CStr(cincolukas)
+    'End Sub
 
-    Private Sub uic_diezluka_Click(sender As Object, e As EventArgs)
-        Dim diezlukas As Integer
-        diezlukas = Val(Me.txt_efectivo.Text) + 10000
+    'Private Sub uic_diezluka_Click(sender As Object, e As EventArgs)
+    '    Dim diezlukas As Integer
+    '    diezlukas = Val(Me.txt_efectivo.Text) + 10000
 
-        Me.txt_efectivo.Text = CStr(diezlukas)
-    End Sub
+    '    Me.txt_efectivo.Text = CStr(diezlukas)
+    'End Sub
 
-    Private Sub uic_veinteluka_Click(sender As Object, e As EventArgs)
-        Dim veintelukas As Integer
-        veintelukas = Val(Me.txt_efectivo.Text) + 20000
+    'Private Sub uic_veinteluka_Click(sender As Object, e As EventArgs)
+    '    Dim veintelukas As Integer
+    '    veintelukas = Val(Me.txt_efectivo.Text) + 20000
 
-        Me.txt_efectivo.Text = CStr(veintelukas)
-    End Sub
+    '    Me.txt_efectivo.Text = CStr(veintelukas)
+    'End Sub
 
     Private Sub btn_limpiar_Click(sender As Object, e As EventArgs) Handles btn_limpiar.Click
         limpiar()
@@ -488,4 +487,10 @@ Public Class Form1
             Return img
         End If
     End Function
+
+    Private Sub RetiroCaja_Click(sender As Object, e As EventArgs) Handles RetiroCaja.Click
+        Dim frmRetiro As New Retiro
+        frmRetiro.Usuario = Usuario
+        frmRetiro.ShowDialog()
+    End Sub
 End Class

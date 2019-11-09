@@ -64,4 +64,8 @@ Public Class AbrirCaja
     Private Sub apertura_caja_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.uic_monto.Focus()
     End Sub
+
+    Private Sub AbrirCaja_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        'System.Diagnostics.Process.GetCurrentProcess().Kill()
+    End Sub
 End Class

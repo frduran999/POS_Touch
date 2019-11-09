@@ -16,7 +16,7 @@ Public Class LoginForm1
         Dim clave As String
         Dim Perfil As Integer
         Dim IdUsuario As Integer
-        Dim resultado As Boolean
+        Dim resultado As DialogResult
         Try
             IdUsuario = DeliveryDataSet1.Tables("usuarios").Rows(Me.cbo_usuario.SelectedIndex).Item("id")
             Perfil = DeliveryDataSet1.Tables("usuarios").Rows(Me.cbo_usuario.SelectedIndex).Item("Perfil_Id")
@@ -47,7 +47,7 @@ Public Class LoginForm1
                         Else
                             MsgBox("Caja Abierta", vbInformation, "Aviso")
                             resultado = MsgBox("Desea Cerrar Caja", vbOKCancel, "Confirmar")
-                            If resultado = True Then
+                            If resultado = vbOK Then
                                 delivery.es_supervisor = False
                                 Me.Hide()
                                 Dim frmCerrar As New CerrarCaja
@@ -57,6 +57,7 @@ Public Class LoginForm1
                                 frm.IdUsuario = IdUsuario
                                 frm.ShowDialog()
                                 Dim frmCaja As New Form1
+                                frmCaja.Usuario = IdUsuario
                                 frmCaja.ShowDialog()
                                 System.Diagnostics.Process.GetCurrentProcess().Kill()
                             Else
@@ -80,7 +81,7 @@ Public Class LoginForm1
     End Sub
 
     Private Sub LoginForm1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
-        ' System.Diagnostics.Process.GetCurrentProcess().Kill()
+        System.Diagnostics.Process.GetCurrentProcess().Kill()
     End Sub
 
     Private Sub LoginForm1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
