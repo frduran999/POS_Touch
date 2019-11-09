@@ -85,6 +85,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Reporte\Reporte.vb" />
+    <Compile Include="Venta\Venta.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -106,6 +107,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\proyectoDTO\proyectoDTO.vbproj">
+      <Project>{ebac20fb-9961-44da-ae1e-15954e6ffcec}</Project>
+      <Name>proyectoDTO</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ProyectoService\ProyectoService.vbproj">
       <Project>{8e277694-ec57-41b6-99db-07f8e8be00aa}</Project>
       <Name>ProyectoService</Name>

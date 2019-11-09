@@ -128,6 +128,12 @@
     <Compile Include="DATASET\dts_mantenedor.vb">
       <DependentUpon>dts_mantenedor.xsd</DependentUpon>
     </Compile>
+    <Compile Include="delivery.Designer.vb">
+      <DependentUpon>delivery.vb</DependentUpon>
+    </Compile>
+    <Compile Include="delivery.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Mantenedores\Buscar_producto.Designer.vb">
       <DependentUpon>Buscar_producto.vb</DependentUpon>
     </Compile>
@@ -226,12 +232,6 @@
     <Compile Include="LoginForm1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="delivery.Designer.vb">
-      <DependentUpon>delivery.vb</DependentUpon>
-    </Compile>
-    <Compile Include="delivery.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Mantenedores\Reporte\RPT_VentasDiarias.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -328,6 +328,9 @@
     <EmbeddedResource Include="CerrarCaja.resx">
       <DependentUpon>CerrarCaja.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="delivery.resx">
+      <DependentUpon>delivery.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mantenedores\Buscar_producto.resx">
       <DependentUpon>Buscar_producto.vb</DependentUpon>
     </EmbeddedResource>
@@ -380,9 +383,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm1.resx">
       <DependentUpon>LoginForm1.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="delivery.resx">
-      <DependentUpon>delivery.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -548,6 +548,10 @@
     <None Include="Resources\luka.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\proyectoDTO\proyectoDTO.vbproj">
+      <Project>{ebac20fb-9961-44da-ae1e-15954e6ffcec}</Project>
+      <Name>proyectoDTO</Name>
+    </ProjectReference>
     <ProjectReference Include="ProyectoNegocio\ProyectoNegocio.vbproj">
       <Project>{6f8cacc2-ff3a-40a2-8efd-c3c8d9b85b0f}</Project>
       <Name>ProyectoNegocio</Name>

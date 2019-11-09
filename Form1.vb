@@ -2,6 +2,7 @@
 Imports System.ComponentModel
 Imports System.IO
 Imports System.Drawing.Imaging
+Imports proyectoDTO
 
 Public Class Form1
     Dim myhelper As New dac.myhelper2
@@ -9,6 +10,7 @@ Public Class Form1
     Private IdPago As String = 0
     Private tipoPago As String = ""
     Private _usuario As Integer
+
     Public Property Usuario As Integer
         Get
             Return _usuario
@@ -17,8 +19,6 @@ Public Class Form1
             _usuario = value
         End Set
     End Property
-    
-
     Private Sub lawea2(ByVal sender As Object, ByVal e As EventArgs)
         Me.FlowLayoutPanel1.Controls.Clear()
         Dim famili As System.Windows.Forms.Button = sender
@@ -56,8 +56,6 @@ Public Class Form1
         End If
 
     End Sub
-
-    'Paso el detalle a la grilla
     Private Sub lawea(ByVal sender As Object, ByVal e As EventArgs)
         If Me.txt_cantidad.Text = "0" Then
             MsgBox("Cantidad debe ser mayor a 0", vbInformation, "Aviso")
@@ -114,22 +112,13 @@ Public Class Form1
         End If
 
     End Sub
-
-
-
     Private Sub btn_salir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_salir.Click
-        'Me.Dispose()
-        'Dim frm As New delivery
-        'frm.IdUsuario = Usuario
-        'frm.Show()
         Me.Hide()
     End Sub
-
     Private Sub DataGridView1_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
         Try
             If DataGridView1.RowCount > 0 Then
                 If DataGridView1.Columns(e.ColumnIndex).Name = "Eliminar" Then
-                    'elimina linea
                     DataGridView1.Rows.RemoveAt(e.RowIndex)
                     calculo_total_venta()
                 End If
@@ -139,7 +128,6 @@ Public Class Form1
         End Try
 
     End Sub
-
     Private Sub calculo_total_venta()
         Dim total As Integer
         For i As Integer = 0 To Me.DataGridView1.Rows.Count - 1
@@ -147,14 +135,10 @@ Public Class Form1
         Next
         Me.txt_Total.Text = total
     End Sub
-
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'FormaPago_dateset.forma_pago' table. You can move, or remove it, as needed.
         Me.Forma_pagoTableAdapter.Fill(Me.FormaPago_dateset.forma_pago)
-        ' llenarCb()
         Me.cbo_formapago.SelectedIndex = -1
 
-        'agrego familia al formulario
         Me.FlowLayoutFamilia.Controls.Clear()
         Dim familia As DataTable
         familia = myhelper.ExecuteDataSet(My.Settings.deliveryConnectionString, CommandType.Text, "SELECT fp.CodigoFamilia, fp.Familia, Ff.FotoNombre FROM FamiliaProducto AS fp LEFT OUTER JOIN FamiliaFoto AS Ff ON fp.CodigoFamilia = Ff.FamiliaId", Nothing, 60).Tables(0)
@@ -172,11 +156,10 @@ Public Class Form1
                 obcontrol.Controls(0).Text = NFamilia
                 obcontrol.Controls(0).Name = codigoFamilia
                 If dr("FotoNombre").ToString.ToUpper = "SINFOTO.JPG" Then
-                    obcontrol.Controls(0).BackgroundImage = My.Resources.SinFoto 'ByteArrayToImage(ImageToByteArray(My.Resources.SinFoto), True)
+                    obcontrol.Controls(0).BackgroundImage = My.Resources.SinFoto
                 Else
                     obcontrol.Controls(0).BackgroundImage = ByteArrayToImage(ImageToByteArray(Image.FromFile(ruta)), True)
                 End If
-
 
                 AddHandler CType(obcontrol.Controls(0), Button).Click, AddressOf lawea2
 
@@ -189,7 +172,6 @@ Public Class Form1
         Next
 
     End Sub
-
     Private Sub llenarCb()
         Try
             Dim dt As DataTable
@@ -205,7 +187,6 @@ Public Class Form1
         Catch ex As Exception
         End Try
     End Sub
-
     Private Sub txt_efectivo_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt_efectivo.KeyPress
         Dim valida As String = "0123456789" & Convert.ToChar(8)
         If (valida.Contains("" + e.KeyChar)) Then
@@ -220,17 +201,12 @@ Public Class Form1
         End If
 
     End Sub
-
     Private Sub btn_aceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_aceptar.Click
         If Me.txt_Total.Text = "" Or Me.txt_Total.Text = "0" Then
             MsgBox("No se puede crear Ticket sin detalle o Total = 0", vbCritical)
             Exit Sub
         End If
-        'If Me.cbo_formapago.Text = "" Then
-        '    MsgBox("Debe ingresar forma de pago", vbCritical)
-        '    Me.cbo_formapago.Focus()
-        '    Exit Sub
-        'End If
+
         If Me.IdPago = 0 Then
             MsgBox("Debe ingresar forma de pago", vbCritical)
             Exit Sub
@@ -245,39 +221,43 @@ Public Class Form1
             Exit Sub
         End If
         Dim cabecera As DataTable
-        Dim dts As New ticket
-        Dim func As New dac.vale
+        Dim dts As New proyectoDTO.ticket
+        Dim func As New ProyectoNegocio.Venta
 
         dts.get_fecha = Format(Now, "yyyy-dd-MM")
         dts.get_forma_pago = tipoPago
         dts.get_total = Me.txt_Total.Text.Trim
         dts.get_efectivo = Me.txt_efectivo.Text.Trim
+        dts.idUsuario = Usuario
 
-        If func.cab_ticket(dts) Then
+        Dim id_doc_cab As String = ""
+        Try
+            id_doc_cab = func.GrabarCab(dts)
+        Catch ex As Exception
+            Telerik.WinControls.RadMessageBox.Show("A ocurrido un error" & vbCrLf & id_doc_cab, "Aviso")
+            Exit Sub
+        End Try
 
-        End If
 
-        cabecera = myhelper.ExecuteDataSet(My.Settings.deliveryConnectionString, CommandType.Text, "select max(id_doc) id from cabecera_doc", Nothing, 60).Tables(0)
-        Dim id_doc_cab As Integer
-        For Each dr As DataRow In cabecera.Rows
-            id_doc_cab = dr("id")
-        Next
-        '  Dim num_linea As Integer = 'Me.DataGridView1.Rows.Count - 1
+
+
+        'cabecera = myhelper.ExecuteDataSet(My.Settings.deliveryConnectionString, CommandType.Text, "select max(id_doc) id from cabecera_doc", Nothing, 60).Tables(0)
+        'Dim id_doc_cab As Integer
+        'For Each dr As DataRow In cabecera.Rows
+        '    id_doc_cab = dr("id")
+        'Next
         Dim num_linea As Integer = Me.DataGridView1.Rows.Count - 1
 
         If DataGridView1.Rows.Count >= 0 Then
-
             For i = 0 To num_linea
-                Dim dts2 As New ticket
-
+                Dim dts2 As New proyectoDTO.ticket
                 dts2.get_id_doc = id_doc_cab
                 dts2.get_descripcion = Me.DataGridView1.Rows(i).Cells(2).Value
                 dts2.get_precio = Me.DataGridView1.Rows(i).Cells(3).Value
                 dts2.get_total_item = Me.DataGridView1.Rows(i).Cells(4).Value
                 dts2.get_cantidad = Me.DataGridView1.Rows(i).Cells(1).Value
                 dts2.get_codigo = Me.DataGridView1.Rows(i).Cells(0).Value
-                If func.detalle_ticket(dts2) Then
-                    'ok
+                If func.DetalleTicket(dts2) = "OK" Then
                 End If
             Next
 
@@ -287,16 +267,13 @@ Public Class Form1
         frmT.Show()
         frmT.Close()
         Try
-            
+
         Catch ex As Exception
             MsgBox("error" & ex.Message)
-            'MsgBox("Reporte no disponible", vbInformation, "Error Reporte")
         End Try
 
         limpiar()
-        'Me.GrBillete.Visible = False
     End Sub
-
     Private Sub limpiar()
         Me.txt_efectivo.Text = ""
         Me.txt_cantidad.Text = ""
@@ -306,19 +283,15 @@ Public Class Form1
         Me.cbo_formapago.SelectedIndex = -1
         Me.txt_efectivo.Enabled = False
     End Sub
-
     Private Sub cbo_formapago_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_formapago.SelectedIndexChanged
         If Me.cbo_formapago.Text.ToUpper <> "CONTADO" Then
             Me.txt_efectivo.Text = Me.txt_Total.Text
             Me.txt_vuelto.Text = "0"
-            ' Me.GrBillete.Visible = False
         Else
             Me.txt_efectivo.Text = "0"
-            ' Me.GrBillete.Visible = True
             Me.txt_vuelto.Text = Val(Me.txt_efectivo.Text) - Val(Me.txt_Total.Text)
         End If
     End Sub
-
     Private Sub txt_cantidad_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_cantidad.KeyPress
         Dim valida As String = "0123456789" & Convert.ToChar(8)
         If (valida.Contains("" + e.KeyChar)) Then
@@ -331,7 +304,6 @@ Public Class Form1
             SendKeys.Send("{TAB}")
         End If
     End Sub
-    ' para la pasar item de las promociones
     Private Sub lawea3(ByVal sender As Object, ByVal e As EventArgs)
         Dim id As String = sender.name
         Dim articulo As String = sender.text.trim
@@ -339,7 +311,6 @@ Public Class Form1
 
         calculo_total_venta()
     End Sub
-    'paso la promocion a la grilla del detalle
     Private Sub para_grilla_oferta(ByVal idOferta As Integer, ByVal articulo As String)
         Dim precio As Integer = 0
         Dim cantidad As Integer = 0
@@ -374,76 +345,34 @@ Public Class Form1
         Next
 
     End Sub
-
     Private Sub uic_reloj_Tick(sender As Object, e As EventArgs) Handles uic_reloj.Tick
         Dim hora_formulario As String = Date.Now.ToLongTimeString
         Me.uic_FechaHora.Text = Format(Now, "dd-MM-yyyy") & "   " & hora_formulario
     End Sub
-
     Private Sub txt_efectivo_TextChanged(sender As Object, e As EventArgs) Handles txt_efectivo.TextChanged
         Me.txt_vuelto.Text = Val(Me.txt_efectivo.Text) - Val(Me.txt_Total.Text)
     End Sub
-
-    'Private Sub uic_luka_Click(sender As Object, e As EventArgs)
-    '    Dim lukas As Integer
-    '    lukas = Val(Me.txt_efectivo.Text) + 1000
-
-    '    Me.txt_efectivo.Text = CStr(lukas)
-    'End Sub
-    'Private Sub uic_dosluka_Click(sender As Object, e As EventArgs)
-    '    Dim doslukas As Integer
-    '    doslukas = Val(Me.txt_efectivo.Text) + 2000
-
-    '    Me.txt_efectivo.Text = CStr(doslukas)
-    'End Sub
-
-    'Private Sub uic_cincoluka_Click(sender As Object, e As EventArgs)
-    '    Dim cincolukas As Integer
-    '    cincolukas = Val(Me.txt_efectivo.Text) + 5000
-
-    '    Me.txt_efectivo.Text = CStr(cincolukas)
-    'End Sub
-
-    'Private Sub uic_diezluka_Click(sender As Object, e As EventArgs)
-    '    Dim diezlukas As Integer
-    '    diezlukas = Val(Me.txt_efectivo.Text) + 10000
-
-    '    Me.txt_efectivo.Text = CStr(diezlukas)
-    'End Sub
-
-    'Private Sub uic_veinteluka_Click(sender As Object, e As EventArgs)
-    '    Dim veintelukas As Integer
-    '    veintelukas = Val(Me.txt_efectivo.Text) + 20000
-
-    '    Me.txt_efectivo.Text = CStr(veintelukas)
-    'End Sub
-
     Private Sub btn_limpiar_Click(sender As Object, e As EventArgs) Handles btn_limpiar.Click
         limpiar()
     End Sub
-
     Private Sub uic_limpiaEfectivo_Click(sender As Object, e As EventArgs)
         Me.txt_efectivo.Text = "0"
     End Sub
-
     Private Sub btn_Efectivo_Click(sender As Object, e As EventArgs) Handles btn_Efectivo.Click
-        Me.IdPago = 1  'Efectivo
+        Me.IdPago = 1
         Me.tipoPago = "Efectivo"
         txt_efectivo.Enabled = True
         Me.txt_efectivo.Text = ""
         Me.txt_efectivo.Focus()
         Me.txt_vuelto.Text = Val(Me.txt_efectivo.Text) - Val(Me.txt_Total.Text)
     End Sub
-
     Private Sub btn_Tarjeta_Click(sender As Object, e As EventArgs) Handles btn_Tarjeta.Click
-        Me.IdPago = 2 'tarjeta
+        Me.IdPago = 2
         Me.tipoPago = "Tarjeta"
         Me.txt_efectivo.Enabled = False
         Me.txt_efectivo.Text = Me.txt_Total.Text
         Me.txt_vuelto.Text = "0"
     End Sub
-
-
     Public Function ByteArrayToImage(ByVal byteArrayIn As Byte(), ByVal red As Boolean) As Image
         Dim ms As New MemoryStream(byteArrayIn)
         Return redimensionarImagen(ms, red)
@@ -487,10 +416,10 @@ Public Class Form1
             Return img
         End If
     End Function
-
     Private Sub RetiroCaja_Click(sender As Object, e As EventArgs) Handles RetiroCaja.Click
         Dim frmRetiro As New Retiro
         frmRetiro.Usuario = Usuario
         frmRetiro.ShowDialog()
     End Sub
+
 End Class

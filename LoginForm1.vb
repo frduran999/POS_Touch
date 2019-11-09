@@ -85,7 +85,6 @@ Public Class LoginForm1
     End Sub
 
     Private Sub LoginForm1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'DeliveryDataSet1.usuarios' table. You can move, or remove it, as needed.
         Me.UsuariosTableAdapter.Fill(Me.DeliveryDataSet1.usuarios)
         Me.cbo_usuario.SelectedValue = -1
 

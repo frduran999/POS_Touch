@@ -90,7 +90,15 @@
             codigo = value
         End Set
     End Property
-
+    Private _Idusuario As Integer
+    Public Property idUsuario As Integer
+        Get
+            Return _Idusuario
+        End Get
+        Set(value As Integer)
+            _Idusuario = value
+        End Set
+    End Property
     Public Sub New(ByVal fecha As String, ByVal forma_pago As String, ByVal total As Integer, ByVal efectivo As Integer, ByVal descripcion As String, ByVal cantidad As Integer, ByVal precio As Integer, ByVal total_item As Integer, ByVal id_doc As Integer, ByVal codigo As Integer)
         get_fecha = fecha
         get_forma_pago = forma_pago
