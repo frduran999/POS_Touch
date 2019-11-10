@@ -80,12 +80,6 @@ Public Class Retiro
             Exit Sub
         End If
 
-        If Not validador.validoNumero(Me.uic_monto.Text.Trim, 0) Then
-            MsgBox("Debe Ingresar Monto")
-            Me.uic_monto.Focus()
-            Exit Sub
-        End If
-
         Dim Monto As Integer = CInt(uic_monto_total_retiro.Text)
         Dim Glosa As String = txtGlosa.Text
         Dim Neg As New RetiroCaja

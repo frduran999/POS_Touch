@@ -24,7 +24,7 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
@@ -59,6 +59,7 @@ Partial Class Form1
         Me.btn_Efectivo = New System.Windows.Forms.Button()
         Me.btn_Tarjeta = New System.Windows.Forms.Button()
         Me.RetiroCaja = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FormapagoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FormaPago_dateset, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -142,8 +143,8 @@ Partial Class Form1
         '
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(136, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(220, Byte), Integer))
@@ -304,7 +305,7 @@ Partial Class Form1
         '
         Me.btn_aceptar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btn_aceptar.Image = Global.delevery.My.Resources.Resources.check
-        Me.btn_aceptar.Location = New System.Drawing.Point(740, 471)
+        Me.btn_aceptar.Location = New System.Drawing.Point(850, 471)
         Me.btn_aceptar.Name = "btn_aceptar"
         Me.btn_aceptar.Size = New System.Drawing.Size(43, 41)
         Me.btn_aceptar.TabIndex = 15
@@ -314,7 +315,7 @@ Partial Class Form1
         '
         Me.btn_salir.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btn_salir.Image = Global.delevery.My.Resources.Resources._Exit
-        Me.btn_salir.Location = New System.Drawing.Point(898, 471)
+        Me.btn_salir.Location = New System.Drawing.Point(965, 471)
         Me.btn_salir.Name = "btn_salir"
         Me.btn_salir.Size = New System.Drawing.Size(46, 41)
         Me.btn_salir.TabIndex = 1
@@ -384,7 +385,7 @@ Partial Class Form1
         '
         Me.btn_limpiar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btn_limpiar.Image = Global.delevery.My.Resources.Resources.Refresh1
-        Me.btn_limpiar.Location = New System.Drawing.Point(819, 471)
+        Me.btn_limpiar.Location = New System.Drawing.Point(913, 471)
         Me.btn_limpiar.Name = "btn_limpiar"
         Me.btn_limpiar.Size = New System.Drawing.Size(46, 41)
         Me.btn_limpiar.TabIndex = 24
@@ -428,11 +429,24 @@ Partial Class Form1
         Me.ToolTip1.SetToolTip(Me.RetiroCaja, "RetiroCaja")
         Me.RetiroCaja.UseVisualStyleBackColor = True
         '
+        'Button1
+        '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(721, 471)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(86, 41)
+        Me.Button1.TabIndex = 28
+        Me.Button1.Text = "CIERRE CAJA"
+        Me.ToolTip1.SetToolTip(Me.Button1, "RetiroCaja")
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1048, 537)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.RetiroCaja)
         Me.Controls.Add(Me.btn_Tarjeta)
         Me.Controls.Add(Me.btn_Efectivo)
@@ -499,5 +513,6 @@ Partial Class Form1
     Friend WithEvents id_productoGrid As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Eliminar As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents RetiroCaja As System.Windows.Forms.Button
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 
 End Class

@@ -42,8 +42,9 @@ Public Class LoginForm1
                             Dim frm As New AbrirCaja
                             frm.IdUsuario = IdUsuario
                             frm.ShowDialog()
-                            Dim frmCaja As New Form1
-                            frmCaja.ShowDialog()
+                            'Dim frmCaja As New Form1
+                            'frmCaja.Usuario = IdUsuario
+                            'frmCaja.ShowDialog()
                         Else
                             MsgBox("Caja Abierta", vbInformation, "Aviso")
                             resultado = MsgBox("Desea Cerrar Caja", vbOKCancel, "Confirmar")

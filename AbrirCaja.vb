@@ -45,7 +45,6 @@ Public Class AbrirCaja
             End If
 
         Else
-
             Dim vmonto As Long = IIf(Me.uic_monto.Text = "", 0, CInt(Me.uic_monto.Text))
             Dim vglosa As String = Me.uic_glosa.Text.Trim
             Dim dt As New DataTable
@@ -53,7 +52,11 @@ Public Class AbrirCaja
             dt = Neg.AbrirCaja(IdUsuario, vmonto, vglosa)
             MsgBox("Apertura registrada exitosamente", vbInformation, "Aviso")
             limpiar()
+            Me.Hide()
             Me.Close()
+            Dim frm As New Form1
+            frm.Usuario = IdUsuario
+            frm.ShowDialog()
         End If
     End Sub
     Private Sub limpiar()

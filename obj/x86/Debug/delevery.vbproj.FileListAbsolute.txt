@@ -123,3 +123,4 @@ C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch___\obj\x86\Debug\de
 C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch___\obj\x86\Debug\delevery.usuario.resources
 C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch___\obj\x86\Debug\delevery.vbproj.GenerateResource.Cache
 C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch___\obj\x86\Debug\delevery.exe.licenses
+C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\obj\x86\Debug\delevery.CierreCaja.resources

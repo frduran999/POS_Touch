@@ -14,12 +14,21 @@ Public Class CerrarCaja
 
 
     Private Sub btnCerrarCaja_Click(sender As Object, e As EventArgs) Handles btnCerrarCaja.Click
-        Dim Neg As New Abrir_Caja
-        Dim vresp As String = Neg.CerrarCaja(IdUsuario)
-        If vresp = "OK" Then
-            MsgBox("Caja Cerrada", vbInformation, "Aviso")
-            Me.Close()
-        End If
-
+        Dim resp As String = ""
+        Dim neg As New ProyectoNegocio.Abrir_Caja
+        resp = neg.CerrarCaja(IdUsuario)
+        Try
+            If CInt(resp) > 0 Then
+                Dim frm As New CierreCaja
+                frm.IdUsuario = IdUsuario
+                frm.IdCaja = resp
+                frm.ShowDialog()
+                Telerik.WinControls.RadMessageBox.Show("Caja Cerrada", "Caja")
+            Else
+                Telerik.WinControls.RadMessageBox.Show("A ocurrido un error" & vbCrLf & resp, "Aviso")
+            End If
+        Catch ex As Exception
+        End Try
+        Me.Close()
     End Sub
 End Class

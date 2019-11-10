@@ -31,6 +31,8 @@ Partial Public Class deliveryDataSet1
     
     Private tableparametros As parametrosDataTable
     
+    Private tableRpt_CierreCaja As Rpt_CierreCajaDataTable
+    
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -68,6 +70,9 @@ Partial Public Class deliveryDataSet1
             End If
             If (Not (ds.Tables("parametros")) Is Nothing) Then
                 MyBase.Tables.Add(New parametrosDataTable(ds.Tables("parametros")))
+            End If
+            If (Not (ds.Tables("Rpt_CierreCaja")) Is Nothing) Then
+                MyBase.Tables.Add(New Rpt_CierreCajaDataTable(ds.Tables("Rpt_CierreCaja")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -113,6 +118,16 @@ Partial Public Class deliveryDataSet1
     Public ReadOnly Property parametros() As parametrosDataTable
         Get
             Return Me.tableparametros
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property Rpt_CierreCaja() As Rpt_CierreCajaDataTable
+        Get
+            Return Me.tableRpt_CierreCaja
         End Get
     End Property
     
@@ -192,6 +207,9 @@ Partial Public Class deliveryDataSet1
             If (Not (ds.Tables("parametros")) Is Nothing) Then
                 MyBase.Tables.Add(New parametrosDataTable(ds.Tables("parametros")))
             End If
+            If (Not (ds.Tables("Rpt_CierreCaja")) Is Nothing) Then
+                MyBase.Tables.Add(New Rpt_CierreCajaDataTable(ds.Tables("Rpt_CierreCaja")))
+            End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
             Me.Namespace = ds.Namespace
@@ -242,6 +260,12 @@ Partial Public Class deliveryDataSet1
                 Me.tableparametros.InitVars
             End If
         End If
+        Me.tableRpt_CierreCaja = CType(MyBase.Tables("Rpt_CierreCaja"),Rpt_CierreCajaDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tableRpt_CierreCaja) Is Nothing) Then
+                Me.tableRpt_CierreCaja.InitVars
+            End If
+        End If
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -258,6 +282,8 @@ Partial Public Class deliveryDataSet1
         MyBase.Tables.Add(Me.tableRpt_Ventas)
         Me.tableparametros = New parametrosDataTable()
         MyBase.Tables.Add(Me.tableparametros)
+        Me.tableRpt_CierreCaja = New Rpt_CierreCajaDataTable()
+        MyBase.Tables.Add(Me.tableRpt_CierreCaja)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -275,6 +301,12 @@ Partial Public Class deliveryDataSet1
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Private Function ShouldSerializeparametros() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Private Function ShouldSerializeRpt_CierreCaja() As Boolean
         Return false
     End Function
     
@@ -344,6 +376,9 @@ Partial Public Class deliveryDataSet1
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Public Delegate Sub parametrosRowChangeEventHandler(ByVal sender As Object, ByVal e As parametrosRowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Public Delegate Sub Rpt_CierreCajaRowChangeEventHandler(ByVal sender As Object, ByVal e As Rpt_CierreCajaRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
@@ -1034,16 +1069,336 @@ Partial Public Class deliveryDataSet1
         Private columnRznSoc As Global.System.Data.DataColumn
         
         Private columnGiro As Global.System.Data.DataColumn
-
+        
         Private columnDireccion As Global.System.Data.DataColumn
-
+        
         Private columnComuna As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "parametros"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property RutEmpresaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnRutEmpresa
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property RznSocColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnRznSoc
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property GiroColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnGiro
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property DireccionColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnDireccion
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property ComunaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnComuna
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As parametrosRow
+            Get
+                Return CType(Me.Rows(index),parametrosRow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event parametrosRowChanging As parametrosRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event parametrosRowChanged As parametrosRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event parametrosRowDeleting As parametrosRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event parametrosRowDeleted As parametrosRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overloads Sub AddparametrosRow(ByVal row As parametrosRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overloads Function AddparametrosRow(ByVal RutEmpresa As String, ByVal RznSoc As String, ByVal Giro As String, ByVal Direccion As String, ByVal Comuna As String) As parametrosRow
+            Dim rowparametrosRow As parametrosRow = CType(Me.NewRow,parametrosRow)
+            Dim columnValuesArray() As Object = New Object() {RutEmpresa, RznSoc, Giro, Direccion, Comuna}
+            rowparametrosRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowparametrosRow)
+            Return rowparametrosRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As parametrosDataTable = CType(MyBase.Clone,parametrosDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New parametrosDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnRutEmpresa = MyBase.Columns("RutEmpresa")
+            Me.columnRznSoc = MyBase.Columns("RznSoc")
+            Me.columnGiro = MyBase.Columns("Giro")
+            Me.columnDireccion = MyBase.Columns("Direccion")
+            Me.columnComuna = MyBase.Columns("Comuna")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnRutEmpresa = New Global.System.Data.DataColumn("RutEmpresa", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnRutEmpresa)
+            Me.columnRznSoc = New Global.System.Data.DataColumn("RznSoc", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnRznSoc)
+            Me.columnGiro = New Global.System.Data.DataColumn("Giro", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnGiro)
+            Me.columnDireccion = New Global.System.Data.DataColumn("Direccion", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnDireccion)
+            Me.columnComuna = New Global.System.Data.DataColumn("Comuna", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnComuna)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function NewparametrosRow() As parametrosRow
+            Return CType(Me.NewRow,parametrosRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New parametrosRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(parametrosRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.parametrosRowChangedEvent) Is Nothing) Then
+                RaiseEvent parametrosRowChanged(Me, New parametrosRowChangeEvent(CType(e.Row,parametrosRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.parametrosRowChangingEvent) Is Nothing) Then
+                RaiseEvent parametrosRowChanging(Me, New parametrosRowChangeEvent(CType(e.Row,parametrosRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.parametrosRowDeletedEvent) Is Nothing) Then
+                RaiseEvent parametrosRowDeleted(Me, New parametrosRowChangeEvent(CType(e.Row,parametrosRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.parametrosRowDeletingEvent) Is Nothing) Then
+                RaiseEvent parametrosRowDeleting(Me, New parametrosRowChangeEvent(CType(e.Row,parametrosRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub RemoveparametrosRow(ByVal row As parametrosRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As deliveryDataSet1 = New deliveryDataSet1()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "parametrosDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class Rpt_CierreCajaDataTable
+        Inherits Global.System.Data.TypedTableBase(Of Rpt_CierreCajaRow)
+        
+        Private columnid_doc As Global.System.Data.DataColumn
+        
+        Private columnforma_pago As Global.System.Data.DataColumn
+        
+        Private columnfecha_emision As Global.System.Data.DataColumn
+        
+        Private columntotal As Global.System.Data.DataColumn
+        
+        Private columnefectivo As Global.System.Data.DataColumn
+        
+        Private columnvuelto As Global.System.Data.DataColumn
+        
+        Private columnNroRetiro As Global.System.Data.DataColumn
+        
+        Private columnMontoRetiro As Global.System.Data.DataColumn
+        
+        Private columnGlosa As Global.System.Data.DataColumn
+        
+        Private columnMontoApertura As Global.System.Data.DataColumn
+        
+        Private columnFecha As Global.System.Data.DataColumn
+        
+        Private columnusuario As Global.System.Data.DataColumn
+        
+        Private columntipo As Global.System.Data.DataColumn
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Sub New()
             MyBase.New()
-            Me.TableName = "parametros"
+            Me.TableName = "Rpt_CierreCaja"
             Me.BeginInit()
             Me.InitClass()
             Me.EndInit()
@@ -1076,41 +1431,105 @@ Partial Public Class deliveryDataSet1
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public ReadOnly Property RutEmpresaColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property id_docColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnRutEmpresa
+                Return Me.columnid_doc
             End Get
         End Property
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public ReadOnly Property RznSocColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property forma_pagoColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnRznSoc
+                Return Me.columnforma_pago
             End Get
         End Property
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public ReadOnly Property GiroColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property fecha_emisionColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnGiro
+                Return Me.columnfecha_emision
             End Get
         End Property
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public ReadOnly Property DireccionColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property totalColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnDireccion
+                Return Me.columntotal
             End Get
         End Property
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public ReadOnly Property ComunaColumn() As Global.System.Data.DataColumn
+        Public ReadOnly Property efectivoColumn() As Global.System.Data.DataColumn
             Get
-                Return Me.columnComuna
+                Return Me.columnefectivo
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property vueltoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnvuelto
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property NroRetiroColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnNroRetiro
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property MontoRetiroColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnMontoRetiro
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property GlosaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnGlosa
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property MontoAperturaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnMontoApertura
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property FechaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnFecha
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property usuarioColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnusuario
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property tipoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntipo
             End Get
         End Property
 
@@ -1125,44 +1544,44 @@ Partial Public Class deliveryDataSet1
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Default Public ReadOnly Property Item(ByVal index As Integer) As parametrosRow
+        Default Public ReadOnly Property Item(ByVal index As Integer) As Rpt_CierreCajaRow
             Get
-                Return CType(Me.Rows(index), parametrosRow)
+                Return CType(Me.Rows(index), Rpt_CierreCajaRow)
             End Get
         End Property
 
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Event parametrosRowChanging As parametrosRowChangeEventHandler
+        Public Event Rpt_CierreCajaRowChanging As Rpt_CierreCajaRowChangeEventHandler
 
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Event parametrosRowChanged As parametrosRowChangeEventHandler
+        Public Event Rpt_CierreCajaRowChanged As Rpt_CierreCajaRowChangeEventHandler
 
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Event parametrosRowDeleting As parametrosRowChangeEventHandler
+        Public Event Rpt_CierreCajaRowDeleting As Rpt_CierreCajaRowChangeEventHandler
 
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Event parametrosRowDeleted As parametrosRowChangeEventHandler
+        Public Event Rpt_CierreCajaRowDeleted As Rpt_CierreCajaRowChangeEventHandler
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Overloads Sub AddparametrosRow(ByVal row As parametrosRow)
+        Public Overloads Sub AddRpt_CierreCajaRow(ByVal row As Rpt_CierreCajaRow)
             Me.Rows.Add(row)
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Overloads Function AddparametrosRow(ByVal RutEmpresa As String, ByVal RznSoc As String, ByVal Giro As String, ByVal Direccion As String, ByVal Comuna As String) As parametrosRow
-            Dim rowparametrosRow As parametrosRow = CType(Me.NewRow, parametrosRow)
-            Dim columnValuesArray() As Object = New Object() {RutEmpresa, RznSoc, Giro, Direccion, Comuna}
-            rowparametrosRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowparametrosRow)
-            Return rowparametrosRow
+        Public Overloads Function AddRpt_CierreCajaRow(ByVal id_doc As Long, ByVal forma_pago As String, ByVal fecha_emision As Date, ByVal total As Long, ByVal efectivo As Long, ByVal vuelto As Long, ByVal NroRetiro As Long, ByVal MontoRetiro As Long, ByVal Glosa As String, ByVal MontoApertura As Long, ByVal Fecha As Date, ByVal usuario As String, ByVal tipo As String) As Rpt_CierreCajaRow
+            Dim rowRpt_CierreCajaRow As Rpt_CierreCajaRow = CType(Me.NewRow, Rpt_CierreCajaRow)
+            Dim columnValuesArray() As Object = New Object() {id_doc, forma_pago, fecha_emision, total, efectivo, vuelto, NroRetiro, MontoRetiro, Glosa, MontoApertura, Fecha, usuario, tipo}
+            rowRpt_CierreCajaRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowRpt_CierreCajaRow)
+            Return rowRpt_CierreCajaRow
         End Function
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As parametrosDataTable = CType(MyBase.Clone, parametrosDataTable)
+            Dim cln As Rpt_CierreCajaDataTable = CType(MyBase.Clone, Rpt_CierreCajaDataTable)
             cln.InitVars()
             Return cln
         End Function
@@ -1170,58 +1589,82 @@ Partial Public Class deliveryDataSet1
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New parametrosDataTable()
+            Return New Rpt_CierreCajaDataTable()
         End Function
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Friend Sub InitVars()
-            Me.columnRutEmpresa = MyBase.Columns("RutEmpresa")
-            Me.columnRznSoc = MyBase.Columns("RznSoc")
-            Me.columnGiro = MyBase.Columns("Giro")
-            Me.columnDireccion = MyBase.Columns("Direccion")
-            Me.columnComuna = MyBase.Columns("Comuna")
+            Me.columnid_doc = MyBase.Columns("id_doc")
+            Me.columnforma_pago = MyBase.Columns("forma_pago")
+            Me.columnfecha_emision = MyBase.Columns("fecha_emision")
+            Me.columntotal = MyBase.Columns("total")
+            Me.columnefectivo = MyBase.Columns("efectivo")
+            Me.columnvuelto = MyBase.Columns("vuelto")
+            Me.columnNroRetiro = MyBase.Columns("NroRetiro")
+            Me.columnMontoRetiro = MyBase.Columns("MontoRetiro")
+            Me.columnGlosa = MyBase.Columns("Glosa")
+            Me.columnMontoApertura = MyBase.Columns("MontoApertura")
+            Me.columnFecha = MyBase.Columns("Fecha")
+            Me.columnusuario = MyBase.Columns("usuario")
+            Me.columntipo = MyBase.Columns("tipo")
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Private Sub InitClass()
-            Me.columnRutEmpresa = New Global.System.Data.DataColumn("RutEmpresa", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnRutEmpresa)
-            Me.columnRznSoc = New Global.System.Data.DataColumn("RznSoc", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnRznSoc)
-            Me.columnGiro = New Global.System.Data.DataColumn("Giro", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnGiro)
-            Me.columnDireccion = New Global.System.Data.DataColumn("Direccion", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnDireccion)
-            Me.columnComuna = New Global.System.Data.DataColumn("Comuna", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnComuna)
+            Me.columnid_doc = New Global.System.Data.DataColumn("id_doc", GetType(Long), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnid_doc)
+            Me.columnforma_pago = New Global.System.Data.DataColumn("forma_pago", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnforma_pago)
+            Me.columnfecha_emision = New Global.System.Data.DataColumn("fecha_emision", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnfecha_emision)
+            Me.columntotal = New Global.System.Data.DataColumn("total", GetType(Long), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntotal)
+            Me.columnefectivo = New Global.System.Data.DataColumn("efectivo", GetType(Long), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnefectivo)
+            Me.columnvuelto = New Global.System.Data.DataColumn("vuelto", GetType(Long), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnvuelto)
+            Me.columnNroRetiro = New Global.System.Data.DataColumn("NroRetiro", GetType(Long), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNroRetiro)
+            Me.columnMontoRetiro = New Global.System.Data.DataColumn("MontoRetiro", GetType(Long), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnMontoRetiro)
+            Me.columnGlosa = New Global.System.Data.DataColumn("Glosa", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnGlosa)
+            Me.columnMontoApertura = New Global.System.Data.DataColumn("MontoApertura", GetType(Long), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnMontoApertura)
+            Me.columnFecha = New Global.System.Data.DataColumn("Fecha", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnFecha)
+            Me.columnusuario = New Global.System.Data.DataColumn("usuario", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnusuario)
+            Me.columntipo = New Global.System.Data.DataColumn("tipo", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntipo)
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Function NewparametrosRow() As parametrosRow
-            Return CType(Me.NewRow, parametrosRow)
+        Public Function NewRpt_CierreCajaRow() As Rpt_CierreCajaRow
+            Return CType(Me.NewRow, Rpt_CierreCajaRow)
         End Function
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New parametrosRow(builder)
+            Return New Rpt_CierreCajaRow(builder)
         End Function
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(parametrosRow)
+            Return GetType(Rpt_CierreCajaRow)
         End Function
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.parametrosRowChangedEvent) Is Nothing) Then
-                RaiseEvent parametrosRowChanged(Me, New parametrosRowChangeEvent(CType(e.Row, parametrosRow), e.Action))
+            If (Not (Me.Rpt_CierreCajaRowChangedEvent) Is Nothing) Then
+                RaiseEvent Rpt_CierreCajaRowChanged(Me, New Rpt_CierreCajaRowChangeEvent(CType(e.Row, Rpt_CierreCajaRow), e.Action))
             End If
         End Sub
 
@@ -1229,8 +1672,8 @@ Partial Public Class deliveryDataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.parametrosRowChangingEvent) Is Nothing) Then
-                RaiseEvent parametrosRowChanging(Me, New parametrosRowChangeEvent(CType(e.Row, parametrosRow), e.Action))
+            If (Not (Me.Rpt_CierreCajaRowChangingEvent) Is Nothing) Then
+                RaiseEvent Rpt_CierreCajaRowChanging(Me, New Rpt_CierreCajaRowChangeEvent(CType(e.Row, Rpt_CierreCajaRow), e.Action))
             End If
         End Sub
 
@@ -1238,8 +1681,8 @@ Partial Public Class deliveryDataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.parametrosRowDeletedEvent) Is Nothing) Then
-                RaiseEvent parametrosRowDeleted(Me, New parametrosRowChangeEvent(CType(e.Row, parametrosRow), e.Action))
+            If (Not (Me.Rpt_CierreCajaRowDeletedEvent) Is Nothing) Then
+                RaiseEvent Rpt_CierreCajaRowDeleted(Me, New Rpt_CierreCajaRowChangeEvent(CType(e.Row, Rpt_CierreCajaRow), e.Action))
             End If
         End Sub
 
@@ -1247,14 +1690,14 @@ Partial Public Class deliveryDataSet1
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.parametrosRowDeletingEvent) Is Nothing) Then
-                RaiseEvent parametrosRowDeleting(Me, New parametrosRowChangeEvent(CType(e.Row, parametrosRow), e.Action))
+            If (Not (Me.Rpt_CierreCajaRowDeletingEvent) Is Nothing) Then
+                RaiseEvent Rpt_CierreCajaRowDeleting(Me, New Rpt_CierreCajaRowChangeEvent(CType(e.Row, Rpt_CierreCajaRow), e.Action))
             End If
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Sub RemoveparametrosRow(ByVal row As parametrosRow)
+        Public Sub RemoveRpt_CierreCajaRow(ByVal row As Rpt_CierreCajaRow)
             Me.Rows.Remove(row)
         End Sub
 
@@ -1281,7 +1724,7 @@ Partial Public Class deliveryDataSet1
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "parametrosDataTable"
+            attribute2.FixedValue = "Rpt_CierreCajaDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -1869,6 +2312,373 @@ Partial Public Class deliveryDataSet1
             Me(Me.tableparametros.ComunaColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
+
+    '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class Rpt_CierreCajaRow
+        Inherits Global.System.Data.DataRow
+
+        Private tableRpt_CierreCaja As Rpt_CierreCajaDataTable
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tableRpt_CierreCaja = CType(Me.Table, Rpt_CierreCajaDataTable)
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property id_doc() As Long
+            Get
+                Try
+                    Return CType(Me(Me.tableRpt_CierreCaja.id_docColumn), Long)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'id_doc' in table 'Rpt_CierreCaja' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Long)
+                Me(Me.tableRpt_CierreCaja.id_docColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property forma_pago() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableRpt_CierreCaja.forma_pagoColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'forma_pago' in table 'Rpt_CierreCaja' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableRpt_CierreCaja.forma_pagoColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property fecha_emision() As Date
+            Get
+                Try
+                    Return CType(Me(Me.tableRpt_CierreCaja.fecha_emisionColumn), Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'fecha_emision' in table 'Rpt_CierreCaja' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Date)
+                Me(Me.tableRpt_CierreCaja.fecha_emisionColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property total() As Long
+            Get
+                Try
+                    Return CType(Me(Me.tableRpt_CierreCaja.totalColumn), Long)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'total' in table 'Rpt_CierreCaja' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Long)
+                Me(Me.tableRpt_CierreCaja.totalColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property efectivo() As Long
+            Get
+                Try
+                    Return CType(Me(Me.tableRpt_CierreCaja.efectivoColumn), Long)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'efectivo' in table 'Rpt_CierreCaja' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Long)
+                Me(Me.tableRpt_CierreCaja.efectivoColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property vuelto() As Long
+            Get
+                Try
+                    Return CType(Me(Me.tableRpt_CierreCaja.vueltoColumn), Long)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'vuelto' in table 'Rpt_CierreCaja' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Long)
+                Me(Me.tableRpt_CierreCaja.vueltoColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property NroRetiro() As Long
+            Get
+                Try
+                    Return CType(Me(Me.tableRpt_CierreCaja.NroRetiroColumn), Long)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'NroRetiro' in table 'Rpt_CierreCaja' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Long)
+                Me(Me.tableRpt_CierreCaja.NroRetiroColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property MontoRetiro() As Long
+            Get
+                Try
+                    Return CType(Me(Me.tableRpt_CierreCaja.MontoRetiroColumn), Long)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'MontoRetiro' in table 'Rpt_CierreCaja' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Long)
+                Me(Me.tableRpt_CierreCaja.MontoRetiroColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property Glosa() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableRpt_CierreCaja.GlosaColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Glosa' in table 'Rpt_CierreCaja' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableRpt_CierreCaja.GlosaColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property MontoApertura() As Long
+            Get
+                Try
+                    Return CType(Me(Me.tableRpt_CierreCaja.MontoAperturaColumn), Long)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'MontoApertura' in table 'Rpt_CierreCaja' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Long)
+                Me(Me.tableRpt_CierreCaja.MontoAperturaColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property Fecha() As Date
+            Get
+                Try
+                    Return CType(Me(Me.tableRpt_CierreCaja.FechaColumn), Date)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Fecha' in table 'Rpt_CierreCaja' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Date)
+                Me(Me.tableRpt_CierreCaja.FechaColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property usuario() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableRpt_CierreCaja.usuarioColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'usuario' in table 'Rpt_CierreCaja' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableRpt_CierreCaja.usuarioColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property tipo() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableRpt_CierreCaja.tipoColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'tipo' in table 'Rpt_CierreCaja' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableRpt_CierreCaja.tipoColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function Isid_docNull() As Boolean
+            Return Me.IsNull(Me.tableRpt_CierreCaja.id_docColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub Setid_docNull()
+            Me(Me.tableRpt_CierreCaja.id_docColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function Isforma_pagoNull() As Boolean
+            Return Me.IsNull(Me.tableRpt_CierreCaja.forma_pagoColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub Setforma_pagoNull()
+            Me(Me.tableRpt_CierreCaja.forma_pagoColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function Isfecha_emisionNull() As Boolean
+            Return Me.IsNull(Me.tableRpt_CierreCaja.fecha_emisionColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub Setfecha_emisionNull()
+            Me(Me.tableRpt_CierreCaja.fecha_emisionColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IstotalNull() As Boolean
+            Return Me.IsNull(Me.tableRpt_CierreCaja.totalColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SettotalNull()
+            Me(Me.tableRpt_CierreCaja.totalColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsefectivoNull() As Boolean
+            Return Me.IsNull(Me.tableRpt_CierreCaja.efectivoColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetefectivoNull()
+            Me(Me.tableRpt_CierreCaja.efectivoColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsvueltoNull() As Boolean
+            Return Me.IsNull(Me.tableRpt_CierreCaja.vueltoColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetvueltoNull()
+            Me(Me.tableRpt_CierreCaja.vueltoColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsNroRetiroNull() As Boolean
+            Return Me.IsNull(Me.tableRpt_CierreCaja.NroRetiroColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetNroRetiroNull()
+            Me(Me.tableRpt_CierreCaja.NroRetiroColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsMontoRetiroNull() As Boolean
+            Return Me.IsNull(Me.tableRpt_CierreCaja.MontoRetiroColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetMontoRetiroNull()
+            Me(Me.tableRpt_CierreCaja.MontoRetiroColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsGlosaNull() As Boolean
+            Return Me.IsNull(Me.tableRpt_CierreCaja.GlosaColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetGlosaNull()
+            Me(Me.tableRpt_CierreCaja.GlosaColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsMontoAperturaNull() As Boolean
+            Return Me.IsNull(Me.tableRpt_CierreCaja.MontoAperturaColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetMontoAperturaNull()
+            Me(Me.tableRpt_CierreCaja.MontoAperturaColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsFechaNull() As Boolean
+            Return Me.IsNull(Me.tableRpt_CierreCaja.FechaColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetFechaNull()
+            Me(Me.tableRpt_CierreCaja.FechaColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsusuarioNull() As Boolean
+            Return Me.IsNull(Me.tableRpt_CierreCaja.usuarioColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetusuarioNull()
+            Me(Me.tableRpt_CierreCaja.usuarioColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IstipoNull() As Boolean
+            Return Me.IsNull(Me.tableRpt_CierreCaja.tipoColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SettipoNull()
+            Me(Me.tableRpt_CierreCaja.tipoColumn) = Global.System.Convert.DBNull
+        End Sub
+    End Class
     
     '''<summary>
     '''Row event argument class
@@ -1964,6 +2774,42 @@ Partial Public Class deliveryDataSet1
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property Row() As parametrosRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Public Class Rpt_CierreCajaRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As Rpt_CierreCajaRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New(ByVal row As Rpt_CierreCajaRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Row() As Rpt_CierreCajaRow
             Get
                 Return Me.eventRow
             End Get

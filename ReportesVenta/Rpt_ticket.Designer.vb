@@ -25,8 +25,8 @@ Partial Class Rpt_ticket
         Me.Office2010BlackTheme1 = New Telerik.WinControls.Themes.Office2010BlackTheme()
         Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.RadMenu1 = New Telerik.WinControls.UI.RadMenu()
-        Me.RadMenuItem1 = New Telerik.WinControls.UI.RadMenuItem()
         Me.RadMenuItem2 = New Telerik.WinControls.UI.RadMenuItem()
+        Me.RadMenuItem1 = New Telerik.WinControls.UI.RadMenuItem()
         CType(Me.RadMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -36,9 +36,9 @@ Partial Class Rpt_ticket
         Me.CrystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.CrystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default
         Me.CrystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.CrystalReportViewer1.Location = New System.Drawing.Point(0, 33)
+        Me.CrystalReportViewer1.Location = New System.Drawing.Point(0, 31)
         Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
-        Me.CrystalReportViewer1.Size = New System.Drawing.Size(148, 11)
+        Me.CrystalReportViewer1.Size = New System.Drawing.Size(120, 0)
         Me.CrystalReportViewer1.TabIndex = 27
         Me.CrystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None
         '
@@ -50,10 +50,15 @@ Partial Class Rpt_ticket
         Me.RadMenu1.Name = "RadMenu1"
         Me.RadMenu1.Padding = New System.Windows.Forms.Padding(2, 2, 0, 0)
         Me.RadMenu1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.RadMenu1.Size = New System.Drawing.Size(148, 33)
+        Me.RadMenu1.Size = New System.Drawing.Size(120, 31)
         Me.RadMenu1.TabIndex = 26
         Me.RadMenu1.Text = "RadMenu1"
         Me.RadMenu1.ThemeName = "Office2010Black"
+        '
+        'RadMenuItem2
+        '
+        Me.RadMenuItem2.Name = "RadMenuItem2"
+        Me.RadMenuItem2.Text = "Minimizar"
         '
         'RadMenuItem1
         '
@@ -62,16 +67,11 @@ Partial Class Rpt_ticket
         Me.RadMenuItem1.Name = "RadMenuItem1"
         Me.RadMenuItem1.Text = "RadMenuItem1"
         '
-        'RadMenuItem2
-        '
-        Me.RadMenuItem2.Name = "RadMenuItem2"
-        Me.RadMenuItem2.Text = "Minimizar"
-        '
         'Rpt_ticket
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(148, 44)
+        Me.ClientSize = New System.Drawing.Size(120, 24)
         Me.Controls.Add(Me.CrystalReportViewer1)
         Me.Controls.Add(Me.RadMenu1)
         Me.Name = "Rpt_ticket"

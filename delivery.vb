@@ -26,9 +26,9 @@ Public Class delivery
             Dim frm As New AbrirCaja
             frm.IdUsuario = IdUsuario
             frm.ShowDialog()
-            Dim frmCaja As New Form1
-            frmCaja.ShowDialog()
-            frmCaja.Close()
+            'Dim frmCaja As New Form1
+            'frmCaja.ShowDialog()
+            'frmCaja.Close()
         Else
             'Me.es_supervisor = False
             MsgBox("Caja Abierta", vbInformation, "Aviso")
@@ -38,13 +38,16 @@ Public Class delivery
                 Dim frmCerrar As New CerrarCaja
                 frmCerrar.IdUsuario = IdUsuario
                 frmCerrar.ShowDialog()
-                Dim frm As New AbrirCaja
+                'Dim frm As New AbrirCaja
+                'frm.IdUsuario = IdUsuario
+                'frm.ShowDialog()
+                'Dim frmCaja As New Form1
+                'frmCaja.Usuario = IdUsuario
+                'frmCaja.ShowDialog()
+                'frmCaja.Close()
+                Dim frm As New delivery
                 frm.IdUsuario = IdUsuario
                 frm.ShowDialog()
-                Dim frmCaja As New Form1
-                frmCaja.Usuario = IdUsuario
-                frmCaja.ShowDialog()
-                frmCaja.Close()
                 'System.Diagnostics.Process.GetCurrentProcess().Kill()
             Else
                 Me.Hide()

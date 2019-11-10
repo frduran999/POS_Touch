@@ -19,6 +19,7 @@ Public Class Form1
             _usuario = value
         End Set
     End Property
+
     Private Sub lawea2(ByVal sender As Object, ByVal e As EventArgs)
         Me.FlowLayoutPanel1.Controls.Clear()
         Dim famili As System.Windows.Forms.Button = sender
@@ -220,7 +221,7 @@ Public Class Form1
             MsgBox("Debe crear Ticket sin monto cancelado", vbCritical)
             Exit Sub
         End If
-        Dim cabecera As DataTable
+        ' Dim cabecera As DataTable
         Dim dts As New proyectoDTO.ticket
         Dim func As New ProyectoNegocio.Venta
 
@@ -230,22 +231,16 @@ Public Class Form1
         dts.get_efectivo = Me.txt_efectivo.Text.Trim
         dts.idUsuario = Usuario
 
+        Me.Cursor = Cursors.WaitCursor
         Dim id_doc_cab As String = ""
         Try
             id_doc_cab = func.GrabarCab(dts)
         Catch ex As Exception
             Telerik.WinControls.RadMessageBox.Show("A ocurrido un error" & vbCrLf & id_doc_cab, "Aviso")
+            Me.Cursor = Cursors.Default
             Exit Sub
         End Try
 
-
-
-
-        'cabecera = myhelper.ExecuteDataSet(My.Settings.deliveryConnectionString, CommandType.Text, "select max(id_doc) id from cabecera_doc", Nothing, 60).Tables(0)
-        'Dim id_doc_cab As Integer
-        'For Each dr As DataRow In cabecera.Rows
-        '    id_doc_cab = dr("id")
-        'Next
         Dim num_linea As Integer = Me.DataGridView1.Rows.Count - 1
 
         If DataGridView1.Rows.Count >= 0 Then
@@ -266,6 +261,7 @@ Public Class Form1
         frmT.idventa = id_doc_cab
         frmT.Show()
         frmT.Close()
+        Me.Cursor = Cursors.Default
         Try
 
         Catch ex As Exception
@@ -422,4 +418,22 @@ Public Class Form1
         frmRetiro.ShowDialog()
     End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim resp As String = ""
+        Dim neg As New ProyectoNegocio.Abrir_Caja
+        resp = neg.CerrarCaja(Usuario)
+        Try
+            If CInt(resp) > 0 Then
+                Dim frm As New CierreCaja
+                frm.IdUsuario = Usuario
+                frm.IdCaja = resp
+                frm.ShowDialog()
+                Telerik.WinControls.RadMessageBox.Show("Caja Cerrada", "Caja")
+            Else
+                Telerik.WinControls.RadMessageBox.Show("A ocurrido un error" & vbCrLf & resp, "Aviso")
+            End If
+        Catch ex As Exception
+        End Try
+        Me.Hide()
+    End Sub
 End Class
