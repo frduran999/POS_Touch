@@ -104,7 +104,7 @@ Partial Class LoginForm1
         'cbo_usuario
         '
         Me.cbo_usuario.DataSource = Me.UsuariosBindingSource
-        Me.cbo_usuario.DisplayMember = "Perfil"
+        Me.cbo_usuario.DisplayMember = "usuario"
         Me.cbo_usuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cbo_usuario.FormattingEnabled = True
         Me.cbo_usuario.Location = New System.Drawing.Point(175, 50)
