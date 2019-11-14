@@ -29,27 +29,11 @@ Partial Class ImpresionCopia
         Me.Label5 = New System.Windows.Forms.Label()
         Me.uic_copia1 = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.RadGroupBox1 = New Telerik.WinControls.UI.RadGroupBox()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.uic_segunda = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.RadGroupBox2 = New Telerik.WinControls.UI.RadGroupBox()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.uic_tercera = New System.Windows.Forms.TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.uic_Salir = New Telerik.WinControls.UI.RadMenuItem()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.RadMenu1 = New Telerik.WinControls.UI.RadMenu()
         CType(Me.RadGroupBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox4.SuspendLayout()
-        CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.RadGroupBox1.SuspendLayout()
-        CType(Me.RadGroupBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.RadGroupBox2.SuspendLayout()
         CType(Me.RadMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -117,134 +101,6 @@ Partial Class ImpresionCopia
         Me.Label6.TabIndex = 102
         Me.Label6.Text = "Copia"
         '
-        'RadGroupBox1
-        '
-        Me.RadGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
-        Me.RadGroupBox1.Controls.Add(Me.Button4)
-        Me.RadGroupBox1.Controls.Add(Me.uic_segunda)
-        Me.RadGroupBox1.Controls.Add(Me.Label1)
-        Me.RadGroupBox1.Controls.Add(Me.TextBox2)
-        Me.RadGroupBox1.Controls.Add(Me.Label2)
-        Me.RadGroupBox1.HeaderText = ""
-        Me.RadGroupBox1.Location = New System.Drawing.Point(12, 131)
-        Me.RadGroupBox1.Name = "RadGroupBox1"
-        Me.RadGroupBox1.Size = New System.Drawing.Size(347, 89)
-        Me.RadGroupBox1.TabIndex = 190
-        Me.RadGroupBox1.ThemeName = "Office2010Black"
-        '
-        'Button4
-        '
-        Me.Button4.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.Button4.Image = Global.delevery.My.Resources.Resources.magnifier
-        Me.Button4.Location = New System.Drawing.Point(268, 32)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(37, 37)
-        Me.Button4.TabIndex = 106
-        Me.Button4.UseCompatibleTextRendering = True
-        Me.Button4.UseVisualStyleBackColor = True
-        '
-        'uic_segunda
-        '
-        Me.uic_segunda.Location = New System.Drawing.Point(92, 49)
-        Me.uic_segunda.MaxLength = 90
-        Me.uic_segunda.Name = "uic_segunda"
-        Me.uic_segunda.Size = New System.Drawing.Size(166, 20)
-        Me.uic_segunda.TabIndex = 101
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(17, 52)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(62, 13)
-        Me.Label1.TabIndex = 103
-        Me.Label1.Text = "Impresora"
-        '
-        'TextBox2
-        '
-        Me.TextBox2.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.TextBox2.Location = New System.Drawing.Point(92, 23)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.ReadOnly = True
-        Me.TextBox2.Size = New System.Drawing.Size(88, 25)
-        Me.TextBox2.TabIndex = 100
-        Me.TextBox2.Text = "2"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(17, 26)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(39, 13)
-        Me.Label2.TabIndex = 102
-        Me.Label2.Text = "Copia"
-        '
-        'RadGroupBox2
-        '
-        Me.RadGroupBox2.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
-        Me.RadGroupBox2.Controls.Add(Me.Button5)
-        Me.RadGroupBox2.Controls.Add(Me.uic_tercera)
-        Me.RadGroupBox2.Controls.Add(Me.Label3)
-        Me.RadGroupBox2.Controls.Add(Me.TextBox4)
-        Me.RadGroupBox2.Controls.Add(Me.Label4)
-        Me.RadGroupBox2.HeaderText = ""
-        Me.RadGroupBox2.Location = New System.Drawing.Point(11, 225)
-        Me.RadGroupBox2.Name = "RadGroupBox2"
-        Me.RadGroupBox2.Size = New System.Drawing.Size(348, 89)
-        Me.RadGroupBox2.TabIndex = 191
-        Me.RadGroupBox2.ThemeName = "Office2010Black"
-        '
-        'Button5
-        '
-        Me.Button5.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.Button5.Image = Global.delevery.My.Resources.Resources.magnifier
-        Me.Button5.Location = New System.Drawing.Point(270, 32)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(37, 37)
-        Me.Button5.TabIndex = 106
-        Me.Button5.UseCompatibleTextRendering = True
-        Me.Button5.UseVisualStyleBackColor = True
-        '
-        'uic_tercera
-        '
-        Me.uic_tercera.Location = New System.Drawing.Point(92, 49)
-        Me.uic_tercera.MaxLength = 90
-        Me.uic_tercera.Name = "uic_tercera"
-        Me.uic_tercera.Size = New System.Drawing.Size(166, 20)
-        Me.uic_tercera.TabIndex = 101
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(17, 52)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(62, 13)
-        Me.Label3.TabIndex = 103
-        Me.Label3.Text = "Impresora"
-        '
-        'TextBox4
-        '
-        Me.TextBox4.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.TextBox4.Location = New System.Drawing.Point(92, 23)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.ReadOnly = True
-        Me.TextBox4.Size = New System.Drawing.Size(88, 25)
-        Me.TextBox4.TabIndex = 100
-        Me.TextBox4.Text = "3"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(17, 26)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(39, 13)
-        Me.Label4.TabIndex = 102
-        Me.Label4.Text = "Copia"
-        '
         'uic_Salir
         '
         Me.uic_Salir.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
@@ -256,7 +112,7 @@ Partial Class ImpresionCopia
         'Button2
         '
         Me.Button2.Image = Global.delevery.My.Resources.Resources.disk_blue
-        Me.Button2.Location = New System.Drawing.Point(168, 331)
+        Me.Button2.Location = New System.Drawing.Point(154, 134)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(37, 37)
         Me.Button2.TabIndex = 192
@@ -277,11 +133,9 @@ Partial Class ImpresionCopia
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(373, 395)
+        Me.ClientSize = New System.Drawing.Size(373, 176)
         Me.ControlBox = False
         Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.RadGroupBox2)
-        Me.Controls.Add(Me.RadGroupBox1)
         Me.Controls.Add(Me.RadGroupBox4)
         Me.Controls.Add(Me.RadMenu1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
@@ -292,12 +146,6 @@ Partial Class ImpresionCopia
         CType(Me.RadGroupBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadGroupBox4.ResumeLayout(False)
         Me.RadGroupBox4.PerformLayout()
-        CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.RadGroupBox1.ResumeLayout(False)
-        Me.RadGroupBox1.PerformLayout()
-        CType(Me.RadGroupBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.RadGroupBox2.ResumeLayout(False)
-        Me.RadGroupBox2.PerformLayout()
         CType(Me.RadMenu1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -310,19 +158,7 @@ Partial Class ImpresionCopia
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents uic_copia1 As System.Windows.Forms.TextBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents RadGroupBox1 As Telerik.WinControls.UI.RadGroupBox
-    Friend WithEvents uic_segunda As System.Windows.Forms.TextBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents RadGroupBox2 As Telerik.WinControls.UI.RadGroupBox
-    Friend WithEvents uic_tercera As System.Windows.Forms.TextBox
-    Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
-    Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Button3 As System.Windows.Forms.Button
-    Friend WithEvents Button4 As System.Windows.Forms.Button
-    Friend WithEvents Button5 As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents RadMenu1 As Telerik.WinControls.UI.RadMenu
 End Class

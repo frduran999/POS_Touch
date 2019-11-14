@@ -78,4 +78,32 @@
         End If
         Return dt
     End Function
+    Public Function GetImpresoraTicket() As String
+        Dim resp As String = ""
+        Dim con As New Conexion
+        If con.Conexion Then
+            Dim odac As New dac.myMSSQL(con.con.ConnectionString, 18000)
+            resp = odac.GetValorNoNull("GetImpresora")
+        End If
+        Return resp
+    End Function
+    Public Function Rpt_TicketFamilia(ByVal idventa As Integer) As DataTable
+        Dim dt As New DataTable
+        Dim con As New Conexion
+        Dim sql As New dac.myhelper3
+        If con.Conexion Then
+            Try
+                sql.paramQUERY.Add("idventa", idventa)
+                dt = sql.ExecuteDatatable(con.con.ConnectionString, CommandType.StoredProcedure, "Rpt_TicketFamilia", sql.paramQUERY, 60000)
+            Catch ex As Exception
+                dt = New DataTable
+                con.Desconectar()
+            End Try
+            Try
+                con.Desconectar()
+            Catch ex As Exception
+            End Try
+        End If
+        Return dt
+    End Function
 End Class
