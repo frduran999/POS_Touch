@@ -13,4 +13,16 @@ Public Class Reporte
         dt = b.RptVentasDiarias(FechaIni, FechaFin)
         Return dt
     End Function
+    Public Function Rpt_Ticket(idventa As Integer) As DataSet
+        Dim dt As New DataSet
+        Dim b As New ReporteService
+        dt = b.Rpt_Ticket(idventa)
+        Return dt
+    End Function
+    Public Function Rpt_CierreCaja(ByVal IdUsuario As Integer, ByVal IdCaja As Integer) As DataSet
+        Dim dt As New DataSet
+        Dim b As New ReporteService
+        dt = b.Rpt_CierreCaja(IdUsuario, IdCaja)
+        Return dt
+    End Function
 End Class

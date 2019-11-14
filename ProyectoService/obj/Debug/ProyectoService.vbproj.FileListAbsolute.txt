@@ -62,3 +62,7 @@ C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\ProyectoService\obj
 C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\ProyectoService\obj\Debug\ProyectoService.dll
 C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\ProyectoService\obj\Debug\ProyectoService.xml
 C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\ProyectoService\obj\Debug\ProyectoService.pdb
+C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\ProyectoService\bin\Debug\proyectoDTO.dll
+C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\ProyectoService\bin\Debug\proyectoDTO.pdb
+C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\ProyectoService\bin\Debug\proyectoDTO.xml
+C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\ProyectoService\obj\Debug\ProyectoService.vbprojResolveAssemblyReference.cache

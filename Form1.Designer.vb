@@ -24,10 +24,17 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Desc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_productoGrid = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Eliminar = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.txt_vuelto = New System.Windows.Forms.TextBox()
         Me.txt_efectivo = New System.Windows.Forms.TextBox()
         Me.txt_Total = New System.Windows.Forms.TextBox()
@@ -51,13 +58,8 @@ Partial Class Form1
         Me.btn_limpiar = New System.Windows.Forms.Button()
         Me.btn_Efectivo = New System.Windows.Forms.Button()
         Me.btn_Tarjeta = New System.Windows.Forms.Button()
-        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Desc = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.id_productoGrid = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Eliminar = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.RetiroCaja = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FormapagoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FormaPago_dateset, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -141,8 +143,8 @@ Partial Class Form1
         '
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(136, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(220, Byte), Integer))
@@ -154,6 +156,58 @@ Partial Class Form1
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.Size = New System.Drawing.Size(364, 393)
         Me.DataGridView1.TabIndex = 0
+        '
+        'codigo
+        '
+        Me.codigo.HeaderText = "codigo"
+        Me.codigo.Name = "codigo"
+        Me.codigo.ReadOnly = True
+        Me.codigo.Visible = False
+        Me.codigo.Width = 50
+        '
+        'cantidad
+        '
+        Me.cantidad.HeaderText = "Cant."
+        Me.cantidad.Name = "cantidad"
+        Me.cantidad.ReadOnly = True
+        Me.cantidad.Width = 50
+        '
+        'Desc
+        '
+        Me.Desc.HeaderText = "Descripcion"
+        Me.Desc.Name = "Desc"
+        Me.Desc.ReadOnly = True
+        Me.Desc.Width = 120
+        '
+        'precio
+        '
+        Me.precio.HeaderText = "Precio"
+        Me.precio.Name = "precio"
+        Me.precio.ReadOnly = True
+        Me.precio.Width = 70
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "Valor"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        Me.Column3.Width = 70
+        '
+        'id_productoGrid
+        '
+        Me.id_productoGrid.HeaderText = "idprod"
+        Me.id_productoGrid.Name = "id_productoGrid"
+        Me.id_productoGrid.ReadOnly = True
+        Me.id_productoGrid.Visible = False
+        '
+        'Eliminar
+        '
+        Me.Eliminar.HeaderText = "Eliminar"
+        Me.Eliminar.Name = "Eliminar"
+        Me.Eliminar.ReadOnly = True
+        Me.Eliminar.Text = "Eliminar"
+        Me.Eliminar.UseColumnTextForButtonValue = True
+        Me.Eliminar.Width = 50
         '
         'txt_vuelto
         '
@@ -251,7 +305,7 @@ Partial Class Form1
         '
         Me.btn_aceptar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btn_aceptar.Image = Global.delevery.My.Resources.Resources.check
-        Me.btn_aceptar.Location = New System.Drawing.Point(623, 471)
+        Me.btn_aceptar.Location = New System.Drawing.Point(850, 471)
         Me.btn_aceptar.Name = "btn_aceptar"
         Me.btn_aceptar.Size = New System.Drawing.Size(43, 41)
         Me.btn_aceptar.TabIndex = 15
@@ -261,7 +315,7 @@ Partial Class Form1
         '
         Me.btn_salir.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btn_salir.Image = Global.delevery.My.Resources.Resources._Exit
-        Me.btn_salir.Location = New System.Drawing.Point(781, 471)
+        Me.btn_salir.Location = New System.Drawing.Point(965, 471)
         Me.btn_salir.Name = "btn_salir"
         Me.btn_salir.Size = New System.Drawing.Size(46, 41)
         Me.btn_salir.TabIndex = 1
@@ -331,7 +385,7 @@ Partial Class Form1
         '
         Me.btn_limpiar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btn_limpiar.Image = Global.delevery.My.Resources.Resources.Refresh1
-        Me.btn_limpiar.Location = New System.Drawing.Point(702, 471)
+        Me.btn_limpiar.Location = New System.Drawing.Point(913, 471)
         Me.btn_limpiar.Name = "btn_limpiar"
         Me.btn_limpiar.Size = New System.Drawing.Size(46, 41)
         Me.btn_limpiar.TabIndex = 24
@@ -363,63 +417,37 @@ Partial Class Form1
         Me.ToolTip1.SetToolTip(Me.btn_Tarjeta, "Tarjeta")
         Me.btn_Tarjeta.UseVisualStyleBackColor = True
         '
-        'codigo
+        'RetiroCaja
         '
-        Me.codigo.HeaderText = "codigo"
-        Me.codigo.Name = "codigo"
-        Me.codigo.ReadOnly = True
-        Me.codigo.Visible = False
-        Me.codigo.Width = 50
+        Me.RetiroCaja.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.RetiroCaja.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RetiroCaja.Location = New System.Drawing.Point(612, 471)
+        Me.RetiroCaja.Name = "RetiroCaja"
+        Me.RetiroCaja.Size = New System.Drawing.Size(86, 41)
+        Me.RetiroCaja.TabIndex = 27
+        Me.RetiroCaja.Text = "RETIRO"
+        Me.ToolTip1.SetToolTip(Me.RetiroCaja, "RetiroCaja")
+        Me.RetiroCaja.UseVisualStyleBackColor = True
         '
-        'cantidad
+        'Button1
         '
-        Me.cantidad.HeaderText = "Cant."
-        Me.cantidad.Name = "cantidad"
-        Me.cantidad.ReadOnly = True
-        Me.cantidad.Width = 50
-        '
-        'Desc
-        '
-        Me.Desc.HeaderText = "Descripcion"
-        Me.Desc.Name = "Desc"
-        Me.Desc.ReadOnly = True
-        Me.Desc.Width = 120
-        '
-        'precio
-        '
-        Me.precio.HeaderText = "Precio"
-        Me.precio.Name = "precio"
-        Me.precio.ReadOnly = True
-        Me.precio.Width = 70
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Valor"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        Me.Column3.Width = 70
-        '
-        'id_productoGrid
-        '
-        Me.id_productoGrid.HeaderText = "idprod"
-        Me.id_productoGrid.Name = "id_productoGrid"
-        Me.id_productoGrid.ReadOnly = True
-        Me.id_productoGrid.Visible = False
-        '
-        'Eliminar
-        '
-        Me.Eliminar.HeaderText = "Eliminar"
-        Me.Eliminar.Name = "Eliminar"
-        Me.Eliminar.ReadOnly = True
-        Me.Eliminar.Text = "Eliminar"
-        Me.Eliminar.UseColumnTextForButtonValue = True
-        Me.Eliminar.Width = 50
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(721, 471)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(86, 41)
+        Me.Button1.TabIndex = 28
+        Me.Button1.Text = "CIERRE CAJA"
+        Me.ToolTip1.SetToolTip(Me.Button1, "RetiroCaja")
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1048, 537)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.RetiroCaja)
         Me.Controls.Add(Me.btn_Tarjeta)
         Me.Controls.Add(Me.btn_Efectivo)
         Me.Controls.Add(Me.btn_limpiar)
@@ -484,5 +512,7 @@ Partial Class Form1
     Friend WithEvents Column3 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents id_productoGrid As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Eliminar As System.Windows.Forms.DataGridViewButtonColumn
+    Friend WithEvents RetiroCaja As System.Windows.Forms.Button
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 
 End Class

@@ -30,14 +30,12 @@ Partial Class Retiro
         Me.Monto = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Eliminar = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.uic_banco = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.uic_monto_total_retiro = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.uic_glosa_retiro = New System.Windows.Forms.TextBox()
         Me.btn_aceptar = New System.Windows.Forms.Button()
         Me.btn_grabar = New System.Windows.Forms.Button()
         Me.btn_salir = New System.Windows.Forms.Button()
+        Me.txtGlosa = New System.Windows.Forms.TextBox()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -103,29 +101,17 @@ Partial Class Retiro
         '
         Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(14, 321)
+        Me.Label1.Location = New System.Drawing.Point(22, 319)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(38, 13)
+        Me.Label1.Size = New System.Drawing.Size(34, 13)
         Me.Label1.TabIndex = 27
-        Me.Label1.Text = "Banco"
-        '
-        'uic_banco
-        '
-        Me.uic_banco.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.uic_banco.DisplayMember = "NombreBanco"
-        Me.uic_banco.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.uic_banco.FormattingEnabled = True
-        Me.uic_banco.Location = New System.Drawing.Point(104, 313)
-        Me.uic_banco.Name = "uic_banco"
-        Me.uic_banco.Size = New System.Drawing.Size(203, 21)
-        Me.uic_banco.TabIndex = 23
-        Me.uic_banco.ValueMember = "Banco"
+        Me.Label1.Text = "Glosa"
         '
         'Label4
         '
         Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(14, 291)
+        Me.Label4.Location = New System.Drawing.Point(22, 293)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(86, 13)
         Me.Label4.TabIndex = 26
@@ -134,7 +120,7 @@ Partial Class Retiro
         'uic_monto_total_retiro
         '
         Me.uic_monto_total_retiro.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.uic_monto_total_retiro.Location = New System.Drawing.Point(104, 287)
+        Me.uic_monto_total_retiro.Location = New System.Drawing.Point(112, 289)
         Me.uic_monto_total_retiro.MaxLength = 20
         Me.uic_monto_total_retiro.Name = "uic_monto_total_retiro"
         Me.uic_monto_total_retiro.ReadOnly = True
@@ -142,31 +128,11 @@ Partial Class Retiro
         Me.uic_monto_total_retiro.TabIndex = 22
         Me.uic_monto_total_retiro.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'Label2
-        '
-        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(14, 350)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(82, 13)
-        Me.Label2.TabIndex = 25
-        Me.Label2.Text = "No. Documento"
-        '
-        'uic_glosa_retiro
-        '
-        Me.uic_glosa_retiro.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.uic_glosa_retiro.Location = New System.Drawing.Point(104, 343)
-        Me.uic_glosa_retiro.MaxLength = 50
-        Me.uic_glosa_retiro.Name = "uic_glosa_retiro"
-        Me.uic_glosa_retiro.Size = New System.Drawing.Size(203, 20)
-        Me.uic_glosa_retiro.TabIndex = 24
-        Me.uic_glosa_retiro.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
         'btn_aceptar
         '
         Me.btn_aceptar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btn_aceptar.Image = Global.delevery.My.Resources.Resources.check
-        Me.btn_aceptar.Location = New System.Drawing.Point(329, 15)
+        Me.btn_aceptar.Location = New System.Drawing.Point(301, 16)
         Me.btn_aceptar.Name = "btn_aceptar"
         Me.btn_aceptar.Size = New System.Drawing.Size(43, 41)
         Me.btn_aceptar.TabIndex = 28
@@ -175,7 +141,7 @@ Partial Class Retiro
         'btn_grabar
         '
         Me.btn_grabar.Image = Global.delevery.My.Resources.Resources.disk_blue
-        Me.btn_grabar.Location = New System.Drawing.Point(335, 287)
+        Me.btn_grabar.Location = New System.Drawing.Point(335, 276)
         Me.btn_grabar.Name = "btn_grabar"
         Me.btn_grabar.Size = New System.Drawing.Size(37, 37)
         Me.btn_grabar.TabIndex = 29
@@ -184,26 +150,34 @@ Partial Class Retiro
         'btn_salir
         '
         Me.btn_salir.Image = Global.delevery.My.Resources.Resources._Exit
-        Me.btn_salir.Location = New System.Drawing.Point(335, 334)
+        Me.btn_salir.Location = New System.Drawing.Point(335, 322)
         Me.btn_salir.Name = "btn_salir"
         Me.btn_salir.Size = New System.Drawing.Size(37, 37)
         Me.btn_salir.TabIndex = 30
         Me.btn_salir.UseVisualStyleBackColor = True
         '
+        'txtGlosa
+        '
+        Me.txtGlosa.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.txtGlosa.Location = New System.Drawing.Point(112, 316)
+        Me.txtGlosa.MaxLength = 50
+        Me.txtGlosa.Name = "txtGlosa"
+        Me.txtGlosa.Size = New System.Drawing.Size(203, 20)
+        Me.txtGlosa.TabIndex = 31
+        Me.txtGlosa.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
         'Retiro
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(390, 381)
+        Me.ClientSize = New System.Drawing.Size(390, 363)
+        Me.Controls.Add(Me.txtGlosa)
         Me.Controls.Add(Me.btn_salir)
         Me.Controls.Add(Me.btn_grabar)
         Me.Controls.Add(Me.btn_aceptar)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.uic_banco)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.uic_monto_total_retiro)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.uic_glosa_retiro)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.uic_monto)
@@ -219,11 +193,8 @@ Partial Class Retiro
     Friend WithEvents uic_monto As System.Windows.Forms.TextBox
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents uic_banco As System.Windows.Forms.ComboBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents uic_monto_total_retiro As System.Windows.Forms.TextBox
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents uic_glosa_retiro As System.Windows.Forms.TextBox
     Friend WithEvents btn_aceptar As System.Windows.Forms.Button
     Friend WithEvents btn_grabar As System.Windows.Forms.Button
     Friend WithEvents btn_salir As System.Windows.Forms.Button
@@ -231,4 +202,5 @@ Partial Class Retiro
     Friend WithEvents TipoRetiro As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Monto As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Eliminar As System.Windows.Forms.DataGridViewButtonColumn
+    Friend WithEvents txtGlosa As System.Windows.Forms.TextBox
 End Class

@@ -20,6 +20,7 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DocumentationFile>ProyectoNegocio.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -67,6 +68,7 @@
     <Compile Include="Mantenedores\Impresoras.vb" />
     <Compile Include="Mantenedores\Ofertas.vb" />
     <Compile Include="Mantenedores\Productos.vb" />
+    <Compile Include="Mantenedores\RetiroCaja.vb" />
     <Compile Include="Mantenedores\Ventas.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -84,6 +86,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Reporte\Reporte.vb" />
+    <Compile Include="Venta\Venta.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -105,6 +108,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\proyectoDTO\proyectoDTO.vbproj">
+      <Project>{ebac20fb-9961-44da-ae1e-15954e6ffcec}</Project>
+      <Name>proyectoDTO</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ProyectoService\ProyectoService.vbproj">
       <Project>{8e277694-ec57-41b6-99db-07f8e8be00aa}</Project>
       <Name>ProyectoService</Name>

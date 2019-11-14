@@ -26,6 +26,7 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DocumentationFile>delevery.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -120,6 +121,14 @@
     <Compile Include="DATASET\deliveryDataSet1.vb">
       <DependentUpon>deliveryDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DATASET\dts_Caja.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dts_Caja.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DATASET\dts_Caja.vb">
+      <DependentUpon>dts_Caja.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DATASET\dts_mantenedor.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -127,6 +136,12 @@
     </Compile>
     <Compile Include="DATASET\dts_mantenedor.vb">
       <DependentUpon>dts_mantenedor.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="delivery.Designer.vb">
+      <DependentUpon>delivery.vb</DependentUpon>
+    </Compile>
+    <Compile Include="delivery.vb">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Mantenedores\Buscar_producto.Designer.vb">
       <DependentUpon>Buscar_producto.vb</DependentUpon>
@@ -226,12 +241,6 @@
     <Compile Include="LoginForm1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="delivery.Designer.vb">
-      <DependentUpon>delivery.vb</DependentUpon>
-    </Compile>
-    <Compile Include="delivery.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Mantenedores\Reporte\RPT_VentasDiarias.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -283,6 +292,30 @@
     <Compile Include="Mantenedores\Promocion.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ReportesVenta\CierreCaja.Designer.vb">
+      <DependentUpon>CierreCaja.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesVenta\CierreCaja.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesVenta\RptTicket.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptTicket.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportesVenta\Rpt_CierreCaja.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rpt_CierreCaja.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportesVenta\Rpt_ticket.Designer.vb">
+      <DependentUpon>Rpt_ticket.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesVenta\Rpt_ticket.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Retiro.Designer.vb">
       <DependentUpon>Retiro.vb</DependentUpon>
     </Compile>
@@ -315,6 +348,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CerrarCaja.resx">
       <DependentUpon>CerrarCaja.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="delivery.resx">
+      <DependentUpon>delivery.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenedores\Buscar_producto.resx">
       <DependentUpon>Buscar_producto.vb</DependentUpon>
@@ -369,9 +405,6 @@
     <EmbeddedResource Include="LoginForm1.resx">
       <DependentUpon>LoginForm1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="delivery.resx">
-      <DependentUpon>delivery.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -383,6 +416,20 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenedores\Promocion.resx">
       <DependentUpon>Promocion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesVenta\CierreCaja.resx">
+      <DependentUpon>CierreCaja.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesVenta\RptTicket.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptTicket.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesVenta\Rpt_CierreCaja.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Rpt_CierreCaja.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesVenta\Rpt_ticket.resx">
+      <DependentUpon>Rpt_ticket.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Retiro.resx">
       <DependentUpon>Retiro.vb</DependentUpon>
@@ -417,6 +464,17 @@
     </None>
     <None Include="DATASET\deliveryDataSet1.xss">
       <DependentUpon>deliveryDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DATASET\dts_Caja.xsc">
+      <DependentUpon>dts_Caja.xsd</DependentUpon>
+    </None>
+    <None Include="DATASET\dts_Caja.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dts_Caja.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DATASET\dts_Caja.xss">
+      <DependentUpon>dts_Caja.xsd</DependentUpon>
     </None>
     <None Include="DATASET\dts_mantenedor.xsc">
       <DependentUpon>dts_mantenedor.xsd</DependentUpon>
@@ -529,6 +587,10 @@
     <None Include="Resources\luka.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="proyectoDTO\proyectoDTO.vbproj">
+      <Project>{ebac20fb-9961-44da-ae1e-15954e6ffcec}</Project>
+      <Name>proyectoDTO</Name>
+    </ProjectReference>
     <ProjectReference Include="ProyectoNegocio\ProyectoNegocio.vbproj">
       <Project>{6f8cacc2-ff3a-40a2-8efd-c3c8d9b85b0f}</Project>
       <Name>ProyectoNegocio</Name>
