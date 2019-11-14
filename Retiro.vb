@@ -1,4 +1,15 @@
-﻿Public Class Retiro
+﻿Imports ProyectoNegocio
+
+Public Class Retiro
+    Private _usuario As Integer
+    Public Property Usuario As Integer
+        Get
+            Return _usuario
+        End Get
+        Set(value As Integer)
+            _usuario = value
+        End Set
+    End Property
 
     Private Sub uic_monto_KeyPress(sender As Object, e As KeyPressEventArgs) Handles uic_monto.KeyPress
         Dim valida As String = "0123456789" & Convert.ToChar(8)
@@ -19,17 +30,23 @@
             Me.uic_monto.Focus()
             Exit Sub
         End If
-        'valida monto efectivo con total efectivo basedato
-        'If Val(Me.uic_monto.Text) > obc_caja.SaldoEfectivoActual Then
-        '    MsgBox("Monto ingresado mayor a total efectivo en caja", vbInformation, "Error")
-        '    Me.uic_monto.Focus()
-        '    Exit Sub
-        'End If
-        If Me.uic_monto.Text <> "" Then
-            Me.DataGridView1.Rows.Add(1, "EFECTIVO", Val(Me.uic_monto.Text))
-            Me.uic_monto.Text = ""
-            sumar_grilla()
+        Dim Monto As Integer = CType(uic_monto.Text, Integer)
+        Dim Neg As New RetiroCaja
+        Dim vresp As String = Neg.ValidaMontoRetiro(Usuario, Monto)
+
+        If vresp = "OK" Then
+            If Me.uic_monto.Text <> "" Then
+                Me.DataGridView1.Rows.Add(1, "EFECTIVO", Val(Me.uic_monto.Text))
+                Me.uic_monto.Text = ""
+                sumar_grilla()
+            End If
+        Else
+            MsgBox("Monto mayor a cantidad apertura")
         End If
+
+       
+        
+        
     End Sub
     Public Sub sumar_grilla()
         Dim sumas As Long = 0
@@ -37,10 +54,6 @@
             sumas += Val(Me.DataGridView1.Rows(x).Cells(2).Value)
         Next
         Me.uic_monto_total_retiro.Text = FormatNumber(Val(sumas), 0)
-    End Sub
-
-    Private Sub uic_glosa_retiro_TextChanged(sender As Object, e As EventArgs) Handles uic_glosa_retiro.TextChanged
-        Me.uic_glosa_retiro.CharacterCasing = CharacterCasing.Upper
     End Sub
 
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
@@ -53,5 +66,28 @@
             End If
         End If
         sumar_grilla()
+    End Sub
+
+    Private Sub btn_salir_Click(sender As Object, e As EventArgs) Handles btn_salir.Click
+        Me.Hide()
+    End Sub
+
+    Private Sub btn_grabar_Click(sender As Object, e As EventArgs) Handles btn_grabar.Click
+
+        If (txtGlosa.Text = "") Then
+            MsgBox("Debe Ingresar Glosa")
+            Me.txtGlosa.Focus()
+            Exit Sub
+        End If
+
+        Dim Monto As Integer = CInt(uic_monto_total_retiro.Text)
+        Dim Glosa As String = txtGlosa.Text
+        Dim Neg As New RetiroCaja
+        Dim vresp As String = Neg.GuardarRetiro(Usuario, Monto, Glosa)
+        If vresp = "OK" Then
+            MsgBox("Retiro Realizado con Exito")
+            Me.Hide()
+        End If
+
     End Sub
 End Class

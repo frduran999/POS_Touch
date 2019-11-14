@@ -137,14 +137,14 @@ Public Class FamiliaProducto
         Dim neg As New ProyectoNegocio.FamiliaProducto
         resp = neg.ModificarFamilia(Me.uic_CodigoFamilia.Text, Me.uic_FamiliaProducto.Text)
         If resp = "OK" Then
-            If Not File.Exists("c:\POS\Imagen\" & Me.uic_CodigoFamilia.Text & ".jpg") Then
-                GrabarFoto(Me.uic_CodigoFamilia.Text)
-                Telerik.WinControls.RadMessageBox.Show(Me, "Registro modificado exitosamente", "Alerta")
-                carga_grilla()
-                Limpiar()
-            Else
-                carga_grilla()
-            End If
+            'If Not File.Exists("c:\POS\Imagen\" & Me.uic_CodigoFamilia.Text & ".jpg") Then
+            GrabarFoto(Me.uic_CodigoFamilia.Text)
+            Telerik.WinControls.RadMessageBox.Show(Me, "Registro modificado exitosamente", "Alerta")
+            carga_grilla()
+            Limpiar()
+            'Else
+            '    carga_grilla()
+            'End If
         Else
             Telerik.WinControls.RadMessageBox.Show(Me, "A ocurrido un error" & vbCrLf & resp, "Alerta")
         End If

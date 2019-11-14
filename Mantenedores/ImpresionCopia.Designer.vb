@@ -24,23 +24,23 @@ Partial Class ImpresionCopia
     Private Sub InitializeComponent()
         Me.Office2010BlackTheme1 = New Telerik.WinControls.Themes.Office2010BlackTheme()
         Me.RadGroupBox4 = New Telerik.WinControls.UI.RadGroupBox()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.uic_primera = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.uic_copia1 = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.RadGroupBox1 = New Telerik.WinControls.UI.RadGroupBox()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.uic_segunda = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.RadGroupBox2 = New Telerik.WinControls.UI.RadGroupBox()
+        Me.Button5 = New System.Windows.Forms.Button()
         Me.uic_tercera = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TextBox4 = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
         Me.uic_Salir = New Telerik.WinControls.UI.RadMenuItem()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.RadMenu1 = New Telerik.WinControls.UI.RadMenu()
@@ -68,12 +68,23 @@ Partial Class ImpresionCopia
         Me.RadGroupBox4.TabIndex = 189
         Me.RadGroupBox4.ThemeName = "Office2010Black"
         '
+        'Button3
+        '
+        Me.Button3.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Button3.Image = Global.delevery.My.Resources.Resources.magnifier
+        Me.Button3.Location = New System.Drawing.Point(270, 34)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(37, 37)
+        Me.Button3.TabIndex = 105
+        Me.Button3.UseCompatibleTextRendering = True
+        Me.Button3.UseVisualStyleBackColor = True
+        '
         'uic_primera
         '
         Me.uic_primera.Location = New System.Drawing.Point(92, 49)
         Me.uic_primera.MaxLength = 90
         Me.uic_primera.Name = "uic_primera"
-        Me.uic_primera.Size = New System.Drawing.Size(166, 22)
+        Me.uic_primera.Size = New System.Drawing.Size(166, 20)
         Me.uic_primera.TabIndex = 101
         '
         'Label5
@@ -82,9 +93,9 @@ Partial Class ImpresionCopia
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.Location = New System.Drawing.Point(17, 52)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(66, 13)
+        Me.Label5.Size = New System.Drawing.Size(62, 13)
         Me.Label5.TabIndex = 103
-        Me.Label5.Text = "Incidencia"
+        Me.Label5.Text = "Impresora"
         '
         'uic_copia1
         '
@@ -121,12 +132,23 @@ Partial Class ImpresionCopia
         Me.RadGroupBox1.TabIndex = 190
         Me.RadGroupBox1.ThemeName = "Office2010Black"
         '
+        'Button4
+        '
+        Me.Button4.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Button4.Image = Global.delevery.My.Resources.Resources.magnifier
+        Me.Button4.Location = New System.Drawing.Point(268, 32)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(37, 37)
+        Me.Button4.TabIndex = 106
+        Me.Button4.UseCompatibleTextRendering = True
+        Me.Button4.UseVisualStyleBackColor = True
+        '
         'uic_segunda
         '
         Me.uic_segunda.Location = New System.Drawing.Point(92, 49)
         Me.uic_segunda.MaxLength = 90
         Me.uic_segunda.Name = "uic_segunda"
-        Me.uic_segunda.Size = New System.Drawing.Size(166, 22)
+        Me.uic_segunda.Size = New System.Drawing.Size(166, 20)
         Me.uic_segunda.TabIndex = 101
         '
         'Label1
@@ -135,9 +157,9 @@ Partial Class ImpresionCopia
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(17, 52)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(66, 13)
+        Me.Label1.Size = New System.Drawing.Size(62, 13)
         Me.Label1.TabIndex = 103
-        Me.Label1.Text = "Incidencia"
+        Me.Label1.Text = "Impresora"
         '
         'TextBox2
         '
@@ -174,12 +196,23 @@ Partial Class ImpresionCopia
         Me.RadGroupBox2.TabIndex = 191
         Me.RadGroupBox2.ThemeName = "Office2010Black"
         '
+        'Button5
+        '
+        Me.Button5.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Button5.Image = Global.delevery.My.Resources.Resources.magnifier
+        Me.Button5.Location = New System.Drawing.Point(270, 32)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(37, 37)
+        Me.Button5.TabIndex = 106
+        Me.Button5.UseCompatibleTextRendering = True
+        Me.Button5.UseVisualStyleBackColor = True
+        '
         'uic_tercera
         '
         Me.uic_tercera.Location = New System.Drawing.Point(92, 49)
         Me.uic_tercera.MaxLength = 90
         Me.uic_tercera.Name = "uic_tercera"
-        Me.uic_tercera.Size = New System.Drawing.Size(166, 22)
+        Me.uic_tercera.Size = New System.Drawing.Size(166, 20)
         Me.uic_tercera.TabIndex = 101
         '
         'Label3
@@ -188,9 +221,9 @@ Partial Class ImpresionCopia
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(17, 52)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(66, 13)
+        Me.Label3.Size = New System.Drawing.Size(62, 13)
         Me.Label3.TabIndex = 103
-        Me.Label3.Text = "Incidencia"
+        Me.Label3.Text = "Impresora"
         '
         'TextBox4
         '
@@ -212,39 +245,6 @@ Partial Class ImpresionCopia
         Me.Label4.TabIndex = 102
         Me.Label4.Text = "Copia"
         '
-        'Button5
-        '
-        Me.Button5.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.Button5.Image = Global.delevery.My.Resources.Resources.magnifier
-        Me.Button5.Location = New System.Drawing.Point(270, 32)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(37, 37)
-        Me.Button5.TabIndex = 106
-        Me.Button5.UseCompatibleTextRendering = True
-        Me.Button5.UseVisualStyleBackColor = True
-        '
-        'Button4
-        '
-        Me.Button4.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.Button4.Image = Global.delevery.My.Resources.Resources.magnifier
-        Me.Button4.Location = New System.Drawing.Point(268, 32)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(37, 37)
-        Me.Button4.TabIndex = 106
-        Me.Button4.UseCompatibleTextRendering = True
-        Me.Button4.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.Button3.Image = Global.delevery.My.Resources.Resources.magnifier
-        Me.Button3.Location = New System.Drawing.Point(270, 34)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(37, 37)
-        Me.Button3.TabIndex = 105
-        Me.Button3.UseCompatibleTextRendering = True
-        Me.Button3.UseVisualStyleBackColor = True
-        '
         'uic_Salir
         '
         Me.uic_Salir.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
@@ -262,13 +262,6 @@ Partial Class ImpresionCopia
         Me.Button2.TabIndex = 192
         Me.Button2.UseVisualStyleBackColor = True
         '
-        'ImpresionCopia
-        '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(373, 395)
-        Me.ControlBox = False
-        '
         'RadMenu1
         '
         Me.RadMenu1.Items.AddRange(New Telerik.WinControls.RadItem() {Me.uic_Salir})
@@ -279,6 +272,13 @@ Partial Class ImpresionCopia
         Me.RadMenu1.TabIndex = 21
         Me.RadMenu1.Text = "RadMenu1"
         Me.RadMenu1.ThemeName = "Office2010Black"
+        '
+        'ImpresionCopia
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(373, 395)
+        Me.ControlBox = False
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.RadGroupBox2)
         Me.Controls.Add(Me.RadGroupBox1)
