@@ -204,7 +204,7 @@ Public Class Form1
     End Sub
     Private Sub btn_aceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_aceptar.Click
         If Me.txt_Total.Text = "" Or Me.txt_Total.Text = "0" Then
-            MsgBox("No se puede crear Ticket sin detalle o Total = 0", vbCritical)
+            MsgBox("Debe Ingresar Monto Pago", vbCritical)
             Exit Sub
         End If
 

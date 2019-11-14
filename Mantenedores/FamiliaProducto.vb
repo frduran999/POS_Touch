@@ -3,13 +3,28 @@ Imports System.Drawing.Imaging
 
 Public Class FamiliaProducto
     Private Linea As Integer
+    Private obc_impresora As New Sel_Impresora
+    Private Lista_impresoras As New ArrayList
+
+    Private Sub Impresoras_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Lista_impresoras = obc_impresora.lista_impresoras
+        cbxImpresora.Items.Clear()
+        cbxImpresora.Items.AddRange(Lista_impresoras.ToArray)
+        Try
+            cbxImpresora.SelectedValue = 0
+        Catch ex As Exception
+        End Try
+    End Sub
+
     Private Sub FamiliaProducto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         carga_grilla()
         btn_modificar.Enabled = False
     End Sub
 
     Private Sub btn_grabar_Click(sender As Object, e As EventArgs) Handles btn_grabar.Click
-
+        Dim impresoraFamilia As String = ""
+        Dim dt As String = ""
+        Dim res As String = ""
         If Me.uic_FamiliaProducto.Text = "" Then
             MsgBox("Debe agregar Familia")
             Me.uic_FamiliaProducto.Focus()
@@ -20,9 +35,13 @@ Public Class FamiliaProducto
         Try
             Dim Neg As New ProyectoNegocio.FamiliaProducto
             Dim Familia As String = uic_FamiliaProducto.Text.Trim
-            Dim dt As String = ""
-            Dim res As String = ""
-            dt = Neg.GrabarFamilia(Familia)
+            If Me.cbxImpresora.SelectedIndex <> -1 Then
+                impresoraFamilia = Me.cbxImpresora.SelectedItem.ToString
+            Else
+                MsgBox("Debe Agregar Impresora", vbInformation, "Aviso")
+            End If
+
+            dt = Neg.GrabarFamilia(Familia, impresoraFamilia)
             If CInt(dt) > 0 Then
                 GrabarFoto(dt)
 
@@ -135,7 +154,7 @@ Public Class FamiliaProducto
         End If
         Dim resp As String = ""
         Dim neg As New ProyectoNegocio.FamiliaProducto
-        resp = neg.ModificarFamilia(Me.uic_CodigoFamilia.Text, Me.uic_FamiliaProducto.Text)
+        resp = neg.ModificarFamilia(Me.uic_CodigoFamilia.Text, Me.uic_FamiliaProducto.Text, Me.cbxImpresora.Text)
         If resp = "OK" Then
             'If Not File.Exists("c:\POS\Imagen\" & Me.uic_CodigoFamilia.Text & ".jpg") Then
             GrabarFoto(Me.uic_CodigoFamilia.Text)
