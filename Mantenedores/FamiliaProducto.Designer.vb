@@ -23,7 +23,7 @@ Partial Class FamiliaProducto
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.uic_CodigoFamilia = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.uic_FamiliaProducto = New System.Windows.Forms.TextBox()
@@ -35,16 +35,17 @@ Partial Class FamiliaProducto
         Me.Office2010BlackTheme1 = New Telerik.WinControls.Themes.Office2010BlackTheme()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.btn_modificar = New System.Windows.Forms.Button()
+        Me.btn_salir = New System.Windows.Forms.Button()
+        Me.btn_grabar = New System.Windows.Forms.Button()
         Me.uic_RutaImagen = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.btn_eliminar = New System.Windows.Forms.Button()
-        Me.btn_modificar = New System.Windows.Forms.Button()
-        Me.btn_salir = New System.Windows.Forms.Button()
-        Me.btn_grabar = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.cbxImpresora = New System.Windows.Forms.ComboBox()
         CType(Me.FamiliaProductoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DeliveryDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -109,65 +110,22 @@ Partial Class FamiliaProducto
         Me.RadGridView1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.RadGridView1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.RadGridView1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.RadGridView1.Location = New System.Drawing.Point(25, 107)
+        Me.RadGridView1.Location = New System.Drawing.Point(25, 143)
         '
         '
         '
         Me.RadGridView1.MasterTemplate.AllowAddNewRow = False
         Me.RadGridView1.MasterTemplate.AllowColumnReorder = False
         Me.RadGridView1.MasterTemplate.EnableAlternatingRowColor = True
-        Me.RadGridView1.MasterTemplate.ViewDefinition = TableViewDefinition1
+        Me.RadGridView1.MasterTemplate.ViewDefinition = TableViewDefinition2
         Me.RadGridView1.Name = "RadGridView1"
         Me.RadGridView1.ReadOnly = True
         Me.RadGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.RadGridView1.ShowGroupPanel = False
-        Me.RadGridView1.Size = New System.Drawing.Size(320, 393)
+        Me.RadGridView1.Size = New System.Drawing.Size(320, 357)
         Me.RadGridView1.TabIndex = 25
         Me.RadGridView1.Text = "RadGridView1"
         Me.RadGridView1.ThemeName = "Office2010Black"
-        '
-        'Button1
-        '
-        Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.Button1.Image = Global.delevery.My.Resources.Resources.magnifier
-        Me.Button1.Location = New System.Drawing.Point(351, 67)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(32, 33)
-        Me.Button1.TabIndex = 28
-        Me.ToolTip1.SetToolTip(Me.Button1, "Buscar imagen")
-        Me.Button1.UseCompatibleTextRendering = True
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'uic_RutaImagen
-        '
-        Me.uic_RutaImagen.Location = New System.Drawing.Point(81, 73)
-        Me.uic_RutaImagen.Name = "uic_RutaImagen"
-        Me.uic_RutaImagen.Size = New System.Drawing.Size(264, 20)
-        Me.uic_RutaImagen.TabIndex = 26
-        '
-        'Label3
-        '
-        Me.Label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label3.Location = New System.Drawing.Point(25, 71)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(50, 23)
-        Me.Label3.TabIndex = 27
-        Me.Label3.Text = "Imagen"
-        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'OpenFileDialog1
-
-        '
-        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Location = New System.Drawing.Point(453, 307)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(21, 20)
-        Me.PictureBox1.TabIndex = 29
-        Me.PictureBox1.TabStop = False
-        Me.PictureBox1.Visible = False
         '
         'Button1
         '
@@ -180,18 +138,6 @@ Partial Class FamiliaProducto
         Me.ToolTip1.SetToolTip(Me.Button1, "Buscar imagen")
         Me.Button1.UseCompatibleTextRendering = True
         Me.Button1.UseVisualStyleBackColor = True
-        '
-        'btn_eliminar
-
-        '
-        Me.btn_eliminar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.btn_eliminar.Image = Global.delevery.My.Resources.Resources.Delete
-        Me.btn_eliminar.Location = New System.Drawing.Point(360, 345)
-        Me.btn_eliminar.Name = "btn_eliminar"
-        Me.btn_eliminar.Size = New System.Drawing.Size(37, 37)
-        Me.btn_eliminar.TabIndex = 19
-        Me.btn_eliminar.UseVisualStyleBackColor = True
-        Me.btn_eliminar.Visible = False
         '
         'btn_modificar
         '
@@ -226,12 +172,73 @@ Partial Class FamiliaProducto
         Me.ToolTip1.SetToolTip(Me.btn_grabar, "Grabar registro")
         Me.btn_grabar.UseVisualStyleBackColor = True
         '
+        'uic_RutaImagen
+        '
+        Me.uic_RutaImagen.Location = New System.Drawing.Point(81, 73)
+        Me.uic_RutaImagen.Name = "uic_RutaImagen"
+        Me.uic_RutaImagen.Size = New System.Drawing.Size(264, 20)
+        Me.uic_RutaImagen.TabIndex = 26
+        '
+        'Label3
+        '
+        Me.Label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Label3.Location = New System.Drawing.Point(25, 71)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(50, 23)
+        Me.Label3.TabIndex = 27
+        Me.Label3.Text = "Imagen"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Location = New System.Drawing.Point(453, 307)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(21, 20)
+        Me.PictureBox1.TabIndex = 29
+        Me.PictureBox1.TabStop = False
+        Me.PictureBox1.Visible = False
+        '
+        'btn_eliminar
+        '
+        Me.btn_eliminar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.btn_eliminar.Image = Global.delevery.My.Resources.Resources.Delete
+        Me.btn_eliminar.Location = New System.Drawing.Point(360, 345)
+        Me.btn_eliminar.Name = "btn_eliminar"
+        Me.btn_eliminar.Size = New System.Drawing.Size(37, 37)
+        Me.btn_eliminar.TabIndex = 19
+        Me.btn_eliminar.UseVisualStyleBackColor = True
+        Me.btn_eliminar.Visible = False
+        '
+        'Label4
+        '
+        Me.Label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Label4.Location = New System.Drawing.Point(25, 108)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(50, 23)
+        Me.Label4.TabIndex = 30
+        Me.Label4.Text = "Impresora"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'cbxImpresora
+        '
+        Me.cbxImpresora.FormattingEnabled = True
+        Me.cbxImpresora.Location = New System.Drawing.Point(82, 108)
+        Me.cbxImpresora.Name = "cbxImpresora"
+        Me.cbxImpresora.Size = New System.Drawing.Size(241, 21)
+        Me.cbxImpresora.TabIndex = 31
+        '
         'FamiliaProducto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(396, 512)
         Me.ControlBox = False
+        Me.Controls.Add(Me.cbxImpresora)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.uic_RutaImagen)
@@ -280,4 +287,6 @@ Partial Class FamiliaProducto
     Friend WithEvents SaveFileDialog1 As System.Windows.Forms.SaveFileDialog
     Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents cbxImpresora As System.Windows.Forms.ComboBox
 End Class

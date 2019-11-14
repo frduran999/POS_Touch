@@ -304,6 +304,12 @@
       <DependentUpon>RptTicket.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ReportesVenta\RptTicketFamilia.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptTicketFamilia.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ReportesVenta\Rpt_CierreCaja.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -423,6 +429,10 @@
     <EmbeddedResource Include="ReportesVenta\RptTicket.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RptTicket.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesVenta\RptTicketFamilia.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptTicketFamilia.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportesVenta\Rpt_CierreCaja.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

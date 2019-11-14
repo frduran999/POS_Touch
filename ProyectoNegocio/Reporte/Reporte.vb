@@ -25,4 +25,16 @@ Public Class Reporte
         dt = b.Rpt_CierreCaja(IdUsuario, IdCaja)
         Return dt
     End Function
+    Public Function GetImpresoraTicket() As String
+        Dim dt As String = ""
+        Dim b As New ReporteService
+        dt = b.GetImpresoraTicket
+        Return dt
+    End Function
+    Public Function Rpt_TicketFamilia(ByVal idventa As Integer) As DataTable
+        Dim dt As New DataTable
+        Dim b As New ReporteService
+        dt = b.Rpt_TicketFamilia(idventa)
+        Return dt
+    End Function
 End Class

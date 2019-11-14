@@ -42,9 +42,6 @@ Public Class LoginForm1
                             Dim frm As New AbrirCaja
                             frm.IdUsuario = IdUsuario
                             frm.ShowDialog()
-                            'Dim frmCaja As New Form1
-                            'frmCaja.Usuario = IdUsuario
-                            'frmCaja.ShowDialog()
                         Else
                             MsgBox("Caja Abierta", vbInformation, "Aviso")
                             resultado = MsgBox("Desea Cerrar Caja", vbOKCancel, "Confirmar")
@@ -63,9 +60,13 @@ Public Class LoginForm1
                                 System.Diagnostics.Process.GetCurrentProcess().Kill()
                             Else
                                 Me.Hide()
+                                Dim frmMenu As New delivery
                                 Dim frmCaja As New Form1
                                 frmCaja.ShowDialog()
-                                System.Diagnostics.Process.GetCurrentProcess().Kill()
+                                'System.Diagnostics.Process.GetCurrentProcess().Kill()
+                                frmCaja.Hide()
+                                frmMenu.IdUsuario = IdUsuario
+                                frmMenu.ShowDialog()
                             End If
 
                         End If
@@ -100,5 +101,5 @@ Public Class LoginForm1
         Dim neg As New ProyectoNegocio.FamiliaProducto
         Dim res As String = neg.TraerImagenes(ruta)
     End Sub
-   
+
 End Class

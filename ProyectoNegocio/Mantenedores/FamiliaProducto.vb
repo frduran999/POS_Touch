@@ -7,17 +7,17 @@ Public Class FamiliaProducto
         dt = b.GetFamiliaProducto
         Return dt
     End Function
-    Public Function ModificarFamilia(ByVal CodigoFamilia As String, ByVal FamiliaProducto As String) As String
+    Public Function ModificarFamilia(ByVal CodigoFamilia As String, ByVal FamiliaProducto As String, ByVal impresoraFamilia As String) As String
         Dim resp As String = ""
         Dim bsp As New FamiliaProductoService
-        resp = bsp.ModificarFamilia(CodigoFamilia, FamiliaProducto)
+        resp = bsp.ModificarFamilia(CodigoFamilia, FamiliaProducto, impresoraFamilia)
         Return resp
     End Function
 
-    Public Function GrabarFamilia(ByVal Familia As String) As String
+    Public Function GrabarFamilia(ByVal Familia As String, ByVal impresoraFamilia As String) As String
         Dim resp As String = ""
         Dim bsp As New FamiliaProductoService
-        resp = bsp.GrabarFamilia(Familia)
+        resp = bsp.GrabarFamilia(Familia, impresoraFamilia)
         Return resp
     End Function
 

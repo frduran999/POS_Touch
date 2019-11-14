@@ -12,25 +12,26 @@
         End If
         Return dt
     End Function
-    Public Function ModificarFamilia(ByVal CodigoFamilia As String, ByVal FamiliaProducto As String) As String
+    Public Function ModificarFamilia(ByVal CodigoFamilia As String, ByVal FamiliaProducto As String, ByVal impresoraFamilia As String) As String
         Dim resp As String = ""
         Dim con As New Conexion
         If con.Conexion Then
             Dim odac As New dac.myMSSQL(con.con.ConnectionString, 180000)
             odac.paramQUERY.Add("CodigoFamilia", CodigoFamilia)
             odac.paramQUERY.Add("FamiliaProducto", FamiliaProducto)
+            odac.paramQUERY.Add("Impresora", impresoraFamilia)
             resp = odac.GetValorNoNull("FamiliaProducto_Modificar")
         End If
         Return resp
     End Function
 
-    Public Function GrabarFamilia(ByVal Familia As String) As String
+    Public Function GrabarFamilia(ByVal Familia As String, ByVal impresoraFamilia As String) As String
         Dim resp As String = ""
         Dim con As New Conexion
         If con.Conexion Then
             Dim odac As New dac.myMSSQL(con.con.ConnectionString, 180000)
             odac.paramQUERY.Add("Familia", Familia)
-
+            odac.paramQUERY.Add("Impresora", impresoraFamilia)
             resp = odac.GetValorNoNull("FamiliaProducto_Grabar")
         End If
         Return resp
