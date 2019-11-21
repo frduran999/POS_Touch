@@ -142,7 +142,7 @@ Public Class Form1
 
         Me.FlowLayoutFamilia.Controls.Clear()
         Dim familia As DataTable
-        familia = myhelper.ExecuteDataSet(My.Settings.deliveryConnectionString, CommandType.Text, "SELECT fp.CodigoFamilia, fp.Familia, Ff.FotoNombre FROM FamiliaProducto AS fp LEFT OUTER JOIN FamiliaFoto AS Ff ON fp.CodigoFamilia = Ff.FamiliaId", Nothing, 60).Tables(0)
+        familia = myhelper.ExecuteDataSet(My.Settings.deliveryConnectionString, CommandType.Text, "SELECT fp.CodigoFamilia, fp.Familia, Ff.FotoNombre FROM FamiliaProducto AS fp LEFT OUTER JOIN FamiliaFoto AS Ff ON fp.CodigoFamilia = Ff.FamiliaId where fp.Estado = 1", Nothing, 60).Tables(0)
         For Each dr As DataRow In familia.Rows
             Dim obcontrol As New WindowsControlLibrary1.UserControl1
             Try
@@ -436,4 +436,9 @@ Public Class Form1
         End Try
         Me.Hide()
     End Sub
+
+    Private Sub FlowLayoutFamilia_Paint(sender As Object, e As PaintEventArgs) Handles FlowLayoutFamilia.Paint
+
+    End Sub
+
 End Class

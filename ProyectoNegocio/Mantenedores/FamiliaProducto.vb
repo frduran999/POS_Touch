@@ -27,4 +27,11 @@ Public Class FamiliaProducto
         resp = bsp.TraerImagenes(ruta)
         Return resp
     End Function
+
+    Public Function EliminarFamilia(ByVal CodigoFamilia As String) As String
+        Dim resp As String = ""
+        Dim b As New FamiliaProductoService
+        resp = b.EliminarFamilia(CodigoFamilia)
+        Return resp
+    End Function
 End Class
