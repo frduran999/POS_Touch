@@ -74,7 +74,7 @@ Partial Class FamiliaProducto
         '
         'uic_FamiliaProducto
         '
-        Me.uic_FamiliaProducto.Location = New System.Drawing.Point(81, 30)
+        Me.uic_FamiliaProducto.Location = New System.Drawing.Point(81, 22)
         Me.uic_FamiliaProducto.Name = "uic_FamiliaProducto"
         Me.uic_FamiliaProducto.Size = New System.Drawing.Size(165, 20)
         Me.uic_FamiliaProducto.TabIndex = 1
@@ -82,7 +82,7 @@ Partial Class FamiliaProducto
         'Label2
         '
         Me.Label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label2.Location = New System.Drawing.Point(25, 28)
+        Me.Label2.Location = New System.Drawing.Point(25, 21)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(50, 23)
         Me.Label2.TabIndex = 22
@@ -110,7 +110,7 @@ Partial Class FamiliaProducto
         Me.RadGridView1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.RadGridView1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.RadGridView1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.RadGridView1.Location = New System.Drawing.Point(25, 143)
+        Me.RadGridView1.Location = New System.Drawing.Point(25, 121)
         '
         '
         '
@@ -131,9 +131,9 @@ Partial Class FamiliaProducto
         '
         Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Button1.Image = Global.delevery.My.Resources.Resources.magnifier
-        Me.Button1.Location = New System.Drawing.Point(349, 67)
+        Me.Button1.Location = New System.Drawing.Point(356, 45)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(32, 33)
+        Me.Button1.Size = New System.Drawing.Size(32, 32)
         Me.Button1.TabIndex = 28
         Me.ToolTip1.SetToolTip(Me.Button1, "Buscar imagen")
         Me.Button1.UseCompatibleTextRendering = True
@@ -143,7 +143,7 @@ Partial Class FamiliaProducto
         '
         Me.btn_modificar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.btn_modificar.Image = Global.delevery.My.Resources.Resources.Modify
-        Me.btn_modificar.Location = New System.Drawing.Point(307, 21)
+        Me.btn_modificar.Location = New System.Drawing.Point(296, 3)
         Me.btn_modificar.Name = "btn_modificar"
         Me.btn_modificar.Size = New System.Drawing.Size(37, 37)
         Me.btn_modificar.TabIndex = 18
@@ -154,9 +154,9 @@ Partial Class FamiliaProducto
         '
         Me.btn_salir.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.btn_salir.Image = Global.delevery.My.Resources.Resources._Exit
-        Me.btn_salir.Location = New System.Drawing.Point(350, 21)
+        Me.btn_salir.Location = New System.Drawing.Point(359, 83)
         Me.btn_salir.Name = "btn_salir"
-        Me.btn_salir.Size = New System.Drawing.Size(37, 37)
+        Me.btn_salir.Size = New System.Drawing.Size(32, 37)
         Me.btn_salir.TabIndex = 3
         Me.ToolTip1.SetToolTip(Me.btn_salir, "Salir")
         Me.btn_salir.UseVisualStyleBackColor = True
@@ -165,7 +165,7 @@ Partial Class FamiliaProducto
         '
         Me.btn_grabar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.btn_grabar.Image = Global.delevery.My.Resources.Resources.disk_blue
-        Me.btn_grabar.Location = New System.Drawing.Point(260, 21)
+        Me.btn_grabar.Location = New System.Drawing.Point(253, 3)
         Me.btn_grabar.Name = "btn_grabar"
         Me.btn_grabar.Size = New System.Drawing.Size(37, 37)
         Me.btn_grabar.TabIndex = 2
@@ -174,7 +174,7 @@ Partial Class FamiliaProducto
         '
         'uic_RutaImagen
         '
-        Me.uic_RutaImagen.Location = New System.Drawing.Point(81, 73)
+        Me.uic_RutaImagen.Location = New System.Drawing.Point(81, 53)
         Me.uic_RutaImagen.Name = "uic_RutaImagen"
         Me.uic_RutaImagen.Size = New System.Drawing.Size(264, 20)
         Me.uic_RutaImagen.TabIndex = 26
@@ -182,7 +182,7 @@ Partial Class FamiliaProducto
         'Label3
         '
         Me.Label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label3.Location = New System.Drawing.Point(25, 71)
+        Me.Label3.Location = New System.Drawing.Point(25, 50)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(50, 23)
         Me.Label3.TabIndex = 27
@@ -206,17 +206,16 @@ Partial Class FamiliaProducto
         '
         Me.btn_eliminar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.btn_eliminar.Image = Global.delevery.My.Resources.Resources.Delete
-        Me.btn_eliminar.Location = New System.Drawing.Point(360, 345)
+        Me.btn_eliminar.Location = New System.Drawing.Point(356, 4)
         Me.btn_eliminar.Name = "btn_eliminar"
-        Me.btn_eliminar.Size = New System.Drawing.Size(37, 37)
+        Me.btn_eliminar.Size = New System.Drawing.Size(32, 36)
         Me.btn_eliminar.TabIndex = 19
         Me.btn_eliminar.UseVisualStyleBackColor = True
-        Me.btn_eliminar.Visible = False
         '
         'Label4
         '
         Me.Label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label4.Location = New System.Drawing.Point(25, 108)
+        Me.Label4.Location = New System.Drawing.Point(25, 79)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(50, 23)
         Me.Label4.TabIndex = 30
@@ -226,7 +225,7 @@ Partial Class FamiliaProducto
         'cbxImpresora
         '
         Me.cbxImpresora.FormattingEnabled = True
-        Me.cbxImpresora.Location = New System.Drawing.Point(82, 108)
+        Me.cbxImpresora.Location = New System.Drawing.Point(81, 79)
         Me.cbxImpresora.Name = "cbxImpresora"
         Me.cbxImpresora.Size = New System.Drawing.Size(241, 21)
         Me.cbxImpresora.TabIndex = 31
@@ -235,7 +234,7 @@ Partial Class FamiliaProducto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(396, 512)
+        Me.ClientSize = New System.Drawing.Size(412, 485)
         Me.ControlBox = False
         Me.Controls.Add(Me.cbxImpresora)
         Me.Controls.Add(Me.Label4)

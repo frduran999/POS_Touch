@@ -24,7 +24,6 @@
         End If
         Return resp
     End Function
-
     Public Function GrabarFamilia(ByVal Familia As String, ByVal impresoraFamilia As String) As String
         Dim resp As String = ""
         Dim con As New Conexion
@@ -59,5 +58,16 @@
             End Try
         End If
         Return ruta
+    End Function
+
+    Public Function EliminarFamilia(ByVal CodigoFamilia As String) As String
+        Dim resp As String = ""
+        Dim con As New Conexion
+        If con.Conexion Then
+            Dim odac As New dac.myMSSQL(con.con.ConnectionString, 180000)
+            odac.paramQUERY.Add("CodigoFamilia", CInt(CodigoFamilia))
+            resp = odac.GetValorNoNull("EliminarFamilia")
+        End If
+        Return resp
     End Function
 End Class
