@@ -30,9 +30,9 @@ Partial Class UserControl1
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.Location = New System.Drawing.Point(5, 5)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(116, 48)
+        Me.Button1.Size = New System.Drawing.Size(123, 56)
         Me.Button1.TabIndex = 0
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.Button1.UseVisualStyleBackColor = True
         '
         'UserControl1
@@ -41,7 +41,7 @@ Partial Class UserControl1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.Button1)
         Me.Name = "UserControl1"
-        Me.Size = New System.Drawing.Size(126, 58)
+        Me.Size = New System.Drawing.Size(134, 65)
         Me.ResumeLayout(False)
 
     End Sub

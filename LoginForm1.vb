@@ -40,8 +40,12 @@ Public Class LoginForm1
                         Dim vresp As String = Neg.ValidaCaja(IdUsuario)
                         If vresp <> "OK" Then
                             Dim frm As New AbrirCaja
+                            Dim frmMenu As New delivery
                             frm.IdUsuario = IdUsuario
                             frm.ShowDialog()
+                            frm.Hide()
+                            frmMenu.IdUsuario = IdUsuario
+                            frmMenu.ShowDialog()
                         Else
                             MsgBox("Caja Abierta", vbInformation, "Aviso")
                             resultado = MsgBox("Desea Cerrar Caja", vbOKCancel, "Confirmar")

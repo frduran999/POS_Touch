@@ -48,6 +48,7 @@ Public Class FamiliaProducto
                 MsgBox("Familia Agregada", vbInformation, "Aviso")
                 Me.uic_FamiliaProducto.Text = ""
                 Me.uic_CodigoFamilia.Text = ""
+                Me.cbxImpresora.Text = ""
                 carga_grilla()
             End If
             Catch ex As Exception
@@ -105,7 +106,8 @@ Public Class FamiliaProducto
     End Sub
     Private Sub ConfiguraGrilla()
         Me.RadGridView1.Columns("CodigoFamilia").IsVisible = False
-
+        Me.RadGridView1.Columns("Impresora").IsVisible = False
+        Me.RadGridView1.Columns("Impresora").ReadOnly = False
         Me.RadGridView1.Columns("Familia").Width = 200
         Me.RadGridView1.Columns("Familia").IsVisible = True
         Me.RadGridView1.Columns("Familia").ReadOnly = False
@@ -125,16 +127,14 @@ Public Class FamiliaProducto
     Private Sub uic_CodigoFamilia_TextChanged(sender As Object, e As EventArgs) Handles uic_CodigoFamilia.TextChanged
         Me.uic_CodigoFamilia.CharacterCasing = CharacterCasing.Upper
     End Sub
-    Private Sub RadGridView1_Click(sender As Object, e As EventArgs) Handles RadGridView1.Click
-
-    End Sub
-
+   
     Private Sub RadGridView1_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles RadGridView1.MouseDoubleClick
         Try
             Linea = Me.RadGridView1.Rows.IndexOf(Me.RadGridView1.CurrentRow)
             Me.uic_CodigoFamilia.Text = Me.RadGridView1.Rows(Linea).Cells(0).Value
             Me.uic_FamiliaProducto.Text = Me.RadGridView1.Rows(Linea).Cells(1).Value
             Me.uic_RutaImagen.Text = Me.RadGridView1.Rows(Linea).Cells(2).Value
+            Me.cbxImpresora.Text = Me.RadGridView1.Rows(Linea).Cells(3).Value
             Me.btn_modificar.Enabled = True
             Me.btn_grabar.Enabled = False
         Catch ex As Exception
@@ -171,10 +171,28 @@ Public Class FamiliaProducto
     Private Sub Limpiar()
         Me.uic_CodigoFamilia.Text = ""
         Me.uic_FamiliaProducto.Text = ""
+        Me.cbxImpresora.Text = ""
         carga_grilla()
         btn_modificar.Enabled = False
         Me.btn_grabar.Enabled = True
         Me.uic_RutaImagen.Text = ""
+    End Sub
+
+    Private Sub btn_eliminar_Click(sender As Object, e As EventArgs) Handles btn_eliminar.Click
+        If Me.uic_CodigoFamilia.Text = "" Then
+            Telerik.WinControls.RadMessageBox.Show(Me, "Debe Seleccionar Familia", "Alerta")
+            Exit Sub
+        End If
+        Dim resp As String = ""
+        Dim neg As New ProyectoNegocio.FamiliaProducto
+        resp = neg.EliminarFamilia(Me.uic_CodigoFamilia.Text)
+        If resp = "OK" Then
+            Telerik.WinControls.RadMessageBox.Show(Me, "Familia Fue Eliminada Con Exito", "Alerta")
+            carga_grilla()
+            Limpiar()
+        Else
+            Telerik.WinControls.RadMessageBox.Show(Me, "A ocurrido un error" & vbCrLf & resp, "Alerta")
+        End If
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -236,4 +254,5 @@ Public Class FamiliaProducto
             Return img
         End If
     End Function
+
 End Class
