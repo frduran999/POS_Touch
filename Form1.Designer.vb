@@ -24,8 +24,8 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
@@ -144,19 +144,19 @@ Partial Class Form1
         '
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(136, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(220, Byte), Integer))
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.cantidad, Me.Desc, Me.precio, Me.Column3, Me.id_productoGrid, Me.Eliminar})
         Me.DataGridView1.Location = New System.Drawing.Point(7, 12)
@@ -186,7 +186,7 @@ Partial Class Form1
         Me.Desc.HeaderText = "Descripcion"
         Me.Desc.Name = "Desc"
         Me.Desc.ReadOnly = True
-        Me.Desc.Width = 150
+        Me.Desc.Width = 140
         '
         'precio
         '
@@ -211,12 +211,13 @@ Partial Class Form1
         '
         'Eliminar
         '
+        Me.Eliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
         Me.Eliminar.HeaderText = "Eliminar"
         Me.Eliminar.Name = "Eliminar"
         Me.Eliminar.ReadOnly = True
         Me.Eliminar.Text = "Eliminar"
         Me.Eliminar.UseColumnTextForButtonValue = True
-        Me.Eliminar.Width = 50
+        Me.Eliminar.Width = 67
         '
         'txt_vuelto
         '
@@ -422,6 +423,7 @@ Partial Class Form1
         Me.btn_Efectivo.Text = "EFECTIVO (F2)"
         Me.ToolTip1.SetToolTip(Me.btn_Efectivo, "Efectivo")
         Me.btn_Efectivo.UseVisualStyleBackColor = True
+        Me.btn_Efectivo.Visible = False
         '
         'btn_Tarjeta
         '
@@ -434,6 +436,7 @@ Partial Class Form1
         Me.btn_Tarjeta.Text = "TARJETA (F3)"
         Me.ToolTip1.SetToolTip(Me.btn_Tarjeta, "Tarjeta")
         Me.btn_Tarjeta.UseVisualStyleBackColor = True
+        Me.btn_Tarjeta.Visible = False
         '
         'RetiroCaja
         '
@@ -446,6 +449,7 @@ Partial Class Form1
         Me.RetiroCaja.Text = "RETIRO"
         Me.ToolTip1.SetToolTip(Me.RetiroCaja, "RetiroCaja")
         Me.RetiroCaja.UseVisualStyleBackColor = True
+        Me.RetiroCaja.Visible = False
         '
         'Button1
         '
@@ -458,6 +462,7 @@ Partial Class Form1
         Me.Button1.Text = "CIERRE CAJA"
         Me.ToolTip1.SetToolTip(Me.Button1, "RetiroCaja")
         Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.Visible = False
         '
         'Form1
         '

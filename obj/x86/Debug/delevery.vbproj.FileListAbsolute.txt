@@ -173,3 +173,8 @@ D:\Sistem_Duran\POS_Touch\obj\x86\Debug\delevery.AdminCaja.resources
 D:\Sistem_Duran\POS_Touch\obj\x86\Debug\delevery.AperturaCaja.resources
 D:\Sistem_Duran\POS_Touch\obj\x86\Debug\delevery.Cierre_Caja.resources
 D:\Sistem_Duran\POS_Touch\obj\x86\Debug\delevery.RetiroCaja.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\obj\x86\Debug\delevery.AdminCaja.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\obj\x86\Debug\delevery.AperturaCaja.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\obj\x86\Debug\delevery.Cierre_Caja.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\obj\x86\Debug\delevery.RetiroCaja.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\obj\x86\Debug\delevery.FrmCaja.resources

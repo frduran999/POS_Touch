@@ -148,12 +148,19 @@ Public Class Form1
 
     Private Sub Form1_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         Select Case e.KeyValue
+            Case Keys.F1
+                'uic_BotonF4_Click(Nothing, Nothing)
             Case Keys.F2
                 btn_Efectivo_Click(Nothing, Nothing)
-            Case Keys.F3
-                btn_Tarjeta_Click(Nothing, Nothing)
+            Case Keys.F4
+                'uic_BotonF4_Click(Nothing, Nothing)
+            Case Keys.F5
+                'uic_ValeBotella_Click(Nothing, Nothing)
+            Case Keys.F6
+                'uic_botonF6_Click(Nothing, Nothing)
         End Select
     End Sub
+
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Me.Forma_pagoTableAdapter.Fill(Me.FormaPago_dateset.forma_pago)
         Me.cbo_formapago.SelectedIndex = -1
@@ -226,27 +233,18 @@ Public Class Form1
             Exit Sub
         End If
 
-        If Me.IdPago = 0 Then
-            MsgBox("Debe ingresar forma de pago", vbCritical)
-            Exit Sub
-        End If
         If Me.DataGridView1.RowCount = 0 Then
             MsgBox("Debe ingresar detalle", vbCritical)
             Exit Sub
         End If
 
-        If Me.txt_efectivo.Text = "" Or Me.txt_efectivo.Text = "0" Then
-            MsgBox("Debe crear Ticket sin monto cancelado", vbCritical)
-            Exit Sub
-        End If
-        ' Dim cabecera As DataTable
         Dim dts As New proyectoDTO.ticket
         Dim func As New ProyectoNegocio.Venta
 
         dts.get_fecha = Format(Now, "yyyy-dd-MM")
         dts.get_forma_pago = tipoPago
         dts.get_total = Me.txt_Total.Text.Trim
-        dts.get_efectivo = Me.txt_efectivo.Text.Trim
+        'dts.get_efectivo = Me.txt_efectivo.Text.Trim
         dts.idUsuario = Usuario
 
         Me.Cursor = Cursors.WaitCursor
@@ -438,7 +436,7 @@ Public Class Form1
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim resp As String = ""
-        Dim neg As New ProyectoNegocio.Abrir_Caja
+        Dim neg As New ProyectoNegocio.AdminCaja
         resp = neg.CerrarCaja(Usuario)
         Try
             If CInt(resp) > 0 Then

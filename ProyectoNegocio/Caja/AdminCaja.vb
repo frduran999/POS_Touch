@@ -1,6 +1,6 @@
 ﻿Imports ProyectoService
 
-Public Class Abrir_Caja
+Public Class AdminCaja
 
     Public Function AbrirCaja(ByVal IdUsuario As Integer, ByVal Monto As Integer, ByVal Glosa As String)
         Dim dt As New DataTable

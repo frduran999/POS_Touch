@@ -15,7 +15,7 @@ Public Class CerrarCaja
 
     Private Sub btnCerrarCaja_Click(sender As Object, e As EventArgs) Handles btnCerrarCaja.Click
         Dim resp As String = ""
-        Dim neg As New ProyectoNegocio.Abrir_Caja
+        Dim neg As New ProyectoNegocio.AdminCaja
         resp = neg.CerrarCaja(IdUsuario)
         Try
             If CInt(resp) > 0 Then

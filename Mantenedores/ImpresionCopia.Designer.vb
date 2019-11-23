@@ -56,7 +56,7 @@ Partial Class ImpresionCopia
         '
         Me.Button3.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Button3.Image = Global.delevery.My.Resources.Resources.magnifier
-        Me.Button3.Location = New System.Drawing.Point(270, 34)
+        Me.Button3.Location = New System.Drawing.Point(294, 32)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(37, 37)
         Me.Button3.TabIndex = 105
@@ -65,7 +65,7 @@ Partial Class ImpresionCopia
         '
         'uic_primera
         '
-        Me.uic_primera.Location = New System.Drawing.Point(92, 49)
+        Me.uic_primera.Location = New System.Drawing.Point(122, 49)
         Me.uic_primera.MaxLength = 90
         Me.uic_primera.Name = "uic_primera"
         Me.uic_primera.Size = New System.Drawing.Size(166, 20)
@@ -77,14 +77,14 @@ Partial Class ImpresionCopia
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.Location = New System.Drawing.Point(17, 52)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(62, 13)
+        Me.Label5.Size = New System.Drawing.Size(99, 13)
         Me.Label5.TabIndex = 103
-        Me.Label5.Text = "Impresora"
+        Me.Label5.Text = "Impresora Venta"
         '
         'uic_copia1
         '
         Me.uic_copia1.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.uic_copia1.Location = New System.Drawing.Point(92, 23)
+        Me.uic_copia1.Location = New System.Drawing.Point(122, 21)
         Me.uic_copia1.Name = "uic_copia1"
         Me.uic_copia1.ReadOnly = True
         Me.uic_copia1.Size = New System.Drawing.Size(88, 25)
@@ -112,7 +112,7 @@ Partial Class ImpresionCopia
         'Button2
         '
         Me.Button2.Image = Global.delevery.My.Resources.Resources.disk_blue
-        Me.Button2.Location = New System.Drawing.Point(154, 134)
+        Me.Button2.Location = New System.Drawing.Point(157, 134)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(37, 37)
         Me.Button2.TabIndex = 192
@@ -133,7 +133,7 @@ Partial Class ImpresionCopia
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(373, 176)
+        Me.ClientSize = New System.Drawing.Size(373, 175)
         Me.ControlBox = False
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.RadGroupBox4)

@@ -62,7 +62,8 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Caja\Abrir_Caja.vb" />
+    <Compile Include="Caja\AdminCaja.vb" />
+    <Compile Include="Caja\VentaCaja.vb" />
     <Compile Include="Combos.vb" />
     <Compile Include="Mantenedores\FamiliaProducto.vb" />
     <Compile Include="Mantenedores\Impresoras.vb" />

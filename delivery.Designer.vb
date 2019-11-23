@@ -72,10 +72,9 @@ Partial Class delivery
         Me.ToolStripButton6.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ToolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripButton6.Name = "ToolStripButton6"
-        Me.ToolStripButton6.Size = New System.Drawing.Size(77, 73)
-        Me.ToolStripButton6.Text = "Compras"
+        Me.ToolStripButton6.Size = New System.Drawing.Size(52, 73)
+        Me.ToolStripButton6.Text = "Caja"
         Me.ToolStripButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.ToolStripButton6.Visible = False
         '
         'ToolStripButton2
         '

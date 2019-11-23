@@ -28,6 +28,7 @@ Public Class LoginForm1
                         Dim frm As New delivery
                         frm.es_supervisor = True
                         frm.IdUsuario = IdUsuario
+                        frm.PerfilUsuario = Perfil
                         Me.Hide()
                         frm.ShowDialog()
                     Case 2
@@ -39,6 +40,17 @@ Public Class LoginForm1
                         frm.ShowDialog()
                         frm.Hide()
                         frmMenu.IdUsuario = IdUsuario
+                        frmMenu.PerfilUsuario = Perfil
+                        frmMenu.ShowDialog()
+                    Case 4
+                        Me.Hide()
+                        Dim frm As New FrmCaja
+                        Dim frmMenu As New delivery
+                        frm.IdCajero = IdUsuario
+                        frm.ShowDialog()
+                        frm.Hide()
+                        frmMenu.IdUsuario = IdUsuario
+                        frmMenu.PerfilUsuario = Perfil
                         frmMenu.ShowDialog()
                 End Select
                 Me.Hide()
