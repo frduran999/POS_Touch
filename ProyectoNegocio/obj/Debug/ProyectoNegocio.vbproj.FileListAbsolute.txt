@@ -133,3 +133,6 @@ C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\ProyectoNegocio\obj
 C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\ProyectoNegocio\bin\Debug\proyectoDTO.dll
 C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\ProyectoNegocio\bin\Debug\proyectoDTO.pdb
 C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\ProyectoNegocio\bin\Debug\proyectoDTO.xml
+D:\Sistem_Duran\POS_Touch\ProyectoNegocio\bin\Debug\proyectoDTO.dll
+D:\Sistem_Duran\POS_Touch\ProyectoNegocio\bin\Debug\proyectoDTO.pdb
+D:\Sistem_Duran\POS_Touch\ProyectoNegocio\bin\Debug\proyectoDTO.xml

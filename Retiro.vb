@@ -31,7 +31,7 @@ Public Class Retiro
             Exit Sub
         End If
         Dim Monto As Integer = CType(uic_monto.Text, Integer)
-        Dim Neg As New RetiroCaja
+        Dim Neg As New ProyectoNegocio.RetiroCaja
         Dim vresp As String = Neg.ValidaMontoRetiro(Usuario, Monto)
 
         If vresp = "OK" Then
@@ -82,7 +82,7 @@ Public Class Retiro
 
         Dim Monto As Integer = CInt(uic_monto_total_retiro.Text)
         Dim Glosa As String = txtGlosa.Text
-        Dim Neg As New RetiroCaja
+        Dim Neg As New ProyectoNegocio.RetiroCaja
         Dim vresp As String = Neg.GuardarRetiro(Usuario, Monto, Glosa)
         If vresp = "OK" Then
             MsgBox("Retiro Realizado con Exito")
