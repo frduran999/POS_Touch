@@ -16,7 +16,6 @@ Public Class LoginForm1
         Dim clave As String
         Dim Perfil As Integer
         Dim IdUsuario As Integer
-        Dim resultado As DialogResult
         Try
             IdUsuario = DeliveryDataSet1.Tables("usuarios").Rows(Me.cbo_usuario.SelectedIndex).Item("id")
             Perfil = DeliveryDataSet1.Tables("usuarios").Rows(Me.cbo_usuario.SelectedIndex).Item("Perfil_Id")
@@ -34,46 +33,13 @@ Public Class LoginForm1
                     Case 2
                         delivery.es_supervisor = False
                         Me.Hide()
-                        Dim dt As New DataTable
-                        Dim Neg As New Abrir_Caja
-
-                        Dim vresp As String = Neg.ValidaCaja(IdUsuario)
-                        If vresp <> "OK" Then
-                            Dim frm As New AbrirCaja
-                            Dim frmMenu As New delivery
-                            frm.IdUsuario = IdUsuario
-                            frm.ShowDialog()
-                            frm.Hide()
-                            frmMenu.IdUsuario = IdUsuario
-                            frmMenu.ShowDialog()
-                        Else
-                            MsgBox("Caja Abierta", vbInformation, "Aviso")
-                            resultado = MsgBox("Desea Cerrar Caja", vbOKCancel, "Confirmar")
-                            If resultado = vbOK Then
-                                delivery.es_supervisor = False
-                                Me.Hide()
-                                Dim frmCerrar As New CerrarCaja
-                                frmCerrar.IdUsuario = IdUsuario
-                                frmCerrar.ShowDialog()
-                                Dim frm As New AbrirCaja
-                                frm.IdUsuario = IdUsuario
-                                frm.ShowDialog()
-                                Dim frmCaja As New Form1
-                                frmCaja.Usuario = IdUsuario
-                                frmCaja.ShowDialog()
-                                System.Diagnostics.Process.GetCurrentProcess().Kill()
-                            Else
-                                Me.Hide()
-                                Dim frmMenu As New delivery
-                                Dim frmCaja As New Form1
-                                frmCaja.ShowDialog()
-                                'System.Diagnostics.Process.GetCurrentProcess().Kill()
-                                frmCaja.Hide()
-                                frmMenu.IdUsuario = IdUsuario
-                                frmMenu.ShowDialog()
-                            End If
-
-                        End If
+                        Dim frm As New Form1
+                        Dim frmMenu As New delivery
+                        frm.Usuario = IdUsuario
+                        frm.ShowDialog()
+                        frm.Hide()
+                        frmMenu.IdUsuario = IdUsuario
+                        frmMenu.ShowDialog()
                 End Select
                 Me.Hide()
             End If
