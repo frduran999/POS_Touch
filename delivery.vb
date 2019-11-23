@@ -17,49 +17,15 @@ Public Class delivery
 
     Private Sub ToolStripButton1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripButton1.Click
 
-        Dim dt As New DataTable
-        Dim Neg As New Abrir_Caja
-        Dim resultado As DialogResult
-
-        Dim vresp As String = Neg.ValidaCaja(IdUsuario)
-        If vresp <> "OK" Then
-            Dim frm As New AbrirCaja
-            frm.IdUsuario = IdUsuario
-            frm.ShowDialog()
-            'Dim frmCaja As New Form1
-            'frmCaja.ShowDialog()
-            'frmCaja.Close()
-        Else
-            'Me.es_supervisor = False
-            MsgBox("Caja Abierta", vbInformation, "Aviso")
-            resultado = MsgBox("Desea Cerrar Caja", vbOKCancel, "Confirmar")
-            If resultado = vbOK Then
-                Me.Hide()
-                Dim frmCerrar As New CerrarCaja
-                frmCerrar.IdUsuario = IdUsuario
-                frmCerrar.ShowDialog()
-                'Dim frm As New AbrirCaja
-                'frm.IdUsuario = IdUsuario
-                'frm.ShowDialog()
-                'Dim frmCaja As New Form1
-                'frmCaja.Usuario = IdUsuario
-                'frmCaja.ShowDialog()
-                'frmCaja.Close()
-                Dim frm As New delivery
-                frm.IdUsuario = IdUsuario
-                frm.ShowDialog()
-                'System.Diagnostics.Process.GetCurrentProcess().Kill()
-            Else
-                Me.Hide()
-                Dim frmVenta As New Form1
-                frmVenta.Usuario = IdUsuario
-                frmVenta.ShowDialog()
-                frmVenta.Close()
-                Me.Show()
-                'System.Diagnostics.Process.GetCurrentProcess().Kill()
-            End If
-        End If
+        Me.Hide()
+        Dim frmVenta As New Form1
+        frmVenta.Usuario = IdUsuario
+        frmVenta.ShowDialog()
+        frmVenta.Close()
+        Me.Show()
+        'System.Diagnostics.Process.GetCurrentProcess().Kill()
         'Form1.ShowDialog()
+
     End Sub
 
     Private Sub menu_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load

@@ -5,11 +5,20 @@ Imports System.Drawing.Imaging
 Imports proyectoDTO
 
 Public Class Form1
+    Private Const CP_NOCLOSE_BUTTON As Integer = &H200
     Dim myhelper As New dac.myhelper2
     Dim obc_RM As New ReportMan.RMan
     Private IdPago As String = 0
     Private tipoPago As String = ""
     Private _usuario As Integer
+
+    Protected Overloads Overrides ReadOnly Property CreateParams() As CreateParams
+        Get
+            Dim myCp As CreateParams = MyBase.CreateParams
+            myCp.ClassStyle = myCp.ClassStyle Or CP_NOCLOSE_BUTTON
+            Return myCp
+        End Get
+    End Property
 
     Public Property Usuario As Integer
         Get
@@ -135,6 +144,15 @@ Public Class Form1
             total += Me.DataGridView1.Rows(i).Cells(4).Value
         Next
         Me.txt_Total.Text = total
+    End Sub
+
+    Private Sub Form1_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        Select Case e.KeyValue
+            Case Keys.F2
+                btn_Efectivo_Click(Nothing, Nothing)
+            Case Keys.F3
+                btn_Tarjeta_Click(Nothing, Nothing)
+        End Select
     End Sub
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Me.Forma_pagoTableAdapter.Fill(Me.FormaPago_dateset.forma_pago)
