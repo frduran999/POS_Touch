@@ -60,6 +60,15 @@ Public Class FrmCaja
 
     End Sub
 
+    Private Sub IdTicket_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles IdTicket.KeyPress
+        Dim valida As String = "0123456789" & Convert.ToChar(8)
+        If (valida.Contains("" + e.KeyChar)) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+    End Sub
+
     Private Sub uic_botonF1_Click(sender As Object, e As EventArgs) Handles uic_botonF1.Click
         Dim IdPago As Integer = 2
         TipoPago = "Tarjeta"
@@ -112,19 +121,26 @@ Public Class FrmCaja
 
         Me.Cursor = Cursors.WaitCursor
         Dim id_doc_cab As String = ""
-        Try
-            id_doc_cab = func.GrabaBoleta(nroticket, usuario)
-            If id_doc_cab = "NO" Then
-                Telerik.WinControls.RadMessageBox.Show("Venta ya registrada" & vbCrLf, "Aviso")
-                limpiar()
+        Dim Neg As New ProyectoNegocio.AdminCaja
+
+        Dim vresp As String = Neg.ValidaCaja(usuario)
+        If vresp = "OK" Then
+            Try
+                id_doc_cab = func.GrabaBoleta(nroticket, usuario)
+            Catch ex As Exception
                 Me.Cursor = Cursors.Default
-            End If
-            'Exit Sub
-        Catch ex As Exception
+                Telerik.WinControls.RadMessageBox.Show("A ocurrido un error" & vbCrLf & nroticket, "Aviso")
+                Exit Sub
+            End Try
+        Else
+            Telerik.WinControls.RadMessageBox.Show(Me, "Tiene que abrir caja Abierta", "Alerta")
+            Dim frmApertura As New AperturaCaja
+            frmApertura.IdUsuario = usuario
+            frmApertura.ShowDialog()
+            limpiar()
             Me.Cursor = Cursors.Default
-            Telerik.WinControls.RadMessageBox.Show("A ocurrido un error" & vbCrLf & id_doc_cab, "Aviso")
             Exit Sub
-        End Try
+        End If
 
         Dim frmT As New Rpt_ticket
         frmT.idventa = nroticket
@@ -155,24 +171,33 @@ Public Class FrmCaja
         Dim articulo As String = ""
         Dim Total As Integer = 0
         Dim neg As New VentaCaja
+        Dim resp As String = ""
+
         IdTicket = IIf(Me.IdTicket.Text = "", 0, Me.IdTicket.Text)
 
-        dt = neg.GetVentaTicket(IdTicket)
-        If dt.Rows.Count > 0 Then
-            Me.DataGridView1.Rows.Clear()
-            For Each valor As DataRow In dt.Rows
-                precio = Val(valor("precio"))
-                codigo_item = valor("id_producto")
-                cantidad = valor("cantidad")
-                articulo = valor("descripcion")
-                Total = valor("total")
-                Me.DataGridView1.Rows.Add(codigo_item.Trim, cantidad, articulo.Trim, precio, Total)
-            Next
+        resp = neg.ValidaTicket(IdTicket)
+        If resp <> "OK" Then
+            dt = neg.GetVentaTicket(IdTicket)
+            If dt.Rows.Count > 0 Then
+                Me.DataGridView1.Rows.Clear()
+                For Each valor As DataRow In dt.Rows
+                    precio = Val(valor("precio"))
+                    codigo_item = valor("id_producto")
+                    cantidad = valor("cantidad")
+                    articulo = valor("descripcion")
+                    Total = valor("total")
+                    Me.DataGridView1.Rows.Add(codigo_item.Trim, cantidad, articulo.Trim, precio, Total)
+                Next
+            Else
+                Me.DataGridView1.DataSource = Nothing
+            End If
+            calculo_total_venta()
         Else
-            Me.DataGridView1.DataSource = Nothing
+            Telerik.WinControls.RadMessageBox.Show(Me, "Ticket ya fue ingresado.", "Alerta")
+            limpiar()
+            Exit Sub
         End If
-        calculo_total_venta()
-        
+
     End Sub
 
     Private Sub txt_efectivo_TextChanged(sender As Object, e As EventArgs) Handles txt_efectivo.TextChanged

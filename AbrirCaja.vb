@@ -49,7 +49,7 @@ Public Class AbrirCaja
             Dim vglosa As String = Me.uic_glosa.Text.Trim
             Dim dt As New DataTable
             Dim Neg As New ProyectoNegocio.AdminCaja
-            dt = Neg.AbrirCaja(IdUsuario, vmonto, vglosa)
+            'dt = Neg.AbrirCaja(IdUsuario, vmonto, vglosa)
             MsgBox("Apertura registrada exitosamente", vbInformation, "Aviso")
             limpiar()
             Me.Hide()

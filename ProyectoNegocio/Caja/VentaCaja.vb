@@ -17,4 +17,11 @@ Public Class VentaCaja
         Return resp
     End Function
 
+    Public Function ValidaTicket(ByVal nroticket As Integer) As String
+        Dim resp As String
+        Dim b As New VentaCajaService
+        resp = b.ValidaTicket(nroticket)
+        Return resp
+    End Function
+
 End Class
