@@ -73,8 +73,9 @@ Public Class FrmCaja
     End Sub
 
     Private Sub uic_BotonF4_Click(sender As Object, e As EventArgs) Handles uic_BotonF4.Click
-        Dim frmCaja As New AdminCaja
-        frmCaja.ShowDialog()
+        Dim frmAdmCaja As New AdminCaja
+        frmAdmCaja.IdUsuario = IdUsuario
+        frmAdmCaja.ShowDialog()
     End Sub
 
     Private Sub uic_ValeBotella_Click(sender As Object, e As EventArgs)
