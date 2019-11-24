@@ -77,7 +77,7 @@ Partial Class Form1
         Me.FlowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.FlowLayoutPanel1.Location = New System.Drawing.Point(409, 231)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(676, 296)
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(801, 248)
         Me.FlowLayoutPanel1.TabIndex = 0
         '
         'ImageList1
@@ -320,7 +320,7 @@ Partial Class Form1
         Me.btn_aceptar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_aceptar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_aceptar.Image = Global.delevery.My.Resources.Resources.check
-        Me.btn_aceptar.Location = New System.Drawing.Point(1109, 298)
+        Me.btn_aceptar.Location = New System.Drawing.Point(1002, 484)
         Me.btn_aceptar.Name = "btn_aceptar"
         Me.btn_aceptar.Size = New System.Drawing.Size(101, 41)
         Me.btn_aceptar.TabIndex = 15
@@ -332,7 +332,7 @@ Partial Class Form1
         '
         Me.btn_salir.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_salir.Image = Global.delevery.My.Resources.Resources._Exit
-        Me.btn_salir.Location = New System.Drawing.Point(1161, 345)
+        Me.btn_salir.Location = New System.Drawing.Point(1161, 485)
         Me.btn_salir.Name = "btn_salir"
         Me.btn_salir.Size = New System.Drawing.Size(46, 41)
         Me.btn_salir.TabIndex = 1
@@ -404,7 +404,7 @@ Partial Class Form1
         '
         Me.btn_limpiar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_limpiar.Image = Global.delevery.My.Resources.Resources.Refresh1
-        Me.btn_limpiar.Location = New System.Drawing.Point(1109, 345)
+        Me.btn_limpiar.Location = New System.Drawing.Point(1109, 485)
         Me.btn_limpiar.Name = "btn_limpiar"
         Me.btn_limpiar.Size = New System.Drawing.Size(46, 41)
         Me.btn_limpiar.TabIndex = 24
@@ -416,9 +416,9 @@ Partial Class Form1
         '
         Me.btn_Efectivo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_Efectivo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_Efectivo.Location = New System.Drawing.Point(1109, 178)
+        Me.btn_Efectivo.Location = New System.Drawing.Point(1152, 245)
         Me.btn_Efectivo.Name = "btn_Efectivo"
-        Me.btn_Efectivo.Size = New System.Drawing.Size(101, 48)
+        Me.btn_Efectivo.Size = New System.Drawing.Size(70, 27)
         Me.btn_Efectivo.TabIndex = 25
         Me.btn_Efectivo.Text = "EFECTIVO (F2)"
         Me.ToolTip1.SetToolTip(Me.btn_Efectivo, "Efectivo")
@@ -429,9 +429,9 @@ Partial Class Form1
         '
         Me.btn_Tarjeta.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_Tarjeta.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_Tarjeta.Location = New System.Drawing.Point(1109, 231)
+        Me.btn_Tarjeta.Location = New System.Drawing.Point(1152, 274)
         Me.btn_Tarjeta.Name = "btn_Tarjeta"
-        Me.btn_Tarjeta.Size = New System.Drawing.Size(101, 48)
+        Me.btn_Tarjeta.Size = New System.Drawing.Size(70, 27)
         Me.btn_Tarjeta.TabIndex = 26
         Me.btn_Tarjeta.Text = "TARJETA (F3)"
         Me.ToolTip1.SetToolTip(Me.btn_Tarjeta, "Tarjeta")
@@ -442,9 +442,9 @@ Partial Class Form1
         '
         Me.RetiroCaja.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RetiroCaja.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RetiroCaja.Location = New System.Drawing.Point(1109, 426)
+        Me.RetiroCaja.Location = New System.Drawing.Point(1152, 304)
         Me.RetiroCaja.Name = "RetiroCaja"
-        Me.RetiroCaja.Size = New System.Drawing.Size(101, 48)
+        Me.RetiroCaja.Size = New System.Drawing.Size(70, 22)
         Me.RetiroCaja.TabIndex = 27
         Me.RetiroCaja.Text = "RETIRO"
         Me.ToolTip1.SetToolTip(Me.RetiroCaja, "RetiroCaja")
@@ -455,9 +455,9 @@ Partial Class Form1
         '
         Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(1109, 480)
+        Me.Button1.Location = New System.Drawing.Point(1152, 329)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(101, 48)
+        Me.Button1.Size = New System.Drawing.Size(70, 29)
         Me.Button1.TabIndex = 28
         Me.Button1.Text = "CIERRE CAJA"
         Me.ToolTip1.SetToolTip(Me.Button1, "RetiroCaja")
@@ -490,6 +490,7 @@ Partial Class Form1
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.btn_salir)
         Me.Controls.Add(Me.FlowLayoutPanel1)
+        Me.KeyPreview = True
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = " "

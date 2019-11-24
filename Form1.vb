@@ -153,7 +153,7 @@ Public Class Form1
             Case Keys.F2
                 btn_Efectivo_Click(Nothing, Nothing)
             Case Keys.F4
-                'uic_BotonF4_Click(Nothing, Nothing)
+                btn_aceptar_Click(Nothing, Nothing)
             Case Keys.F5
                 'uic_ValeBotella_Click(Nothing, Nothing)
             Case Keys.F6
@@ -169,7 +169,8 @@ Public Class Form1
         Dim familia As DataTable
         familia = myhelper.ExecuteDataSet(My.Settings.deliveryConnectionString, CommandType.Text, "SELECT fp.CodigoFamilia, fp.Familia, Ff.FotoNombre FROM FamiliaProducto AS fp LEFT OUTER JOIN FamiliaFoto AS Ff ON fp.CodigoFamilia = Ff.FamiliaId where fp.Estado = 1", Nothing, 60).Tables(0)
         For Each dr As DataRow In familia.Rows
-            Dim obcontrol As New WindowsControlLibrary1.UserControl1
+            'Dim oc As New U_Familia
+            Dim obcontrol As New U_Familia
             Try
                 Dim NFamilia As String = dr("Familia")
                 Dim codigoFamilia As String = dr("CodigoFamilia")
@@ -185,6 +186,7 @@ Public Class Form1
                     obcontrol.Controls(0).BackgroundImage = My.Resources.SinFoto
                 Else
                     obcontrol.Controls(0).BackgroundImage = ByteArrayToImage(ImageToByteArray(Image.FromFile(ruta)), True)
+                    obcontrol.Controls(0).BackgroundImageLayout = ImageLayout.Stretch
                 End If
 
                 AddHandler CType(obcontrol.Controls(0), Button).Click, AddressOf lawea2

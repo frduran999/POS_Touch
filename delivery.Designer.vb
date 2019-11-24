@@ -68,7 +68,7 @@ Partial Class delivery
         'ToolStripButton6
         '
         Me.ToolStripButton6.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.ToolStripButton6.Image = Global.delevery.My.Resources.Resources.address_book2
+        Me.ToolStripButton6.Image = CType(resources.GetObject("ToolStripButton6.Image"), System.Drawing.Image)
         Me.ToolStripButton6.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ToolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripButton6.Name = "ToolStripButton6"

@@ -322,6 +322,12 @@
     <Compile Include="ReportesVenta\CierreCaja.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ReportesVenta\RptBoleta.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptBoleta.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ReportesVenta\RptTicket.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -369,6 +375,12 @@
     </Compile>
     <Compile Include="Mantenedores\usuario.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="U_Familia.Designer.vb">
+      <DependentUpon>U_Familia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="U_Familia.vb">
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Ventas\FrmCaja.Designer.vb">
       <DependentUpon>FrmCaja.vb</DependentUpon>
@@ -468,6 +480,10 @@
     <EmbeddedResource Include="ReportesVenta\CierreCaja.resx">
       <DependentUpon>CierreCaja.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportesVenta\RptBoleta.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptBoleta.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportesVenta\RptTicket.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RptTicket.vb</LastGenOutput>
@@ -491,6 +507,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenedores\usuario.resx">
       <DependentUpon>usuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="U_Familia.resx">
+      <DependentUpon>U_Familia.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventas\FrmCaja.resx">
       <DependentUpon>FrmCaja.vb</DependentUpon>
@@ -654,9 +673,7 @@
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Ventas\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

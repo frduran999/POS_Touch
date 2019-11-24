@@ -1,4 +1,6 @@
-﻿Public Class VentaCajaService
+﻿Imports proyectoDTO
+
+Public Class VentaCajaService
 
     Public Function GetVentaTicket(ByVal IdTicket As Integer) As DataTable
         Dim con As New Conexion
@@ -18,6 +20,19 @@
             End Try
         End If
         Return dt
+    End Function
+
+    Public Function GrabaBoleta(ByVal nroticket As Integer, ByVal idUsuario As Integer) As String
+        Dim resp As String = ""
+        Dim con As New Conexion
+        If con.Conexion Then
+            Dim odac As New dac.myMSSQL(con.con.ConnectionString, 180000)
+            odac.paramQUERY.Add("NroTicket", nroticket)
+            odac.paramQUERY.Add("IdUsuario", idUsuario)
+
+            resp = odac.GetValorNoNull("GrabaBoleta")
+        End If
+        Return resp
     End Function
 
 End Class

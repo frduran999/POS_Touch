@@ -22,6 +22,14 @@ Represents the strongly named DataTable class.
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
+</member><member name="T:delevery.dts_Caja.parametrosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:delevery.dts_Caja.Rpt_BoletaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
 </member><member name="T:delevery.dts_Caja.cabeceraRow">
 	<summary>
 Represents strongly named DataRow class.
@@ -38,6 +46,14 @@ Represents strongly named DataRow class.
 	<summary>
 Represents strongly named DataRow class.
 </summary>
+</member><member name="T:delevery.dts_Caja.parametrosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:delevery.dts_Caja.Rpt_BoletaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
 </member><member name="T:delevery.dts_Caja.cabeceraRowChangeEvent">
 	<summary>
 Row event argument class
@@ -51,6 +67,14 @@ Row event argument class
 Row event argument class
 </summary>
 </member><member name="T:delevery.dts_Caja.RptTicketFamiliaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:delevery.dts_Caja.parametrosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:delevery.dts_Caja.Rpt_BoletaRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>

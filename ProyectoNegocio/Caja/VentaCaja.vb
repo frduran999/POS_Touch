@@ -1,4 +1,5 @@
 ﻿Imports ProyectoService
+Imports proyectoDTO
 
 Public Class VentaCaja
 
@@ -8,4 +9,12 @@ Public Class VentaCaja
         dt = b.GetVentaTicket(IdTicket)
         Return dt
     End Function
+
+    Public Function GrabaBoleta(ByVal nroticket As Integer, ByVal idUsuario As Integer) As String
+        Dim resp As String
+        Dim b As New VentaCajaService
+        resp = b.GrabaBoleta(nroticket, idUsuario)
+        Return resp
+    End Function
+
 End Class

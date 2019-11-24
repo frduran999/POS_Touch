@@ -2,15 +2,15 @@
 Imports ProyectoNegocio
 
 Public Class FrmCaja
+    Dim TipoPago As String = ""
+    Private _IdUsuario As Integer
 
-    Private _IdCajero As Integer
-
-    Public Property IdCajero As String
+    Public Property IdUsuario As Integer
         Get
-            Return _IdCajero
+            Return _IdUsuario
         End Get
-        Set(ByVal value As String)
-            _IdCajero = value
+        Set(ByVal value As Integer)
+            _IdUsuario = value
         End Set
     End Property
 
@@ -38,7 +38,7 @@ Public Class FrmCaja
 
     Private Sub uic_botonF2_Click(sender As Object, e As EventArgs) Handles uic_botonF2.Click
         Dim IdPago As Integer = 1
-        Dim TipoPago = "Efectivo"
+        TipoPago = "Efectivo"
         txt_efectivo.Enabled = True
         Me.txt_efectivo.Text = ""
         Me.txt_efectivo.Focus()
@@ -62,7 +62,7 @@ Public Class FrmCaja
 
     Private Sub uic_botonF1_Click(sender As Object, e As EventArgs) Handles uic_botonF1.Click
         Dim IdPago As Integer = 2
-        Dim TipoPago = "Tarjeta"
+        TipoPago = "Tarjeta"
         Me.txt_efectivo.Enabled = False
         Me.txt_efectivo.Text = Me.txt_Total.Text
         Me.txt_vuelto.Text = "0"
@@ -86,8 +86,64 @@ Public Class FrmCaja
     End Sub
 
     Private Sub btn_aceptar_Click(sender As Object, e As EventArgs) Handles btn_aceptar.Click
+        If Me.txt_Total.Text = "" Or Me.txt_Total.Text = "0" Then
+            MsgBox("Debe Ingresar Monto Pago", vbCritical)
+            Exit Sub
+        End If
 
+        If Me.DataGridView1.RowCount = 0 Then
+            MsgBox("Debe ingresar detalle", vbCritical)
+            Exit Sub
+        End If
+
+        If Me.txt_efectivo.Text = "" Or Me.txt_efectivo.Text = "0" Then
+            MsgBox("Debe ingresar Monto", vbCritical)
+            Exit Sub
+        End If
+
+
+        Dim dts As New proyectoDTO.ticket
+        Dim func As New VentaCaja
+        Dim nroticket As String = ""
+        Dim usuario As Integer
+        nroticket = Me.IdTicket.Text
+        usuario = IdUsuario
+
+        Me.Cursor = Cursors.WaitCursor
+        Dim id_doc_cab As String = ""
+        Try
+            id_doc_cab = func.GrabaBoleta(nroticket, usuario)
+            If id_doc_cab = "NO" Then
+                Telerik.WinControls.RadMessageBox.Show("Venta ya registrada" & vbCrLf, "Aviso")
+                limpiar()
+                Me.Cursor = Cursors.Default
+            End If
+            'Exit Sub
+        Catch ex As Exception
+            Me.Cursor = Cursors.Default
+            Telerik.WinControls.RadMessageBox.Show("A ocurrido un error" & vbCrLf & id_doc_cab, "Aviso")
+            Exit Sub
+        End Try
+
+        Dim frmT As New Rpt_ticket
+        frmT.idventa = nroticket
+        frmT.Formulario = "FrmCaja"
+        frmT.Show()
+        frmT.Close()
+
+        limpiar()
+        Me.Cursor = Cursors.Default
     End Sub
+
+    Private Sub limpiar()
+        Me.txt_efectivo.Text = ""
+        Me.txt_Total.Text = ""
+        Me.txt_vuelto.Text = ""
+        Me.IdTicket.Text = ""
+        Me.DataGridView1.Rows.Clear()
+        Me.txt_efectivo.Enabled = False
+    End Sub
+
 
     Private Sub uic_BuscaVta_Click(sender As Object, e As EventArgs) Handles uic_BuscaVta.Click
         Dim dt As New DataTable
@@ -98,10 +154,11 @@ Public Class FrmCaja
         Dim articulo As String = ""
         Dim Total As Integer = 0
         Dim neg As New VentaCaja
-        IdTicket = Me.IdTicket.Text
+        IdTicket = IIf(Me.IdTicket.Text = "", 0, Me.IdTicket.Text)
 
         dt = neg.GetVentaTicket(IdTicket)
         If dt.Rows.Count > 0 Then
+            Me.DataGridView1.Rows.Clear()
             For Each valor As DataRow In dt.Rows
                 precio = Val(valor("precio"))
                 codigo_item = valor("id_producto")
@@ -135,10 +192,78 @@ Public Class FrmCaja
     End Sub
 
     Private Sub calculo_total_venta()
-        Dim total As Integer
-        For i As Integer = 0 To Me.DataGridView1.Rows.Count - 1
-            total += Me.DataGridView1.Rows(i).Cells(4).Value
-        Next
+        Dim total As Integer = 0
+        If Me.DataGridView1.Rows.Count > 0 Then
+            For i As Integer = 0 To Me.DataGridView1.Rows.Count - 1
+                total += Me.DataGridView1.Rows(i).Cells(4).Value
+            Next
+        End If
         Me.txt_Total.Text = total
     End Sub
+
+
+#Region "Botonera"
+    Private Sub uic_boton0_Click(sender As Object, e As EventArgs) Handles uic_boton0.Click
+        Me.txt_efectivo.Text &= "0"
+        Me.txt_efectivo.Focus()
+    End Sub
+    Private Sub uic_boton1_Click(sender As Object, e As EventArgs) Handles uic_boton1.Click
+        Me.txt_efectivo.Text &= "1"
+        Me.txt_efectivo.Focus()
+    End Sub
+
+    Private Sub uic_boton2_Click(sender As Object, e As EventArgs) Handles uic_boton2.Click
+        Me.txt_efectivo.Text &= "2"
+        Me.txt_efectivo.Focus()
+    End Sub
+
+    Private Sub uic_boton3_Click(sender As Object, e As EventArgs) Handles uic_boton3.Click
+        Me.txt_efectivo.Text &= "3"
+        Me.txt_efectivo.Focus()
+    End Sub
+
+    Private Sub uic_boton4_Click(sender As Object, e As EventArgs) Handles uic_boton4.Click
+        Me.txt_efectivo.Text &= "4"
+        Me.txt_efectivo.Focus()
+    End Sub
+
+    Private Sub uic_boton5_Click(sender As Object, e As EventArgs) Handles uic_boton5.Click
+        Me.txt_efectivo.Text &= "5"
+        Me.txt_efectivo.Focus()
+    End Sub
+
+    Private Sub uic_boton6_Click(sender As Object, e As EventArgs) Handles uic_boton6.Click
+        Me.txt_efectivo.Text &= "6"
+        Me.txt_efectivo.Focus()
+    End Sub
+
+    Private Sub uic_boton7_Click(sender As Object, e As EventArgs) Handles uic_boton7.Click
+        Me.txt_efectivo.Text &= "7"
+        Me.txt_efectivo.Focus()
+    End Sub
+
+    Private Sub uic_boton8_Click(sender As Object, e As EventArgs) Handles uic_boton8.Click
+        Me.txt_efectivo.Text &= "8"
+        Me.txt_efectivo.Focus()
+    End Sub
+
+    Private Sub uic_boton9_Click(sender As Object, e As EventArgs) Handles uic_boton9.Click
+        If Me.txt_efectivo.Enabled = True Then
+            Me.txt_efectivo.Text &= "9"
+            Me.txt_efectivo.Focus()
+        Else
+            Me.IdTicket.Text &= "9"
+            Me.IdTicket.Focus()
+        End If
+
+    End Sub
+
+    Private Sub uic_botonBack_Click(sender As Object, e As EventArgs) Handles uic_botonBack.Click
+        If Me.txt_efectivo.Text.Length > 0 Then
+            Me.txt_efectivo.Text = txt_efectivo.Text.Substring(0, Me.txt_efectivo.Text.Length - 1)
+        End If
+    End Sub
+
+
+#End Region
 End Class

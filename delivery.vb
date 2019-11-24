@@ -99,7 +99,7 @@ Public Class delivery
     Private Sub ToolStripButton6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripButton6.Click
         If PerfilUsuario = 4 Or PerfilUsuario = 1 Then
             Dim frmCaja As New FrmCaja
-            frmCaja.IdCajero = IdUsuario
+            frmCaja.IdUsuario = IdUsuario
             frmCaja.ShowDialog()
             frmCaja.Hide()
         Else

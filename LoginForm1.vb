@@ -46,7 +46,7 @@ Public Class LoginForm1
                         Me.Hide()
                         Dim frm As New FrmCaja
                         Dim frmMenu As New delivery
-                        frm.IdCajero = IdUsuario
+                        frm.IdUsuario = IdUsuario
                         frm.ShowDialog()
                         frm.Hide()
                         frmMenu.IdUsuario = IdUsuario
