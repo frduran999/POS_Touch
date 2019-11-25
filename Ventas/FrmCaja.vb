@@ -137,7 +137,7 @@ Public Class FrmCaja
             Dim frmApertura As New AperturaCaja
             frmApertura.IdUsuario = usuario
             frmApertura.ShowDialog()
-            limpiar()
+            'limpiar()
             Me.Cursor = Cursors.Default
             Exit Sub
         End If

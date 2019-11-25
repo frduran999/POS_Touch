@@ -30,14 +30,31 @@
 
     Private Sub uic_retiro_Click(sender As Object, e As EventArgs) Handles uic_retiro.Click
         Dim frmRetiro As New RetiroCaja
-        frmRetiro.ShowDialog()
-        Me.Hide()
+        frmRetiro.IdUsuario = IdUsuario
+        Dim Neg As New ProyectoNegocio.AdminCaja
+
+        Dim vresp As String = Neg.ValidaCaja(IdUsuario)
+        If vresp = "OK" Then
+            frmRetiro.ShowDialog()
+            frmRetiro.Hide()
+        Else
+            Telerik.WinControls.RadMessageBox.Show(Me, "Debe abrir caja", "Alerta")
+        End If
+        'Me.Hide()
     End Sub
 
     Private Sub uic_cierre_Click(sender As Object, e As EventArgs) Handles uic_cierre.Click
-        Dim frmCierre As New Cierre_Caja
-        frmCierre.ShowDialog()
-        Me.Hide()
+        Dim Neg As New ProyectoNegocio.AdminCaja
+        Dim vresp As String = Neg.ValidaCaja(IdUsuario)
+        If vresp = "OK" Then
+            Dim frmCierre As New Cierre_Caja
+            frmCierre.IdUsuario = IdUsuario
+            frmCierre.ShowDialog()
+            Me.Hide()
+        Else
+            Telerik.WinControls.RadMessageBox.Show(Me, "Debe abrir caja", "Alerta")
+        End If
+        'Me.Hide()
     End Sub
 
     Private Sub uic_Volver_Click(sender As Object, e As EventArgs) Handles uic_Volver.Click

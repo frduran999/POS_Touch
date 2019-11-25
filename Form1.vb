@@ -230,34 +230,55 @@ Public Class Form1
 
     End Sub
     Private Sub btn_aceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_aceptar.Click
-        If Me.txt_Total.Text = "" Or Me.txt_Total.Text = "0" Then
-            MsgBox("Debe Ingresar Monto Pago", vbCritical)
-            Exit Sub
-        End If
-
         If Me.DataGridView1.RowCount = 0 Then
             MsgBox("Debe ingresar detalle", vbCritical)
             Exit Sub
         End If
 
+        If Me.txt_Total.Text = "" Or Me.txt_Total.Text = "0" Then
+            MsgBox("Debe Ingresar Monto Pago", vbCritical)
+            Exit Sub
+        End If
+
+        If Me.txt_efectivo.Text = "" Or Me.txt_Total.Text = "0" Then
+            MsgBox("Debe Ingresar Monto a Cancelar", vbCritical)
+            Exit Sub
+        End If
+
         Dim dts As New proyectoDTO.ticket
         Dim func As New ProyectoNegocio.Venta
+        Dim id_doc_cab As String = ""
+        Dim Neg As New ProyectoNegocio.AdminCaja
 
         dts.get_fecha = Format(Now, "yyyy-dd-MM")
         dts.get_forma_pago = tipoPago
         dts.get_total = Me.txt_Total.Text.Trim
-        'dts.get_efectivo = Me.txt_efectivo.Text.Trim
+        dts.get_efectivo = Me.txt_efectivo.Text.Trim
         dts.idUsuario = Usuario
 
         Me.Cursor = Cursors.WaitCursor
-        Dim id_doc_cab As String = ""
-        Try
-            id_doc_cab = func.GrabarCab(dts)
-        Catch ex As Exception
-            Telerik.WinControls.RadMessageBox.Show("A ocurrido un error" & vbCrLf & id_doc_cab, "Aviso")
+        
+
+        Dim vresp As String = Neg.ValidaCaja(Usuario)
+        If vresp = "OK" Then
+            Try
+                id_doc_cab = func.GrabarCab(dts)
+            Catch ex As Exception
+                Telerik.WinControls.RadMessageBox.Show("A ocurrido un error" & vbCrLf & id_doc_cab, "Aviso")
+                Me.Cursor = Cursors.Default
+                Exit Sub
+            End Try
+        Else
+            Telerik.WinControls.RadMessageBox.Show(Me, "Tiene que abrir caja Abierta", "Alerta")
+            Dim frmApertura As New AperturaCaja
+            frmApertura.IdUsuario = Usuario
+            frmApertura.ShowDialog()
+            'limpiar()
             Me.Cursor = Cursors.Default
             Exit Sub
-        End Try
+        End If
+
+
 
         Dim num_linea As Integer = Me.DataGridView1.Rows.Count - 1
 
@@ -459,4 +480,9 @@ Public Class Form1
 
     End Sub
 
+    Private Sub uic_admCaja_Click(sender As Object, e As EventArgs) Handles uic_admCaja.Click
+        Dim frmAdmCaja As New AdminCaja
+        frmAdmCaja.IdUsuario = Usuario
+        frmAdmCaja.ShowDialog()
+    End Sub
 End Class
