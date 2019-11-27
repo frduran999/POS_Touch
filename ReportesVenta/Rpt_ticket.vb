@@ -25,7 +25,7 @@ Public Class Rpt_ticket
     End Sub
     Private Sub Cargar()
         Me.Cursor = Cursors.WaitCursor
-        If Formulario = "FrmCaja" Then
+        If Formulario = "FrmCaja" Or Formulario = "FrmVenta" Then
             Try
                 Dim rpt As New RptBoleta
                 Dim data As New dts_Caja
@@ -58,7 +58,8 @@ Public Class Rpt_ticket
                 End If
             Catch ex As Exception
             End Try
-        Else
+        End If
+        If Formulario = "FrmVenta" Then
             Try
                 Dim rpt As New RptTicket
                 Dim data As New deliveryDataSet1
@@ -92,7 +93,7 @@ Public Class Rpt_ticket
             Catch ex As Exception
             End Try
         End If
-        
+
         Me.Cursor = Cursors.Default
     End Sub
 

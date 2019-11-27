@@ -44,7 +44,8 @@ Public Class delivery
             LoginForm1.ShowDialog()
         Catch ex As Exception
         End Try
-
+        Dim frm As New StockCritico
+        frm.ShowDialog()
         'Me.uic_versionApp.Text = "APP: " & System.Reflection.Assembly.GetExecutingAssembly.GetName.Version.Major & "." & System.Reflection.Assembly.GetExecutingAssembly.GetName.Version.Minor & "." & System.Reflection.Assembly.GetExecutingAssembly.GetName.Version.Build
         Dim resp As String = ""
         resp = oconfig.get_parametros()
@@ -64,12 +65,8 @@ Public Class delivery
         Application.Exit()
     End Sub
 
-    Private Sub ToolStripButton4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripButton4.Click
-        If es_supervisor Then
-            Productos.ShowDialog()
-        Else
-            MsgBox("Opción disponible solamente para el supervisor", MsgBoxStyle.Information, "Aviso")
-        End If
+    Private Sub ToolStripButton4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+
     End Sub
 
     Private Sub ToolStripButton3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripButton3.Click
@@ -147,5 +144,24 @@ Public Class delivery
     Private Sub ImpresorasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ImpresorasToolStripMenuItem.Click
         Dim frm As New ImpresionCopia
         frm.ShowDialog()
+    End Sub
+
+    Private Sub ProductoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProductoToolStripMenuItem.Click
+        If es_supervisor Then
+            Productos.ShowDialog()
+        Else
+            MsgBox("Opción disponible solamente para el supervisor", MsgBoxStyle.Information, "Aviso")
+        End If
+    End Sub
+
+    Private Sub StockToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StockToolStripMenuItem.Click
+        Dim frm As New compras
+        frm.IdUsuario = IdUsuario
+        frm.ShowDialog()
+    End Sub
+
+    Private Sub StockCriticoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StockCriticoToolStripMenuItem.Click
+        Dim frm As New StockCritico
+        frm.Show()
     End Sub
 End Class

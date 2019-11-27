@@ -1,4 +1,5 @@
 ﻿Imports ProyectoService
+Imports proyectoDTO
 
 Public Class Productos
     Public Function getProductos() As DataTable
@@ -30,6 +31,19 @@ Public Class Productos
         Dim dt As String = ""
         Dim b As New ProductoService
         dt = b.EliminaProducto(Codigo)
+        Return dt
+    End Function
+    Public Function getProductosFamilia(ByVal Id As Integer) As DataTable
+        Dim dt As New DataTable
+        Dim b As New ProductoService
+        dt = b.getProductosFamilia(Id)
+        Return dt
+    End Function
+
+    Public Function GrabaStock(ByVal dts As Compras) As String
+        Dim dt As String = ""
+        Dim b As New ProductoService
+        dt = b.GrabaStock(dts)
         Return dt
     End Function
 End Class

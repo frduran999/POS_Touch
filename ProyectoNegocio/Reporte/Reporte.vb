@@ -1,8 +1,14 @@
 ﻿Imports ProyectoService
 Public Class Reporte
+    Public Function Rpt_StockCritico() As DataTable
+        Dim dt As New DataTable
+        Dim b As New ReporteService
+        dt = b.Rpt_StockCritico
+        Return dt
+    End Function
     Public Function ReporteProducto() As DataTable
         Dim dt As New DataTable
-        Dim b As New reporteService
+        Dim b As New ReporteService
         dt = b.ReporteProducto
         Return dt
     End Function

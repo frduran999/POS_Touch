@@ -76,7 +76,7 @@ Partial Class Form1
         Me.FlowLayoutPanel1.AutoScroll = True
         Me.FlowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(217, Byte), Integer))
         Me.FlowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(409, 231)
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(409, 284)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
         Me.FlowLayoutPanel1.Size = New System.Drawing.Size(694, 248)
         Me.FlowLayoutPanel1.TabIndex = 0
@@ -321,7 +321,7 @@ Partial Class Form1
         Me.btn_aceptar.Name = "btn_aceptar"
         Me.btn_aceptar.Size = New System.Drawing.Size(101, 41)
         Me.btn_aceptar.TabIndex = 15
-        Me.btn_aceptar.Text = "(F5)"
+        Me.btn_aceptar.Text = "(F6)"
         Me.btn_aceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btn_aceptar.UseVisualStyleBackColor = True
         '
@@ -369,7 +369,7 @@ Partial Class Form1
         Me.FlowLayoutFamilia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.FlowLayoutFamilia.Location = New System.Drawing.Point(410, 12)
         Me.FlowLayoutFamilia.Name = "FlowLayoutFamilia"
-        Me.FlowLayoutFamilia.Size = New System.Drawing.Size(800, 209)
+        Me.FlowLayoutFamilia.Size = New System.Drawing.Size(800, 266)
         Me.FlowLayoutFamilia.TabIndex = 21
         '
         'StatusStrip1

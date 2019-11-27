@@ -90,6 +90,10 @@ Represents the strongly named DataTable class.
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
+</member><member name="T:delevery.dts_mantenedor.StockCriticoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
 </member><member name="T:delevery.dts_mantenedor.ProductoRow">
 	<summary>
 Represents strongly named DataRow class.
@@ -98,11 +102,19 @@ Represents strongly named DataRow class.
 	<summary>
 Represents strongly named DataRow class.
 </summary>
+</member><member name="T:delevery.dts_mantenedor.StockCriticoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
 </member><member name="T:delevery.dts_mantenedor.ProductoRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
 </member><member name="T:delevery.dts_mantenedor.VentasDiariasRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:delevery.dts_mantenedor.StockCriticoRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>

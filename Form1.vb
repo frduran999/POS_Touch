@@ -148,16 +148,14 @@ Public Class Form1
 
     Private Sub Form1_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         Select Case e.KeyValue
-            Case Keys.F1
-                'uic_BotonF4_Click(Nothing, Nothing)
             Case Keys.F2
                 btn_Efectivo_Click(Nothing, Nothing)
+            Case Keys.F3
+                btn_Tarjeta_Click(Nothing, Nothing)
             Case Keys.F4
-                btn_aceptar_Click(Nothing, Nothing)
-            Case Keys.F5
-                'uic_ValeBotella_Click(Nothing, Nothing)
+                uic_admCaja_Click(Nothing, Nothing)
             Case Keys.F6
-                'uic_botonF6_Click(Nothing, Nothing)
+                btn_aceptar_Click(Nothing, Nothing)
         End Select
     End Sub
 
@@ -269,7 +267,7 @@ Public Class Form1
                 Exit Sub
             End Try
         Else
-            Telerik.WinControls.RadMessageBox.Show(Me, "Tiene que abrir caja Abierta", "Alerta")
+            Telerik.WinControls.RadMessageBox.Show(Me, "Tiene que abrir caja", "Alerta")
             Dim frmApertura As New AperturaCaja
             frmApertura.IdUsuario = Usuario
             frmApertura.ShowDialog()
@@ -296,8 +294,10 @@ Public Class Form1
             Next
 
         End If
+
         Dim frmT As New Rpt_ticket
         frmT.idventa = id_doc_cab
+        frmT.Formulario = "FrmVenta"
         frmT.Show()
         frmT.Close()
         Me.Cursor = Cursors.Default
