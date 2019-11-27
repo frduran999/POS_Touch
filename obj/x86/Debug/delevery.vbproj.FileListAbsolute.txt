@@ -48,8 +48,6 @@ C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\bin\Debug\ProyectoN
 C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\bin\Debug\ProyectoService.pdb
 C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\bin\Debug\ProyectoService.xml
 C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\obj\x86\Debug\delevery.vbprojResolveAssemblyReference.cache
-C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\obj\x86\Debug\delevery.AbrirCaja.resources
-C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\obj\x86\Debug\delevery.CerrarCaja.resources
 C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\obj\x86\Debug\delevery.Buscar_producto.resources
 C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\obj\x86\Debug\delevery.compras.resources
 C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\obj\x86\Debug\delevery.Compras_diario.resources
@@ -173,3 +171,10 @@ D:\Sistem_Duran\POS_Touch\obj\x86\Debug\delevery.AdminCaja.resources
 D:\Sistem_Duran\POS_Touch\obj\x86\Debug\delevery.AperturaCaja.resources
 D:\Sistem_Duran\POS_Touch\obj\x86\Debug\delevery.Cierre_Caja.resources
 D:\Sistem_Duran\POS_Touch\obj\x86\Debug\delevery.RetiroCaja.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\obj\x86\Debug\delevery.AdminCaja.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\obj\x86\Debug\delevery.AperturaCaja.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\obj\x86\Debug\delevery.Cierre_Caja.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\obj\x86\Debug\delevery.RetiroCaja.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\obj\x86\Debug\delevery.FrmCaja.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\obj\x86\Debug\delevery.U_Familia.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\obj\x86\Debug\delevery.StockCritico.resources

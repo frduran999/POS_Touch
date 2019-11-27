@@ -30,7 +30,9 @@ Partial Class delivery
         Me.DIARIOToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.COMPRASDIARIOToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
-        Me.ToolStripButton4 = New System.Windows.Forms.ToolStripButton()
+        Me.ToolStripDropDownButton2 = New System.Windows.Forms.ToolStripDropDownButton()
+        Me.ProductoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.StockToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripDropDownButton1 = New System.Windows.Forms.ToolStripDropDownButton()
         Me.XxToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FamiliaProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -41,13 +43,14 @@ Partial Class delivery
         Me.ToolStripButton5 = New System.Windows.Forms.ToolStripButton()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.uic_versionApp = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.StockCriticoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'ToolStrip1
         '
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.ToolStripButton6, Me.ToolStripButton2, Me.ToolStripButton3, Me.ToolStripButton4, Me.ToolStripDropDownButton1, Me.ToolStripButton5})
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripButton1, Me.ToolStripButton6, Me.ToolStripButton2, Me.ToolStripButton3, Me.ToolStripDropDownButton2, Me.ToolStripDropDownButton1, Me.ToolStripButton5})
         Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
         Me.ToolStrip1.Size = New System.Drawing.Size(623, 76)
@@ -68,12 +71,12 @@ Partial Class delivery
         'ToolStripButton6
         '
         Me.ToolStripButton6.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.ToolStripButton6.Image = Global.delevery.My.Resources.Resources.address_book2
+        Me.ToolStripButton6.Image = CType(resources.GetObject("ToolStripButton6.Image"), System.Drawing.Image)
         Me.ToolStripButton6.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ToolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripButton6.Name = "ToolStripButton6"
-        Me.ToolStripButton6.Size = New System.Drawing.Size(77, 73)
-        Me.ToolStripButton6.Text = "Compras"
+        Me.ToolStripButton6.Size = New System.Drawing.Size(52, 73)
+        Me.ToolStripButton6.Text = "Caja"
         Me.ToolStripButton6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         Me.ToolStripButton6.Visible = False
         '
@@ -113,16 +116,29 @@ Partial Class delivery
         Me.ToolStripButton3.Text = "Usuarios"
         Me.ToolStripButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
-        'ToolStripButton4
+        'ToolStripDropDownButton2
         '
-        Me.ToolStripButton4.Font = New System.Drawing.Font("Segoe UI", 12.0!)
-        Me.ToolStripButton4.Image = Global.delevery.My.Resources.Resources.product2
-        Me.ToolStripButton4.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
-        Me.ToolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripButton4.Name = "ToolStripButton4"
-        Me.ToolStripButton4.Size = New System.Drawing.Size(84, 73)
-        Me.ToolStripButton4.Text = "Productos"
-        Me.ToolStripButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.ToolStripDropDownButton2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ProductoToolStripMenuItem, Me.StockToolStripMenuItem, Me.StockCriticoToolStripMenuItem})
+        Me.ToolStripDropDownButton2.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.ToolStripDropDownButton2.Image = Global.delevery.My.Resources.Resources.product2
+        Me.ToolStripDropDownButton2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
+        Me.ToolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripDropDownButton2.Name = "ToolStripDropDownButton2"
+        Me.ToolStripDropDownButton2.Size = New System.Drawing.Size(93, 73)
+        Me.ToolStripDropDownButton2.Text = "Productos"
+        Me.ToolStripDropDownButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        '
+        'ProductoToolStripMenuItem
+        '
+        Me.ProductoToolStripMenuItem.Name = "ProductoToolStripMenuItem"
+        Me.ProductoToolStripMenuItem.Size = New System.Drawing.Size(166, 26)
+        Me.ProductoToolStripMenuItem.Text = "Productos"
+        '
+        'StockToolStripMenuItem
+        '
+        Me.StockToolStripMenuItem.Name = "StockToolStripMenuItem"
+        Me.StockToolStripMenuItem.Size = New System.Drawing.Size(166, 26)
+        Me.StockToolStripMenuItem.Text = "Stock"
         '
         'ToolStripDropDownButton1
         '
@@ -198,6 +214,12 @@ Partial Class delivery
         Me.uic_versionApp.Name = "uic_versionApp"
         Me.uic_versionApp.Size = New System.Drawing.Size(0, 17)
         '
+        'StockCriticoToolStripMenuItem
+        '
+        Me.StockCriticoToolStripMenuItem.Name = "StockCriticoToolStripMenuItem"
+        Me.StockCriticoToolStripMenuItem.Size = New System.Drawing.Size(166, 26)
+        Me.StockCriticoToolStripMenuItem.Text = "Stock Critico"
+        '
         'delivery
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -222,7 +244,6 @@ Partial Class delivery
     Friend WithEvents ToolStrip1 As System.Windows.Forms.ToolStrip
     Friend WithEvents ToolStripButton1 As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolStripButton3 As System.Windows.Forms.ToolStripButton
-    Friend WithEvents ToolStripButton4 As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolStripButton5 As System.Windows.Forms.ToolStripButton
     Friend WithEvents ToolStripDropDownButton1 As System.Windows.Forms.ToolStripDropDownButton
     Friend WithEvents XxToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
@@ -237,4 +258,8 @@ Partial Class delivery
     Friend WithEvents RetiroCajaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents InformacionTicketToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ImpresorasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripDropDownButton2 As System.Windows.Forms.ToolStripDropDownButton
+    Friend WithEvents ProductoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents StockToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents StockCriticoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

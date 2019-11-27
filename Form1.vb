@@ -152,8 +152,13 @@ Public Class Form1
                 btn_Efectivo_Click(Nothing, Nothing)
             Case Keys.F3
                 btn_Tarjeta_Click(Nothing, Nothing)
+            Case Keys.F4
+                uic_admCaja_Click(Nothing, Nothing)
+            Case Keys.F6
+                btn_aceptar_Click(Nothing, Nothing)
         End Select
     End Sub
+
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Me.Forma_pagoTableAdapter.Fill(Me.FormaPago_dateset.forma_pago)
         Me.cbo_formapago.SelectedIndex = -1
@@ -162,7 +167,8 @@ Public Class Form1
         Dim familia As DataTable
         familia = myhelper.ExecuteDataSet(My.Settings.deliveryConnectionString, CommandType.Text, "SELECT fp.CodigoFamilia, fp.Familia, Ff.FotoNombre FROM FamiliaProducto AS fp LEFT OUTER JOIN FamiliaFoto AS Ff ON fp.CodigoFamilia = Ff.FamiliaId where fp.Estado = 1", Nothing, 60).Tables(0)
         For Each dr As DataRow In familia.Rows
-            Dim obcontrol As New WindowsControlLibrary1.UserControl1
+            'Dim oc As New U_Familia
+            Dim obcontrol As New U_Familia
             Try
                 Dim NFamilia As String = dr("Familia")
                 Dim codigoFamilia As String = dr("CodigoFamilia")
@@ -178,6 +184,7 @@ Public Class Form1
                     obcontrol.Controls(0).BackgroundImage = My.Resources.SinFoto
                 Else
                     obcontrol.Controls(0).BackgroundImage = ByteArrayToImage(ImageToByteArray(Image.FromFile(ruta)), True)
+                    obcontrol.Controls(0).BackgroundImageLayout = ImageLayout.Stretch
                 End If
 
                 AddHandler CType(obcontrol.Controls(0), Button).Click, AddressOf lawea2
@@ -221,27 +228,25 @@ Public Class Form1
 
     End Sub
     Private Sub btn_aceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_aceptar.Click
-        If Me.txt_Total.Text = "" Or Me.txt_Total.Text = "0" Then
-            MsgBox("Debe Ingresar Monto Pago", vbCritical)
-            Exit Sub
-        End If
-
-        If Me.IdPago = 0 Then
-            MsgBox("Debe ingresar forma de pago", vbCritical)
-            Exit Sub
-        End If
         If Me.DataGridView1.RowCount = 0 Then
             MsgBox("Debe ingresar detalle", vbCritical)
             Exit Sub
         End If
 
-        If Me.txt_efectivo.Text = "" Or Me.txt_efectivo.Text = "0" Then
-            MsgBox("Debe crear Ticket sin monto cancelado", vbCritical)
+        If Me.txt_Total.Text = "" Or Me.txt_Total.Text = "0" Then
+            MsgBox("Debe Ingresar Monto Pago", vbCritical)
             Exit Sub
         End If
-        ' Dim cabecera As DataTable
+
+        If Me.txt_efectivo.Text = "" Or Me.txt_Total.Text = "0" Then
+            MsgBox("Debe Ingresar Monto a Cancelar", vbCritical)
+            Exit Sub
+        End If
+
         Dim dts As New proyectoDTO.ticket
         Dim func As New ProyectoNegocio.Venta
+        Dim id_doc_cab As String = ""
+        Dim Neg As New ProyectoNegocio.AdminCaja
 
         dts.get_fecha = Format(Now, "yyyy-dd-MM")
         dts.get_forma_pago = tipoPago
@@ -250,14 +255,28 @@ Public Class Form1
         dts.idUsuario = Usuario
 
         Me.Cursor = Cursors.WaitCursor
-        Dim id_doc_cab As String = ""
-        Try
-            id_doc_cab = func.GrabarCab(dts)
-        Catch ex As Exception
-            Telerik.WinControls.RadMessageBox.Show("A ocurrido un error" & vbCrLf & id_doc_cab, "Aviso")
+        
+
+        Dim vresp As String = Neg.ValidaCaja(Usuario)
+        If vresp = "OK" Then
+            Try
+                id_doc_cab = func.GrabarCab(dts)
+            Catch ex As Exception
+                Telerik.WinControls.RadMessageBox.Show("A ocurrido un error" & vbCrLf & id_doc_cab, "Aviso")
+                Me.Cursor = Cursors.Default
+                Exit Sub
+            End Try
+        Else
+            Telerik.WinControls.RadMessageBox.Show(Me, "Tiene que abrir caja", "Alerta")
+            Dim frmApertura As New AperturaCaja
+            frmApertura.IdUsuario = Usuario
+            frmApertura.ShowDialog()
+            'limpiar()
             Me.Cursor = Cursors.Default
             Exit Sub
-        End Try
+        End If
+
+
 
         Dim num_linea As Integer = Me.DataGridView1.Rows.Count - 1
 
@@ -275,8 +294,10 @@ Public Class Form1
             Next
 
         End If
+
         Dim frmT As New Rpt_ticket
         frmT.idventa = id_doc_cab
+        frmT.Formulario = "FrmVenta"
         frmT.Show()
         frmT.Close()
         Me.Cursor = Cursors.Default
@@ -438,7 +459,7 @@ Public Class Form1
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim resp As String = ""
-        Dim neg As New ProyectoNegocio.Abrir_Caja
+        Dim neg As New ProyectoNegocio.AdminCaja
         resp = neg.CerrarCaja(Usuario)
         Try
             If CInt(resp) > 0 Then
@@ -459,4 +480,9 @@ Public Class Form1
 
     End Sub
 
+    Private Sub uic_admCaja_Click(sender As Object, e As EventArgs) Handles uic_admCaja.Click
+        Dim frmAdmCaja As New AdminCaja
+        frmAdmCaja.IdUsuario = Usuario
+        frmAdmCaja.ShowDialog()
+    End Sub
 End Class

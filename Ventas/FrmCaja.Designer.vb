@@ -23,24 +23,20 @@ Partial Class FrmCaja
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim SortDescriptor9 As Telerik.WinControls.Data.SortDescriptor = New Telerik.WinControls.Data.SortDescriptor()
-        Dim TableViewDefinition12 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
-        Dim TableViewDefinition13 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim TableViewDefinition3 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.RadGroupBox3 = New Telerik.WinControls.UI.RadGroupBox()
         Me.RadLabel1 = New Telerik.WinControls.UI.RadLabel()
         Me.uic_BuscaVta = New Telerik.WinControls.UI.RadButton()
-        Me.uic_BuscaNroTrans = New Telerik.WinControls.UI.RadTextBox()
-        Me.RadGroupBox1 = New Telerik.WinControls.UI.RadGroupBox()
-        Me.GridVenta = New Telerik.WinControls.UI.RadGridView()
+        Me.IdTicket = New Telerik.WinControls.UI.RadTextBox()
         Me.Panel_keypad = New Telerik.WinControls.UI.RadPanel()
         Me.uic_botonEnter = New System.Windows.Forms.Button()
         Me.uic_botonC = New System.Windows.Forms.Button()
         Me.uic_botonBack = New System.Windows.Forms.Button()
-        Me.uic_botonPunto = New System.Windows.Forms.Button()
         Me.uic_boton3 = New System.Windows.Forms.Button()
         Me.uic_boton6 = New System.Windows.Forms.Button()
         Me.uic_boton9 = New System.Windows.Forms.Button()
-        Me.uic_botonAsterisco = New System.Windows.Forms.Button()
         Me.uic_boton2 = New System.Windows.Forms.Button()
         Me.uic_boton5 = New System.Windows.Forms.Button()
         Me.uic_boton8 = New System.Windows.Forms.Button()
@@ -51,13 +47,14 @@ Partial Class FrmCaja
         Me.Office2010BlackTheme1 = New Telerik.WinControls.Themes.Office2010BlackTheme()
         Me.uic_Reloj = New System.Windows.Forms.Timer(Me.components)
         Me.Panel_cobro = New Telerik.WinControls.UI.RadPanel()
-        Me.uic_Total = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.uic_botonF6 = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.txt_Total = New System.Windows.Forms.TextBox()
+        Me.txt_efectivo = New System.Windows.Forms.TextBox()
+        Me.txt_vuelto = New System.Windows.Forms.TextBox()
         Me.uic_botonF1 = New System.Windows.Forms.Button()
-        Me.uic_ValeBotella = New System.Windows.Forms.Button()
         Me.uic_BotonF4 = New System.Windows.Forms.Button()
-        Me.uic_salir = New System.Windows.Forms.Button()
         Me.uic_botonF2 = New System.Windows.Forms.Button()
         Me.RadStatusStrip1 = New Telerik.WinControls.UI.RadStatusStrip()
         Me.uic_Nrotransaccion = New Telerik.WinControls.UI.RadLabelElement()
@@ -69,15 +66,21 @@ Partial Class FrmCaja
         Me.uic_BuscaArticulo = New Telerik.WinControls.UI.RadButton()
         Me.uic_BuscarProducto = New Telerik.WinControls.UI.RadTextBox()
         Me.GridProductos = New Telerik.WinControls.UI.RadGridView()
+        Me.btn_salir = New System.Windows.Forms.Button()
+        Me.btn_aceptar = New System.Windows.Forms.Button()
+        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Desc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_productoGrid = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Eliminar = New System.Windows.Forms.DataGridViewButtonColumn()
         CType(Me.RadGroupBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox3.SuspendLayout()
         CType(Me.RadLabel1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.uic_BuscaVta, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.uic_BuscaNroTrans, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.RadGroupBox1.SuspendLayout()
-        CType(Me.GridVenta, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.GridVenta.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.IdTicket, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Panel_keypad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel_keypad.SuspendLayout()
         CType(Me.Panel_cobro, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -90,6 +93,7 @@ Partial Class FrmCaja
         CType(Me.uic_BuscarProducto, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridProductos.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RadGroupBox3
@@ -99,7 +103,7 @@ Partial Class FrmCaja
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.RadGroupBox3.Controls.Add(Me.RadLabel1)
         Me.RadGroupBox3.Controls.Add(Me.uic_BuscaVta)
-        Me.RadGroupBox3.Controls.Add(Me.uic_BuscaNroTrans)
+        Me.RadGroupBox3.Controls.Add(Me.IdTicket)
         Me.RadGroupBox3.HeaderText = ""
         Me.RadGroupBox3.Location = New System.Drawing.Point(7, 4)
         Me.RadGroupBox3.Name = "RadGroupBox3"
@@ -124,64 +128,23 @@ Partial Class FrmCaja
         Me.uic_BuscaVta.Size = New System.Drawing.Size(33, 32)
         Me.uic_BuscaVta.TabIndex = 87
         '
-        'uic_BuscaNroTrans
+        'IdTicket
         '
-        Me.uic_BuscaNroTrans.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Bold)
-        Me.uic_BuscaNroTrans.Location = New System.Drawing.Point(137, 19)
-        Me.uic_BuscaNroTrans.Name = "uic_BuscaNroTrans"
-        Me.uic_BuscaNroTrans.Size = New System.Drawing.Size(201, 25)
-        Me.uic_BuscaNroTrans.TabIndex = 4
-        Me.uic_BuscaNroTrans.ThemeName = "ControlDefault"
-        '
-        'RadGroupBox1
-        '
-        Me.RadGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
-        Me.RadGroupBox1.Controls.Add(Me.GridVenta)
-        Me.RadGroupBox1.HeaderText = ""
-        Me.RadGroupBox1.Location = New System.Drawing.Point(6, 69)
-        Me.RadGroupBox1.Name = "RadGroupBox1"
-        Me.RadGroupBox1.Size = New System.Drawing.Size(501, 392)
-        Me.RadGroupBox1.TabIndex = 8
-        Me.RadGroupBox1.ThemeName = "Office2010Black"
-        '
-        'GridVenta
-        '
-        Me.GridVenta.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.GridVenta.BackColor = System.Drawing.SystemColors.Control
-        Me.GridVenta.Cursor = System.Windows.Forms.Cursors.Default
-        Me.GridVenta.Font = New System.Drawing.Font("Segoe UI", 8.25!)
-        Me.GridVenta.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.GridVenta.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.GridVenta.Location = New System.Drawing.Point(5, 9)
-        '
-        '
-        '
-        Me.GridVenta.MasterTemplate.AllowAddNewRow = False
-        Me.GridVenta.MasterTemplate.AllowColumnReorder = False
-        SortDescriptor9.PropertyName = "column1"
-        Me.GridVenta.MasterTemplate.SortDescriptors.AddRange(New Telerik.WinControls.Data.SortDescriptor() {SortDescriptor9})
-        Me.GridVenta.MasterTemplate.ViewDefinition = TableViewDefinition12
-        Me.GridVenta.Name = "GridVenta"
-        Me.GridVenta.ReadOnly = True
-        Me.GridVenta.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.GridVenta.ShowGroupPanel = False
-        Me.GridVenta.Size = New System.Drawing.Size(491, 378)
-        Me.GridVenta.TabIndex = 0
-        Me.GridVenta.Text = "RadGridView1"
-        Me.GridVenta.ThemeName = "Office2010Black"
+        Me.IdTicket.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Bold)
+        Me.IdTicket.Location = New System.Drawing.Point(137, 19)
+        Me.IdTicket.Name = "IdTicket"
+        Me.IdTicket.Size = New System.Drawing.Size(201, 25)
+        Me.IdTicket.TabIndex = 4
+        Me.IdTicket.ThemeName = "ControlDefault"
         '
         'Panel_keypad
         '
         Me.Panel_keypad.Controls.Add(Me.uic_botonEnter)
         Me.Panel_keypad.Controls.Add(Me.uic_botonC)
         Me.Panel_keypad.Controls.Add(Me.uic_botonBack)
-        Me.Panel_keypad.Controls.Add(Me.uic_botonPunto)
         Me.Panel_keypad.Controls.Add(Me.uic_boton3)
         Me.Panel_keypad.Controls.Add(Me.uic_boton6)
         Me.Panel_keypad.Controls.Add(Me.uic_boton9)
-        Me.Panel_keypad.Controls.Add(Me.uic_botonAsterisco)
         Me.Panel_keypad.Controls.Add(Me.uic_boton2)
         Me.Panel_keypad.Controls.Add(Me.uic_boton5)
         Me.Panel_keypad.Controls.Add(Me.uic_boton8)
@@ -230,18 +193,6 @@ Partial Class FrmCaja
         Me.uic_botonBack.Text = "<--"
         Me.uic_botonBack.UseVisualStyleBackColor = False
         '
-        'uic_botonPunto
-        '
-        Me.uic_botonPunto.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.uic_botonPunto.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.uic_botonPunto.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.uic_botonPunto.Location = New System.Drawing.Point(175, 158)
-        Me.uic_botonPunto.Name = "uic_botonPunto"
-        Me.uic_botonPunto.Size = New System.Drawing.Size(60, 42)
-        Me.uic_botonPunto.TabIndex = 60
-        Me.uic_botonPunto.Text = "."
-        Me.uic_botonPunto.UseVisualStyleBackColor = False
-        '
         'uic_boton3
         '
         Me.uic_boton3.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
@@ -277,18 +228,6 @@ Partial Class FrmCaja
         Me.uic_boton9.TabIndex = 69
         Me.uic_boton9.Text = "9"
         Me.uic_boton9.UseVisualStyleBackColor = False
-        '
-        'uic_botonAsterisco
-        '
-        Me.uic_botonAsterisco.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.uic_botonAsterisco.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.uic_botonAsterisco.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.uic_botonAsterisco.Location = New System.Drawing.Point(109, 158)
-        Me.uic_botonAsterisco.Name = "uic_botonAsterisco"
-        Me.uic_botonAsterisco.Size = New System.Drawing.Size(60, 42)
-        Me.uic_botonAsterisco.TabIndex = 59
-        Me.uic_botonAsterisco.Text = "*"
-        Me.uic_botonAsterisco.UseVisualStyleBackColor = False
         '
         'uic_boton2
         '
@@ -331,7 +270,7 @@ Partial Class FrmCaja
         Me.uic_boton0.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.uic_boton0.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.uic_boton0.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.uic_boton0.Location = New System.Drawing.Point(43, 159)
+        Me.uic_boton0.Location = New System.Drawing.Point(109, 158)
         Me.uic_boton0.Name = "uic_boton0"
         Me.uic_boton0.Size = New System.Drawing.Size(60, 42)
         Me.uic_boton0.TabIndex = 58
@@ -382,48 +321,85 @@ Partial Class FrmCaja
         'Panel_cobro
         '
         Me.Panel_cobro.BackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(217, Byte), Integer))
-        Me.Panel_cobro.Controls.Add(Me.uic_Total)
-        Me.Panel_cobro.Controls.Add(Me.Label8)
-        Me.Panel_cobro.Location = New System.Drawing.Point(10, 465)
+        Me.Panel_cobro.Controls.Add(Me.Label5)
+        Me.Panel_cobro.Controls.Add(Me.Label4)
+        Me.Panel_cobro.Controls.Add(Me.Label3)
+        Me.Panel_cobro.Controls.Add(Me.txt_Total)
+        Me.Panel_cobro.Controls.Add(Me.txt_efectivo)
+        Me.Panel_cobro.Controls.Add(Me.txt_vuelto)
+        Me.Panel_cobro.Location = New System.Drawing.Point(10, 449)
         Me.Panel_cobro.Name = "Panel_cobro"
-        Me.Panel_cobro.Size = New System.Drawing.Size(497, 75)
+        Me.Panel_cobro.Size = New System.Drawing.Size(497, 91)
         Me.Panel_cobro.TabIndex = 9
         '
-        'uic_Total
+        'Label5
         '
-        Me.uic_Total.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.uic_Total.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.uic_Total.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.uic_Total.Location = New System.Drawing.Point(332, 21)
-        Me.uic_Total.Name = "uic_Total"
-        Me.uic_Total.Size = New System.Drawing.Size(116, 26)
-        Me.uic_Total.TabIndex = 17
-        Me.uic_Total.Text = "0"
-        Me.uic_Total.TextAlign = System.Drawing.ContentAlignment.TopRight
+        Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(280, 66)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(87, 23)
+        Me.Label5.TabIndex = 20
+        Me.Label5.Text = "Vuelto"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Label8
+        'Label4
         '
-        Me.Label8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.Label8.Location = New System.Drawing.Point(11, 21)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(126, 26)
-        Me.Label8.TabIndex = 4
-        Me.Label8.Text = "Total a pagar"
+        Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(280, 36)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(87, 23)
+        Me.Label4.TabIndex = 19
+        Me.Label4.Text = "Cancelado"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'uic_botonF6
+        'Label3
         '
-        Me.uic_botonF6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.uic_botonF6.BackColor = System.Drawing.Color.Magenta
-        Me.uic_botonF6.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.uic_botonF6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.uic_botonF6.Location = New System.Drawing.Point(868, 396)
-        Me.uic_botonF6.Name = "uic_botonF6"
-        Me.uic_botonF6.Size = New System.Drawing.Size(92, 35)
-        Me.uic_botonF6.TabIndex = 81
-        Me.uic_botonF6.Text = "F6"
-        Me.uic_botonF6.UseVisualStyleBackColor = False
+        Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(280, 7)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(87, 23)
+        Me.Label3.TabIndex = 18
+        Me.Label3.Text = "Total"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'txt_Total
+        '
+        Me.txt_Total.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.txt_Total.Enabled = False
+        Me.txt_Total.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_Total.Location = New System.Drawing.Point(373, 8)
+        Me.txt_Total.Name = "txt_Total"
+        Me.txt_Total.Size = New System.Drawing.Size(100, 21)
+        Me.txt_Total.TabIndex = 17
+        Me.txt_Total.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'txt_efectivo
+        '
+        Me.txt_efectivo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.txt_efectivo.Enabled = False
+        Me.txt_efectivo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_efectivo.Location = New System.Drawing.Point(373, 38)
+        Me.txt_efectivo.Name = "txt_efectivo"
+        Me.txt_efectivo.Size = New System.Drawing.Size(100, 21)
+        Me.txt_efectivo.TabIndex = 16
+        Me.txt_efectivo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'txt_vuelto
+        '
+        Me.txt_vuelto.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.txt_vuelto.Enabled = False
+        Me.txt_vuelto.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_vuelto.Location = New System.Drawing.Point(373, 67)
+        Me.txt_vuelto.Name = "txt_vuelto"
+        Me.txt_vuelto.Size = New System.Drawing.Size(100, 21)
+        Me.txt_vuelto.TabIndex = 15
+        Me.txt_vuelto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'uic_botonF1
         '
@@ -435,22 +411,9 @@ Partial Class FrmCaja
         Me.uic_botonF1.Name = "uic_botonF1"
         Me.uic_botonF1.Size = New System.Drawing.Size(92, 35)
         Me.uic_botonF1.TabIndex = 80
-        Me.uic_botonF1.Text = "F1"
+        Me.uic_botonF1.Text = "F2"
         Me.uic_botonF1.TextAlign = System.Drawing.ContentAlignment.TopCenter
         Me.uic_botonF1.UseVisualStyleBackColor = False
-        '
-        'uic_ValeBotella
-        '
-        Me.uic_ValeBotella.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.uic_ValeBotella.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.uic_ValeBotella.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.uic_ValeBotella.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.uic_ValeBotella.Location = New System.Drawing.Point(868, 474)
-        Me.uic_ValeBotella.Name = "uic_ValeBotella"
-        Me.uic_ValeBotella.Size = New System.Drawing.Size(92, 35)
-        Me.uic_ValeBotella.TabIndex = 79
-        Me.uic_ValeBotella.Text = "F5 Vale"
-        Me.uic_ValeBotella.UseVisualStyleBackColor = False
         '
         'uic_BotonF4
         '
@@ -458,26 +421,12 @@ Partial Class FrmCaja
         Me.uic_BotonF4.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.uic_BotonF4.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.uic_BotonF4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.uic_BotonF4.Location = New System.Drawing.Point(868, 435)
+        Me.uic_BotonF4.Location = New System.Drawing.Point(868, 398)
         Me.uic_BotonF4.Name = "uic_BotonF4"
         Me.uic_BotonF4.Size = New System.Drawing.Size(92, 35)
         Me.uic_BotonF4.TabIndex = 78
-        Me.uic_BotonF4.Text = "F4"
+        Me.uic_BotonF4.Text = "F3"
         Me.uic_BotonF4.UseVisualStyleBackColor = False
-        '
-        'uic_salir
-        '
-        Me.uic_salir.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.uic_salir.BackColor = System.Drawing.Color.FromArgb(CType(CType(244, Byte), Integer), CType(CType(206, Byte), Integer), CType(CType(212, Byte), Integer))
-        Me.uic_salir.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.uic_salir.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.uic_salir.Location = New System.Drawing.Point(868, 513)
-        Me.uic_salir.Name = "uic_salir"
-        Me.uic_salir.Size = New System.Drawing.Size(92, 26)
-        Me.uic_salir.TabIndex = 77
-        Me.uic_salir.Text = "SALIR"
-        Me.uic_salir.UseCompatibleTextRendering = True
-        Me.uic_salir.UseVisualStyleBackColor = False
         '
         'uic_botonF2
         '
@@ -489,7 +438,7 @@ Partial Class FrmCaja
         Me.uic_botonF2.Name = "uic_botonF2"
         Me.uic_botonF2.Size = New System.Drawing.Size(92, 35)
         Me.uic_botonF2.TabIndex = 76
-        Me.uic_botonF2.Text = "Efectivo"
+        Me.uic_botonF2.Text = "F1"
         Me.uic_botonF2.UseVisualStyleBackColor = False
         '
         'RadStatusStrip1
@@ -584,7 +533,7 @@ Partial Class FrmCaja
         '
         Me.GridProductos.MasterTemplate.AllowAddNewRow = False
         Me.GridProductos.MasterTemplate.AllowColumnReorder = False
-        Me.GridProductos.MasterTemplate.ViewDefinition = TableViewDefinition13
+        Me.GridProductos.MasterTemplate.ViewDefinition = TableViewDefinition3
         Me.GridProductos.Name = "GridProductos"
         Me.GridProductos.ReadOnly = True
         Me.GridProductos.Size = New System.Drawing.Size(437, 245)
@@ -592,40 +541,142 @@ Partial Class FrmCaja
         Me.GridProductos.Text = "RadGridView2"
         Me.GridProductos.ThemeName = "Office2010Black"
         '
+        'btn_salir
+        '
+        Me.btn_salir.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_salir.Image = Global.delevery.My.Resources.Resources._Exit
+        Me.btn_salir.Location = New System.Drawing.Point(866, 498)
+        Me.btn_salir.Name = "btn_salir"
+        Me.btn_salir.Size = New System.Drawing.Size(90, 41)
+        Me.btn_salir.TabIndex = 84
+        Me.btn_salir.UseVisualStyleBackColor = True
+        '
+        'btn_aceptar
+        '
+        Me.btn_aceptar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_aceptar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_aceptar.Image = Global.delevery.My.Resources.Resources.check
+        Me.btn_aceptar.Location = New System.Drawing.Point(866, 442)
+        Me.btn_aceptar.Name = "btn_aceptar"
+        Me.btn_aceptar.Size = New System.Drawing.Size(94, 42)
+        Me.btn_aceptar.TabIndex = 85
+        Me.btn_aceptar.Text = "F4"
+        Me.btn_aceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btn_aceptar.UseVisualStyleBackColor = True
+        '
+        'DataGridView1
+        '
+        Me.DataGridView1.AllowUserToAddRows = False
+        Me.DataGridView1.AllowUserToDeleteRows = False
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
+        Me.DataGridView1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.DataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(136, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(220, Byte), Integer))
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
+        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.cantidad, Me.Desc, Me.precio, Me.Column3, Me.id_productoGrid, Me.Eliminar})
+        Me.DataGridView1.Location = New System.Drawing.Point(10, 73)
+        Me.DataGridView1.Name = "DataGridView1"
+        Me.DataGridView1.ReadOnly = True
+        Me.DataGridView1.RowHeadersVisible = False
+        Me.DataGridView1.Size = New System.Drawing.Size(497, 370)
+        Me.DataGridView1.TabIndex = 86
+        '
+        'codigo
+        '
+        Me.codigo.HeaderText = "codigo"
+        Me.codigo.Name = "codigo"
+        Me.codigo.ReadOnly = True
+        Me.codigo.Visible = False
+        Me.codigo.Width = 70
+        '
+        'cantidad
+        '
+        Me.cantidad.HeaderText = "Cant."
+        Me.cantidad.Name = "cantidad"
+        Me.cantidad.ReadOnly = True
+        Me.cantidad.Width = 68
+        '
+        'Desc
+        '
+        Me.Desc.HeaderText = "Descripcion"
+        Me.Desc.Name = "Desc"
+        Me.Desc.ReadOnly = True
+        Me.Desc.Width = 150
+        '
+        'precio
+        '
+        Me.precio.HeaderText = "Precio"
+        Me.precio.Name = "precio"
+        Me.precio.ReadOnly = True
+        Me.precio.Width = 85
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "Valor"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        Me.Column3.Width = 85
+        '
+        'id_productoGrid
+        '
+        Me.id_productoGrid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        Me.id_productoGrid.HeaderText = "idprod"
+        Me.id_productoGrid.Name = "id_productoGrid"
+        Me.id_productoGrid.ReadOnly = True
+        Me.id_productoGrid.Visible = False
+        '
+        'Eliminar
+        '
+        Me.Eliminar.HeaderText = "Eliminar"
+        Me.Eliminar.Name = "Eliminar"
+        Me.Eliminar.ReadOnly = True
+        Me.Eliminar.Text = "Eliminar"
+        Me.Eliminar.UseColumnTextForButtonValue = True
+        Me.Eliminar.Width = 90
+        '
         'FrmCaja
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(972, 567)
         Me.ControlBox = False
+        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.btn_aceptar)
+        Me.Controls.Add(Me.btn_salir)
         Me.Controls.Add(Me.RadGroupBox2)
         Me.Controls.Add(Me.RadStatusStrip1)
-        Me.Controls.Add(Me.uic_botonF6)
         Me.Controls.Add(Me.uic_botonF1)
-        Me.Controls.Add(Me.uic_ValeBotella)
         Me.Controls.Add(Me.uic_BotonF4)
-        Me.Controls.Add(Me.uic_salir)
         Me.Controls.Add(Me.uic_botonF2)
         Me.Controls.Add(Me.Panel_cobro)
         Me.Controls.Add(Me.RadGroupBox3)
-        Me.Controls.Add(Me.RadGroupBox1)
         Me.Controls.Add(Me.Panel_keypad)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.KeyPreview = True
+        Me.MaximizeBox = False
         Me.Name = "FrmCaja"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "FrmCaja"
         CType(Me.RadGroupBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadGroupBox3.ResumeLayout(False)
         Me.RadGroupBox3.PerformLayout()
         CType(Me.RadLabel1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.uic_BuscaVta, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.uic_BuscaNroTrans, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.RadGroupBox1.ResumeLayout(False)
-        CType(Me.GridVenta.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.GridVenta, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.IdTicket, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Panel_keypad, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel_keypad.ResumeLayout(False)
         CType(Me.Panel_cobro, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel_cobro.ResumeLayout(False)
+        Me.Panel_cobro.PerformLayout()
         CType(Me.RadStatusStrip1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadGroupBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadGroupBox2.ResumeLayout(False)
@@ -635,6 +686,7 @@ Partial Class FrmCaja
         CType(Me.uic_BuscarProducto, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridProductos.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.GridProductos, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -642,18 +694,14 @@ Partial Class FrmCaja
     Friend WithEvents RadGroupBox3 As Telerik.WinControls.UI.RadGroupBox
     Friend WithEvents RadLabel1 As Telerik.WinControls.UI.RadLabel
     Friend WithEvents uic_BuscaVta As Telerik.WinControls.UI.RadButton
-    Friend WithEvents uic_BuscaNroTrans As Telerik.WinControls.UI.RadTextBox
-    Friend WithEvents RadGroupBox1 As Telerik.WinControls.UI.RadGroupBox
-    Friend WithEvents GridVenta As Telerik.WinControls.UI.RadGridView
+    Friend WithEvents IdTicket As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents Panel_keypad As Telerik.WinControls.UI.RadPanel
     Friend WithEvents uic_botonEnter As System.Windows.Forms.Button
     Friend WithEvents uic_botonC As System.Windows.Forms.Button
     Friend WithEvents uic_botonBack As System.Windows.Forms.Button
-    Friend WithEvents uic_botonPunto As System.Windows.Forms.Button
     Friend WithEvents uic_boton3 As System.Windows.Forms.Button
     Friend WithEvents uic_boton6 As System.Windows.Forms.Button
     Friend WithEvents uic_boton9 As System.Windows.Forms.Button
-    Friend WithEvents uic_botonAsterisco As System.Windows.Forms.Button
     Friend WithEvents uic_boton2 As System.Windows.Forms.Button
     Friend WithEvents uic_boton5 As System.Windows.Forms.Button
     Friend WithEvents uic_boton8 As System.Windows.Forms.Button
@@ -664,13 +712,8 @@ Partial Class FrmCaja
     Friend WithEvents Office2010BlackTheme1 As Telerik.WinControls.Themes.Office2010BlackTheme
     Friend WithEvents uic_Reloj As System.Windows.Forms.Timer
     Friend WithEvents Panel_cobro As Telerik.WinControls.UI.RadPanel
-    Friend WithEvents uic_Total As System.Windows.Forms.Label
-    Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents uic_botonF6 As System.Windows.Forms.Button
     Friend WithEvents uic_botonF1 As System.Windows.Forms.Button
-    Friend WithEvents uic_ValeBotella As System.Windows.Forms.Button
     Friend WithEvents uic_BotonF4 As System.Windows.Forms.Button
-    Friend WithEvents uic_salir As System.Windows.Forms.Button
     Friend WithEvents uic_botonF2 As System.Windows.Forms.Button
     Friend WithEvents RadStatusStrip1 As Telerik.WinControls.UI.RadStatusStrip
     Friend WithEvents uic_Nrotransaccion As Telerik.WinControls.UI.RadLabelElement
@@ -682,4 +725,20 @@ Partial Class FrmCaja
     Friend WithEvents uic_BuscaArticulo As Telerik.WinControls.UI.RadButton
     Friend WithEvents uic_BuscarProducto As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents GridProductos As Telerik.WinControls.UI.RadGridView
+    Friend WithEvents btn_salir As System.Windows.Forms.Button
+    Friend WithEvents btn_aceptar As System.Windows.Forms.Button
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents txt_Total As System.Windows.Forms.TextBox
+    Friend WithEvents txt_efectivo As System.Windows.Forms.TextBox
+    Friend WithEvents txt_vuelto As System.Windows.Forms.TextBox
+    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents codigo As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents cantidad As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Desc As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents precio As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents id_productoGrid As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Eliminar As System.Windows.Forms.DataGridViewButtonColumn
 End Class

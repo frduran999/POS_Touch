@@ -98,12 +98,6 @@
     <Import Include="System.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbrirCaja.Designer.vb">
-      <DependentUpon>AbrirCaja.vb</DependentUpon>
-    </Compile>
-    <Compile Include="AbrirCaja.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="BC\RUTman.vb" />
     <Compile Include="BE\compra.vb" />
     <Compile Include="BE\Fpago.vb" />
@@ -134,12 +128,6 @@
       <DependentUpon>RetiroCaja.vb</DependentUpon>
     </Compile>
     <Compile Include="Caja\RetiroCaja.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CerrarCaja.Designer.vb">
-      <DependentUpon>CerrarCaja.vb</DependentUpon>
-    </Compile>
-    <Compile Include="CerrarCaja.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DATASET\deliveryDataSet1.vb">
@@ -322,6 +310,12 @@
     <Compile Include="ReportesVenta\CierreCaja.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ReportesVenta\RptBoleta.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RptBoleta.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ReportesVenta\RptTicket.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -340,10 +334,22 @@
       <DependentUpon>Rpt_CierreCaja.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ReportesVenta\Rpt_StockCritico.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rpt_StockCritico.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ReportesVenta\Rpt_ticket.Designer.vb">
       <DependentUpon>Rpt_ticket.vb</DependentUpon>
     </Compile>
     <Compile Include="ReportesVenta\Rpt_ticket.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportesVenta\StockCritico.Designer.vb">
+      <DependentUpon>StockCritico.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReportesVenta\StockCritico.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Retiro.Designer.vb">
@@ -370,6 +376,12 @@
     <Compile Include="Mantenedores\usuario.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="U_Familia.Designer.vb">
+      <DependentUpon>U_Familia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="U_Familia.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="Ventas\FrmCaja.Designer.vb">
       <DependentUpon>FrmCaja.vb</DependentUpon>
     </Compile>
@@ -378,10 +390,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="AbrirCaja.resx">
-      <DependentUpon>AbrirCaja.vb</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="Caja\AdminCaja.resx">
       <DependentUpon>AdminCaja.vb</DependentUpon>
     </EmbeddedResource>
@@ -393,9 +401,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Caja\RetiroCaja.resx">
       <DependentUpon>RetiroCaja.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CerrarCaja.resx">
-      <DependentUpon>CerrarCaja.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="delivery.resx">
       <DependentUpon>delivery.vb</DependentUpon>
@@ -468,6 +473,10 @@
     <EmbeddedResource Include="ReportesVenta\CierreCaja.resx">
       <DependentUpon>CierreCaja.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportesVenta\RptBoleta.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RptBoleta.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportesVenta\RptTicket.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RptTicket.vb</LastGenOutput>
@@ -480,8 +489,15 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>Rpt_CierreCaja.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportesVenta\Rpt_StockCritico.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Rpt_StockCritico.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportesVenta\Rpt_ticket.resx">
       <DependentUpon>Rpt_ticket.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportesVenta\StockCritico.resx">
+      <DependentUpon>StockCritico.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Retiro.resx">
       <DependentUpon>Retiro.vb</DependentUpon>
@@ -491,6 +507,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenedores\usuario.resx">
       <DependentUpon>usuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="U_Familia.resx">
+      <DependentUpon>U_Familia.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventas\FrmCaja.resx">
       <DependentUpon>FrmCaja.vb</DependentUpon>
@@ -654,9 +673,7 @@
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Ventas\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,8 +1,8 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class CerrarCaja
-    Inherits System.Windows.Forms.Form
+Partial Class U_Familia
+    Inherits System.Windows.Forms.UserControl
 
-    'Form overrides dispose to clean up the component list.
+    'UserControl overrides dispose to clean up the component list.
     <System.Diagnostics.DebuggerNonUserCode()> _
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
@@ -22,30 +22,29 @@ Partial Class CerrarCaja
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.btnCerrarCaja = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
-        'btnCerrarCaja
+        'Button1
         '
-        Me.btnCerrarCaja.Location = New System.Drawing.Point(49, 38)
-        Me.btnCerrarCaja.Name = "btnCerrarCaja"
-        Me.btnCerrarCaja.Size = New System.Drawing.Size(75, 23)
-        Me.btnCerrarCaja.TabIndex = 0
-        Me.btnCerrarCaja.Text = "Cerrar Caja"
-        Me.btnCerrarCaja.UseVisualStyleBackColor = True
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(2, 2)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(123, 56)
+        Me.Button1.TabIndex = 1
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button1.UseVisualStyleBackColor = True
         '
-        'CerrarCaja
+        'U_Familia
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(179, 98)
-        Me.ControlBox = False
-        Me.Controls.Add(Me.btnCerrarCaja)
-        Me.Name = "CerrarCaja"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "CerrarCaja"
+        Me.Controls.Add(Me.Button1)
+        Me.Name = "U_Familia"
+        Me.Size = New System.Drawing.Size(130, 61)
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents btnCerrarCaja As System.Windows.Forms.Button
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+
 End Class

@@ -1,22 +1,17 @@
 ﻿Public Class AbrirCajaService
 
-    Public Function AbrirCaja(ByVal IdUsuario As Integer, ByVal Monto As Integer, ByVal Glosa As String) As DataTable
+    Public Function AbrirCaja(ByVal IdUsuario As Integer, ByVal Monto As Integer, ByVal Glosa As String) As String
         Dim con As New Conexion
-        Dim dt As New DataTable
-        Dim sql As New dac.myhelper3
+        Dim dt As String = ""
         If con.Conexion Then
             Try
-                sql.paramQUERY.Add("IdUsuario", IdUsuario)
-                sql.paramQUERY.Add("Monto", Monto)
-                sql.paramQUERY.Add("Glosa", Glosa)
-                dt = sql.ExecuteDatatable(con.con.ConnectionString, CommandType.StoredProcedure, "Set_AbrirCaja", sql.paramQUERY, 60000)
+                Dim sql As New dac.myMSSQL(con.con.ConnectionString, 60000)
+                Sql.paramQUERY.Add("IdUsuario", IdUsuario)
+                Sql.paramQUERY.Add("Monto", Monto)
+                Sql.paramQUERY.Add("Glosa", Glosa)
+                dt = Sql.GetValorNoNull("Set_AbrirCaja")
             Catch ex As Exception
-                dt = New DataTable
                 con.Desconectar()
-            End Try
-            Try
-                con.Desconectar()
-            Catch ex As Exception
             End Try
         End If
         Return dt
