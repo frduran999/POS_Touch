@@ -16,6 +16,13 @@ Public Class Venta
         Return dt
     End Function
 
+    Public Function DetallePromo(ByVal dto As ticket) As String
+        Dim dt As String
+        Dim b As New VentaService
+        dt = b.DetallePromo(dto)
+        Return dt
+    End Function
+
     Public Function BuscarVentas(ByVal fechaini As String, ByVal fechafin As String) As DataTable
         Dim dt As New DataTable
         Dim b As New VentaService
@@ -34,4 +41,12 @@ Public Class Venta
         dt = b.EliminaTicket(NroTicket)
         Return dt
     End Function
+
+    Public Function ValidaProducto(ByVal dts As ticket) As String
+        Dim dt As String = ""
+        Dim b As New VentaService
+        dt = b.ValidaProducto(dts)
+        Return dt
+    End Function
+
 End Class

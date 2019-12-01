@@ -50,6 +50,20 @@ Public Class VentaService
         End If
         Return resp
     End Function
+
+    Public Function DetallePromo(ByVal dto As ticket) As String
+        Dim resp As String = ""
+        Dim con As New Conexion
+        If con.Conexion Then
+            Dim odac As New dac.myMSSQL(con.con.ConnectionString, 180000)
+            odac.paramQUERY.Add("IdProducto", dto.get_codigo)
+            odac.paramQUERY.Add("Cantidad", dto.get_cantidad)
+
+            resp = odac.GetValorNoNull("StockPromocion")
+        End If
+        Return resp
+    End Function
+
     Public Function BuscarVentas(ByVal fechaini As String, ByVal fechafin As String) As DataTable
         Dim dt As New DataTable
         Dim con As New Conexion
@@ -94,4 +108,17 @@ Public Class VentaService
         End If
         Return resp
     End Function
+
+    Public Function ValidaProducto(ByVal dts As ticket) As String
+        Dim resp As String = ""
+        Dim con As New Conexion
+        If con.Conexion Then
+            Dim odac As New dac.myMSSQL(con.con.ConnectionString, 180000)
+            odac.paramQUERY.Add("idPromocion", dts.get_codigo)
+            resp = odac.GetValorNoNull("ValidaProducto")
+        End If
+        Return resp
+
+    End Function
+
 End Class
