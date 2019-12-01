@@ -149,6 +149,11 @@
     <Compile Include="DATASET\dts_mantenedor.vb">
       <DependentUpon>dts_mantenedor.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DATASET\dts_Ventas.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dts_Ventas.xsd</DependentUpon>
+    </Compile>
     <Compile Include="delivery.Designer.vb">
       <DependentUpon>delivery.vb</DependentUpon>
     </Compile>
@@ -394,6 +399,30 @@
     <Compile Include="Ventas\FrmCaja.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Ventas\Info_Ventas.Designer.vb">
+      <DependentUpon>Info_Ventas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\Info_Ventas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\Reportes\InfoVentas.Designer.vb">
+      <DependentUpon>InfoVentas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\Reportes\InfoVentas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\Reportes\Info_Productos.Designer.vb">
+      <DependentUpon>Info_Productos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\Reportes\Info_Productos.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\Reportes\RPT_Ventas_X_Usuario.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPT_Ventas_X_Usuario.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Caja\AdminCaja.resx">
@@ -523,6 +552,19 @@
     <EmbeddedResource Include="Ventas\FrmCaja.resx">
       <DependentUpon>FrmCaja.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\Info_Ventas.resx">
+      <DependentUpon>Info_Ventas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\Reportes\InfoVentas.resx">
+      <DependentUpon>InfoVentas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\Reportes\Info_Productos.resx">
+      <DependentUpon>Info_Productos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\Reportes\RPT_Ventas_X_Usuario.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPT_Ventas_X_Usuario.vb</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -569,6 +611,17 @@
     </None>
     <None Include="DATASET\dts_mantenedor.xss">
       <DependentUpon>dts_mantenedor.xsd</DependentUpon>
+    </None>
+    <None Include="DATASET\dts_Ventas.xsc">
+      <DependentUpon>dts_Ventas.xsd</DependentUpon>
+    </None>
+    <None Include="DATASET\dts_Ventas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dts_Ventas.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DATASET\dts_Ventas.xss">
+      <DependentUpon>dts_Ventas.xsd</DependentUpon>
     </None>
     <None Include="formaPago_dateset.xsc">
       <DependentUpon>formaPago_dateset.xsd</DependentUpon>
