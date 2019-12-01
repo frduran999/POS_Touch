@@ -31,6 +31,10 @@ Partial Class compras
         Me.Label3 = New System.Windows.Forms.Label()
         Me.txt_folio = New System.Windows.Forms.TextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.eliminar = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -52,10 +56,6 @@ Partial Class compras
         Me.uic_familia = New System.Windows.Forms.ComboBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.uic_Productos = New System.Windows.Forms.ComboBox()
-        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.eliminar = New System.Windows.Forms.DataGridViewButtonColumn()
         CType(Me.TipodocBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Tipo_doc_DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -122,6 +122,35 @@ Partial Class compras
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.Size = New System.Drawing.Size(466, 256)
         Me.DataGridView1.TabIndex = 119
+        '
+        'codigo
+        '
+        Me.codigo.HeaderText = "Codigo"
+        Me.codigo.Name = "codigo"
+        Me.codigo.ReadOnly = True
+        '
+        'descripcion
+        '
+        Me.descripcion.HeaderText = "Descripcion"
+        Me.descripcion.Name = "descripcion"
+        Me.descripcion.ReadOnly = True
+        Me.descripcion.Width = 222
+        '
+        'cantidad
+        '
+        Me.cantidad.HeaderText = "Cantidad"
+        Me.cantidad.Name = "cantidad"
+        Me.cantidad.ReadOnly = True
+        Me.cantidad.Width = 50
+        '
+        'eliminar
+        '
+        Me.eliminar.HeaderText = "Eliminar"
+        Me.eliminar.Name = "eliminar"
+        Me.eliminar.ReadOnly = True
+        Me.eliminar.Text = "Eliminar"
+        Me.eliminar.UseColumnTextForButtonValue = True
+        Me.eliminar.Width = 50
         '
         'Label5
         '
@@ -315,35 +344,6 @@ Partial Class compras
         Me.uic_Productos.Size = New System.Drawing.Size(187, 21)
         Me.uic_Productos.TabIndex = 124
         Me.uic_Productos.ValueMember = "id_doc"
-        '
-        'codigo
-        '
-        Me.codigo.HeaderText = "Codigo"
-        Me.codigo.Name = "codigo"
-        Me.codigo.ReadOnly = True
-        '
-        'descripcion
-        '
-        Me.descripcion.HeaderText = "Descripcion"
-        Me.descripcion.Name = "descripcion"
-        Me.descripcion.ReadOnly = True
-        Me.descripcion.Width = 222
-        '
-        'cantidad
-        '
-        Me.cantidad.HeaderText = "Cantidad"
-        Me.cantidad.Name = "cantidad"
-        Me.cantidad.ReadOnly = True
-        Me.cantidad.Width = 50
-        '
-        'eliminar
-        '
-        Me.eliminar.HeaderText = "Eliminar"
-        Me.eliminar.Name = "eliminar"
-        Me.eliminar.ReadOnly = True
-        Me.eliminar.Text = "Eliminar"
-        Me.eliminar.UseColumnTextForButtonValue = True
-        Me.eliminar.Width = 50
         '
         'compras
         '

@@ -21,11 +21,13 @@ Public Class Rpt_ticket
     End Property
     Private Sub Rpt_ticket_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Cargar()
-        TicketFamilia()
+        If Formulario = "FrmCaja" Or Formulario = "FrmVenta" Then
+            TicketFamilia()
+        End If
     End Sub
     Private Sub Cargar()
         Me.Cursor = Cursors.WaitCursor
-        If Formulario = "FrmCaja" Or Formulario = "FrmVenta" Then
+        If Formulario = "FrmCaja" Or Formulario = "FrmVenta" Or Formulario = "ImprimeBoleta" Then
             Try
                 Dim rpt As New RptBoleta
                 Dim data As New dts_Caja
@@ -59,7 +61,7 @@ Public Class Rpt_ticket
             Catch ex As Exception
             End Try
         End If
-        If Formulario = "FrmVenta" Then
+        If Formulario = "FrmVenta" Or Formulario = "ImprimeTicket" Then
             Try
                 Dim rpt As New RptTicket
                 Dim data As New deliveryDataSet1

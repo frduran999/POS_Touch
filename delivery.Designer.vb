@@ -29,10 +29,12 @@ Partial Class delivery
         Me.ToolStripButton2 = New System.Windows.Forms.ToolStripDropDownButton()
         Me.DIARIOToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.COMPRASDIARIOToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ListadoVentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripDropDownButton2 = New System.Windows.Forms.ToolStripDropDownButton()
         Me.ProductoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StockToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.StockCriticoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripDropDownButton1 = New System.Windows.Forms.ToolStripDropDownButton()
         Me.XxToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.FamiliaProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -43,7 +45,6 @@ Partial Class delivery
         Me.ToolStripButton5 = New System.Windows.Forms.ToolStripButton()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.uic_versionApp = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.StockCriticoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -82,7 +83,7 @@ Partial Class delivery
         '
         'ToolStripButton2
         '
-        Me.ToolStripButton2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DIARIOToolStripMenuItem, Me.COMPRASDIARIOToolStripMenuItem})
+        Me.ToolStripButton2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DIARIOToolStripMenuItem, Me.COMPRASDIARIOToolStripMenuItem, Me.ListadoVentasToolStripMenuItem})
         Me.ToolStripButton2.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.ToolStripButton2.Image = Global.delevery.My.Resources.Resources.book_blue
         Me.ToolStripButton2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
@@ -104,6 +105,12 @@ Partial Class delivery
         Me.COMPRASDIARIOToolStripMenuItem.Size = New System.Drawing.Size(209, 26)
         Me.COMPRASDIARIOToolStripMenuItem.Text = "COMPRAS DIARIO"
         Me.COMPRASDIARIOToolStripMenuItem.Visible = False
+        '
+        'ListadoVentasToolStripMenuItem
+        '
+        Me.ListadoVentasToolStripMenuItem.Name = "ListadoVentasToolStripMenuItem"
+        Me.ListadoVentasToolStripMenuItem.Size = New System.Drawing.Size(209, 26)
+        Me.ListadoVentasToolStripMenuItem.Text = "Listado ventas"
         '
         'ToolStripButton3
         '
@@ -139,6 +146,12 @@ Partial Class delivery
         Me.StockToolStripMenuItem.Name = "StockToolStripMenuItem"
         Me.StockToolStripMenuItem.Size = New System.Drawing.Size(166, 26)
         Me.StockToolStripMenuItem.Text = "Stock"
+        '
+        'StockCriticoToolStripMenuItem
+        '
+        Me.StockCriticoToolStripMenuItem.Name = "StockCriticoToolStripMenuItem"
+        Me.StockCriticoToolStripMenuItem.Size = New System.Drawing.Size(166, 26)
+        Me.StockCriticoToolStripMenuItem.Text = "Stock Critico"
         '
         'ToolStripDropDownButton1
         '
@@ -214,12 +227,6 @@ Partial Class delivery
         Me.uic_versionApp.Name = "uic_versionApp"
         Me.uic_versionApp.Size = New System.Drawing.Size(0, 17)
         '
-        'StockCriticoToolStripMenuItem
-        '
-        Me.StockCriticoToolStripMenuItem.Name = "StockCriticoToolStripMenuItem"
-        Me.StockCriticoToolStripMenuItem.Size = New System.Drawing.Size(166, 26)
-        Me.StockCriticoToolStripMenuItem.Text = "Stock Critico"
-        '
         'delivery
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -262,4 +269,5 @@ Partial Class delivery
     Friend WithEvents ProductoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents StockToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents StockCriticoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ListadoVentasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

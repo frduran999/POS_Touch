@@ -276,8 +276,6 @@ Public Class Form1
             Exit Sub
         End If
 
-
-
         Dim num_linea As Integer = Me.DataGridView1.Rows.Count - 1
 
         If DataGridView1.Rows.Count >= 0 Then
@@ -294,6 +292,8 @@ Public Class Form1
             Next
 
         End If
+        Dim neg_ As New ProyectoNegocio.VentaCaja
+        neg_.GrabaBoleta(id_doc_cab, Usuario)
 
         Dim frmT As New Rpt_ticket
         frmT.idventa = id_doc_cab
