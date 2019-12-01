@@ -31,17 +31,45 @@ Public Class compras
 
 
     Private Sub btn_agregar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_agregar.Click
+        Dim Linea As Integer
+        Dim Repetido As Boolean
+        Dim Codigo_Item As String = Me.uic_Productos.SelectedValue
+        Dim CantidadLinea As Integer
         If Me.uic_Productos.SelectedValue = 0 Then
             MsgBox("Debe Ingresar producto", MsgBoxStyle.Critical, "Error")
             Exit Sub
         End If
-
         'calculo_detalle()
-        Me.DataGridView1.Rows.Add(Me.uic_Productos.SelectedValue, Me.uic_Productos.Text, Me.uic_cantidad.Text)
-        Me.uic_codigo.Text = ""
-        Me.uic_descripcion.Text = ""
-        Me.uic_cantidad.Text = ""
-        Me.uic_precio.Text = ""
+
+        Try
+            If Me.DataGridView1.Rows.Count > 0 Then
+                For index = 0 To DataGridView1.Rows.Count - 1
+                    If (DataGridView1.Rows(index).Cells(0).Value.ToString.Trim = Codigo_Item.Trim) Then
+                        Repetido = True
+                        Linea = index
+                        CantidadLinea = DataGridView1.Rows(index).Cells(2).Value.ToString
+                        Exit For
+                    End If
+                Next
+            End If
+            
+            If Repetido Then
+                Me.DataGridView1.Rows(Linea).Cells(2).Value = CantidadLinea + CInt(Me.uic_cantidad.Text)
+            Else
+                'If Me.DataGridView1.Rows.Count > 0 Then
+                Me.DataGridView1.Rows.Add(Me.uic_Productos.SelectedValue, Me.uic_Productos.Text, Me.uic_cantidad.Text)
+                Me.uic_codigo.Text = ""
+                Me.uic_descripcion.Text = ""
+                Me.uic_cantidad.Text = ""
+                Me.uic_precio.Text = ""
+                'End If
+            End If
+
+
+        Catch ex As Exception
+
+        End Try
+        
 
     End Sub
     Private Sub calculo_detalle()
@@ -113,9 +141,11 @@ Public Class compras
     End Sub
 
     Private Sub txt_folio_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt_folio.KeyPress
-        If e.KeyChar = ChrW(Keys.Enter) Then
+        Dim valida As String = "0123456789" & Convert.ToChar(8)
+        If (valida.Contains("" + e.KeyChar)) Then
+            e.Handled = False
+        Else
             e.Handled = True
-            SendKeys.Send("{TAB}")
         End If
     End Sub
 
@@ -179,6 +209,7 @@ Public Class compras
         Me.txt_folio.Text = ""
         Me.uic_codigo.Text = ""
         Me.uic_descripcion.Text = ""
+        CargarCombos()
         Me.DataGridView1.Rows.Clear()
     End Sub
 
@@ -226,4 +257,5 @@ Public Class compras
             Me.uic_Productos.ValueMember = "id"
         End If
     End Sub
+
 End Class

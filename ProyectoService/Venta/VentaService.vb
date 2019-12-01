@@ -50,4 +50,48 @@ Public Class VentaService
         End If
         Return resp
     End Function
+    Public Function BuscarVentas(ByVal fechaini As String, ByVal fechafin As String) As DataTable
+        Dim dt As New DataTable
+        Dim con As New Conexion
+        Dim sql As New dac.myhelper3
+        If con.Conexion Then
+            Try
+                sql.paramQUERY.Add("FechaIni", fechaini)
+                sql.paramQUERY.Add("FechaFin", fechafin)
+                dt = sql.ExecuteDatatable(con.con.ConnectionString, CommandType.StoredProcedure, "BuscarVentas", sql.paramQUERY, 60000)
+            Catch ex As Exception
+                dt = New DataTable
+                con.Desconectar()
+            End Try
+            Try
+                con.Desconectar()
+            Catch ex As Exception
+            End Try
+        End If
+        Return dt
+    End Function
+    Public Function LogImpresion(ByVal NroTicket As Integer, ByVal NroBoleta As Integer, ByVal Tipo As Integer) As String
+        Dim resp As String = ""
+        Dim con As New Conexion
+        If con.Conexion Then
+            Dim odac As New dac.myMSSQL(con.con.ConnectionString, 180000)
+            odac.paramQUERY.Add("NroTicket", NroTicket)
+            odac.paramQUERY.Add("NroBoleta", NroBoleta)
+            odac.paramQUERY.Add("Tipo", Tipo)
+
+            resp = odac.GetValorNoNull("ImprimeRegistro")
+        End If
+        Return resp
+    End Function
+    Public Function EliminaTicket(ByVal NroTicket As Integer) As String
+        Dim resp As String = ""
+        Dim con As New Conexion
+        If con.Conexion Then
+            Dim odac As New dac.myMSSQL(con.con.ConnectionString, 180000)
+            odac.paramQUERY.Add("NroTicket", NroTicket)
+
+            resp = odac.GetValorNoNull("EliminaTicket")
+        End If
+        Return resp
+    End Function
 End Class

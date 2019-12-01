@@ -164,4 +164,10 @@ Public Class delivery
         Dim frm As New StockCritico
         frm.Show()
     End Sub
+
+    Private Sub ListadoVentasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoVentasToolStripMenuItem.Click
+        Dim frm As New Anula_Imprime
+        frm.Perfil = PerfilUsuario
+        frm.Show()
+    End Sub
 End Class

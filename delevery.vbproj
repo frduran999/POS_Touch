@@ -382,6 +382,12 @@
     <Compile Include="U_Familia.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Ventas\Anula_Imprime.Designer.vb">
+      <DependentUpon>Anula_Imprime.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\Anula_Imprime.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Ventas\FrmCaja.Designer.vb">
       <DependentUpon>FrmCaja.vb</DependentUpon>
     </Compile>
@@ -510,6 +516,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="U_Familia.resx">
       <DependentUpon>U_Familia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\Anula_Imprime.resx">
+      <DependentUpon>Anula_Imprime.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventas\FrmCaja.resx">
       <DependentUpon>FrmCaja.vb</DependentUpon>

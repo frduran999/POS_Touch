@@ -46,14 +46,11 @@ Public Class FamiliaProducto
                 GrabarFoto(dt)
 
                 MsgBox("Familia Agregada", vbInformation, "Aviso")
-                Me.uic_FamiliaProducto.Text = ""
-                Me.uic_CodigoFamilia.Text = ""
-                Me.cbxImpresora.Text = ""
+                Limpiar()
                 carga_grilla()
             End If
             Catch ex As Exception
             End Try
-
     End Sub
     Private Sub GrabarFoto(ByVal id As Integer)
 
