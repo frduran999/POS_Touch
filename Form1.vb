@@ -287,10 +287,14 @@ Public Class Form1
                 dts2.get_total_item = Me.DataGridView1.Rows(i).Cells(4).Value
                 dts2.get_cantidad = Me.DataGridView1.Rows(i).Cells(1).Value
                 dts2.get_codigo = Me.DataGridView1.Rows(i).Cells(0).Value
-                If func.DetalleTicket(dts2) = "OK" Then
+                If func.ValidaProducto(dts2) = "OK" Then
+                    MsgBox("Producto Pertence a promocion")
+                    func.DetallePromo(dts2)
+                Else
+                    If func.DetalleTicket(dts2) = "OK" Then
+                    End If
                 End If
             Next
-
         End If
         Dim neg_ As New ProyectoNegocio.VentaCaja
         neg_.GrabaBoleta(id_doc_cab, Usuario)
@@ -353,32 +357,57 @@ Public Class Form1
         Dim codigo_item As String = ""
         Dim descripcionProducto As String = ""
         Dim Oferta As DataTable
-        Dim DetalleOferta As DataTable
+        Dim repetido As Boolean
+        Dim CantidadLinea As Integer
+        Dim linea As Integer
+        'Dim DetalleOferta As DataTable
 
-        Oferta = myhelper.ExecuteDataSet(My.Settings.deliveryConnectionString, CommandType.Text, "select PrecioOferta,CodigoOferta,NombreOferta from Oferta where idOferta=" & idOferta, Nothing, 60).Tables(0)
-        For Each dts2 As DataRow In Oferta.Rows
-            precio = dts2("PrecioOferta")
-            codigo_item = dts2("CodigoOferta")
-            descripcionProducto = dts2("NombreOferta")
-            If Me.txt_cantidad.Text = "" Then
-                Me.DataGridView1.Rows.Add(codigo_item.Trim, 1, descripcionProducto, precio, precio)
-            Else
-                cantidad = Val(Me.txt_cantidad.Text)
-                total_linea = Val(Me.txt_cantidad.Text) * precio
-                Me.DataGridView1.Rows.Add(codigo_item.Trim, cantidad, articulo, precio, total_linea)
-                Me.txt_cantidad.Text = ""
+        Oferta = myhelper.ExecuteDataSet(My.Settings.deliveryConnectionString, CommandType.Text, "select PrecioOferta,idOferta,NombreOferta from Oferta where idOferta=" & idOferta, Nothing, 60).Tables(0)
+
+        For Each valor As DataRow In Oferta.Rows
+            codigo_item = valor("idOferta")
+        Next
+
+        For index = 0 To DataGridView1.Rows.Count - 1
+            If (DataGridView1.Rows(index).Cells(0).Value.ToString.Trim = codigo_item.Trim) Then
+                repetido = True
+                linea = index
+                CantidadLinea = DataGridView1.Rows(index).Cells(1).Value.ToString
+                precio = DataGridView1.Rows(index).Cells(3).Value.ToString
+                Exit For
             End If
         Next
 
-        DetalleOferta = myhelper.ExecuteDataSet(My.Settings.deliveryConnectionString, CommandType.Text, "select Precio,Codigo,Descripcion_Producto,Cantidad from OfertaDetalle where IdOferta=" & idOferta, Nothing, 60).Tables(0)
-        For Each dts As DataRow In DetalleOferta.Rows
-            precio = Val(dts("Precio"))
-            codigo_item = dts("Codigo")
-            descripcionProducto = dts("Descripcion_Producto")
-            cantidad = dts("Cantidad")
-            Me.DataGridView1.Rows.Add(codigo_item.Trim, cantidad, descripcionProducto, precio, precio)
-        Next
+        If repetido Then
+            If Me.txt_cantidad.Text = "" Then
+                Me.txt_cantidad.Text = 1
+            End If
+            Me.DataGridView1.Rows(linea).Cells(1).Value = CantidadLinea + CInt(Me.txt_cantidad.Text)
+            Me.DataGridView1.Rows(linea).Cells(4).Value = (CantidadLinea + CInt(Me.txt_cantidad.Text)) * precio
+        Else
+            For Each dts2 As DataRow In Oferta.Rows
+                precio = dts2("PrecioOferta")
+                codigo_item = dts2("idOferta")
+                descripcionProducto = dts2("NombreOferta")
+                If Me.txt_cantidad.Text = "" Then
+                    Me.DataGridView1.Rows.Add(codigo_item.Trim, 1, descripcionProducto, precio, precio)
+                Else
+                    cantidad = Val(Me.txt_cantidad.Text)
+                    total_linea = Val(Me.txt_cantidad.Text) * precio
+                    Me.DataGridView1.Rows.Add(codigo_item.Trim, cantidad, articulo, precio, total_linea)
+                    Me.txt_cantidad.Text = ""
+                End If
+            Next
 
+            'DetalleOferta = myhelper.ExecuteDataSet(My.Settings.deliveryConnectionString, CommandType.Text, "select Precio,Codigo,Descripcion_Producto,Cantidad from OfertaDetalle where IdOferta=" & idOferta, Nothing, 60).Tables(0)
+            'For Each dts As DataRow In DetalleOferta.Rows
+            '    precio = Val(dts("Precio"))
+            '    codigo_item = dts("Codigo")
+            '    descripcionProducto = dts("Descripcion_Producto")
+            '    cantidad = dts("Cantidad")
+            '    Me.DataGridView1.Rows.Add(codigo_item.Trim, cantidad, descripcionProducto, precio, precio)
+            'Next
+        End If
     End Sub
     Private Sub uic_reloj_Tick(sender As Object, e As EventArgs) Handles uic_reloj.Tick
         Dim hora_formulario As String = Date.Now.ToLongTimeString
