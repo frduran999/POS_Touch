@@ -44,8 +44,12 @@ Public Class delivery
             LoginForm1.ShowDialog()
         Catch ex As Exception
         End Try
-        Dim frm As New StockCritico
-        frm.ShowDialog()
+        Dim Neg As New Reporte
+        Dim dt As New DataTable
+        dt = Neg.Rpt_StockCritico()
+        If (dt.Rows.Count > 0) Then
+            Telerik.WinControls.RadMessageBox.Show("Tiene productos con stock critico", "Stock")
+        End If
         'Me.uic_versionApp.Text = "APP: " & System.Reflection.Assembly.GetExecutingAssembly.GetName.Version.Major & "." & System.Reflection.Assembly.GetExecutingAssembly.GetName.Version.Minor & "." & System.Reflection.Assembly.GetExecutingAssembly.GetName.Version.Build
         Dim resp As String = ""
         resp = oconfig.get_parametros()
@@ -87,7 +91,9 @@ Public Class delivery
 
     Private Sub DIARIOToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DIARIOToolStripMenuItem.Click
         If es_supervisor Then
-            diario.ShowDialog()
+            'diario.ShowDialog()
+            Dim frm As New Info_Ventas
+            frm.show()
         Else
             MsgBox("Opción disponible solamente para el supervisor", MsgBoxStyle.Information, "Aviso")
         End If

@@ -28,11 +28,13 @@ Partial Class U_Familia
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(2, 2)
+        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button1.Location = New System.Drawing.Point(5, 3)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(123, 56)
+        Me.Button1.Size = New System.Drawing.Size(129, 58)
         Me.Button1.TabIndex = 1
-        Me.Button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter
+        Me.Button1.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage
         Me.Button1.UseVisualStyleBackColor = True
         '
         'U_Familia
@@ -41,7 +43,7 @@ Partial Class U_Familia
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.Controls.Add(Me.Button1)
         Me.Name = "U_Familia"
-        Me.Size = New System.Drawing.Size(130, 61)
+        Me.Size = New System.Drawing.Size(139, 65)
         Me.ResumeLayout(False)
 
     End Sub

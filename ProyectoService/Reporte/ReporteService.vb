@@ -153,4 +153,46 @@
         End If
         Return dt
     End Function
+    Public Function RPT_Productos(ByVal FechaIni As String, ByVal FechaFin As String, ByVal usuario As String) As DataTable
+        Dim dt As New DataTable
+        Dim con As New Conexion
+        Dim sql As New dac.myhelper3
+        If con.Conexion Then
+            Try
+                sql.paramQUERY.Add("FechaIni", FechaIni)
+                sql.paramQUERY.Add("FechaFin", FechaFin)
+                sql.paramQUERY.Add("Usuario", usuario)
+                dt = sql.ExecuteDatatable(con.con.ConnectionString, CommandType.StoredProcedure, "Rpt_Productos", sql.paramQUERY, 60000)
+            Catch ex As Exception
+                dt = New DataTable
+                con.Desconectar()
+            End Try
+            Try
+                con.Desconectar()
+            Catch ex As Exception
+            End Try
+        End If
+        Return dt
+    End Function
+    Public Function RPT_Ventas_X_Usuario(ByVal FechaIni As String, ByVal FechaFin As String, ByVal usuario As String) As DataTable
+        Dim dt As New DataTable
+        Dim con As New Conexion
+        Dim sql As New dac.myhelper3
+        If con.Conexion Then
+            Try
+                sql.paramQUERY.Add("FechaIni", FechaIni)
+                sql.paramQUERY.Add("FechaFin", FechaFin)
+                sql.paramQUERY.Add("Usuario", usuario)
+                dt = sql.ExecuteDatatable(con.con.ConnectionString, CommandType.StoredProcedure, "Get_VentasDiarias_X_Ususario", sql.paramQUERY, 60000)
+            Catch ex As Exception
+                dt = New DataTable
+                con.Desconectar()
+            End Try
+            Try
+                con.Desconectar()
+            Catch ex As Exception
+            End Try
+        End If
+        Return dt
+    End Function
 End Class
