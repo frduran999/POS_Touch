@@ -288,7 +288,7 @@ Public Class Form1
                 dts2.get_cantidad = Me.DataGridView1.Rows(i).Cells(1).Value
                 dts2.get_codigo = Me.DataGridView1.Rows(i).Cells(0).Value
                 If func.ValidaProducto(dts2) = "OK" Then
-                    MsgBox("Producto Pertence a promocion")
+                    'MsgBox("Producto Pertence a promocion")
                     func.DetallePromo(dts2)
                 Else
                     If func.DetalleTicket(dts2) = "OK" Then
@@ -513,5 +513,14 @@ Public Class Form1
         Dim frmAdmCaja As New AdminCaja
         frmAdmCaja.IdUsuario = Usuario
         frmAdmCaja.ShowDialog()
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Me.IdPago = 3
+        Me.tipoPago = "Delivery"
+        txt_efectivo.Enabled = True
+        Me.txt_efectivo.Text = ""
+        Me.txt_efectivo.Focus()
+        Me.txt_vuelto.Text = Val(Me.txt_efectivo.Text) - Val(Me.txt_Total.Text)
     End Sub
 End Class
