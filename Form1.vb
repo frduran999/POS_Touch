@@ -152,8 +152,13 @@ Public Class Form1
                 btn_Efectivo_Click(Nothing, Nothing)
             Case Keys.F3
                 btn_Tarjeta_Click(Nothing, Nothing)
+            Case Keys.F4
+                uic_admCaja_Click(Nothing, Nothing)
+            Case Keys.F6
+                btn_aceptar_Click(Nothing, Nothing)
         End Select
     End Sub
+
     Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Me.Forma_pagoTableAdapter.Fill(Me.FormaPago_dateset.forma_pago)
         Me.cbo_formapago.SelectedIndex = -1
@@ -162,7 +167,8 @@ Public Class Form1
         Dim familia As DataTable
         familia = myhelper.ExecuteDataSet(My.Settings.deliveryConnectionString, CommandType.Text, "SELECT fp.CodigoFamilia, fp.Familia, Ff.FotoNombre FROM FamiliaProducto AS fp LEFT OUTER JOIN FamiliaFoto AS Ff ON fp.CodigoFamilia = Ff.FamiliaId where fp.Estado = 1", Nothing, 60).Tables(0)
         For Each dr As DataRow In familia.Rows
-            Dim obcontrol As New WindowsControlLibrary1.UserControl1
+            'Dim oc As New U_Familia
+            Dim obcontrol As New U_Familia
             Try
                 Dim NFamilia As String = dr("Familia")
                 Dim codigoFamilia As String = dr("CodigoFamilia")
@@ -178,6 +184,7 @@ Public Class Form1
                     obcontrol.Controls(0).BackgroundImage = My.Resources.SinFoto
                 Else
                     obcontrol.Controls(0).BackgroundImage = ByteArrayToImage(ImageToByteArray(Image.FromFile(ruta)), True)
+                    obcontrol.Controls(0).BackgroundImageLayout = ImageLayout.Stretch
                 End If
 
                 AddHandler CType(obcontrol.Controls(0), Button).Click, AddressOf lawea2
@@ -221,27 +228,25 @@ Public Class Form1
 
     End Sub
     Private Sub btn_aceptar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_aceptar.Click
-        If Me.txt_Total.Text = "" Or Me.txt_Total.Text = "0" Then
-            MsgBox("Debe Ingresar Monto Pago", vbCritical)
-            Exit Sub
-        End If
-
-        If Me.IdPago = 0 Then
-            MsgBox("Debe ingresar forma de pago", vbCritical)
-            Exit Sub
-        End If
         If Me.DataGridView1.RowCount = 0 Then
             MsgBox("Debe ingresar detalle", vbCritical)
             Exit Sub
         End If
 
-        If Me.txt_efectivo.Text = "" Or Me.txt_efectivo.Text = "0" Then
-            MsgBox("Debe crear Ticket sin monto cancelado", vbCritical)
+        If Me.txt_Total.Text = "" Or Me.txt_Total.Text = "0" Then
+            MsgBox("Debe Ingresar Monto Pago", vbCritical)
             Exit Sub
         End If
-        ' Dim cabecera As DataTable
+
+        If Me.txt_efectivo.Text = "" Or Me.txt_Total.Text = "0" Then
+            MsgBox("Debe Ingresar Monto a Cancelar", vbCritical)
+            Exit Sub
+        End If
+
         Dim dts As New proyectoDTO.ticket
         Dim func As New ProyectoNegocio.Venta
+        Dim id_doc_cab As String = ""
+        Dim Neg As New ProyectoNegocio.AdminCaja
 
         dts.get_fecha = Format(Now, "yyyy-dd-MM")
         dts.get_forma_pago = tipoPago
@@ -250,14 +255,26 @@ Public Class Form1
         dts.idUsuario = Usuario
 
         Me.Cursor = Cursors.WaitCursor
-        Dim id_doc_cab As String = ""
-        Try
-            id_doc_cab = func.GrabarCab(dts)
-        Catch ex As Exception
-            Telerik.WinControls.RadMessageBox.Show("A ocurrido un error" & vbCrLf & id_doc_cab, "Aviso")
+        
+
+        Dim vresp As String = Neg.ValidaCaja(Usuario)
+        If vresp = "OK" Then
+            Try
+                id_doc_cab = func.GrabarCab(dts)
+            Catch ex As Exception
+                Telerik.WinControls.RadMessageBox.Show("A ocurrido un error" & vbCrLf & id_doc_cab, "Aviso")
+                Me.Cursor = Cursors.Default
+                Exit Sub
+            End Try
+        Else
+            Telerik.WinControls.RadMessageBox.Show(Me, "Tiene que abrir caja", "Alerta")
+            Dim frmApertura As New AperturaCaja
+            frmApertura.IdUsuario = Usuario
+            frmApertura.ShowDialog()
+            'limpiar()
             Me.Cursor = Cursors.Default
             Exit Sub
-        End Try
+        End If
 
         Dim num_linea As Integer = Me.DataGridView1.Rows.Count - 1
 
@@ -270,13 +287,21 @@ Public Class Form1
                 dts2.get_total_item = Me.DataGridView1.Rows(i).Cells(4).Value
                 dts2.get_cantidad = Me.DataGridView1.Rows(i).Cells(1).Value
                 dts2.get_codigo = Me.DataGridView1.Rows(i).Cells(0).Value
-                If func.DetalleTicket(dts2) = "OK" Then
+                If func.ValidaProducto(dts2) = "OK" Then
+                    MsgBox("Producto Pertence a promocion")
+                    func.DetallePromo(dts2)
+                Else
+                    If func.DetalleTicket(dts2) = "OK" Then
+                    End If
                 End If
             Next
-
         End If
+        Dim neg_ As New ProyectoNegocio.VentaCaja
+        neg_.GrabaBoleta(id_doc_cab, Usuario)
+
         Dim frmT As New Rpt_ticket
         frmT.idventa = id_doc_cab
+        frmT.Formulario = "FrmVenta"
         frmT.Show()
         frmT.Close()
         Me.Cursor = Cursors.Default
@@ -332,32 +357,57 @@ Public Class Form1
         Dim codigo_item As String = ""
         Dim descripcionProducto As String = ""
         Dim Oferta As DataTable
-        Dim DetalleOferta As DataTable
+        Dim repetido As Boolean
+        Dim CantidadLinea As Integer
+        Dim linea As Integer
+        'Dim DetalleOferta As DataTable
 
-        Oferta = myhelper.ExecuteDataSet(My.Settings.deliveryConnectionString, CommandType.Text, "select PrecioOferta,CodigoOferta,NombreOferta from Oferta where idOferta=" & idOferta, Nothing, 60).Tables(0)
-        For Each dts2 As DataRow In Oferta.Rows
-            precio = dts2("PrecioOferta")
-            codigo_item = dts2("CodigoOferta")
-            descripcionProducto = dts2("NombreOferta")
-            If Me.txt_cantidad.Text = "" Then
-                Me.DataGridView1.Rows.Add(codigo_item.Trim, 1, descripcionProducto, precio, precio)
-            Else
-                cantidad = Val(Me.txt_cantidad.Text)
-                total_linea = Val(Me.txt_cantidad.Text) * precio
-                Me.DataGridView1.Rows.Add(codigo_item.Trim, cantidad, articulo, precio, total_linea)
-                Me.txt_cantidad.Text = ""
+        Oferta = myhelper.ExecuteDataSet(My.Settings.deliveryConnectionString, CommandType.Text, "select PrecioOferta,idOferta,NombreOferta from Oferta where idOferta=" & idOferta, Nothing, 60).Tables(0)
+
+        For Each valor As DataRow In Oferta.Rows
+            codigo_item = valor("idOferta")
+        Next
+
+        For index = 0 To DataGridView1.Rows.Count - 1
+            If (DataGridView1.Rows(index).Cells(0).Value.ToString.Trim = codigo_item.Trim) Then
+                repetido = True
+                linea = index
+                CantidadLinea = DataGridView1.Rows(index).Cells(1).Value.ToString
+                precio = DataGridView1.Rows(index).Cells(3).Value.ToString
+                Exit For
             End If
         Next
 
-        DetalleOferta = myhelper.ExecuteDataSet(My.Settings.deliveryConnectionString, CommandType.Text, "select Precio,Codigo,Descripcion_Producto,Cantidad from OfertaDetalle where IdOferta=" & idOferta, Nothing, 60).Tables(0)
-        For Each dts As DataRow In DetalleOferta.Rows
-            precio = Val(dts("Precio"))
-            codigo_item = dts("Codigo")
-            descripcionProducto = dts("Descripcion_Producto")
-            cantidad = dts("Cantidad")
-            Me.DataGridView1.Rows.Add(codigo_item.Trim, cantidad, descripcionProducto, precio, precio)
-        Next
+        If repetido Then
+            If Me.txt_cantidad.Text = "" Then
+                Me.txt_cantidad.Text = 1
+            End If
+            Me.DataGridView1.Rows(linea).Cells(1).Value = CantidadLinea + CInt(Me.txt_cantidad.Text)
+            Me.DataGridView1.Rows(linea).Cells(4).Value = (CantidadLinea + CInt(Me.txt_cantidad.Text)) * precio
+        Else
+            For Each dts2 As DataRow In Oferta.Rows
+                precio = dts2("PrecioOferta")
+                codigo_item = dts2("idOferta")
+                descripcionProducto = dts2("NombreOferta")
+                If Me.txt_cantidad.Text = "" Then
+                    Me.DataGridView1.Rows.Add(codigo_item.Trim, 1, descripcionProducto, precio, precio)
+                Else
+                    cantidad = Val(Me.txt_cantidad.Text)
+                    total_linea = Val(Me.txt_cantidad.Text) * precio
+                    Me.DataGridView1.Rows.Add(codigo_item.Trim, cantidad, articulo, precio, total_linea)
+                    Me.txt_cantidad.Text = ""
+                End If
+            Next
 
+            'DetalleOferta = myhelper.ExecuteDataSet(My.Settings.deliveryConnectionString, CommandType.Text, "select Precio,Codigo,Descripcion_Producto,Cantidad from OfertaDetalle where IdOferta=" & idOferta, Nothing, 60).Tables(0)
+            'For Each dts As DataRow In DetalleOferta.Rows
+            '    precio = Val(dts("Precio"))
+            '    codigo_item = dts("Codigo")
+            '    descripcionProducto = dts("Descripcion_Producto")
+            '    cantidad = dts("Cantidad")
+            '    Me.DataGridView1.Rows.Add(codigo_item.Trim, cantidad, descripcionProducto, precio, precio)
+            'Next
+        End If
     End Sub
     Private Sub uic_reloj_Tick(sender As Object, e As EventArgs) Handles uic_reloj.Tick
         Dim hora_formulario As String = Date.Now.ToLongTimeString
@@ -438,7 +488,7 @@ Public Class Form1
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim resp As String = ""
-        Dim neg As New ProyectoNegocio.Abrir_Caja
+        Dim neg As New ProyectoNegocio.AdminCaja
         resp = neg.CerrarCaja(Usuario)
         Try
             If CInt(resp) > 0 Then
@@ -459,4 +509,9 @@ Public Class Form1
 
     End Sub
 
+    Private Sub uic_admCaja_Click(sender As Object, e As EventArgs) Handles uic_admCaja.Click
+        Dim frmAdmCaja As New AdminCaja
+        frmAdmCaja.IdUsuario = Usuario
+        frmAdmCaja.ShowDialog()
+    End Sub
 End Class

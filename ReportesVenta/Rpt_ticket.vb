@@ -2,6 +2,7 @@
 
 Public Class Rpt_ticket
     Private _idventa As Integer
+    Private _Formulario As String
     Public Property idventa As Integer
         Get
             Return _idventa
@@ -10,44 +11,91 @@ Public Class Rpt_ticket
             _idventa = value
         End Set
     End Property
+    Public Property Formulario As String
+        Get
+            Return _Formulario
+        End Get
+        Set(value As String)
+            _Formulario = value
+        End Set
+    End Property
     Private Sub Rpt_ticket_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Cargar()
-        TicketFamilia()
+        If Formulario = "FrmCaja" Or Formulario = "FrmVenta" Then
+            TicketFamilia()
+        End If
     End Sub
     Private Sub Cargar()
         Me.Cursor = Cursors.WaitCursor
-        Try
-            Dim rpt As New RptTicket
-            Dim data As New deliveryDataSet1
-            Dim Neg As New Reporte
-            Dim dt As New DataSet
+        If Formulario = "FrmCaja" Or Formulario = "FrmVenta" Or Formulario = "ImprimeBoleta" Then
+            Try
+                Dim rpt As New RptBoleta
+                Dim data As New dts_Caja
+                Dim Neg As New Reporte
+                Dim dt As New DataSet
+                Dim impresoraBoleta As String = Neg.GetImpresoraBoleta
 
-            Dim impresoraTicket As String = Neg.GetImpresoraTicket
-            dt = Neg.Rpt_Ticket(idventa)
-            If (dt.Tables(0).Rows.Count > 0) Then
-                For Each item As DataRow In dt.Tables(0).Rows
+                dt = Neg.Rpt_Boleta(idventa)
+                If (dt.Tables(0).Rows.Count > 0) Then
+                    For Each item As DataRow In dt.Tables(0).Rows
+                        Try
+                            data.Rpt_Boleta.Rows.Add(item(0), item(1), item(2), item(3), item(4), item(5), item(6), item(7), item(8), item(9))
+                        Catch ex As Exception
+                            MsgBox(ex.Message & vbCr & ex.StackTrace)
+                        End Try
+                    Next
+                    For Each dato As DataRow In dt.Tables(1).Rows
+                        data.parametros.Rows.Add(dato(0), dato(1), dato(2), dato(3), dato(4))
+                    Next
                     Try
-                        data.Rpt_Ventas.Rows.Add(item(0), item(1), item(2), item(3), item(4), item(5), item(6), item(7))
+                        rpt.SetDataSource(data)
+                        rpt.PrintOptions.PrinterName = impresoraBoleta
+                        rpt.PrintToPrinter(1, False, 0, 0)
                     Catch ex As Exception
-                        MsgBox(ex.Message & vbCr & ex.StackTrace)
                     End Try
-                Next
-                For Each dato As DataRow In dt.Tables(1).Rows
-                    data.parametros.Rows.Add(dato(0), dato(1), dato(2), dato(3), dato(4))
-                Next
-                Try
-                    rpt.SetDataSource(data)
-                    rpt.PrintOptions.PrinterName = impresoraTicket
-                    rpt.PrintToPrinter(1, False, 0, 0)
-                Catch ex As Exception
-                End Try
-                
-            Else
-                Telerik.WinControls.RadMessageBox.Show(Me, "No se encontraron datos", "Alerta")
-                Me.Close()
-            End If
-        Catch ex As Exception
-        End Try
+
+                Else
+                    Telerik.WinControls.RadMessageBox.Show(Me, "No se encontraron datos", "Alerta")
+                    Me.Close()
+                End If
+            Catch ex As Exception
+            End Try
+        End If
+        'If Formulario = "FrmVenta" Or Formulario = "ImprimeTicket" Then
+        '    Try
+        '        Dim rpt As New RptTicket
+        '        Dim data As New deliveryDataSet1
+        '        Dim Neg As New Reporte
+        '        Dim dt As New DataSet
+
+        '        Dim impresoraTicket As String = Neg.GetImpresoraTicket
+        '        dt = Neg.Rpt_Ticket(idventa)
+        '        If (dt.Tables(0).Rows.Count > 0) Then
+        '            For Each item As DataRow In dt.Tables(0).Rows
+        '                Try
+        '                    data.Rpt_Ventas.Rows.Add(item(0), item(1), item(2), item(3), item(4), item(5), item(6), item(7))
+        '                Catch ex As Exception
+        '                    MsgBox(ex.Message & vbCr & ex.StackTrace)
+        '                End Try
+        '            Next
+        '            For Each dato As DataRow In dt.Tables(1).Rows
+        '                data.parametros.Rows.Add(dato(0), dato(1), dato(2), dato(3), dato(4))
+        '            Next
+        '            Try
+        '                rpt.SetDataSource(data)
+        '                rpt.PrintOptions.PrinterName = impresoraTicket
+        '                rpt.PrintToPrinter(1, False, 0, 0)
+        '            Catch ex As Exception
+        '            End Try
+
+        '        Else
+        '            Telerik.WinControls.RadMessageBox.Show(Me, "No se encontraron datos", "Alerta")
+        '            Me.Close()
+        '        End If
+        '    Catch ex As Exception
+        '    End Try
+        'End If
+
         Me.Cursor = Cursors.Default
     End Sub
 

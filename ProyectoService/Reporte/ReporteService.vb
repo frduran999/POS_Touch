@@ -1,4 +1,23 @@
 ﻿Public Class ReporteService
+
+    Public Function Rpt_StockCritico() As DataTable
+        Dim dt As New DataTable
+        Dim con As New Conexion
+        Dim sql As New dac.myhelper3
+        If con.Conexion Then
+            Try
+                dt = sql.ExecuteDatatable(con.con.ConnectionString, CommandType.StoredProcedure, "Rpt_StockCritico", sql.paramQUERY, 60000)
+            Catch ex As Exception
+                dt = New DataTable
+                con.Desconectar()
+            End Try
+            Try
+                con.Desconectar()
+            Catch ex As Exception
+            End Try
+        End If
+        Return dt
+    End Function
     Public Function ReporteProducto() As DataTable
         Dim dt As New DataTable
         Dim con As New Conexion
@@ -58,6 +77,25 @@
         End If
         Return dt
     End Function
+    Public Function Rpt_Boleta(idventa As Integer) As DataSet
+        Dim dt As New DataSet
+        Dim con As New Conexion
+        Dim sql As New dac.myhelper3
+        If con.Conexion Then
+            Try
+                sql.paramQUERY.Add("idventa", idventa)
+                dt = sql.ExecuteDataSet(con.con.ConnectionString, CommandType.StoredProcedure, "Rpt_Boleta", sql.paramQUERY, 60000)
+            Catch ex As Exception
+                dt = New DataSet
+                con.Desconectar()
+            End Try
+            Try
+                con.Desconectar()
+            Catch ex As Exception
+            End Try
+        End If
+        Return dt
+    End Function
     Public Function Rpt_CierreCaja(ByVal IdUsuario As Integer, ByVal IdCaja As Integer) As DataSet
         Dim dt As New DataSet
         Dim con As New Conexion
@@ -87,6 +125,15 @@
         End If
         Return resp
     End Function
+    Public Function GetImpresoraBoleta() As String
+        Dim resp As String = ""
+        Dim con As New Conexion
+        If con.Conexion Then
+            Dim odac As New dac.myMSSQL(con.con.ConnectionString, 18000)
+            resp = odac.GetValorNoNull("GetImpresoraBoleta")
+        End If
+        Return resp
+    End Function
     Public Function Rpt_TicketFamilia(ByVal idventa As Integer) As DataTable
         Dim dt As New DataTable
         Dim con As New Conexion
@@ -95,6 +142,48 @@
             Try
                 sql.paramQUERY.Add("idventa", idventa)
                 dt = sql.ExecuteDatatable(con.con.ConnectionString, CommandType.StoredProcedure, "Rpt_TicketFamilia", sql.paramQUERY, 60000)
+            Catch ex As Exception
+                dt = New DataTable
+                con.Desconectar()
+            End Try
+            Try
+                con.Desconectar()
+            Catch ex As Exception
+            End Try
+        End If
+        Return dt
+    End Function
+    Public Function RPT_Productos(ByVal FechaIni As String, ByVal FechaFin As String, ByVal usuario As String) As DataTable
+        Dim dt As New DataTable
+        Dim con As New Conexion
+        Dim sql As New dac.myhelper3
+        If con.Conexion Then
+            Try
+                sql.paramQUERY.Add("FechaIni", FechaIni)
+                sql.paramQUERY.Add("FechaFin", FechaFin)
+                sql.paramQUERY.Add("Usuario", usuario)
+                dt = sql.ExecuteDatatable(con.con.ConnectionString, CommandType.StoredProcedure, "Rpt_Productos", sql.paramQUERY, 60000)
+            Catch ex As Exception
+                dt = New DataTable
+                con.Desconectar()
+            End Try
+            Try
+                con.Desconectar()
+            Catch ex As Exception
+            End Try
+        End If
+        Return dt
+    End Function
+    Public Function RPT_Ventas_X_Usuario(ByVal FechaIni As String, ByVal FechaFin As String, ByVal usuario As String) As DataTable
+        Dim dt As New DataTable
+        Dim con As New Conexion
+        Dim sql As New dac.myhelper3
+        If con.Conexion Then
+            Try
+                sql.paramQUERY.Add("FechaIni", FechaIni)
+                sql.paramQUERY.Add("FechaFin", FechaFin)
+                sql.paramQUERY.Add("Usuario", usuario)
+                dt = sql.ExecuteDatatable(con.con.ConnectionString, CommandType.StoredProcedure, "Get_VentasDiarias_X_Ususario", sql.paramQUERY, 60000)
             Catch ex As Exception
                 dt = New DataTable
                 con.Desconectar()

@@ -1,36 +1,75 @@
-﻿Public Class compras
+﻿Imports ProyectoNegocio
+
+Public Class compras
     Dim rut As New bc.RUTman
     Dim myhelper As New dac.myhelper2
 
+    Private _IdUsuario As Integer
+
+    Public Property IdUsuario As Integer
+        Get
+            Return _IdUsuario
+        End Get
+        Set(value As Integer)
+            _IdUsuario = value
+        End Set
+    End Property
+
     Private Sub compras_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        'TODO: This line of code loads data into the 'Tipo_doc_DataSet.tipo_doc' table. You can move, or remove it, as needed.
-        Me.Tipo_docTableAdapter.Fill(Me.Tipo_doc_DataSet.tipo_doc)
         Me.DateTimePicker1.Value = Now
-        Me.cbo_tipoDoc.SelectedValue = -1
+        CargarCombos()
+    End Sub
+    Private Sub CargarCombos()
+        Dim neg As New Combos
+        Try
+            Me.uic_familia.DataSource = neg.getFamilia
+            Me.uic_familia.DisplayMember = "nombre"
+            Me.uic_familia.ValueMember = "id"
+        Catch ex As Exception
+        End Try
     End Sub
 
-    Private Sub txt_rut_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt_rut.KeyPress
-        If e.KeyChar = ChrW(Keys.Enter) Then
-            e.Handled = True
-            SendKeys.Send("{TAB}")
-            If Not rut.check_es_valido(Me.txt_rut.Text.Trim) Then
-                MsgBox("Error, RUT no valido", MsgBoxStyle.Critical, "Error")
-            End If
-        End If
-    End Sub
 
     Private Sub btn_agregar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btn_agregar.Click
-        If Me.uic_descripcion.Text = "" Then
+        Dim Linea As Integer
+        Dim Repetido As Boolean
+        Dim Codigo_Item As String = Me.uic_Productos.SelectedValue
+        Dim CantidadLinea As Integer
+        If Me.uic_Productos.SelectedValue = 0 Then
             MsgBox("Debe Ingresar producto", MsgBoxStyle.Critical, "Error")
             Exit Sub
         End If
+        'calculo_detalle()
 
-        calculo_detalle()
+        Try
+            If Me.DataGridView1.Rows.Count > 0 Then
+                For index = 0 To DataGridView1.Rows.Count - 1
+                    If (DataGridView1.Rows(index).Cells(0).Value.ToString.Trim = Codigo_Item.Trim) Then
+                        Repetido = True
+                        Linea = index
+                        CantidadLinea = DataGridView1.Rows(index).Cells(2).Value.ToString
+                        Exit For
+                    End If
+                Next
+            End If
+            
+            If Repetido Then
+                Me.DataGridView1.Rows(Linea).Cells(2).Value = CantidadLinea + CInt(Me.uic_cantidad.Text)
+            Else
+                'If Me.DataGridView1.Rows.Count > 0 Then
+                Me.DataGridView1.Rows.Add(Me.uic_Productos.SelectedValue, Me.uic_Productos.Text, Me.uic_cantidad.Text)
+                Me.uic_codigo.Text = ""
+                Me.uic_descripcion.Text = ""
+                Me.uic_cantidad.Text = ""
+                Me.uic_precio.Text = ""
+                'End If
+            End If
 
-        Me.uic_codigo.Text = ""
-        Me.uic_descripcion.Text = ""
-        Me.uic_cantidad.Text = ""
-        Me.uic_precio.Text = ""
+
+        Catch ex As Exception
+
+        End Try
+        
 
     End Sub
     Private Sub calculo_detalle()
@@ -102,9 +141,11 @@
     End Sub
 
     Private Sub txt_folio_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt_folio.KeyPress
-        If e.KeyChar = ChrW(Keys.Enter) Then
+        Dim valida As String = "0123456789" & Convert.ToChar(8)
+        If (valida.Contains("" + e.KeyChar)) Then
+            e.Handled = False
+        Else
             e.Handled = True
-            SendKeys.Send("{TAB}")
         End If
     End Sub
 
@@ -113,74 +154,62 @@
     End Sub
 
     Private Sub uic_grabar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles uic_grabar.Click
-        If Me.cbo_tipoDoc.Text = "" Then
-            MsgBox("Debe ingresar Documento", MsgBoxStyle.Critical, "Error")
-            Me.cbo_tipoDoc.Focus()
-            Exit Sub
-        End If
+
         If Me.txt_folio.Text = "" Then
             MsgBox("Debe ingresar folio", MsgBoxStyle.Critical, "Error")
             Me.txt_folio.Focus()
             Exit Sub
         End If
-        If Me.txt_rut.Text = "" Then
-            MsgBox("Debe ingresar RUT", MsgBoxStyle.Critical, "Error")
-            Me.txt_rut.Focus()
-            Exit Sub
-        End If
+
         If Me.DataGridView1.RowCount = 0 Then
             MsgBox("Debe ingresar Detalle", MsgBoxStyle.Critical, "Error")
             Exit Sub
         End If
 
-        Dim cabecera As DataTable
-        Dim dts As New comprar
-        Dim func As New dac.compra
+        'Dim cabecera As DataTable
+        Dim dts As New proyectoDTO.Compras
+        Dim func As New ProyectoNegocio.Productos
 
-        dts.get_fecha = Format(DateTimePicker1.Value, "yyyy-MM-dd").ToString
+        dts.Fecha_ = Format(DateTimePicker1.Value, "yyyy-dd-MM").ToString
         dts.get_folio = Val(Me.txt_folio.Text)
-        dts.get_tipodoc = Me.cbo_tipoDoc.SelectedValue
-        dts.get_rut_preveedor = Me.txt_rut.Text
         dts.get_neto = Val(Me.uic_neto.Text)
         dts.get_iva = Val(Me.uic_IVA.Text)
         dts.get_total = Val(Me.uic_total.Text)
-        If func.cab_compras(dts) Then
-
-        End If
-
-        ' GRABO EL DETALLE
-
-        cabecera = myhelper.ExecuteDataSet(My.Settings.deliveryConnectionString, CommandType.Text, "select max(id_doc) id from cebecera_compra", Nothing, 60).Tables(0)
-        Dim id_doc_cab As Integer
-        For Each dr As DataRow In cabecera.Rows
-            id_doc_cab = dr("id")
-        Next
+        dts.Usuario = IdUsuario
 
         Dim num_linea As Integer = Me.DataGridView1.Rows.Count - 1
+
         If DataGridView1.Rows.Count >= 0 Then
+            Try
+                For i = 0 To num_linea
+                    'Dim dts2 As New comprar
 
-            For i = 0 To num_linea
-                Dim dts2 As New comprar
+                    dts.get_codigo = Me.DataGridView1.Rows(i).Cells(0).Value
+                    dts.get_descripcion = Me.DataGridView1.Rows(i).Cells(1).Value
+                    'dts.get_precio = Me.DataGridView1.Rows(i).Cells(2).Value
+                    dts.get_cantidad = Me.DataGridView1.Rows(i).Cells(2).Value
+                    'dts2.get_total_detalle = Me.DataGridView1.Rows(i).Cells(4).Value
+                    'dts2.get_id_cab = id_doc_cab
 
-                dts2.get_codigo = Me.DataGridView1.Rows(i).Cells(0).Value
-                dts2.get_descripcion = Me.DataGridView1.Rows(i).Cells(1).Value
-                dts2.get_precio = Me.DataGridView1.Rows(i).Cells(2).Value
-                dts2.get_cantidad = Me.DataGridView1.Rows(i).Cells(3).Value
-                dts2.get_total_detalle = Me.DataGridView1.Rows(i).Cells(4).Value
-                dts2.get_id_cab = id_doc_cab
-
-                If func.detalle_compras(dts2) Then
-                    'ok
-                End If
-            Next
+                    Dim res As String = ""
+                    res = func.GrabaStock(dts)
+                    If res = "OK" Then
+                        Telerik.WinControls.RadMessageBox.Show(Me, "Productos agregados a stock", "Alerta")
+                    End If
+                Next
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+           
         End If
+
         limpiar()
     End Sub
     Private Sub limpiar()
         Me.txt_folio.Text = ""
-        Me.txt_rut.Text = ""
         Me.uic_codigo.Text = ""
         Me.uic_descripcion.Text = ""
+        CargarCombos()
         Me.DataGridView1.Rows.Clear()
     End Sub
 
@@ -200,6 +229,33 @@
             total += Me.DataGridView1.Rows(i).Cells(4).Value
         Next
         Me.uic_neto.Text = total
+    End Sub
+
+    Private Sub uic_familia_SelectedIndexChanged(sender As Object, e As EventArgs) Handles uic_familia.SelectedIndexChanged
+        Me.Cursor = Cursors.WaitCursor
+        Try
+            Dim Id As Integer = Me.uic_familia.SelectedValue
+            If Not Id = 0 Then
+                BuscarProductosFamilia(Id)
+            End If
+        Catch ex As Exception
+
+        End Try
+        Me.Cursor = Cursors.Default
+    End Sub
+    Private Sub BuscarProductosFamilia(ByVal Id As Integer)
+        Dim dt As New DataTable
+        Dim neg As New ProyectoNegocio.Productos
+        dt = neg.getProductosFamilia(Id)
+        If dt.Rows.Count > 0 Then
+            Me.uic_Productos.DataSource = dt
+            Me.uic_Productos.DisplayMember = "nombre"
+            Me.uic_Productos.ValueMember = "id"
+        Else
+            Me.uic_Productos.DataSource = neg.getProductos
+            Me.uic_Productos.DisplayMember = "nombre"
+            Me.uic_Productos.ValueMember = "id"
+        End If
     End Sub
 
 End Class

@@ -1,4 +1,6 @@
-﻿Public Class ProductoService
+﻿Imports proyectoDTO
+
+Public Class ProductoService
     Public Function getProductos() As DataTable
         Dim con As New Conexion
         Dim dt As New DataTable
@@ -70,5 +72,35 @@
             End Try
         End If
         Return dt
+    End Function
+    Public Function getProductosFamilia(ByVal Id As Integer) As DataTable
+        Dim con As New Conexion
+        Dim dt As New DataTable
+        If con.Conexion Then
+            Try
+                Dim odac As New dac.myhelper3
+                odac.paramQUERY.Add("Id", Id)
+                dt = odac.ExecuteDatatable(con.con.ConnectionString, CommandType.StoredProcedure, "getProductosFamilia", odac.paramQUERY, 180000)
+            Catch ex As Exception
+                dt = New DataTable
+            End Try
+        End If
+        Return dt
+    End Function
+
+    Public Function GrabaStock(ByVal dts As Compras) As String
+        Dim resp As String = ""
+        Dim con As New Conexion
+        If con.Conexion Then
+            Dim odac As New dac.myMSSQL(con.con.ConnectionString, 180000)
+            odac.paramQUERY.Add("Fecha", dts.Fecha_)
+            odac.paramQUERY.Add("Folio", dts.get_folio)
+            odac.paramQUERY.Add("IdProducto", CInt(dts.get_codigo))
+            odac.paramQUERY.Add("Cantidad", dts.get_cantidad)
+            odac.paramQUERY.Add("Usuario", dts.Usuario)
+
+            resp = odac.GetValorNoNull("Stock_Grabar")
+        End If
+        Return resp
     End Function
 End Class

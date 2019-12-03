@@ -12,7 +12,7 @@
   <xs:element name="dts_mantenedor" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dts_mantenedor" msprop:Generator_UserDSName="dts_mantenedor">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Producto" msprop:Generator_TableClassName="ProductoDataTable" msprop:Generator_TableVarName="tableProducto" msprop:Generator_TablePropName="Producto" msprop:Generator_RowDeletingName="ProductoRowDeleting" msprop:Generator_RowChangingName="ProductoRowChanging" msprop:Generator_RowEvHandlerName="ProductoRowChangeEventHandler" msprop:Generator_RowDeletedName="ProductoRowDeleted" msprop:Generator_UserTableName="Producto" msprop:Generator_RowChangedName="ProductoRowChanged" msprop:Generator_RowEvArgName="ProductoRowChangeEvent" msprop:Generator_RowClassName="ProductoRow">
+        <xs:element name="Producto" msprop:Generator_TableClassName="ProductoDataTable" msprop:Generator_TableVarName="tableProducto" msprop:Generator_RowChangedName="ProductoRowChanged" msprop:Generator_TablePropName="Producto" msprop:Generator_RowDeletingName="ProductoRowDeleting" msprop:Generator_RowChangingName="ProductoRowChanging" msprop:Generator_RowEvHandlerName="ProductoRowChangeEventHandler" msprop:Generator_RowDeletedName="ProductoRowDeleted" msprop:Generator_RowClassName="ProductoRow" msprop:Generator_UserTableName="Producto" msprop:Generator_RowEvArgName="ProductoRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_producto" msprop:Generator_ColumnVarNameInTable="columnid_producto" msprop:Generator_ColumnPropNameInRow="id_producto" msprop:Generator_ColumnPropNameInTable="id_productoColumn" msprop:Generator_UserColumnName="id_producto" type="xs:long" minOccurs="0" />
@@ -24,7 +24,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VentasDiarias" msprop:Generator_TableClassName="VentasDiariasDataTable" msprop:Generator_TableVarName="tableVentasDiarias" msprop:Generator_TablePropName="VentasDiarias" msprop:Generator_RowDeletingName="VentasDiariasRowDeleting" msprop:Generator_RowChangingName="VentasDiariasRowChanging" msprop:Generator_RowEvHandlerName="VentasDiariasRowChangeEventHandler" msprop:Generator_RowDeletedName="VentasDiariasRowDeleted" msprop:Generator_UserTableName="VentasDiarias" msprop:Generator_RowChangedName="VentasDiariasRowChanged" msprop:Generator_RowEvArgName="VentasDiariasRowChangeEvent" msprop:Generator_RowClassName="VentasDiariasRow">
+        <xs:element name="VentasDiarias" msprop:Generator_TableClassName="VentasDiariasDataTable" msprop:Generator_TableVarName="tableVentasDiarias" msprop:Generator_RowChangedName="VentasDiariasRowChanged" msprop:Generator_TablePropName="VentasDiarias" msprop:Generator_RowDeletingName="VentasDiariasRowDeleting" msprop:Generator_RowChangingName="VentasDiariasRowChanging" msprop:Generator_RowEvHandlerName="VentasDiariasRowChangeEventHandler" msprop:Generator_RowDeletedName="VentasDiariasRowDeleted" msprop:Generator_RowClassName="VentasDiariasRow" msprop:Generator_UserTableName="VentasDiarias" msprop:Generator_RowEvArgName="VentasDiariasRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_doc" msprop:Generator_ColumnVarNameInTable="columnid_doc" msprop:Generator_ColumnPropNameInRow="id_doc" msprop:Generator_ColumnPropNameInTable="id_docColumn" msprop:Generator_UserColumnName="id_doc" type="xs:long" minOccurs="0" />
@@ -33,6 +33,15 @@
               <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" type="xs:string" minOccurs="0" />
               <xs:element name="total" msprop:Generator_ColumnVarNameInTable="columntotal" msprop:Generator_ColumnPropNameInRow="total" msprop:Generator_ColumnPropNameInTable="totalColumn" msprop:Generator_UserColumnName="total" type="xs:long" minOccurs="0" />
               <xs:element name="efectivo" msprop:Generator_ColumnVarNameInTable="columnefectivo" msprop:Generator_ColumnPropNameInRow="efectivo" msprop:Generator_ColumnPropNameInTable="efectivoColumn" msprop:Generator_UserColumnName="efectivo" type="xs:long" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="StockCritico" msprop:Generator_TableClassName="StockCriticoDataTable" msprop:Generator_TableVarName="tableStockCritico" msprop:Generator_TablePropName="StockCritico" msprop:Generator_RowDeletingName="StockCriticoRowDeleting" msprop:Generator_RowChangingName="StockCriticoRowChanging" msprop:Generator_RowEvHandlerName="StockCriticoRowChangeEventHandler" msprop:Generator_RowDeletedName="StockCriticoRowDeleted" msprop:Generator_UserTableName="StockCritico" msprop:Generator_RowChangedName="StockCriticoRowChanged" msprop:Generator_RowEvArgName="StockCriticoRowChangeEvent" msprop:Generator_RowClassName="StockCriticoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Producto" msprop:Generator_ColumnVarNameInTable="columnProducto" msprop:Generator_ColumnPropNameInRow="Producto" msprop:Generator_ColumnPropNameInTable="ProductoColumn" msprop:Generator_UserColumnName="Producto" type="xs:string" minOccurs="0" />
+              <xs:element name="Saldo" msprop:Generator_ColumnVarNameInTable="columnSaldo" msprop:Generator_ColumnPropNameInRow="Saldo" msprop:Generator_ColumnPropNameInTable="SaldoColumn" msprop:Generator_UserColumnName="Saldo" type="xs:long" minOccurs="0" />
+              <xs:element name="StockCritico" msprop:Generator_ColumnVarNameInTable="columnStockCritico" msprop:Generator_ColumnPropNameInRow="StockCritico" msprop:Generator_ColumnPropNameInTable="StockCriticoColumn" msprop:Generator_UserColumnName="StockCritico" type="xs:long" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

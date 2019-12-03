@@ -12,4 +12,16 @@ Public Class Combos
         dt = bsp.getFamilia()
         Return dt
     End Function
+    Public Function getProductos() As DataTable
+        Dim dt As New DataTable
+        Dim bsp As New CombosServices
+        dt = bsp.getProductos()
+        Return dt
+    End Function
+    Public Function GetUsuario() As DataTable
+        Dim dt As New DataTable
+        Dim bsp As New CombosServices
+        dt = bsp.GetUsuario()
+        Return dt
+    End Function
 End Class

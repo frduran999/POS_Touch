@@ -61,6 +61,7 @@ Partial Class Form1
         Me.btn_Tarjeta = New System.Windows.Forms.Button()
         Me.RetiroCaja = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.uic_admCaja = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FormapagoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FormaPago_dateset, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -75,9 +76,9 @@ Partial Class Form1
         Me.FlowLayoutPanel1.AutoScroll = True
         Me.FlowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(217, Byte), Integer))
         Me.FlowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(409, 231)
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(409, 284)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(676, 296)
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(694, 248)
         Me.FlowLayoutPanel1.TabIndex = 0
         '
         'ImageList1
@@ -186,7 +187,7 @@ Partial Class Form1
         Me.Desc.HeaderText = "Descripcion"
         Me.Desc.Name = "Desc"
         Me.Desc.ReadOnly = True
-        Me.Desc.Width = 150
+        Me.Desc.Width = 140
         '
         'precio
         '
@@ -211,12 +212,13 @@ Partial Class Form1
         '
         'Eliminar
         '
+        Me.Eliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
         Me.Eliminar.HeaderText = "Eliminar"
         Me.Eliminar.Name = "Eliminar"
         Me.Eliminar.ReadOnly = True
         Me.Eliminar.Text = "Eliminar"
         Me.Eliminar.UseColumnTextForButtonValue = True
-        Me.Eliminar.Width = 50
+        Me.Eliminar.Width = 67
         '
         'txt_vuelto
         '
@@ -228,7 +230,6 @@ Partial Class Form1
         Me.txt_vuelto.Size = New System.Drawing.Size(100, 21)
         Me.txt_vuelto.TabIndex = 6
         Me.txt_vuelto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.txt_vuelto.Visible = False
         '
         'txt_efectivo
         '
@@ -240,7 +241,6 @@ Partial Class Form1
         Me.txt_efectivo.Size = New System.Drawing.Size(100, 21)
         Me.txt_efectivo.TabIndex = 7
         Me.txt_efectivo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.txt_efectivo.Visible = False
         '
         'txt_Total
         '
@@ -299,7 +299,6 @@ Partial Class Form1
         Me.Label4.TabIndex = 13
         Me.Label4.Text = "Cancelado"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Label4.Visible = False
         '
         'Label5
         '
@@ -312,18 +311,17 @@ Partial Class Form1
         Me.Label5.TabIndex = 14
         Me.Label5.Text = "Vuelto"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.Label5.Visible = False
         '
         'btn_aceptar
         '
         Me.btn_aceptar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_aceptar.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_aceptar.Image = Global.delevery.My.Resources.Resources.check
-        Me.btn_aceptar.Location = New System.Drawing.Point(1109, 298)
+        Me.btn_aceptar.Location = New System.Drawing.Point(1106, 427)
         Me.btn_aceptar.Name = "btn_aceptar"
         Me.btn_aceptar.Size = New System.Drawing.Size(101, 41)
         Me.btn_aceptar.TabIndex = 15
-        Me.btn_aceptar.Text = "(F4)"
+        Me.btn_aceptar.Text = "(F6)"
         Me.btn_aceptar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btn_aceptar.UseVisualStyleBackColor = True
         '
@@ -331,7 +329,7 @@ Partial Class Form1
         '
         Me.btn_salir.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_salir.Image = Global.delevery.My.Resources.Resources._Exit
-        Me.btn_salir.Location = New System.Drawing.Point(1161, 345)
+        Me.btn_salir.Location = New System.Drawing.Point(1158, 484)
         Me.btn_salir.Name = "btn_salir"
         Me.btn_salir.Size = New System.Drawing.Size(46, 41)
         Me.btn_salir.TabIndex = 1
@@ -371,7 +369,7 @@ Partial Class Form1
         Me.FlowLayoutFamilia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.FlowLayoutFamilia.Location = New System.Drawing.Point(410, 12)
         Me.FlowLayoutFamilia.Name = "FlowLayoutFamilia"
-        Me.FlowLayoutFamilia.Size = New System.Drawing.Size(800, 209)
+        Me.FlowLayoutFamilia.Size = New System.Drawing.Size(800, 266)
         Me.FlowLayoutFamilia.TabIndex = 21
         '
         'StatusStrip1
@@ -403,7 +401,7 @@ Partial Class Form1
         '
         Me.btn_limpiar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_limpiar.Image = Global.delevery.My.Resources.Resources.Refresh1
-        Me.btn_limpiar.Location = New System.Drawing.Point(1109, 345)
+        Me.btn_limpiar.Location = New System.Drawing.Point(1106, 483)
         Me.btn_limpiar.Name = "btn_limpiar"
         Me.btn_limpiar.Size = New System.Drawing.Size(46, 41)
         Me.btn_limpiar.TabIndex = 24
@@ -415,9 +413,9 @@ Partial Class Form1
         '
         Me.btn_Efectivo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_Efectivo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_Efectivo.Location = New System.Drawing.Point(1109, 178)
+        Me.btn_Efectivo.Location = New System.Drawing.Point(1106, 231)
         Me.btn_Efectivo.Name = "btn_Efectivo"
-        Me.btn_Efectivo.Size = New System.Drawing.Size(101, 48)
+        Me.btn_Efectivo.Size = New System.Drawing.Size(101, 43)
         Me.btn_Efectivo.TabIndex = 25
         Me.btn_Efectivo.Text = "EFECTIVO (F2)"
         Me.ToolTip1.SetToolTip(Me.btn_Efectivo, "Efectivo")
@@ -427,9 +425,9 @@ Partial Class Form1
         '
         Me.btn_Tarjeta.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_Tarjeta.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_Tarjeta.Location = New System.Drawing.Point(1109, 231)
+        Me.btn_Tarjeta.Location = New System.Drawing.Point(1106, 292)
         Me.btn_Tarjeta.Name = "btn_Tarjeta"
-        Me.btn_Tarjeta.Size = New System.Drawing.Size(101, 48)
+        Me.btn_Tarjeta.Size = New System.Drawing.Size(101, 45)
         Me.btn_Tarjeta.TabIndex = 26
         Me.btn_Tarjeta.Text = "TARJETA (F3)"
         Me.ToolTip1.SetToolTip(Me.btn_Tarjeta, "Tarjeta")
@@ -439,25 +437,39 @@ Partial Class Form1
         '
         Me.RetiroCaja.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RetiroCaja.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RetiroCaja.Location = New System.Drawing.Point(1109, 426)
+        Me.RetiroCaja.Location = New System.Drawing.Point(810, 504)
         Me.RetiroCaja.Name = "RetiroCaja"
-        Me.RetiroCaja.Size = New System.Drawing.Size(101, 48)
+        Me.RetiroCaja.Size = New System.Drawing.Size(70, 22)
         Me.RetiroCaja.TabIndex = 27
         Me.RetiroCaja.Text = "RETIRO"
         Me.ToolTip1.SetToolTip(Me.RetiroCaja, "RetiroCaja")
         Me.RetiroCaja.UseVisualStyleBackColor = True
+        Me.RetiroCaja.Visible = False
         '
         'Button1
         '
         Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(1109, 480)
+        Me.Button1.Location = New System.Drawing.Point(886, 504)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(101, 48)
+        Me.Button1.Size = New System.Drawing.Size(70, 29)
         Me.Button1.TabIndex = 28
         Me.Button1.Text = "CIERRE CAJA"
         Me.ToolTip1.SetToolTip(Me.Button1, "RetiroCaja")
         Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.Visible = False
+        '
+        'uic_admCaja
+        '
+        Me.uic_admCaja.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.uic_admCaja.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.uic_admCaja.Location = New System.Drawing.Point(1106, 356)
+        Me.uic_admCaja.Name = "uic_admCaja"
+        Me.uic_admCaja.Size = New System.Drawing.Size(101, 45)
+        Me.uic_admCaja.TabIndex = 29
+        Me.uic_admCaja.Text = "ADMIN CAJA (F4)"
+        Me.ToolTip1.SetToolTip(Me.uic_admCaja, "Tarjeta")
+        Me.uic_admCaja.UseVisualStyleBackColor = True
         '
         'Form1
         '
@@ -465,10 +477,11 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1222, 563)
         Me.ControlBox = False
+        Me.Controls.Add(Me.uic_admCaja)
+        Me.Controls.Add(Me.btn_Efectivo)
+        Me.Controls.Add(Me.btn_Tarjeta)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.RetiroCaja)
-        Me.Controls.Add(Me.btn_Tarjeta)
-        Me.Controls.Add(Me.btn_Efectivo)
         Me.Controls.Add(Me.btn_limpiar)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.FlowLayoutFamilia)
@@ -485,6 +498,7 @@ Partial Class Form1
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.btn_salir)
         Me.Controls.Add(Me.FlowLayoutPanel1)
+        Me.KeyPreview = True
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = " "
@@ -533,5 +547,6 @@ Partial Class Form1
     Friend WithEvents Column3 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents id_productoGrid As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Eliminar As System.Windows.Forms.DataGridViewButtonColumn
+    Friend WithEvents uic_admCaja As System.Windows.Forms.Button
 
 End Class
