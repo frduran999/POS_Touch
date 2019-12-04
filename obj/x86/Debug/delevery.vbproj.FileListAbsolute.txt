@@ -133,6 +133,7 @@ D:\Sistem_Duran\POS_Touch\obj\x86\Debug\delevery.Anula_Imprime.resources
 D:\Sistem_Duran\POS_Touch\obj\x86\Debug\delevery.Info_Ventas.resources
 D:\Sistem_Duran\POS_Touch\obj\x86\Debug\delevery.InfoVentas.resources
 D:\Sistem_Duran\POS_Touch\obj\x86\Debug\delevery.Info_Productos.resources
+<<<<<<< Updated upstream
 C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\bin\Debug\delevery.exe.config
 C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\bin\Debug\delevery.exe
 C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\bin\Debug\delevery.pdb
@@ -186,3 +187,8 @@ C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\obj\x86\Debug\delev
 C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\obj\x86\Debug\delevery.exe
 C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\obj\x86\Debug\delevery.xml
 C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\obj\x86\Debug\delevery.pdb
+=======
+D:\Sistem_Duran\POS_Touch\obj\x86\Debug\delevery.InfoProductos.resources
+D:\Sistem_Duran\POS_Touch\obj\x86\Debug\delevery.InfoFpagos.resources
+D:\Sistem_Duran\POS_Touch\obj\x86\Debug\delevery.info_Fpago.resources
+>>>>>>> Stashed changes

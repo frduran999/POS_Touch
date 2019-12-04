@@ -48,7 +48,7 @@
         Dim Con As New Conexion
         If Con.Conexion Then
             Try
-                Dim sql As String = "select id_producto Id, descripcion_producto nombre from Productos  order by descripcion_producto"
+                Dim sql As String = "select id_producto Id, ltrim(rtrim(descripcion_producto)) nombre from Productos  order by descripcion_producto"
                 Con.da = New SqlClient.SqlDataAdapter(sql, Con.con.ConnectionString)
                 Con.da.Fill(dt)
                 Dim row As DataRow = dt.NewRow()

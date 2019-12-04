@@ -46,6 +46,12 @@ Public Class Productos
         dt = b.GrabaStock(dts)
         Return dt
     End Function
+    Public Function GetProductoFamilia(ByVal IdFamilia As Integer) As DataTable
+        Dim dt As New DataTable
+        Dim b As New ProductoService
+        dt = b.GetProductoFamilia(IdFamilia)
+        Return dt
+    End Function
 End Class
 
 

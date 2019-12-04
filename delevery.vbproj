@@ -399,10 +399,22 @@
     <Compile Include="Ventas\FrmCaja.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Ventas\InfoProductos.Designer.vb">
+      <DependentUpon>InfoProductos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\InfoProductos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Ventas\Info_Ventas.Designer.vb">
       <DependentUpon>Info_Ventas.vb</DependentUpon>
     </Compile>
     <Compile Include="Ventas\Info_Ventas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\InfoFpagos.Designer.vb">
+      <DependentUpon>InfoFpagos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\InfoFpagos.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Ventas\Reportes\InfoVentas.Designer.vb">
@@ -411,11 +423,29 @@
     <Compile Include="Ventas\Reportes\InfoVentas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Ventas\Reportes\info_Fpago.Designer.vb">
+      <DependentUpon>info_Fpago.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ventas\Reportes\info_Fpago.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Ventas\Reportes\Info_Productos.Designer.vb">
       <DependentUpon>Info_Productos.vb</DependentUpon>
     </Compile>
     <Compile Include="Ventas\Reportes\Info_Productos.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ventas\Reportes\RPT_FormaPago.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPT_FormaPago.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ventas\Reportes\RPT_VentaProducto.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPT_VentaProducto.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Ventas\Reportes\RPT_Ventas_X_Usuario.vb">
       <AutoGen>True</AutoGen>
@@ -552,14 +582,31 @@
     <EmbeddedResource Include="Ventas\FrmCaja.resx">
       <DependentUpon>FrmCaja.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\InfoProductos.resx">
+      <DependentUpon>InfoProductos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ventas\Info_Ventas.resx">
       <DependentUpon>Info_Ventas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\InfoFpagos.resx">
+      <DependentUpon>InfoFpagos.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventas\Reportes\InfoVentas.resx">
       <DependentUpon>InfoVentas.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\Reportes\info_Fpago.resx">
+      <DependentUpon>info_Fpago.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ventas\Reportes\Info_Productos.resx">
       <DependentUpon>Info_Productos.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\Reportes\RPT_FormaPago.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPT_FormaPago.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\Reportes\RPT_VentaProducto.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPT_VentaProducto.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventas\Reportes\RPT_Ventas_X_Usuario.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

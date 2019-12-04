@@ -179,6 +179,7 @@ Public Class delivery
         frm.Show()
     End Sub
 
+<<<<<<< Updated upstream
     Private Sub RespaldoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RespaldoToolStripMenuItem.Click
         Dim neg As New Mantenimiento
         Dim resp As String = ""
@@ -193,5 +194,15 @@ Public Class delivery
         Else
             Telerik.WinControls.RadMessageBox.Show("A ocurrido un error" & vbCrLf & resp, "Respaldo base datos")
         End If
+=======
+    Private Sub INFORMEPRODUCTOSToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles INFORMEPRODUCTOSToolStripMenuItem.Click
+        Dim frm As New InfoProductos
+        frm.ShowDialog()
+    End Sub
+
+    Private Sub InformeFormaDePagoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InformeFormaDePagoToolStripMenuItem.Click
+        Dim frm As New InfoFpagos
+        frm.showdialog()
+>>>>>>> Stashed changes
     End Sub
 End Class
