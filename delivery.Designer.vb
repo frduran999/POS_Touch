@@ -42,9 +42,11 @@ Partial Class delivery
         Me.InformacionTicketToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RetiroCajaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ImpresorasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RespaldoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripButton5 = New System.Windows.Forms.ToolStripButton()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.uic_versionApp = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.CIERREDECAJASToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -83,7 +85,7 @@ Partial Class delivery
         '
         'ToolStripButton2
         '
-        Me.ToolStripButton2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DIARIOToolStripMenuItem, Me.COMPRASDIARIOToolStripMenuItem, Me.ListadoVentasToolStripMenuItem})
+        Me.ToolStripButton2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DIARIOToolStripMenuItem, Me.COMPRASDIARIOToolStripMenuItem, Me.ListadoVentasToolStripMenuItem, Me.CIERREDECAJASToolStripMenuItem})
         Me.ToolStripButton2.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.ToolStripButton2.Image = Global.delevery.My.Resources.Resources.book_blue
         Me.ToolStripButton2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
@@ -97,7 +99,7 @@ Partial Class delivery
         '
         Me.DIARIOToolStripMenuItem.Name = "DIARIOToolStripMenuItem"
         Me.DIARIOToolStripMenuItem.Size = New System.Drawing.Size(209, 26)
-        Me.DIARIOToolStripMenuItem.Text = "VENTAS DIARIO"
+        Me.DIARIOToolStripMenuItem.Text = "Ventas"
         '
         'COMPRASDIARIOToolStripMenuItem
         '
@@ -110,7 +112,7 @@ Partial Class delivery
         '
         Me.ListadoVentasToolStripMenuItem.Name = "ListadoVentasToolStripMenuItem"
         Me.ListadoVentasToolStripMenuItem.Size = New System.Drawing.Size(209, 26)
-        Me.ListadoVentasToolStripMenuItem.Text = "Listado ventas"
+        Me.ListadoVentasToolStripMenuItem.Text = "LISTADO VENTAS"
         '
         'ToolStripButton3
         '
@@ -155,7 +157,7 @@ Partial Class delivery
         '
         'ToolStripDropDownButton1
         '
-        Me.ToolStripDropDownButton1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.XxToolStripMenuItem, Me.FamiliaProductosToolStripMenuItem, Me.PromocionesToolStripMenuItem, Me.InformacionTicketToolStripMenuItem, Me.RetiroCajaToolStripMenuItem, Me.ImpresorasToolStripMenuItem})
+        Me.ToolStripDropDownButton1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.XxToolStripMenuItem, Me.FamiliaProductosToolStripMenuItem, Me.PromocionesToolStripMenuItem, Me.InformacionTicketToolStripMenuItem, Me.RetiroCajaToolStripMenuItem, Me.ImpresorasToolStripMenuItem, Me.RespaldoToolStripMenuItem})
         Me.ToolStripDropDownButton1.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.ToolStripDropDownButton1.Image = Global.delevery.My.Resources.Resources.gear
         Me.ToolStripDropDownButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
@@ -201,6 +203,12 @@ Partial Class delivery
         Me.ImpresorasToolStripMenuItem.Size = New System.Drawing.Size(208, 26)
         Me.ImpresorasToolStripMenuItem.Text = "Impresoras"
         '
+        'RespaldoToolStripMenuItem
+        '
+        Me.RespaldoToolStripMenuItem.Name = "RespaldoToolStripMenuItem"
+        Me.RespaldoToolStripMenuItem.Size = New System.Drawing.Size(208, 26)
+        Me.RespaldoToolStripMenuItem.Text = "Respaldo"
+        '
         'ToolStripButton5
         '
         Me.ToolStripButton5.Font = New System.Drawing.Font("Segoe UI", 12.0!)
@@ -226,6 +234,12 @@ Partial Class delivery
         Me.uic_versionApp.BackColor = System.Drawing.SystemColors.Control
         Me.uic_versionApp.Name = "uic_versionApp"
         Me.uic_versionApp.Size = New System.Drawing.Size(0, 17)
+        '
+        'CIERREDECAJASToolStripMenuItem
+        '
+        Me.CIERREDECAJASToolStripMenuItem.Name = "CIERREDECAJASToolStripMenuItem"
+        Me.CIERREDECAJASToolStripMenuItem.Size = New System.Drawing.Size(209, 26)
+        Me.CIERREDECAJASToolStripMenuItem.Text = "CIERRE DE CAJAS"
         '
         'delivery
         '
@@ -270,4 +284,6 @@ Partial Class delivery
     Friend WithEvents StockToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents StockCriticoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ListadoVentasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents RespaldoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents CIERREDECAJASToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

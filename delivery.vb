@@ -1,4 +1,6 @@
 ﻿Imports ProyectoNegocio
+Imports ProyectoService
+Imports System.Data.SqlClient
 
 Public Class delivery
 
@@ -93,7 +95,7 @@ Public Class delivery
         If es_supervisor Then
             'diario.ShowDialog()
             Dim frm As New Info_Ventas
-            frm.show()
+            frm.Show()
         Else
             MsgBox("Opción disponible solamente para el supervisor", MsgBoxStyle.Information, "Aviso")
         End If
@@ -175,5 +177,21 @@ Public Class delivery
         Dim frm As New Anula_Imprime
         frm.Perfil = PerfilUsuario
         frm.Show()
+    End Sub
+
+    Private Sub RespaldoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RespaldoToolStripMenuItem.Click
+        Dim neg As New Mantenimiento
+        Dim resp As String = ""
+        Dim ruta As String = "C:\POS\RespaldoBD_POS"
+        If Not System.IO.Directory.Exists(ruta) Then
+            System.IO.Directory.CreateDirectory(ruta)
+        End If
+        resp = neg.RespaldoBase
+        
+        If resp.Contains("OK") Then
+            Telerik.WinControls.RadMessageBox.Show(resp.Substring(3, 21), "Respaldo base datos")
+        Else
+            Telerik.WinControls.RadMessageBox.Show("A ocurrido un error" & vbCrLf & resp, "Respaldo base datos")
+        End If
     End Sub
 End Class

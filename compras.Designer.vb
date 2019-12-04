@@ -56,6 +56,7 @@ Partial Class compras
         Me.uic_familia = New System.Windows.Forms.ComboBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.uic_Productos = New System.Windows.Forms.ComboBox()
+        Me.btn_limpiar = New System.Windows.Forms.Button()
         CType(Me.TipodocBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Tipo_doc_DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -183,7 +184,7 @@ Partial Class compras
         '
         'btn_agregar
         '
-        Me.btn_agregar.Location = New System.Drawing.Point(691, 164)
+        Me.btn_agregar.Location = New System.Drawing.Point(696, 164)
         Me.btn_agregar.Name = "btn_agregar"
         Me.btn_agregar.Size = New System.Drawing.Size(94, 60)
         Me.btn_agregar.TabIndex = 9
@@ -288,18 +289,18 @@ Partial Class compras
         'uic_grabar
         '
         Me.uic_grabar.Image = Global.delevery.My.Resources.Resources.disk_blue
-        Me.uic_grabar.Location = New System.Drawing.Point(528, 219)
+        Me.uic_grabar.Location = New System.Drawing.Point(502, 219)
         Me.uic_grabar.Name = "uic_grabar"
-        Me.uic_grabar.Size = New System.Drawing.Size(37, 41)
+        Me.uic_grabar.Size = New System.Drawing.Size(46, 41)
         Me.uic_grabar.TabIndex = 120
         Me.uic_grabar.UseVisualStyleBackColor = True
         '
         'uic_salir
         '
         Me.uic_salir.Image = Global.delevery.My.Resources.Resources._Exit
-        Me.uic_salir.Location = New System.Drawing.Point(585, 219)
+        Me.uic_salir.Location = New System.Drawing.Point(639, 219)
         Me.uic_salir.Name = "uic_salir"
-        Me.uic_salir.Size = New System.Drawing.Size(37, 41)
+        Me.uic_salir.Size = New System.Drawing.Size(46, 41)
         Me.uic_salir.TabIndex = 121
         Me.uic_salir.UseVisualStyleBackColor = True
         '
@@ -345,11 +346,23 @@ Partial Class compras
         Me.uic_Productos.TabIndex = 124
         Me.uic_Productos.ValueMember = "id_doc"
         '
+        'btn_limpiar
+        '
+        Me.btn_limpiar.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_limpiar.Image = Global.delevery.My.Resources.Resources.Refresh1
+        Me.btn_limpiar.Location = New System.Drawing.Point(568, 219)
+        Me.btn_limpiar.Name = "btn_limpiar"
+        Me.btn_limpiar.Size = New System.Drawing.Size(46, 41)
+        Me.btn_limpiar.TabIndex = 126
+        Me.btn_limpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
+        Me.btn_limpiar.UseVisualStyleBackColor = True
+        '
         'compras
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(801, 272)
+        Me.Controls.Add(Me.btn_limpiar)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.uic_Productos)
         Me.Controls.Add(Me.Label12)
@@ -419,4 +432,5 @@ Partial Class compras
     Friend WithEvents descripcion As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents cantidad As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents eliminar As System.Windows.Forms.DataGridViewButtonColumn
+    Friend WithEvents btn_limpiar As System.Windows.Forms.Button
 End Class
