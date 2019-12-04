@@ -37,6 +37,12 @@ Public Class Reporte
         dt = b.Rpt_CierreCaja(IdUsuario, IdCaja)
         Return dt
     End Function
+    Public Function Rpt_CierreCajaRevision(ByVal IdUsuario As Integer, ByVal IdCaja As Integer, ByVal fecha As String) As DataSet
+        Dim dt As New DataSet
+        Dim b As New ReporteService
+        dt = b.Rpt_CierreCajaRevision(IdUsuario, IdCaja, fecha)
+        Return dt
+    End Function
     Public Function GetImpresoraTicket() As String
         Dim dt As String = ""
         Dim b As New ReporteService
@@ -49,16 +55,16 @@ Public Class Reporte
         dt = b.GetImpresoraBoleta
         Return dt
     End Function
-    Public Function Rpt_TicketFamilia(ByVal idventa As Integer) As DataTable
-        Dim dt As New DataTable
+    Public Function Rpt_TicketFamilia(ByVal idventa As Integer) As DataSet
+        Dim dt As New DataSet
         Dim b As New ReporteService
         dt = b.Rpt_TicketFamilia(idventa)
         Return dt
     End Function
-    Public Function RPT_Productos(ByVal FechaIni As String, ByVal FechaFin As String, ByVal usuario As String, ByVal Familia As Integer, ByVal Producto As Integer) As DataTable
+    Public Function RPT_Productos_Revision(ByVal FechaIni As String, ByVal FechaFin As String, ByVal usuario As String, ByVal Familia As Integer, ByVal Producto As Integer) As DataTable
         Dim dt As New DataTable
         Dim b As New ReporteService
-        dt = b.RPT_Productos(FechaIni, FechaFin, usuario, Familia, Producto)
+        dt = b.RPT_Productos_Revision(FechaIni, FechaFin, usuario, Familia, Producto)
         Return dt
     End Function
     Public Function RPT_Ventas_X_Usuario(ByVal FechaIni As String, ByVal FechaFin As String, ByVal usuario As String) As DataTable
