@@ -67,6 +67,7 @@
     <Compile Include="Combos.vb" />
     <Compile Include="Mantenedores\FamiliaProducto.vb" />
     <Compile Include="Mantenedores\Impresoras.vb" />
+    <Compile Include="Mantenedores\Mantenimiento.vb" />
     <Compile Include="Mantenedores\Ofertas.vb" />
     <Compile Include="Mantenedores\Productos.vb" />
     <Compile Include="Mantenedores\RetiroCaja.vb" />

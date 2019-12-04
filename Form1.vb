@@ -148,6 +148,8 @@ Public Class Form1
 
     Private Sub Form1_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         Select Case e.KeyValue
+            Case Keys.F1
+                Button2_Click(Nothing, Nothing)
             Case Keys.F2
                 btn_Efectivo_Click(Nothing, Nothing)
             Case Keys.F3

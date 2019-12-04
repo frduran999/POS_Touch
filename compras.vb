@@ -15,6 +15,8 @@ Public Class compras
         End Set
     End Property
 
+    
+
     Private Sub compras_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Me.DateTimePicker1.Value = Now
         CargarCombos()
@@ -70,7 +72,7 @@ Public Class compras
 
         End Try
         
-
+        limpiarStock()
     End Sub
     Private Sub calculo_detalle()
         Dim neto As Integer = 0
@@ -213,6 +215,13 @@ Public Class compras
         Me.DataGridView1.Rows.Clear()
     End Sub
 
+    Private Sub limpiarStock()
+        Me.txt_folio.Text = ""
+        Me.uic_familia.Text = ""
+        Me.uic_Productos.Text = ""
+        'uic_cantidad =
+    End Sub
+
     Private Sub DataGridView1_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
         If DataGridView1.RowCount > 0 Then
             If DataGridView1.Columns(e.ColumnIndex).Name = "eliminar" Then
@@ -258,4 +267,7 @@ Public Class compras
         End If
     End Sub
 
+    Private Sub btn_limpiar_Click(sender As Object, e As EventArgs) Handles btn_limpiar.Click
+        limpiarStock()
+    End Sub
 End Class

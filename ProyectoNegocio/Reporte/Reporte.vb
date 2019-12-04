@@ -55,16 +55,22 @@ Public Class Reporte
         dt = b.Rpt_TicketFamilia(idventa)
         Return dt
     End Function
-    Public Function RPT_Productos(ByVal FechaIni As String, ByVal FechaFin As String, ByVal usuario As String) As DataTable
+    Public Function RPT_Productos(ByVal FechaIni As String, ByVal FechaFin As String, ByVal usuario As String, ByVal Familia As Integer, ByVal Producto As Integer) As DataTable
         Dim dt As New DataTable
         Dim b As New ReporteService
-        dt = b.RPT_Productos(FechaIni, FechaFin, usuario)
+        dt = b.RPT_Productos(FechaIni, FechaFin, usuario, Familia, Producto)
         Return dt
     End Function
     Public Function RPT_Ventas_X_Usuario(ByVal FechaIni As String, ByVal FechaFin As String, ByVal usuario As String) As DataTable
         Dim dt As New DataTable
         Dim b As New ReporteService
         dt = b.RPT_Ventas_X_Usuario(FechaIni, FechaFin, usuario)
+        Return dt
+    End Function
+    Public Function RPT_FormaPago(ByVal FechaIni As String, ByVal FechaFin As String, ByVal Tipo As Integer) As DataTable
+        Dim dt As New DataTable
+        Dim b As New ReporteService
+        dt = b.RPT_FormaPago(FechaIni, FechaFin, Tipo)
         Return dt
     End Function
 End Class

@@ -153,7 +153,7 @@
         End If
         Return dt
     End Function
-    Public Function RPT_Productos(ByVal FechaIni As String, ByVal FechaFin As String, ByVal usuario As String) As DataTable
+    Public Function RPT_Productos(ByVal FechaIni As String, ByVal FechaFin As String, ByVal usuario As String, ByVal Familia As Integer, ByVal Producto As Integer) As DataTable
         Dim dt As New DataTable
         Dim con As New Conexion
         Dim sql As New dac.myhelper3
@@ -162,6 +162,8 @@
                 sql.paramQUERY.Add("FechaIni", FechaIni)
                 sql.paramQUERY.Add("FechaFin", FechaFin)
                 sql.paramQUERY.Add("Usuario", usuario)
+                sql.paramQUERY.Add("Familia", Familia)
+                sql.paramQUERY.Add("Producto", Producto)
                 dt = sql.ExecuteDatatable(con.con.ConnectionString, CommandType.StoredProcedure, "Rpt_Productos", sql.paramQUERY, 60000)
             Catch ex As Exception
                 dt = New DataTable
@@ -184,6 +186,27 @@
                 sql.paramQUERY.Add("FechaFin", FechaFin)
                 sql.paramQUERY.Add("Usuario", usuario)
                 dt = sql.ExecuteDatatable(con.con.ConnectionString, CommandType.StoredProcedure, "Get_VentasDiarias_X_Ususario", sql.paramQUERY, 60000)
+            Catch ex As Exception
+                dt = New DataTable
+                con.Desconectar()
+            End Try
+            Try
+                con.Desconectar()
+            Catch ex As Exception
+            End Try
+        End If
+        Return dt
+    End Function
+    Public Function RPT_FormaPago(ByVal FechaIni As String, ByVal FechaFin As String, ByVal Tipo As Integer) As DataTable
+        Dim dt As New DataTable
+        Dim con As New Conexion
+        Dim sql As New dac.myhelper3
+        If con.Conexion Then
+            Try
+                sql.paramQUERY.Add("FechaIni", FechaIni)
+                sql.paramQUERY.Add("FechaFin", FechaFin)
+                sql.paramQUERY.Add("Tipo", Tipo)
+                dt = sql.ExecuteDatatable(con.con.ConnectionString, CommandType.StoredProcedure, "RPT_FormaPago", sql.paramQUERY, 60000)
             Catch ex As Exception
                 dt = New DataTable
                 con.Desconectar()
