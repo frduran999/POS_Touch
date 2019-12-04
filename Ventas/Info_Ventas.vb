@@ -22,17 +22,10 @@ Public Class Info_Ventas
 
     Private Sub uic_Ventas_Click(sender As Object, e As EventArgs) Handles uic_Ventas.Click
         Dim frm As New InfoVentas
-        frm.FechaIni = Format(Me.uic_FechaIni.Value, "yyyy-MM-dd")
-        frm.FechaFin = Format(Me.uic_FechaFin.Value, "yyyy-MM-dd")
+        frm.FechaIni = Format(Me.uic_FechaIni.Value, "yyyy-dd-MM")
+        frm.FechaFin = Format(Me.uic_FechaFin.Value, "yyyy-dd-MM")
         frm.Usuario = Me.uic_Usuario.SelectedValue()
         frm.Show()
     End Sub
 
-    Private Sub uic_Productos_Click(sender As Object, e As EventArgs) Handles uic_Productos.Click
-        Dim frm As New Info_Productos
-        frm.FechaIni = Format(Me.uic_FechaIni.Value, "yyyy-MM-dd")
-        frm.FechaFin = Format(Me.uic_FechaFin.Value, "yyyy-MM-dd")
-        frm.Usuario = Me.uic_Usuario.SelectedValue()
-        frm.Show()
-    End Sub
 End Class

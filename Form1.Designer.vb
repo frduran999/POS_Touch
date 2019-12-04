@@ -62,6 +62,7 @@ Partial Class Form1
         Me.RetiroCaja = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.uic_admCaja = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FormapagoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FormaPago_dateset, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -471,12 +472,25 @@ Partial Class Form1
         Me.ToolTip1.SetToolTip(Me.uic_admCaja, "Tarjeta")
         Me.uic_admCaja.UseVisualStyleBackColor = True
         '
+        'Button2
+        '
+        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Location = New System.Drawing.Point(1106, 170)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(101, 43)
+        Me.Button2.TabIndex = 30
+        Me.Button2.Text = "DELIVERY (F1)"
+        Me.ToolTip1.SetToolTip(Me.Button2, "Efectivo")
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1222, 563)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.uic_admCaja)
         Me.Controls.Add(Me.btn_Efectivo)
         Me.Controls.Add(Me.btn_Tarjeta)
@@ -548,5 +562,6 @@ Partial Class Form1
     Friend WithEvents id_productoGrid As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Eliminar As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents uic_admCaja As System.Windows.Forms.Button
+    Friend WithEvents Button2 As System.Windows.Forms.Button
 
 End Class

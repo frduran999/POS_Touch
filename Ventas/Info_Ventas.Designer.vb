@@ -28,7 +28,6 @@ Partial Class Info_Ventas
         Me.RadGroupBox1 = New Telerik.WinControls.UI.RadGroupBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.uic_Usuario = New System.Windows.Forms.ComboBox()
-        Me.uic_Productos = New Telerik.WinControls.UI.RadButton()
         Me.uic_Ventas = New Telerik.WinControls.UI.RadButton()
         Me.uic_FechaFin = New Telerik.WinControls.UI.RadDateTimePicker()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -37,7 +36,6 @@ Partial Class Info_Ventas
         CType(Me.RadMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox1.SuspendLayout()
-        CType(Me.uic_Productos, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.uic_Ventas, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.uic_FechaFin, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.uic_FechaIni, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -69,7 +67,6 @@ Partial Class Info_Ventas
         Me.RadGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
         Me.RadGroupBox1.Controls.Add(Me.Label3)
         Me.RadGroupBox1.Controls.Add(Me.uic_Usuario)
-        Me.RadGroupBox1.Controls.Add(Me.uic_Productos)
         Me.RadGroupBox1.Controls.Add(Me.uic_Ventas)
         Me.RadGroupBox1.Controls.Add(Me.uic_FechaFin)
         Me.RadGroupBox1.Controls.Add(Me.Label2)
@@ -100,27 +97,15 @@ Partial Class Info_Ventas
         Me.uic_Usuario.Size = New System.Drawing.Size(160, 21)
         Me.uic_Usuario.TabIndex = 115
         '
-        'uic_Productos
-        '
-        Me.uic_Productos.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.uic_Productos.Image = Global.delevery.My.Resources.Resources.print
-        Me.uic_Productos.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.uic_Productos.Location = New System.Drawing.Point(151, 153)
-        Me.uic_Productos.Name = "uic_Productos"
-        Me.uic_Productos.Size = New System.Drawing.Size(72, 51)
-        Me.uic_Productos.TabIndex = 114
-        Me.uic_Productos.Text = "Productos"
-        Me.uic_Productos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
-        Me.uic_Productos.ThemeName = "Office2010Black"
-        '
         'uic_Ventas
         '
+        Me.uic_Ventas.DisplayStyle = Telerik.WinControls.DisplayStyle.Image
         Me.uic_Ventas.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
         Me.uic_Ventas.Image = Global.delevery.My.Resources.Resources.print
         Me.uic_Ventas.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        Me.uic_Ventas.Location = New System.Drawing.Point(73, 153)
+        Me.uic_Ventas.Location = New System.Drawing.Point(117, 153)
         Me.uic_Ventas.Name = "uic_Ventas"
-        Me.uic_Ventas.Size = New System.Drawing.Size(72, 51)
+        Me.uic_Ventas.Size = New System.Drawing.Size(53, 41)
         Me.uic_Ventas.TabIndex = 113
         Me.uic_Ventas.Text = "Ventas"
         Me.uic_Ventas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
@@ -186,7 +171,6 @@ Partial Class Info_Ventas
         CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadGroupBox1.ResumeLayout(False)
         Me.RadGroupBox1.PerformLayout()
-        CType(Me.uic_Productos, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.uic_Ventas, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.uic_FechaFin, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.uic_FechaIni, System.ComponentModel.ISupportInitialize).EndInit()
@@ -203,7 +187,6 @@ Partial Class Info_Ventas
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents uic_FechaIni As Telerik.WinControls.UI.RadDateTimePicker
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents uic_Productos As Telerik.WinControls.UI.RadButton
     Friend WithEvents uic_Usuario As System.Windows.Forms.ComboBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
 End Class

@@ -58,6 +58,10 @@ Public Class VentaService
             Dim odac As New dac.myMSSQL(con.con.ConnectionString, 180000)
             odac.paramQUERY.Add("IdProducto", dto.get_codigo)
             odac.paramQUERY.Add("Cantidad", dto.get_cantidad)
+            odac.paramQUERY.Add("total_item", dto.get_total_item)
+            odac.paramQUERY.Add("precio", dto.get_precio)
+            odac.paramQUERY.Add("descripcion", dto.get_descripcion)
+            odac.paramQUERY.Add("id_doc", dto.get_id_doc)
 
             resp = odac.GetValorNoNull("StockPromocion")
         End If

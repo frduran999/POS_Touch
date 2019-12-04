@@ -30,6 +30,7 @@ Partial Class delivery
         Me.DIARIOToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.COMPRASDIARIOToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListadoVentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.INFORMEPRODUCTOSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripDropDownButton2 = New System.Windows.Forms.ToolStripDropDownButton()
         Me.ProductoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -42,9 +43,15 @@ Partial Class delivery
         Me.InformacionTicketToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RetiroCajaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ImpresorasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RespaldoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripButton5 = New System.Windows.Forms.ToolStripButton()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.uic_versionApp = New System.Windows.Forms.ToolStripStatusLabel()
+<<<<<<< Updated upstream
+        Me.CIERREDECAJASToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+=======
+        Me.InformeFormaDePagoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+>>>>>>> Stashed changes
         Me.ToolStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -65,7 +72,7 @@ Partial Class delivery
         Me.ToolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.Size = New System.Drawing.Size(53, 73)
+        Me.ToolStripButton1.Size = New System.Drawing.Size(54, 73)
         Me.ToolStripButton1.Text = "Venta"
         Me.ToolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
@@ -83,7 +90,11 @@ Partial Class delivery
         '
         'ToolStripButton2
         '
-        Me.ToolStripButton2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DIARIOToolStripMenuItem, Me.COMPRASDIARIOToolStripMenuItem, Me.ListadoVentasToolStripMenuItem})
+<<<<<<< Updated upstream
+        Me.ToolStripButton2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DIARIOToolStripMenuItem, Me.COMPRASDIARIOToolStripMenuItem, Me.ListadoVentasToolStripMenuItem, Me.CIERREDECAJASToolStripMenuItem})
+=======
+        Me.ToolStripButton2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DIARIOToolStripMenuItem, Me.COMPRASDIARIOToolStripMenuItem, Me.ListadoVentasToolStripMenuItem, Me.INFORMEPRODUCTOSToolStripMenuItem, Me.InformeFormaDePagoToolStripMenuItem})
+>>>>>>> Stashed changes
         Me.ToolStripButton2.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.ToolStripButton2.Image = Global.delevery.My.Resources.Resources.book_blue
         Me.ToolStripButton2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
@@ -96,21 +107,37 @@ Partial Class delivery
         'DIARIOToolStripMenuItem
         '
         Me.DIARIOToolStripMenuItem.Name = "DIARIOToolStripMenuItem"
+<<<<<<< Updated upstream
         Me.DIARIOToolStripMenuItem.Size = New System.Drawing.Size(209, 26)
-        Me.DIARIOToolStripMenuItem.Text = "VENTAS DIARIO"
+        Me.DIARIOToolStripMenuItem.Text = "Ventas"
+=======
+        Me.DIARIOToolStripMenuItem.Size = New System.Drawing.Size(244, 26)
+        Me.DIARIOToolStripMenuItem.Text = "Ventas Diario"
+>>>>>>> Stashed changes
         '
         'COMPRASDIARIOToolStripMenuItem
         '
         Me.COMPRASDIARIOToolStripMenuItem.Name = "COMPRASDIARIOToolStripMenuItem"
-        Me.COMPRASDIARIOToolStripMenuItem.Size = New System.Drawing.Size(209, 26)
-        Me.COMPRASDIARIOToolStripMenuItem.Text = "COMPRAS DIARIO"
+        Me.COMPRASDIARIOToolStripMenuItem.Size = New System.Drawing.Size(244, 26)
+        Me.COMPRASDIARIOToolStripMenuItem.Text = "Compras Diario"
         Me.COMPRASDIARIOToolStripMenuItem.Visible = False
         '
         'ListadoVentasToolStripMenuItem
         '
         Me.ListadoVentasToolStripMenuItem.Name = "ListadoVentasToolStripMenuItem"
+<<<<<<< Updated upstream
         Me.ListadoVentasToolStripMenuItem.Size = New System.Drawing.Size(209, 26)
+        Me.ListadoVentasToolStripMenuItem.Text = "LISTADO VENTAS"
+=======
+        Me.ListadoVentasToolStripMenuItem.Size = New System.Drawing.Size(244, 26)
         Me.ListadoVentasToolStripMenuItem.Text = "Listado ventas"
+>>>>>>> Stashed changes
+        '
+        'INFORMEPRODUCTOSToolStripMenuItem
+        '
+        Me.INFORMEPRODUCTOSToolStripMenuItem.Name = "INFORMEPRODUCTOSToolStripMenuItem"
+        Me.INFORMEPRODUCTOSToolStripMenuItem.Size = New System.Drawing.Size(244, 26)
+        Me.INFORMEPRODUCTOSToolStripMenuItem.Text = "Informe Productos"
         '
         'ToolStripButton3
         '
@@ -138,24 +165,24 @@ Partial Class delivery
         'ProductoToolStripMenuItem
         '
         Me.ProductoToolStripMenuItem.Name = "ProductoToolStripMenuItem"
-        Me.ProductoToolStripMenuItem.Size = New System.Drawing.Size(166, 26)
+        Me.ProductoToolStripMenuItem.Size = New System.Drawing.Size(167, 26)
         Me.ProductoToolStripMenuItem.Text = "Productos"
         '
         'StockToolStripMenuItem
         '
         Me.StockToolStripMenuItem.Name = "StockToolStripMenuItem"
-        Me.StockToolStripMenuItem.Size = New System.Drawing.Size(166, 26)
+        Me.StockToolStripMenuItem.Size = New System.Drawing.Size(167, 26)
         Me.StockToolStripMenuItem.Text = "Stock"
         '
         'StockCriticoToolStripMenuItem
         '
         Me.StockCriticoToolStripMenuItem.Name = "StockCriticoToolStripMenuItem"
-        Me.StockCriticoToolStripMenuItem.Size = New System.Drawing.Size(166, 26)
+        Me.StockCriticoToolStripMenuItem.Size = New System.Drawing.Size(167, 26)
         Me.StockCriticoToolStripMenuItem.Text = "Stock Critico"
         '
         'ToolStripDropDownButton1
         '
-        Me.ToolStripDropDownButton1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.XxToolStripMenuItem, Me.FamiliaProductosToolStripMenuItem, Me.PromocionesToolStripMenuItem, Me.InformacionTicketToolStripMenuItem, Me.RetiroCajaToolStripMenuItem, Me.ImpresorasToolStripMenuItem})
+        Me.ToolStripDropDownButton1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.XxToolStripMenuItem, Me.FamiliaProductosToolStripMenuItem, Me.PromocionesToolStripMenuItem, Me.InformacionTicketToolStripMenuItem, Me.RetiroCajaToolStripMenuItem, Me.ImpresorasToolStripMenuItem, Me.RespaldoToolStripMenuItem})
         Me.ToolStripDropDownButton1.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.ToolStripDropDownButton1.Image = Global.delevery.My.Resources.Resources.gear
         Me.ToolStripDropDownButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
@@ -201,6 +228,12 @@ Partial Class delivery
         Me.ImpresorasToolStripMenuItem.Size = New System.Drawing.Size(208, 26)
         Me.ImpresorasToolStripMenuItem.Text = "Impresoras"
         '
+        'RespaldoToolStripMenuItem
+        '
+        Me.RespaldoToolStripMenuItem.Name = "RespaldoToolStripMenuItem"
+        Me.RespaldoToolStripMenuItem.Size = New System.Drawing.Size(208, 26)
+        Me.RespaldoToolStripMenuItem.Text = "Respaldo"
+        '
         'ToolStripButton5
         '
         Me.ToolStripButton5.Font = New System.Drawing.Font("Segoe UI", 12.0!)
@@ -226,6 +259,20 @@ Partial Class delivery
         Me.uic_versionApp.BackColor = System.Drawing.SystemColors.Control
         Me.uic_versionApp.Name = "uic_versionApp"
         Me.uic_versionApp.Size = New System.Drawing.Size(0, 17)
+        '
+<<<<<<< Updated upstream
+        'CIERREDECAJASToolStripMenuItem
+        '
+        Me.CIERREDECAJASToolStripMenuItem.Name = "CIERREDECAJASToolStripMenuItem"
+        Me.CIERREDECAJASToolStripMenuItem.Size = New System.Drawing.Size(209, 26)
+        Me.CIERREDECAJASToolStripMenuItem.Text = "CIERRE DE CAJAS"
+=======
+        'InformeFormaDePagoToolStripMenuItem
+        '
+        Me.InformeFormaDePagoToolStripMenuItem.Name = "InformeFormaDePagoToolStripMenuItem"
+        Me.InformeFormaDePagoToolStripMenuItem.Size = New System.Drawing.Size(244, 26)
+        Me.InformeFormaDePagoToolStripMenuItem.Text = "Informe Forma de Pago"
+>>>>>>> Stashed changes
         '
         'delivery
         '
@@ -270,4 +317,11 @@ Partial Class delivery
     Friend WithEvents StockToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents StockCriticoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ListadoVentasToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+<<<<<<< Updated upstream
+    Friend WithEvents RespaldoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents CIERREDECAJASToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+=======
+    Friend WithEvents INFORMEPRODUCTOSToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents InformeFormaDePagoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+>>>>>>> Stashed changes
 End Class

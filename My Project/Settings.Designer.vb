@@ -58,7 +58,7 @@ Namespace My
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
          Global.System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=deliverys;Persist Security Info=True;User ID=tecnic"& _ 
-            "o;Password=tecnico")>  _
+            "o;Password=tecnico;")>  _
         Public ReadOnly Property deliveryConnectionString() As String
             Get
                 Return CType(Me("deliveryConnectionString"),String)
