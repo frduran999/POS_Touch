@@ -34,7 +34,7 @@ Public Class Anula_Imprime
         End If
     End Sub
     Private Sub ConfiguraGrilla()
-        Me.GridVentas.Columns("id_doc").Width = 40
+        Me.GridVentas.Columns("id_doc").Width = 60
         Me.GridVentas.Columns("id_doc").IsVisible = True
         Me.GridVentas.Columns("id_doc").ReadOnly = True
         Me.GridVentas.Columns("id_doc").HeaderText = "Nro Ticket"

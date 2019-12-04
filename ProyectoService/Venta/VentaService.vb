@@ -88,6 +88,28 @@ Public Class VentaService
         End If
         Return dt
     End Function
+
+    Public Function grillaCierre(ByVal fechaini As String, ByVal fechafin As String) As DataTable
+        Dim dt As New DataTable
+        Dim con As New Conexion
+        Dim sql As New dac.myhelper3
+        If con.Conexion Then
+            Try
+                sql.paramQUERY.Add("FechaIni", fechaini)
+                sql.paramQUERY.Add("FechaFin", fechafin)
+                dt = sql.ExecuteDatatable(con.con.ConnectionString, CommandType.StoredProcedure, "grillaCierre", sql.paramQUERY, 60000)
+            Catch ex As Exception
+                dt = New DataTable
+                con.Desconectar()
+            End Try
+            Try
+                con.Desconectar()
+            Catch ex As Exception
+            End Try
+        End If
+        Return dt
+    End Function
+
     Public Function LogImpresion(ByVal NroTicket As Integer, ByVal NroBoleta As Integer, ByVal Tipo As Integer) As String
         Dim resp As String = ""
         Dim con As New Conexion

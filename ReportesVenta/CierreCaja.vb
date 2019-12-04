@@ -21,6 +21,26 @@ Public Class CierreCaja
             _idcaja = value
         End Set
     End Property
+    Private _fecha As String
+    Public Property Fecha() As String
+        Get
+            Return _fecha
+        End Get
+        Set(ByVal value As String)
+            _fecha = value
+        End Set
+    End Property
+    Private _paso As Integer
+    Public Property paso() As Integer
+        Get
+            Return _paso
+        End Get
+        Set(ByVal value As Integer)
+            _paso = value
+        End Set
+    End Property
+
+
     Private Sub CierreCaja_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Cargar()
     End Sub
@@ -31,44 +51,84 @@ Public Class CierreCaja
             Dim data As New dts_Caja
             Dim Neg As New Reporte
             Dim dt As New DataSet
+            If paso = 0 Then
+                dt = Neg.Rpt_CierreCaja(IdUsuario, IdCaja)
+                If (dt.Tables(0).Rows.Count > 0) Then
 
-            dt = Neg.Rpt_CierreCaja(IdUsuario, IdCaja)
-            'dt = Neg.Rpt_CierreCaja(2, 19)
-            If (dt.Tables(0).Rows.Count > 0) Then
-
-                For Each Item As DataRow In dt.Tables(0).Rows
-                    Try
-                        data.caja.Rows.Add(Item(0), Item(1), Item(2), Item(3), Item(4), Item(5), Item(6))
-                    Catch ex As Exception
-                    End Try
-                Next
-
-                If (dt.Tables(1).Rows.Count > 0) Then
-                    For Each item As DataRow In dt.Tables(1).Rows
+                    For Each Item As DataRow In dt.Tables(0).Rows
                         Try
-                            data.cabecera.Rows.Add(item(0), item(1), item(2), item(3), item(4), item(5), item(6))
+                            data.caja.Rows.Add(Item(0), Item(1), Item(2), Item(3), Item(4), Item(5), Item(6))
                         Catch ex As Exception
                         End Try
                     Next
 
-                End If
+                    If (dt.Tables(1).Rows.Count > 0) Then
+                        For Each item As DataRow In dt.Tables(1).Rows
+                            Try
+                                data.cabecera.Rows.Add(item(0), item(1), item(2), item(3), item(4), item(5), item(6))
+                            Catch ex As Exception
+                            End Try
+                        Next
 
-                If (dt.Tables(2).Rows.Count > 0) Then
-                    For Each item As DataRow In dt.Tables(2).Rows
-                        Try
-                            data.retirocaja.Rows.Add(item(0), item(1), item(2), item(3), item(4))
-                        Catch ex As Exception
-                        End Try
-                    Next
-                End If
+                    End If
 
-            rpt.SetDataSource(data)
-            CrystalReportViewer1.ReportSource = rpt
+                    If (dt.Tables(2).Rows.Count > 0) Then
+                        For Each item As DataRow In dt.Tables(2).Rows
+                            Try
+                                data.retirocaja.Rows.Add(item(0), item(1), item(2), item(3), item(4))
+                            Catch ex As Exception
+                            End Try
+                        Next
+                    End If
+
+                    rpt.SetDataSource(data)
+                    CrystalReportViewer1.ReportSource = rpt
+
+                Else
+                    Telerik.WinControls.RadMessageBox.Show(Me, "No se encontraron datos", "Alerta")
+                    Me.Close()
+                End If
 
             Else
-            Telerik.WinControls.RadMessageBox.Show(Me, "No se encontraron datos", "Alerta")
-            Me.Close()
+
+                dt = Neg.Rpt_CierreCajaRevision(IdUsuario, IdCaja, Fecha)
+                If (dt.Tables(0).Rows.Count > 0) Then
+
+                    For Each Item As DataRow In dt.Tables(0).Rows
+                        Try
+                            data.caja.Rows.Add(Item(0), Item(1), Item(2), Item(3), Item(4), Item(5), Item(6))
+                        Catch ex As Exception
+                        End Try
+                    Next
+
+                    If (dt.Tables(1).Rows.Count > 0) Then
+                        For Each item As DataRow In dt.Tables(1).Rows
+                            Try
+                                data.cabecera.Rows.Add(item(0), item(1), item(2), item(3), item(4), item(5), item(6))
+                            Catch ex As Exception
+                            End Try
+                        Next
+
+                    End If
+
+                    If (dt.Tables(2).Rows.Count > 0) Then
+                        For Each item As DataRow In dt.Tables(2).Rows
+                            Try
+                                data.retirocaja.Rows.Add(item(0), item(1), item(2), item(3), item(4))
+                            Catch ex As Exception
+                            End Try
+                        Next
+                    End If
+
+                    rpt.SetDataSource(data)
+                    CrystalReportViewer1.ReportSource = rpt
+
+                Else
+                    Telerik.WinControls.RadMessageBox.Show(Me, "No se encontraron datos", "Alerta")
+                    Me.Close()
+                End If
             End If
+            
         Catch ex As Exception
         End Try
         Me.Cursor = Cursors.Default

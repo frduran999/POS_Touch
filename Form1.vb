@@ -7,7 +7,7 @@ Imports proyectoDTO
 Public Class Form1
     Private Const CP_NOCLOSE_BUTTON As Integer = &H200
     Dim myhelper As New dac.myhelper2
-    Dim obc_RM As New ReportMan.RMan
+    'Dim obc_RM As New ReportMan.RMan
     Private IdPago As String = 0
     Private tipoPago As String = ""
     Private _usuario As Integer
