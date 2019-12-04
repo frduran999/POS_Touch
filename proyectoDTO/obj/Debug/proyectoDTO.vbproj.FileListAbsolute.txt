@@ -6,14 +6,6 @@ C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\proyectoDTO\obj\Debug\proyect
 C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\proyectoDTO\obj\Debug\proyectoDTO.dll
 C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\proyectoDTO\obj\Debug\proyectoDTO.xml
 C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\proyectoDTO\obj\Debug\proyectoDTO.pdb
-C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\proyectoDTO\bin\Debug\proyectoDTO.dll
-C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\proyectoDTO\bin\Debug\proyectoDTO.pdb
-C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\proyectoDTO\bin\Debug\proyectoDTO.xml
-C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\proyectoDTO\obj\Debug\proyectoDTO.Resources.resources
-C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\proyectoDTO\obj\Debug\proyectoDTO.vbproj.GenerateResource.Cache
-C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\proyectoDTO\obj\Debug\proyectoDTO.dll
-C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\proyectoDTO\obj\Debug\proyectoDTO.xml
-C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\proyectoDTO\obj\Debug\proyectoDTO.pdb
 D:\Sistem_Duran\POS_Touch\proyectoDTO\bin\Debug\proyectoDTO.dll
 D:\Sistem_Duran\POS_Touch\proyectoDTO\bin\Debug\proyectoDTO.pdb
 D:\Sistem_Duran\POS_Touch\proyectoDTO\bin\Debug\proyectoDTO.xml
@@ -22,3 +14,11 @@ D:\Sistem_Duran\POS_Touch\proyectoDTO\obj\Debug\proyectoDTO.vbproj.GenerateResou
 D:\Sistem_Duran\POS_Touch\proyectoDTO\obj\Debug\proyectoDTO.dll
 D:\Sistem_Duran\POS_Touch\proyectoDTO\obj\Debug\proyectoDTO.xml
 D:\Sistem_Duran\POS_Touch\proyectoDTO\obj\Debug\proyectoDTO.pdb
+C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\proyectoDTO\bin\Debug\proyectoDTO.dll
+C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\proyectoDTO\bin\Debug\proyectoDTO.pdb
+C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\proyectoDTO\bin\Debug\proyectoDTO.xml
+C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\proyectoDTO\obj\Debug\proyectoDTO.Resources.resources
+C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\proyectoDTO\obj\Debug\proyectoDTO.vbproj.GenerateResource.Cache
+C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\proyectoDTO\obj\Debug\proyectoDTO.dll
+C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\proyectoDTO\obj\Debug\proyectoDTO.xml
+C:\Users\Francisco\Desktop\Sistem_Duran\POS\Prueba\POS_Touch\proyectoDTO\obj\Debug\proyectoDTO.pdb

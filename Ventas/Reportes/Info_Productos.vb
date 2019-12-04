@@ -63,7 +63,7 @@ Public Class Info_Productos
             Dim data As New dts_Ventas
             Dim Neg As New Reporte
             Dim dt As New DataTable
-            dt = Neg.RPT_Productos(FechaIni, FechaFin, Usuario, Familia, Producto)
+            dt = Neg.RPT_Productos_Revision(FechaIni, FechaFin, Usuario, Familia, Producto)
             If dt.Rows.Count > 0 Then
                 For Each item As DataRow In dt.Rows
                     Try
