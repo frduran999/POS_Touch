@@ -53,39 +53,42 @@ Public Class FamiliaProducto
             End Try
     End Sub
     Private Sub GrabarFoto(ByVal id As Integer)
-
-        Dim Archivo() As Byte
-        Dim Fstream As New System.IO.FileStream(OpenFileDialog1.FileName, IO.FileMode.Open, IO.FileAccess.Read)
-        Dim reader As New BinaryReader(Fstream)
-        Archivo = reader.ReadBytes(Fstream.Length)
-        Fstream.Close()
-        reader.Close()
-        Me.Cursor = Cursors.WaitCursor
-
-        Dim oconexion As System.Data.SqlClient.SqlConnection = New System.Data.SqlClient.SqlConnection(My.Settings.deliveryConnectionString)
         Try
-            oconexion.Open()
-            Dim ocomando As System.Data.SqlClient.SqlCommand = New System.Data.SqlClient.SqlCommand
-            ocomando.CommandText = "insert into FamiliaFoto (FamiliaId,Foto,FotoNombre) values (@IdFamilia,@Foto,@FotoNombre)"
-            ocomando.Parameters.Clear()
-            ocomando.Parameters.Add("@IdFamilia", SqlDbType.Int).Value = id
-            ocomando.Parameters.Add("@Foto", SqlDbType.VarBinary).Value = Archivo
-            ocomando.Parameters.Add("@FotoNombre", SqlDbType.NVarChar).Value = Me.uic_FamiliaProducto.Text
-            ocomando.Connection = oconexion
-            ocomando.ExecuteNonQuery()
-            oconexion.Close()
-            Me.Cursor = Cursors.Default
+            Dim Archivo() As Byte
+            Dim Fstream As New System.IO.FileStream(OpenFileDialog1.FileName, IO.FileMode.Open, IO.FileAccess.Read)
+            Dim reader As New BinaryReader(Fstream)
+            Archivo = reader.ReadBytes(Fstream.Length)
+            Fstream.Close()
+            reader.Close()
+            Me.Cursor = Cursors.WaitCursor
+            Dim oconexion As System.Data.SqlClient.SqlConnection = New System.Data.SqlClient.SqlConnection(My.Settings.deliveryConnectionString)
+            Try
+                oconexion.Open()
+                Dim ocomando As System.Data.SqlClient.SqlCommand = New System.Data.SqlClient.SqlCommand
+                ocomando.CommandText = "insert into FamiliaFoto (FamiliaId,Foto,FotoNombre) values (@IdFamilia,@Foto,@FotoNombre)"
+                ocomando.Parameters.Clear()
+                ocomando.Parameters.Add("@IdFamilia", SqlDbType.Int).Value = id
+                ocomando.Parameters.Add("@Foto", SqlDbType.VarBinary).Value = Archivo
+                ocomando.Parameters.Add("@FotoNombre", SqlDbType.NVarChar).Value = Me.uic_FamiliaProducto.Text
+                ocomando.Connection = oconexion
+                ocomando.ExecuteNonQuery()
+                oconexion.Close()
+                Me.Cursor = Cursors.Default
 
+            Catch ex As Exception
+                MsgBox(ex.Message)
+                oconexion.Close()
+                Me.Cursor = Cursors.Default
+            End Try
+
+            Me.PictureBox1.Visible = False
+            Dim ruta As String = "C:\POS\Imagen"
+            Dim neg As New ProyectoNegocio.FamiliaProducto
+            Dim res As String = neg.TraerImagenes(ruta)
+            Me.Cursor = Cursors.Default
         Catch ex As Exception
-            MsgBox(ex.Message)
-            oconexion.Close()
             Me.Cursor = Cursors.Default
         End Try
-
-        Me.PictureBox1.Visible = False
-        Dim ruta As String = "C:\POS\Imagen"
-        Dim neg As New ProyectoNegocio.FamiliaProducto
-        Dim res As String = neg.TraerImagenes(ruta)
         Me.Cursor = Cursors.Default
     End Sub
     Private Sub carga_grilla()
@@ -173,6 +176,7 @@ Public Class FamiliaProducto
         btn_modificar.Enabled = False
         Me.btn_grabar.Enabled = True
         Me.uic_RutaImagen.Text = ""
+        Me.OpenFileDialog1.Dispose()
     End Sub
 
     Private Sub btn_eliminar_Click(sender As Object, e As EventArgs) Handles btn_eliminar.Click
@@ -252,4 +256,14 @@ Public Class FamiliaProducto
         End If
     End Function
 
+    Private Function IsFileOpen(filePath As String) As Boolean
+        Dim rtnvalue As Boolean = False
+        Try
+            Dim fs As System.IO.FileStream = System.IO.File.OpenWrite(filePath)
+            fs.Close()
+        Catch ex As System.IO.IOException
+            rtnvalue = True
+        End Try
+        Return rtnvalue
+    End Function
 End Class
