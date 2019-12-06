@@ -50,7 +50,15 @@ Public Class ReporteCierreCaja
         mostrarcierre()
     End Sub
 
-    Private Sub GridVentas_Click(sender As Object, e As EventArgs) Handles GridVentas.Click
+    'Private Sub GridVentas_Click(sender As Object, e As EventArgs) Handles GridVentas.Click
+
+    'End Sub
+
+    Private Sub uic_Volver_Click(sender As Object, e As EventArgs) Handles uic_Volver.Click
+        Me.Hide()
+    End Sub
+
+    Private Sub GridVentas_DoubleClick(sender As Object, e As EventArgs) Handles GridVentas.DoubleClick
         Try
             linea = Me.GridVentas.Rows.IndexOf(Me.GridVentas.CurrentRow)
             Me.idusuario = Me.GridVentas.Rows(linea).Cells(4).Value
@@ -62,13 +70,9 @@ Public Class ReporteCierreCaja
             Dim frm As New CierreCaja
             frm.IdUsuario = Me.idusuario
             frm.IdCaja = Me.idcaja
-            frm.fecha = Me.fecha
+            frm.Fecha = Me.fecha
             frm.ShowDialog()
         Catch ex As Exception
         End Try
-    End Sub
-
-    Private Sub uic_Volver_Click(sender As Object, e As EventArgs) Handles uic_Volver.Click
-        Me.Hide()
     End Sub
 End Class

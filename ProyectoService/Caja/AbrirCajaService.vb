@@ -34,13 +34,14 @@
         Return dt
     End Function
 
-    Public Function CerrarCaja(ByVal IdUsuario As Integer) As String
+    Public Function CerrarCaja(ByVal IdUsuario As Integer, ByVal Glosa As String) As String
         Dim con As New Conexion
         Dim dt As String = ""
 
         If con.Conexion Then
             Try
                 Dim sql As New dac.myMSSQL(con.con.ConnectionString, 60000)
+                sql.paramQUERY.Add("Glosa", Glosa)
                 sql.paramQUERY.Add("IdUsuario", IdUsuario)
                 dt = sql.GetValorNoNull("CerrarCaja")
             Catch ex As Exception

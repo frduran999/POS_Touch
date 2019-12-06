@@ -348,7 +348,8 @@ Public Class Form1
     Private Sub lawea3(ByVal sender As Object, ByVal e As EventArgs)
         Dim id As String = sender.name
         Dim articulo As String = sender.text.trim
-        para_grilla_oferta(id, articulo)
+        Dim dato() As String = articulo.Split("$")
+        para_grilla_oferta(id, dato(0))
 
         calculo_total_venta()
     End Sub
@@ -488,24 +489,24 @@ Public Class Form1
         frmRetiro.ShowDialog()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim resp As String = ""
-        Dim neg As New ProyectoNegocio.AdminCaja
-        resp = neg.CerrarCaja(Usuario)
-        Try
-            If CInt(resp) > 0 Then
-                Dim frm As New CierreCaja
-                frm.IdUsuario = Usuario
-                frm.IdCaja = resp
-                frm.ShowDialog()
-                Telerik.WinControls.RadMessageBox.Show("Caja Cerrada", "Caja")
-            Else
-                Telerik.WinControls.RadMessageBox.Show("A ocurrido un error" & vbCrLf & resp, "Aviso")
-            End If
-        Catch ex As Exception
-        End Try
-        Me.Hide()
-    End Sub
+    'Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    '    Dim resp As String = ""
+    '    Dim neg As New ProyectoNegocio.AdminCaja
+    '    resp = neg.CerrarCaja(Usuario)
+    '    Try
+    '        If CInt(resp) > 0 Then
+    '            Dim frm As New CierreCaja
+    '            frm.IdUsuario = Usuario
+    '            frm.IdCaja = resp
+    '            frm.ShowDialog()
+    '            Telerik.WinControls.RadMessageBox.Show("Caja Cerrada", "Caja")
+    '        Else
+    '            Telerik.WinControls.RadMessageBox.Show("A ocurrido un error" & vbCrLf & resp, "Aviso")
+    '        End If
+    '    Catch ex As Exception
+    '    End Try
+    '    Me.Hide()
+    'End Sub
 
     Private Sub FlowLayoutFamilia_Paint(sender As Object, e As PaintEventArgs) Handles FlowLayoutFamilia.Paint
 

@@ -16,10 +16,10 @@ Public Class AdminCaja
         Return dt
     End Function
 
-    Public Function CerrarCaja(ByVal IdUsuario As Integer) As String
+    Public Function CerrarCaja(ByVal IdUsuario As Integer, ByVal Glosa As String) As String
         Dim dt As String = ""
         Dim b As New AbrirCajaService
-        dt = b.CerrarCaja(IdUsuario)
+        dt = b.CerrarCaja(IdUsuario, Glosa)
         Return dt
     End Function
 End Class
