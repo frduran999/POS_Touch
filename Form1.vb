@@ -348,7 +348,8 @@ Public Class Form1
     Private Sub lawea3(ByVal sender As Object, ByVal e As EventArgs)
         Dim id As String = sender.name
         Dim articulo As String = sender.text.trim
-        para_grilla_oferta(id, articulo)
+        Dim dato() As String = articulo.Split("$")
+        para_grilla_oferta(id, dato(0))
 
         calculo_total_venta()
     End Sub
