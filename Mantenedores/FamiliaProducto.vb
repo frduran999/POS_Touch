@@ -30,16 +30,16 @@ Public Class FamiliaProducto
             Me.uic_FamiliaProducto.Focus()
             Exit Sub
         End If
-
+        If Me.cbxImpresora.SelectedIndex <> -1 Then
+            impresoraFamilia = Me.cbxImpresora.SelectedItem.ToString
+        Else
+            MsgBox("Debe Agregar Impresora", vbInformation, "Aviso")
+            Exit Sub
+        End If
 
         Try
             Dim Neg As New ProyectoNegocio.FamiliaProducto
             Dim Familia As String = uic_FamiliaProducto.Text.Trim
-            If Me.cbxImpresora.SelectedIndex <> -1 Then
-                impresoraFamilia = Me.cbxImpresora.SelectedItem.ToString
-            Else
-                MsgBox("Debe Agregar Impresora", vbInformation, "Aviso")
-            End If
 
             dt = Neg.GrabarFamilia(Familia, impresoraFamilia)
             If CInt(dt) > 0 Then

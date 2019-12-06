@@ -23,7 +23,7 @@ Partial Class FamiliaProducto
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.uic_CodigoFamilia = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.uic_FamiliaProducto = New System.Windows.Forms.TextBox()
@@ -117,7 +117,7 @@ Partial Class FamiliaProducto
         Me.RadGridView1.MasterTemplate.AllowAddNewRow = False
         Me.RadGridView1.MasterTemplate.AllowColumnReorder = False
         Me.RadGridView1.MasterTemplate.EnableAlternatingRowColor = True
-        Me.RadGridView1.MasterTemplate.ViewDefinition = TableViewDefinition2
+        Me.RadGridView1.MasterTemplate.ViewDefinition = TableViewDefinition1
         Me.RadGridView1.Name = "RadGridView1"
         Me.RadGridView1.ReadOnly = True
         Me.RadGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -131,7 +131,7 @@ Partial Class FamiliaProducto
         '
         Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Button1.Image = Global.delevery.My.Resources.Resources.magnifier
-        Me.Button1.Location = New System.Drawing.Point(356, 45)
+        Me.Button1.Location = New System.Drawing.Point(370, 45)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(32, 32)
         Me.Button1.TabIndex = 28
@@ -143,7 +143,7 @@ Partial Class FamiliaProducto
         '
         Me.btn_modificar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.btn_modificar.Image = Global.delevery.My.Resources.Resources.Modify
-        Me.btn_modificar.Location = New System.Drawing.Point(296, 3)
+        Me.btn_modificar.Location = New System.Drawing.Point(313, 3)
         Me.btn_modificar.Name = "btn_modificar"
         Me.btn_modificar.Size = New System.Drawing.Size(37, 37)
         Me.btn_modificar.TabIndex = 18
@@ -154,7 +154,7 @@ Partial Class FamiliaProducto
         '
         Me.btn_salir.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.btn_salir.Image = Global.delevery.My.Resources.Resources._Exit
-        Me.btn_salir.Location = New System.Drawing.Point(359, 83)
+        Me.btn_salir.Location = New System.Drawing.Point(400, 4)
         Me.btn_salir.Name = "btn_salir"
         Me.btn_salir.Size = New System.Drawing.Size(32, 37)
         Me.btn_salir.TabIndex = 3
@@ -165,7 +165,7 @@ Partial Class FamiliaProducto
         '
         Me.btn_grabar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.btn_grabar.Image = Global.delevery.My.Resources.Resources.disk_blue
-        Me.btn_grabar.Location = New System.Drawing.Point(253, 3)
+        Me.btn_grabar.Location = New System.Drawing.Point(267, 3)
         Me.btn_grabar.Name = "btn_grabar"
         Me.btn_grabar.Size = New System.Drawing.Size(37, 37)
         Me.btn_grabar.TabIndex = 2
@@ -206,7 +206,7 @@ Partial Class FamiliaProducto
         '
         Me.btn_eliminar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.btn_eliminar.Image = Global.delevery.My.Resources.Resources.Delete
-        Me.btn_eliminar.Location = New System.Drawing.Point(356, 4)
+        Me.btn_eliminar.Location = New System.Drawing.Point(359, 4)
         Me.btn_eliminar.Name = "btn_eliminar"
         Me.btn_eliminar.Size = New System.Drawing.Size(32, 36)
         Me.btn_eliminar.TabIndex = 19
@@ -234,7 +234,7 @@ Partial Class FamiliaProducto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(412, 485)
+        Me.ClientSize = New System.Drawing.Size(440, 485)
         Me.ControlBox = False
         Me.Controls.Add(Me.cbxImpresora)
         Me.Controls.Add(Me.Label4)
