@@ -132,6 +132,22 @@ Public Class Form1
                     DataGridView1.Rows.RemoveAt(e.RowIndex)
                     calculo_total_venta()
                 End If
+                If DataGridView1.Columns(e.ColumnIndex).Name = "sumar" Then
+                    Dim pos As Integer = Me.DataGridView1.Rows.IndexOf(Me.DataGridView1.CurrentRow)
+                    Me.DataGridView1.Rows(pos).Cells(1).Value = CInt(Me.DataGridView1.Rows(pos).Cells(1).Value) + 1
+                        Me.DataGridView1.Rows(pos).Cells(4).Value = CInt(Me.DataGridView1.Rows(pos).Cells(1).Value) * CInt(Me.DataGridView1.Rows(pos).Cells(3).Value)
+                        calculo_total_venta()
+                End If
+                If DataGridView1.Columns(e.ColumnIndex).Name = "restar" Then
+                    Dim pos As Integer = Me.DataGridView1.Rows.IndexOf(Me.DataGridView1.CurrentRow)
+                    If Me.DataGridView1.Rows(pos).Cells(1).Value = 1 Then
+                        Telerik.WinControls.RadMessageBox.Show("Debe eliminar el producto")
+                    Else
+                        Me.DataGridView1.Rows(pos).Cells(1).Value = CInt(Me.DataGridView1.Rows(pos).Cells(1).Value) - 1
+                        Me.DataGridView1.Rows(pos).Cells(4).Value = CInt(Me.DataGridView1.Rows(pos).Cells(1).Value) * CInt(Me.DataGridView1.Rows(pos).Cells(3).Value)
+                        calculo_total_venta()
+                    End If
+                End If
             End If
         Catch ex As Exception
 
@@ -526,4 +542,5 @@ Public Class Form1
         Me.txt_efectivo.Focus()
         Me.txt_vuelto.Text = Val(Me.txt_efectivo.Text) - Val(Me.txt_Total.Text)
     End Sub
+
 End Class
