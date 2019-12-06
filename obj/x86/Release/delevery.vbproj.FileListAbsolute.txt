@@ -112,3 +112,4 @@ D:\Sistem_Duran\POS_Touch\obj\x86\Release\delevery.info_Fpago.resources
 D:\Sistem_Duran\POS_Touch\obj\x86\Release\delevery.Info_Productos.resources
 D:\Sistem_Duran\POS_Touch\obj\x86\Release\delevery.vbproj.GenerateResource.Cache
 D:\Sistem_Duran\POS_Touch\obj\x86\Release\delevery.exe.licenses
+D:\Sistem_Duran\POS_Touch\obj\x86\Release\delevery.ResetearFolioInterno.resources

@@ -27,7 +27,9 @@ Public Class Rpt_ticket
     End Sub
     Private Sub Cargar()
         Me.Cursor = Cursors.WaitCursor
+        Dim Tipo As String = ""
         If Formulario = "FrmCaja" Or Formulario = "FrmVenta" Or Formulario = "ImprimeBoleta" Then
+            Tipo = Formulario
             Try
                 Dim rpt As New RptBoleta
                 Dim data As New dts_Caja
@@ -35,7 +37,7 @@ Public Class Rpt_ticket
                 Dim dt As New DataSet
                 Dim impresoraBoleta As String = Neg.GetImpresoraBoleta
 
-                dt = Neg.Rpt_Boleta(idventa)
+                dt = Neg.Rpt_Boleta(idventa, Tipo)
                 If (dt.Tables(0).Rows.Count > 0) Then
                     For Each item As DataRow In dt.Tables(0).Rows
                         Try
@@ -125,6 +127,9 @@ Public Class Rpt_ticket
                             data.RptTicketFamilia.Rows.Add(item(0), item(1), item(2), item(3), item(4), item(5))
                         Else
                             Try
+                                For Each dato As DataRow In dt.Tables(1).Rows
+                                    data.parametros.Rows.Add(dato(0), dato(1), dato(2), dato(3), dato(4))
+                                Next
                                 rpt.SetDataSource(data)
                                 rpt.PrintOptions.PrinterName = impresora1
                                 rpt.PrintToPrinter(1, False, 0, 0)

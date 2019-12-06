@@ -209,4 +209,9 @@ Public Class delivery
         Dim frm As New ReporteCierreCaja
         frm.ShowDialog()
     End Sub
+
+    Private Sub FolioInternoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FolioInternoToolStripMenuItem.Click
+        Dim frm As New ResetearFolioInterno
+        frm.ShowDialog()
+    End Sub
 End Class
