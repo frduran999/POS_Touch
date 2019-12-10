@@ -13,6 +13,16 @@ Public Class Anula_Imprime
             _Perfil = value
         End Set
     End Property
+    Private _usuario As Integer
+    Public Property usuario() As Integer
+        Get
+            Return _usuario
+        End Get
+        Set(ByVal value As Integer)
+            _usuario = value
+        End Set
+    End Property
+
     Private Sub Anula_Imprime_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If Perfil <> 1 Then
             Me.btnBoleta.Visible = False
@@ -69,6 +79,7 @@ Public Class Anula_Imprime
         Dim frmT As New Rpt_ticket
         frmT.idventa = NroTicket
         frmT.Formulario = "ImprimeTicket"
+        frmT.IdUsuario = usuario
         frmT.Show()
         frmT.Close()
     End Sub
@@ -79,6 +90,7 @@ Public Class Anula_Imprime
         Dim frmT As New Rpt_ticket
         frmT.idventa = NroBoleta
         frmT.Formulario = "ImprimeBoleta"
+        frmT.IdUsuario = usuario
         frmT.Show()
         frmT.Close()
     End Sub

@@ -28,7 +28,6 @@ Partial Class U_Familia
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter
         Me.Button1.Location = New System.Drawing.Point(5, 3)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(129, 58)

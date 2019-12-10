@@ -14,7 +14,7 @@ Public Class ResetearFolioInterno
         Dim resp As String = ""
         resp = neg.ReseteaFolioInterno
         If resp = "OK" Then
-            Telerik.WinControls.RadMessageBox.Show("Resetea folio corresctamente", "Folios")
+            Telerik.WinControls.RadMessageBox.Show("Resetea folio correctamente", "Folios")
             Me.uic_UltimoFolio.Text = "0"
         Else
             Telerik.WinControls.RadMessageBox.Show("A ocurriod un error" & vbCrLf & resp, "Folios")

@@ -320,6 +320,8 @@ Public Class Form1
         Dim frmT As New Rpt_ticket
         frmT.idventa = id_doc_cab
         frmT.Formulario = "FrmVenta"
+        frmT.IdUsuario = Usuario
+        frmT.Observacion = Me.uic_Observacion.Text
         frmT.Show()
         frmT.Close()
         Me.Cursor = Cursors.Default
@@ -339,6 +341,7 @@ Public Class Form1
         Me.DataGridView1.Rows.Clear()
         Me.cbo_formapago.SelectedIndex = -1
         Me.txt_efectivo.Enabled = False
+        Me.uic_Observacion.Text = ""
     End Sub
     Private Sub cbo_formapago_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_formapago.SelectedIndexChanged
         If Me.cbo_formapago.Text.ToUpper <> "CONTADO" Then
