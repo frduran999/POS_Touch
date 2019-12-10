@@ -176,6 +176,7 @@ Public Class delivery
     Private Sub ListadoVentasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoVentasToolStripMenuItem.Click
         Dim frm As New Anula_Imprime
         frm.Perfil = PerfilUsuario
+        frm.usuario = IdUsuario
         frm.Show()
     End Sub
 
@@ -207,6 +208,11 @@ Public Class delivery
 
     Private Sub CierreCajaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CierreCajaToolStripMenuItem.Click
         Dim frm As New ReporteCierreCaja
+        frm.ShowDialog()
+    End Sub
+
+    Private Sub FolioInternoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FolioInternoToolStripMenuItem.Click
+        Dim frm As New ResetearFolioInterno
         frm.ShowDialog()
     End Sub
 End Class

@@ -23,7 +23,7 @@ Partial Class Anula_Imprime
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim TableViewDefinition6 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.btnBoleta = New Telerik.WinControls.UI.RadButton()
         Me.btnLimpiar = New Telerik.WinControls.UI.RadButton()
@@ -143,7 +143,8 @@ Partial Class Anula_Imprime
         '
         Me.GridVentas.MasterTemplate.AllowAddNewRow = False
         Me.GridVentas.MasterTemplate.AllowColumnReorder = False
-        Me.GridVentas.MasterTemplate.ViewDefinition = TableViewDefinition6
+        Me.GridVentas.MasterTemplate.EnableAlternatingRowColor = True
+        Me.GridVentas.MasterTemplate.ViewDefinition = TableViewDefinition1
         Me.GridVentas.Name = "GridVentas"
         Me.GridVentas.ReadOnly = True
         Me.GridVentas.Size = New System.Drawing.Size(565, 380)

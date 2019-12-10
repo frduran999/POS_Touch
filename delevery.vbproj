@@ -282,6 +282,12 @@
       <DependentUpon>RPT_Producto.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Mantenedores\ResetearFolioInterno.Designer.vb">
+      <DependentUpon>ResetearFolioInterno.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenedores\ResetearFolioInterno.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -512,6 +518,9 @@
     <EmbeddedResource Include="Mantenedores\Reporte\RPT_Producto.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RPT_Producto.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenedores\ResetearFolioInterno.resx">
+      <DependentUpon>ResetearFolioInterno.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="Mantenedores\Parametros.resx">

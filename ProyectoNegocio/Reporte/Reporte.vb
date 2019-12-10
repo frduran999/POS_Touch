@@ -19,16 +19,16 @@ Public Class Reporte
         dt = b.RptVentasDiarias(FechaIni, FechaFin)
         Return dt
     End Function
-    Public Function Rpt_Ticket(idventa As Integer) As DataSet
+    Public Function Rpt_Ticket(idventa As Integer, ByVal IdUsuario As Integer) As DataSet
         Dim dt As New DataSet
         Dim b As New ReporteService
-        dt = b.Rpt_Ticket(idventa)
+        dt = b.Rpt_Ticket(idventa, IdUsuario)
         Return dt
     End Function
-    Public Function Rpt_Boleta(idventa As Integer) As DataSet
+    Public Function Rpt_Boleta(idventa As Integer, ByVal Tipo As String, ByVal IdUsuario As Integer) As DataSet
         Dim dt As New DataSet
         Dim b As New ReporteService
-        dt = b.Rpt_Boleta(idventa)
+        dt = b.Rpt_Boleta(idventa, Tipo, IdUsuario)
         Return dt
     End Function
     Public Function Rpt_CierreCaja(ByVal IdUsuario As Integer, ByVal IdCaja As Integer) As DataSet
@@ -55,10 +55,10 @@ Public Class Reporte
         dt = b.GetImpresoraBoleta
         Return dt
     End Function
-    Public Function Rpt_TicketFamilia(ByVal idventa As Integer) As DataSet
+    Public Function Rpt_TicketFamilia(ByVal idventa As Integer, ByVal idusuario As Integer) As DataSet
         Dim dt As New DataSet
         Dim b As New ReporteService
-        dt = b.Rpt_TicketFamilia(idventa)
+        dt = b.Rpt_TicketFamilia(idventa, idusuario)
         Return dt
     End Function
     Public Function RPT_Productos_Revision(ByVal FechaIni As String, ByVal FechaFin As String, ByVal usuario As String, ByVal Familia As Integer, ByVal Producto As Integer) As DataTable

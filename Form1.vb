@@ -132,6 +132,22 @@ Public Class Form1
                     DataGridView1.Rows.RemoveAt(e.RowIndex)
                     calculo_total_venta()
                 End If
+                If DataGridView1.Columns(e.ColumnIndex).Name = "sumar" Then
+                    Dim pos As Integer = Me.DataGridView1.Rows.IndexOf(Me.DataGridView1.CurrentRow)
+                    Me.DataGridView1.Rows(pos).Cells(1).Value = CInt(Me.DataGridView1.Rows(pos).Cells(1).Value) + 1
+                        Me.DataGridView1.Rows(pos).Cells(4).Value = CInt(Me.DataGridView1.Rows(pos).Cells(1).Value) * CInt(Me.DataGridView1.Rows(pos).Cells(3).Value)
+                        calculo_total_venta()
+                End If
+                If DataGridView1.Columns(e.ColumnIndex).Name = "restar" Then
+                    Dim pos As Integer = Me.DataGridView1.Rows.IndexOf(Me.DataGridView1.CurrentRow)
+                    If Me.DataGridView1.Rows(pos).Cells(1).Value = 1 Then
+                        Telerik.WinControls.RadMessageBox.Show("Debe eliminar el producto")
+                    Else
+                        Me.DataGridView1.Rows(pos).Cells(1).Value = CInt(Me.DataGridView1.Rows(pos).Cells(1).Value) - 1
+                        Me.DataGridView1.Rows(pos).Cells(4).Value = CInt(Me.DataGridView1.Rows(pos).Cells(1).Value) * CInt(Me.DataGridView1.Rows(pos).Cells(3).Value)
+                        calculo_total_venta()
+                    End If
+                End If
             End If
         Catch ex As Exception
 
@@ -304,6 +320,8 @@ Public Class Form1
         Dim frmT As New Rpt_ticket
         frmT.idventa = id_doc_cab
         frmT.Formulario = "FrmVenta"
+        frmT.IdUsuario = Usuario
+        frmT.Observacion = Me.uic_Observacion.Text
         frmT.Show()
         frmT.Close()
         Me.Cursor = Cursors.Default
@@ -323,6 +341,7 @@ Public Class Form1
         Me.DataGridView1.Rows.Clear()
         Me.cbo_formapago.SelectedIndex = -1
         Me.txt_efectivo.Enabled = False
+        Me.uic_Observacion.Text = ""
     End Sub
     Private Sub cbo_formapago_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbo_formapago.SelectedIndexChanged
         If Me.cbo_formapago.Text.ToUpper <> "CONTADO" Then
@@ -348,7 +367,8 @@ Public Class Form1
     Private Sub lawea3(ByVal sender As Object, ByVal e As EventArgs)
         Dim id As String = sender.name
         Dim articulo As String = sender.text.trim
-        para_grilla_oferta(id, articulo)
+        Dim dato() As String = articulo.Split("$")
+        para_grilla_oferta(id, dato(0))
 
         calculo_total_venta()
     End Sub
@@ -488,24 +508,24 @@ Public Class Form1
         frmRetiro.ShowDialog()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim resp As String = ""
-        Dim neg As New ProyectoNegocio.AdminCaja
-        resp = neg.CerrarCaja(Usuario)
-        Try
-            If CInt(resp) > 0 Then
-                Dim frm As New CierreCaja
-                frm.IdUsuario = Usuario
-                frm.IdCaja = resp
-                frm.ShowDialog()
-                Telerik.WinControls.RadMessageBox.Show("Caja Cerrada", "Caja")
-            Else
-                Telerik.WinControls.RadMessageBox.Show("A ocurrido un error" & vbCrLf & resp, "Aviso")
-            End If
-        Catch ex As Exception
-        End Try
-        Me.Hide()
-    End Sub
+    'Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    '    Dim resp As String = ""
+    '    Dim neg As New ProyectoNegocio.AdminCaja
+    '    resp = neg.CerrarCaja(Usuario)
+    '    Try
+    '        If CInt(resp) > 0 Then
+    '            Dim frm As New CierreCaja
+    '            frm.IdUsuario = Usuario
+    '            frm.IdCaja = resp
+    '            frm.ShowDialog()
+    '            Telerik.WinControls.RadMessageBox.Show("Caja Cerrada", "Caja")
+    '        Else
+    '            Telerik.WinControls.RadMessageBox.Show("A ocurrido un error" & vbCrLf & resp, "Aviso")
+    '        End If
+    '    Catch ex As Exception
+    '    End Try
+    '    Me.Hide()
+    'End Sub
 
     Private Sub FlowLayoutFamilia_Paint(sender As Object, e As PaintEventArgs) Handles FlowLayoutFamilia.Paint
 
@@ -525,4 +545,5 @@ Public Class Form1
         Me.txt_efectivo.Focus()
         Me.txt_vuelto.Text = Val(Me.txt_efectivo.Text) - Val(Me.txt_Total.Text)
     End Sub
+
 End Class

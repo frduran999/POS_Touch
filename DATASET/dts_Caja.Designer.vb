@@ -1749,6 +1749,8 @@ Partial Public Class dts_Caja
 
         Private columnComuna As Global.System.Data.DataColumn
 
+        Private columnUsuario As Global.System.Data.DataColumn
+
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Sub New()
@@ -1825,6 +1827,14 @@ Partial Public Class dts_Caja
         End Property
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property UsuarioColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnUsuario
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
          Global.System.ComponentModel.Browsable(False)> _
         Public ReadOnly Property Count() As Integer
@@ -1861,9 +1871,9 @@ Partial Public Class dts_Caja
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Overloads Function AddparametrosRow(ByVal RutEmpresa As String, ByVal RznSoc As String, ByVal Giro As String, ByVal Direccion As String, ByVal Comuna As String) As parametrosRow
+        Public Overloads Function AddparametrosRow(ByVal RutEmpresa As String, ByVal RznSoc As String, ByVal Giro As String, ByVal Direccion As String, ByVal Comuna As String, ByVal Usuario As String) As parametrosRow
             Dim rowparametrosRow As parametrosRow = CType(Me.NewRow, parametrosRow)
-            Dim columnValuesArray() As Object = New Object() {RutEmpresa, RznSoc, Giro, Direccion, Comuna}
+            Dim columnValuesArray() As Object = New Object() {RutEmpresa, RznSoc, Giro, Direccion, Comuna, Usuario}
             rowparametrosRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowparametrosRow)
             Return rowparametrosRow
@@ -1891,6 +1901,7 @@ Partial Public Class dts_Caja
             Me.columnGiro = MyBase.Columns("Giro")
             Me.columnDireccion = MyBase.Columns("Direccion")
             Me.columnComuna = MyBase.Columns("Comuna")
+            Me.columnUsuario = MyBase.Columns("Usuario")
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -1906,6 +1917,8 @@ Partial Public Class dts_Caja
             MyBase.Columns.Add(Me.columnDireccion)
             Me.columnComuna = New Global.System.Data.DataColumn("Comuna", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnComuna)
+            Me.columnUsuario = New Global.System.Data.DataColumn("Usuario", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnUsuario)
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -3235,6 +3248,21 @@ Partial Public Class dts_Caja
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property Usuario() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableparametros.UsuarioColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Usuario' in table 'parametros' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableparametros.UsuarioColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Function IsRutEmpresaNull() As Boolean
             Return Me.IsNull(Me.tableparametros.RutEmpresaColumn)
         End Function
@@ -3291,6 +3319,18 @@ Partial Public Class dts_Caja
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Sub SetComunaNull()
             Me(Me.tableparametros.ComunaColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsUsuarioNull() As Boolean
+            Return Me.IsNull(Me.tableparametros.UsuarioColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetUsuarioNull()
+            Me(Me.tableparametros.UsuarioColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
 

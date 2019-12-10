@@ -1,4 +1,5 @@
 ﻿Imports ProyectoNegocio
+Imports CrystalDecisions.Shared
 
 Public Class Rpt_ticket
     Private _idventa As Integer
@@ -19,23 +20,49 @@ Public Class Rpt_ticket
             _Formulario = value
         End Set
     End Property
+    Private _idusuario As Integer
+    Public Property IdUsuario() As Integer
+        Get
+            Return _idusuario
+        End Get
+        Set(ByVal value As Integer)
+            _idusuario = value
+        End Set
+    End Property
+    Private _Observacion As String
+    Public Property Observacion As String
+        Get
+            Return _Observacion
+        End Get
+        Set(ByVal value As String)
+            _Observacion = value
+        End Set
+    End Property
+
+
     Private Sub Rpt_ticket_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Cargar()
-        If Formulario = "FrmCaja" Or Formulario = "FrmVenta" Or Formulario = "ImprimeTicket" Then
+        If Formulario = "FrmCaja" Or Formulario = "FrmVenta" Then
             TicketFamilia()
         End If
     End Sub
     Private Sub Cargar()
         Me.Cursor = Cursors.WaitCursor
-        If Formulario = "FrmCaja" Or Formulario = "FrmVenta" Or Formulario = "ImprimeBoleta" Then
+        Dim Tipo As String = ""
+       
+
+        If Formulario = "FrmCaja" Or Formulario = "ImprimeBoleta" Then
+            Tipo = Formulario
             Try
                 Dim rpt As New RptBoleta
+                Dim Param As New ParameterValues
+                Dim myDiscreteValue As New ParameterDiscreteValue
                 Dim data As New dts_Caja
                 Dim Neg As New Reporte
                 Dim dt As New DataSet
                 Dim impresoraBoleta As String = Neg.GetImpresoraBoleta
 
-                dt = Neg.Rpt_Boleta(idventa)
+                dt = Neg.Rpt_Boleta(idventa, Tipo, IdUsuario)
                 If (dt.Tables(0).Rows.Count > 0) Then
                     For Each item As DataRow In dt.Tables(0).Rows
                         Try
@@ -45,10 +72,55 @@ Public Class Rpt_ticket
                         End Try
                     Next
                     For Each dato As DataRow In dt.Tables(1).Rows
-                        data.parametros.Rows.Add(dato(0), dato(1), dato(2), dato(3), dato(4))
+                        data.parametros.Rows.Add(dato(0), dato(1), dato(2), dato(3), dato(4), dato(5))
                     Next
                     Try
                         rpt.SetDataSource(data)
+                        Param.Clear()
+                        myDiscreteValue.Value = " "
+                        Param.Add(myDiscreteValue)
+                        rpt.DataDefinition.ParameterFields("Observacion").ApplyCurrentValues(Param)
+                        rpt.PrintOptions.PrinterName = impresoraBoleta
+                        rpt.PrintToPrinter(1, False, 0, 0)
+                    Catch ex As Exception
+                    End Try
+
+                Else
+                    Telerik.WinControls.RadMessageBox.Show(Me, "No se encontraron datos", "Alerta")
+                    Me.Close()
+                End If
+            Catch ex As Exception
+            End Try
+        End If
+        If Formulario = "FrmVenta" Then
+            Tipo = Formulario
+            Try
+                Dim rpt As New RptBoleta
+                Dim Param As New ParameterValues
+                Dim myDiscreteValue As New ParameterDiscreteValue
+                Dim data As New dts_Caja
+                Dim Neg As New Reporte
+                Dim dt As New DataSet
+                Dim impresoraBoleta As String = Neg.GetImpresoraBoleta
+
+                dt = Neg.Rpt_Boleta(idventa, Tipo, IdUsuario)
+                If (dt.Tables(0).Rows.Count > 0) Then
+                    For Each item As DataRow In dt.Tables(0).Rows
+                        Try
+                            data.Rpt_Boleta.Rows.Add(item(0), item(1), item(2), item(3), item(4), item(5), item(6), item(7), item(8), item(9))
+                        Catch ex As Exception
+                            MsgBox(ex.Message & vbCr & ex.StackTrace)
+                        End Try
+                    Next
+                    For Each dato As DataRow In dt.Tables(1).Rows
+                        data.parametros.Rows.Add(dato(0), dato(1), dato(2), dato(3), dato(4), dato(5))
+                    Next
+                    Try
+                        rpt.SetDataSource(data)
+                        Param.Clear()
+                        myDiscreteValue.Value = Observacion
+                        Param.Add(myDiscreteValue)
+                        rpt.DataDefinition.ParameterFields("Observacion").ApplyCurrentValues(Param)
                         rpt.PrintOptions.PrinterName = impresoraBoleta
                         rpt.PrintToPrinter(1, False, 0, 0)
                     Catch ex As Exception
@@ -69,7 +141,7 @@ Public Class Rpt_ticket
                 Dim dt As New DataSet
 
                 Dim impresoraTicket As String = Neg.GetImpresoraTicket
-                dt = Neg.Rpt_Ticket(idventa)
+                dt = Neg.Rpt_Ticket(idventa, IdUsuario)
                 If (dt.Tables(0).Rows.Count > 0) Then
                     For Each item As DataRow In dt.Tables(0).Rows
                         Try
@@ -79,7 +151,7 @@ Public Class Rpt_ticket
                         End Try
                     Next
                     For Each dato As DataRow In dt.Tables(1).Rows
-                        data.parametros.Rows.Add(dato(0), dato(1), dato(2), dato(3), dato(4))
+                        data.parametros.Rows.Add(dato(0), dato(1), dato(2), dato(3), dato(4), dato(5))
                     Next
                     Try
                         rpt.SetDataSource(data)
@@ -103,13 +175,15 @@ Public Class Rpt_ticket
         Me.Cursor = Cursors.WaitCursor
         Try
             Dim rpt As New RptTicketFamilia
+            Dim Param As New ParameterValues
+            Dim myDiscreteValue As New ParameterDiscreteValue
             Dim data As New dts_Caja
             Dim Neg As New Reporte
             Dim dt As New DataSet
             Dim paso As Integer = 0
             Dim impresora1 As String = ""
             Dim impresora2 As String = ""
-            dt = Neg.Rpt_TicketFamilia(idventa)
+            dt = Neg.Rpt_TicketFamilia(idventa, IdUsuario)
             If (dt.Tables.Count > 0) Then
                 impresora1 = dt.Tables(0).Rows(0)("impresora")
                 For Each item As DataRow In dt.Tables(0).Rows
@@ -125,14 +199,21 @@ Public Class Rpt_ticket
                             data.RptTicketFamilia.Rows.Add(item(0), item(1), item(2), item(3), item(4), item(5))
                         Else
                             Try
+                                For Each dato As DataRow In dt.Tables(1).Rows
+                                    data.parametros.Rows.Add(dato(0), dato(1), dato(2), dato(3), dato(4), dato(5))
+                                Next
                                 rpt.SetDataSource(data)
+                                Param.Clear()
+                                myDiscreteValue.Value = Observacion
+                                Param.Add(myDiscreteValue)
+                                rpt.DataDefinition.ParameterFields("Observacion").ApplyCurrentValues(Param)
                                 rpt.PrintOptions.PrinterName = impresora1
                                 rpt.PrintToPrinter(1, False, 0, 0)
                             Catch ex As Exception
                             End Try
 
                             data.Clear()
-                           
+
                             data.RptTicketFamilia.Rows.Add(item(0), item(1), item(2), item(3), item(4), item(5))
                             impresora1 = item("Impresora")
                         End If
@@ -141,10 +222,16 @@ Public Class Rpt_ticket
                 Next
                 Try
                     For Each dato As DataRow In dt.Tables(1).Rows
-                        data.parametros.Rows.Add(dato(0), dato(1), dato(2), dato(3), dato(4))
+                        data.parametros.Rows.Add(dato(0), dato(1), dato(2), dato(3), dato(4), dato(5))
                     Next
 
                     rpt.SetDataSource(data)
+
+                    Param.Clear()
+                    myDiscreteValue.Value = Observacion
+                    Param.Add(myDiscreteValue)
+                    rpt.DataDefinition.ParameterFields("Observacion").ApplyCurrentValues(Param)
+
                     rpt.PrintOptions.PrinterName = impresora1
                     rpt.PrintToPrinter(1, False, 0, 0)
                 Catch ex As Exception

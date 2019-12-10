@@ -58,13 +58,14 @@
         Return dt
     End Function
 
-    Public Function Rpt_Ticket(idventa As Integer) As DataSet
+    Public Function Rpt_Ticket(idventa As Integer, ByVal IdUsuario As Integer) As DataSet
         Dim dt As New DataSet
         Dim con As New Conexion
         Dim sql As New dac.myhelper3
         If con.Conexion Then
             Try
                 sql.paramQUERY.Add("idventa", idventa)
+                sql.paramQUERY.Add("IdUsuario", IdUsuario)
                 dt = sql.ExecuteDataSet(con.con.ConnectionString, CommandType.StoredProcedure, "Rpt_VentasTicket", sql.paramQUERY, 60000)
             Catch ex As Exception
                 dt = New DataSet
@@ -77,13 +78,15 @@
         End If
         Return dt
     End Function
-    Public Function Rpt_Boleta(idventa As Integer) As DataSet
+    Public Function Rpt_Boleta(idventa As Integer, ByVal Tipo As String, ByVal IdUsuario As Integer) As DataSet
         Dim dt As New DataSet
         Dim con As New Conexion
         Dim sql As New dac.myhelper3
         If con.Conexion Then
             Try
                 sql.paramQUERY.Add("idventa", idventa)
+                sql.paramQUERY.Add("Tipo", Tipo)
+                sql.paramQUERY.Add("IdUsuario", IdUsuario)
                 dt = sql.ExecuteDataSet(con.con.ConnectionString, CommandType.StoredProcedure, "Rpt_Boleta", sql.paramQUERY, 60000)
             Catch ex As Exception
                 dt = New DataSet
@@ -155,13 +158,14 @@
         End If
         Return resp
     End Function
-    Public Function Rpt_TicketFamilia(ByVal idventa As Integer) As DataSet
+    Public Function Rpt_TicketFamilia(ByVal idventa As Integer, ByVal idusuario As Integer) As DataSet
         Dim dt As New DataSet
         Dim con As New Conexion
         Dim sql As New dac.myhelper3
         If con.Conexion Then
             Try
                 sql.paramQUERY.Add("idventa", idventa)
+                sql.paramQUERY.Add("IdUsuario", idusuario)
                 dt = sql.ExecuteDataSet(con.con.ConnectionString, CommandType.StoredProcedure, "Rpt_TicketFamilia", sql.paramQUERY, 60000)
             Catch ex As Exception
                 dt = New DataSet
