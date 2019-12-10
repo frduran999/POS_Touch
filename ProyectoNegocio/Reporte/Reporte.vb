@@ -25,10 +25,10 @@ Public Class Reporte
         dt = b.Rpt_Ticket(idventa)
         Return dt
     End Function
-    Public Function Rpt_Boleta(idventa As Integer) As DataSet
+    Public Function Rpt_Boleta(idventa As Integer, ByVal Tipo As String) As DataSet
         Dim dt As New DataSet
         Dim b As New ReporteService
-        dt = b.Rpt_Boleta(idventa)
+        dt = b.Rpt_Boleta(idventa, Tipo)
         Return dt
     End Function
     Public Function Rpt_CierreCaja(ByVal IdUsuario As Integer, ByVal IdCaja As Integer) As DataSet

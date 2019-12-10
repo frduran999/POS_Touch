@@ -77,13 +77,14 @@
         End If
         Return dt
     End Function
-    Public Function Rpt_Boleta(idventa As Integer) As DataSet
+    Public Function Rpt_Boleta(idventa As Integer, ByVal Tipo As String) As DataSet
         Dim dt As New DataSet
         Dim con As New Conexion
         Dim sql As New dac.myhelper3
         If con.Conexion Then
             Try
                 sql.paramQUERY.Add("idventa", idventa)
+                sql.paramQUERY.Add("Tipo", Tipo)
                 dt = sql.ExecuteDataSet(con.con.ConnectionString, CommandType.StoredProcedure, "Rpt_Boleta", sql.paramQUERY, 60000)
             Catch ex As Exception
                 dt = New DataSet

@@ -132,10 +132,9 @@ Partial Class ImpresionCopia
         Me.RadMenu1.Location = New System.Drawing.Point(0, 0)
         Me.RadMenu1.Name = "RadMenu1"
         Me.RadMenu1.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.RadMenu1.Size = New System.Drawing.Size(373, 29)
+        Me.RadMenu1.Size = New System.Drawing.Size(373, 28)
         Me.RadMenu1.TabIndex = 21
         Me.RadMenu1.Text = "RadMenu1"
-        Me.RadMenu1.ThemeName = "Office2010Black"
         '
         'RadGroupBox1
         '

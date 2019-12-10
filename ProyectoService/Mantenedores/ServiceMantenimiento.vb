@@ -2,7 +2,7 @@
 
 Public Class ServiceMantenimiento
     Public Function RespaldoBase() As String
-        Dim res As String
+        Dim res As String = ""
         Dim NombreRespaldo As String = "BACKUP_" & Now.Day & "_" & Now.Month & "_" & Now.Year & "_" & Now.Minute & ".bak"
         Dim RutaRespaldo As String = "C:\POS\RespaldoBD_POS\"
         Dim sql As New dac.myhelper3
@@ -20,5 +20,23 @@ Public Class ServiceMantenimiento
             End Try
         End If
         Return res
+    End Function
+    Public Function TreaUltimoFolio() As String
+        Dim resp As String = ""
+        Dim con As New Conexion
+        If con.Conexion Then
+            Dim odac As New dac.myMSSQL(con.con.ConnectionString, 180000)
+            resp = odac.GetValorNoNull("GetUltimofolioInterno")
+        End If
+        Return resp
+    End Function
+    Public Function ReseteaFolioInterno() As String
+        Dim resp As String = ""
+        Dim con As New Conexion
+        If con.Conexion Then
+            Dim odac As New dac.myMSSQL(con.con.ConnectionString, 180000)
+            resp = odac.GetValorNoNull("ResetarFolioInterno")
+        End If
+        Return resp
     End Function
 End Class
