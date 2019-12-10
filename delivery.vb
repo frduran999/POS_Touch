@@ -176,6 +176,7 @@ Public Class delivery
     Private Sub ListadoVentasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoVentasToolStripMenuItem.Click
         Dim frm As New Anula_Imprime
         frm.Perfil = PerfilUsuario
+        frm.usuario = IdUsuario
         frm.Show()
     End Sub
 

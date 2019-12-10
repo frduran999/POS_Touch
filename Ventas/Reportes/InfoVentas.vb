@@ -57,12 +57,12 @@ Public Class InfoVentas
 
                 Reporte.SetDataSource(data)
                 Param.Clear()
-                myDiscreteValue.Value = FechaIni.Substring(8, 2) & "-" & FechaIni.Substring(5, 2) & "-" & FechaIni.Substring(0, 4)
+                myDiscreteValue.Value = FechaIni.Substring(5, 2) & "-" & FechaIni.Substring(8, 2) & "-" & FechaIni.Substring(0, 4)
                 Param.Add(myDiscreteValue)
                 Reporte.DataDefinition.ParameterFields("FechaIni").ApplyCurrentValues(Param)
 
                 Param.Clear()
-                myDiscreteValue.Value = FechaFin.Substring(8, 2) & "-" & FechaFin.Substring(5, 2) & "-" & FechaFin.Substring(0, 4)
+                myDiscreteValue.Value = FechaFin.Substring(5, 2) & "-" & FechaFin.Substring(8, 2) & "-" & FechaFin.Substring(0, 4)
                 Param.Add(myDiscreteValue)
                 Reporte.DataDefinition.ParameterFields("FechaFin").ApplyCurrentValues(Param)
                 CrystalReportViewer1.ReportSource = Reporte
