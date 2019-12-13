@@ -46,10 +46,10 @@ Partial Class delivery
         Me.RetiroCajaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ImpresorasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RespaldoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FolioInternoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripButton5 = New System.Windows.Forms.ToolStripButton()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.uic_versionApp = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.FolioInternoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -70,7 +70,7 @@ Partial Class delivery
         Me.ToolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ToolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripButton1.Name = "ToolStripButton1"
-        Me.ToolStripButton1.Size = New System.Drawing.Size(54, 73)
+        Me.ToolStripButton1.Size = New System.Drawing.Size(53, 73)
         Me.ToolStripButton1.Text = "Venta"
         Me.ToolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText
         '
@@ -101,39 +101,39 @@ Partial Class delivery
         'DIARIOToolStripMenuItem
         '
         Me.DIARIOToolStripMenuItem.Name = "DIARIOToolStripMenuItem"
-        Me.DIARIOToolStripMenuItem.Size = New System.Drawing.Size(244, 26)
-        Me.DIARIOToolStripMenuItem.Text = "Ventas Diario"
+        Me.DIARIOToolStripMenuItem.Size = New System.Drawing.Size(243, 26)
+        Me.DIARIOToolStripMenuItem.Text = "Informe X"
         '
         'COMPRASDIARIOToolStripMenuItem
         '
         Me.COMPRASDIARIOToolStripMenuItem.Name = "COMPRASDIARIOToolStripMenuItem"
-        Me.COMPRASDIARIOToolStripMenuItem.Size = New System.Drawing.Size(244, 26)
+        Me.COMPRASDIARIOToolStripMenuItem.Size = New System.Drawing.Size(243, 26)
         Me.COMPRASDIARIOToolStripMenuItem.Text = "Compras Diario"
         Me.COMPRASDIARIOToolStripMenuItem.Visible = False
         '
         'ListadoVentasToolStripMenuItem
         '
         Me.ListadoVentasToolStripMenuItem.Name = "ListadoVentasToolStripMenuItem"
-        Me.ListadoVentasToolStripMenuItem.Size = New System.Drawing.Size(244, 26)
+        Me.ListadoVentasToolStripMenuItem.Size = New System.Drawing.Size(243, 26)
         Me.ListadoVentasToolStripMenuItem.Text = "Listado ventas"
         '
         'INFORMEPRODUCTOSToolStripMenuItem
         '
         Me.INFORMEPRODUCTOSToolStripMenuItem.Name = "INFORMEPRODUCTOSToolStripMenuItem"
-        Me.INFORMEPRODUCTOSToolStripMenuItem.Size = New System.Drawing.Size(244, 26)
+        Me.INFORMEPRODUCTOSToolStripMenuItem.Size = New System.Drawing.Size(243, 26)
         Me.INFORMEPRODUCTOSToolStripMenuItem.Text = "Informe Productos"
         '
         'InformeFormaDePagoToolStripMenuItem
         '
         Me.InformeFormaDePagoToolStripMenuItem.Name = "InformeFormaDePagoToolStripMenuItem"
-        Me.InformeFormaDePagoToolStripMenuItem.Size = New System.Drawing.Size(244, 26)
+        Me.InformeFormaDePagoToolStripMenuItem.Size = New System.Drawing.Size(243, 26)
         Me.InformeFormaDePagoToolStripMenuItem.Text = "Informe Forma de Pago"
         '
         'CierreCajaToolStripMenuItem
         '
         Me.CierreCajaToolStripMenuItem.Name = "CierreCajaToolStripMenuItem"
-        Me.CierreCajaToolStripMenuItem.Size = New System.Drawing.Size(244, 26)
-        Me.CierreCajaToolStripMenuItem.Text = "Cierre Caja"
+        Me.CierreCajaToolStripMenuItem.Size = New System.Drawing.Size(243, 26)
+        Me.CierreCajaToolStripMenuItem.Text = "Informe Z"
         '
         'ToolStripButton3
         '
@@ -161,19 +161,19 @@ Partial Class delivery
         'ProductoToolStripMenuItem
         '
         Me.ProductoToolStripMenuItem.Name = "ProductoToolStripMenuItem"
-        Me.ProductoToolStripMenuItem.Size = New System.Drawing.Size(167, 26)
+        Me.ProductoToolStripMenuItem.Size = New System.Drawing.Size(166, 26)
         Me.ProductoToolStripMenuItem.Text = "Productos"
         '
         'StockToolStripMenuItem
         '
         Me.StockToolStripMenuItem.Name = "StockToolStripMenuItem"
-        Me.StockToolStripMenuItem.Size = New System.Drawing.Size(167, 26)
+        Me.StockToolStripMenuItem.Size = New System.Drawing.Size(166, 26)
         Me.StockToolStripMenuItem.Text = "Stock"
         '
         'StockCriticoToolStripMenuItem
         '
         Me.StockCriticoToolStripMenuItem.Name = "StockCriticoToolStripMenuItem"
-        Me.StockCriticoToolStripMenuItem.Size = New System.Drawing.Size(167, 26)
+        Me.StockCriticoToolStripMenuItem.Size = New System.Drawing.Size(166, 26)
         Me.StockCriticoToolStripMenuItem.Text = "Stock Critico"
         '
         'ToolStripDropDownButton1
@@ -230,6 +230,12 @@ Partial Class delivery
         Me.RespaldoToolStripMenuItem.Size = New System.Drawing.Size(208, 26)
         Me.RespaldoToolStripMenuItem.Text = "Respaldo"
         '
+        'FolioInternoToolStripMenuItem
+        '
+        Me.FolioInternoToolStripMenuItem.Name = "FolioInternoToolStripMenuItem"
+        Me.FolioInternoToolStripMenuItem.Size = New System.Drawing.Size(208, 26)
+        Me.FolioInternoToolStripMenuItem.Text = "Folio interno"
+        '
         'ToolStripButton5
         '
         Me.ToolStripButton5.Font = New System.Drawing.Font("Segoe UI", 12.0!)
@@ -256,18 +262,13 @@ Partial Class delivery
         Me.uic_versionApp.Name = "uic_versionApp"
         Me.uic_versionApp.Size = New System.Drawing.Size(0, 17)
         '
-        'FolioInternoToolStripMenuItem
-        '
-        Me.FolioInternoToolStripMenuItem.Name = "FolioInternoToolStripMenuItem"
-        Me.FolioInternoToolStripMenuItem.Size = New System.Drawing.Size(208, 26)
-        Me.FolioInternoToolStripMenuItem.Text = "Folio interno"
-        '
         'delivery
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.SteelBlue
         Me.ClientSize = New System.Drawing.Size(623, 356)
+        Me.ControlBox = False
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)

@@ -23,7 +23,7 @@ Partial Class Productos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim TableViewDefinition3 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -145,14 +145,11 @@ Partial Class Productos
         '
         'uic_Familia
         '
-        Me.uic_Familia.DataSource = Me.FamiliaProductoBindingSource
-        Me.uic_Familia.DisplayMember = "Familia"
         Me.uic_Familia.FormattingEnabled = True
         Me.uic_Familia.Location = New System.Drawing.Point(101, 210)
         Me.uic_Familia.Name = "uic_Familia"
         Me.uic_Familia.Size = New System.Drawing.Size(137, 21)
         Me.uic_Familia.TabIndex = 5
-        Me.uic_Familia.ValueMember = "CodigoFamilia"
         '
         'FamiliaProductoBindingSource
         '
@@ -204,7 +201,7 @@ Partial Class Productos
         Me.RadButton1.TabIndex = 82
         Me.RadButton1.Text = "RadButton4"
         Me.RadButton1.ThemeName = "Office2010Black"
-        Me.ToolTip1.SetToolTip(Me.RadButton1, "Limpiar pantalla")
+        Me.ToolTip1.SetToolTip(Me.RadButton1, "Reporte productos")
         '
         'btnLimpiar
         '
@@ -294,7 +291,7 @@ Partial Class Productos
         '
         '
         Me.RadGridView1.MasterTemplate.AllowAddNewRow = False
-        Me.RadGridView1.MasterTemplate.ViewDefinition = TableViewDefinition3
+        Me.RadGridView1.MasterTemplate.ViewDefinition = TableViewDefinition2
         Me.RadGridView1.Name = "RadGridView1"
         Me.RadGridView1.ReadOnly = True
         Me.RadGridView1.Size = New System.Drawing.Size(462, 487)

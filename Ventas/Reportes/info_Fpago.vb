@@ -47,7 +47,7 @@ Public Class info_Fpago
             If dt.Rows.Count > 0 Then
                 For Each item As DataRow In dt.Rows
                     Try
-                        data.RPT_FormaPago.Rows.Add(item(0), item(1), item(2), item(3), item(4), item(5), item(6))
+                        data.RPT_FormaPago.Rows.Add(item(0), item(1), item(2), item(3), item(4), item(5))
                     Catch ex As Exception
                     End Try
                 Next
