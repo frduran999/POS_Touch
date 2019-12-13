@@ -17,16 +17,25 @@ Public Class Productos
 
     Private Sub Productos_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'DeliveryDataSet.FamiliaProducto' table. You can move, or remove it, as needed.
-        Me.FamiliaProductoTableAdapter.Fill(Me.DeliveryDataSet.FamiliaProducto)
+
         Me.btn_modificar.Enabled = False
         Me.btn_eliminar.Enabled = False
-
+        cargaconbo()
         Me.uic_Familia.SelectedIndex = -1
         CargarGrilla()
 
         Me.btn_grabar.Enabled = True
         Me.btn_modificar.Enabled = False
         Me.btn_eliminar.Enabled = False
+    End Sub
+    Private Sub cargaconbo()
+        Dim neg As New Combos
+        Try
+            Me.uic_Familia.DataSource = neg.getFamilia
+            Me.uic_Familia.DisplayMember = "nombre"
+            Me.uic_Familia.ValueMember = "id"
+        Catch ex As Exception
+        End Try
     End Sub
     Private Sub CargarGrilla()
         Dim Neg As New ProyectoNegocio.Productos
@@ -227,7 +236,7 @@ Public Class Productos
         Me.btn_grabar.Enabled = True
         Me.btn_modificar.Enabled = False
         Me.btn_eliminar.Enabled = False
-
+        cargaconbo()
         CargarGrilla()
     End Sub
 

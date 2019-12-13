@@ -1036,11 +1036,7 @@ Partial Public Class dts_Ventas
 
         Private columnefectivo As Global.System.Data.DataColumn
 
-        Private columnFamilia As Global.System.Data.DataColumn
-
         Private columnusuario As Global.System.Data.DataColumn
-
-        Private columnProducto As Global.System.Data.DataColumn
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
@@ -1119,25 +1115,9 @@ Partial Public Class dts_Ventas
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public ReadOnly Property FamiliaColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnFamilia
-            End Get
-        End Property
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public ReadOnly Property usuarioColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnusuario
-            End Get
-        End Property
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public ReadOnly Property ProductoColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnProducto
             End Get
         End Property
 
@@ -1178,9 +1158,9 @@ Partial Public Class dts_Ventas
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Overloads Function AddRPT_FormaPagoRow(ByVal Id_doc As Long, ByVal forma_pago As String, ByVal fecha_emision As Date, ByVal total As Long, ByVal efectivo As Long, ByVal Familia As String, ByVal usuario As String, ByVal Producto As String) As RPT_FormaPagoRow
+        Public Overloads Function AddRPT_FormaPagoRow(ByVal Id_doc As Long, ByVal forma_pago As String, ByVal fecha_emision As Date, ByVal total As Long, ByVal efectivo As Long, ByVal usuario As String) As RPT_FormaPagoRow
             Dim rowRPT_FormaPagoRow As RPT_FormaPagoRow = CType(Me.NewRow, RPT_FormaPagoRow)
-            Dim columnValuesArray() As Object = New Object() {Id_doc, forma_pago, fecha_emision, total, efectivo, Familia, usuario, Producto}
+            Dim columnValuesArray() As Object = New Object() {Id_doc, forma_pago, fecha_emision, total, efectivo, usuario}
             rowRPT_FormaPagoRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowRPT_FormaPagoRow)
             Return rowRPT_FormaPagoRow
@@ -1208,9 +1188,7 @@ Partial Public Class dts_Ventas
             Me.columnfecha_emision = MyBase.Columns("fecha_emision")
             Me.columntotal = MyBase.Columns("total")
             Me.columnefectivo = MyBase.Columns("efectivo")
-            Me.columnFamilia = MyBase.Columns("Familia")
             Me.columnusuario = MyBase.Columns("usuario")
-            Me.columnProducto = MyBase.Columns("Producto")
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -1226,12 +1204,8 @@ Partial Public Class dts_Ventas
             MyBase.Columns.Add(Me.columntotal)
             Me.columnefectivo = New Global.System.Data.DataColumn("efectivo", GetType(Long), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnefectivo)
-            Me.columnFamilia = New Global.System.Data.DataColumn("Familia", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnFamilia)
             Me.columnusuario = New Global.System.Data.DataColumn("usuario", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnusuario)
-            Me.columnProducto = New Global.System.Data.DataColumn("Producto", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnProducto)
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -1890,21 +1864,6 @@ Partial Public Class dts_Ventas
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Property Familia() As String
-            Get
-                Try
-                    Return CType(Me(Me.tableRPT_FormaPago.FamiliaColumn), String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Familia' in table 'RPT_FormaPago' is DBNull.", e)
-                End Try
-            End Get
-            Set(value As String)
-                Me(Me.tableRPT_FormaPago.FamiliaColumn) = value
-            End Set
-        End Property
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Property usuario() As String
             Get
                 Try
@@ -1915,21 +1874,6 @@ Partial Public Class dts_Ventas
             End Get
             Set(value As String)
                 Me(Me.tableRPT_FormaPago.usuarioColumn) = value
-            End Set
-        End Property
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Property Producto() As String
-            Get
-                Try
-                    Return CType(Me(Me.tableRPT_FormaPago.ProductoColumn), String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'Producto' in table 'RPT_FormaPago' is DBNull.", e)
-                End Try
-            End Get
-            Set(value As String)
-                Me(Me.tableRPT_FormaPago.ProductoColumn) = value
             End Set
         End Property
 
@@ -1995,18 +1939,6 @@ Partial Public Class dts_Ventas
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Function IsFamiliaNull() As Boolean
-            Return Me.IsNull(Me.tableRPT_FormaPago.FamiliaColumn)
-        End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Sub SetFamiliaNull()
-            Me(Me.tableRPT_FormaPago.FamiliaColumn) = Global.System.Convert.DBNull
-        End Sub
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Function IsusuarioNull() As Boolean
             Return Me.IsNull(Me.tableRPT_FormaPago.usuarioColumn)
         End Function
@@ -2015,18 +1947,6 @@ Partial Public Class dts_Ventas
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Sub SetusuarioNull()
             Me(Me.tableRPT_FormaPago.usuarioColumn) = Global.System.Convert.DBNull
-        End Sub
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Function IsProductoNull() As Boolean
-            Return Me.IsNull(Me.tableRPT_FormaPago.ProductoColumn)
-        End Function
-
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Sub SetProductoNull()
-            Me(Me.tableRPT_FormaPago.ProductoColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
 
