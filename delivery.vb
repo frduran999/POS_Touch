@@ -68,7 +68,12 @@ Public Class delivery
 
 
     Private Sub ToolStripButton5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripButton5.Click
-        Application.Exit()
+        'Me.Hide()
+        'Try
+        '    LoginForm1.Show()
+        'Catch ex As Exception
+        'End Try
+
     End Sub
 
     Private Sub ToolStripButton4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)

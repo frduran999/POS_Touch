@@ -24,22 +24,13 @@ Partial Class Form1
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Desc = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.id_productoGrid = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Eliminar = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.sumar = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.restar = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.txt_vuelto = New System.Windows.Forms.TextBox()
         Me.txt_efectivo = New System.Windows.Forms.TextBox()
         Me.txt_Total = New System.Windows.Forms.TextBox()
@@ -69,6 +60,15 @@ Partial Class Form1
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.uic_Observacion = New System.Windows.Forms.TextBox()
+        Me.codigo = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.cantidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Desc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.precio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id_productoGrid = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Eliminar = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.sumar = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.restar = New System.Windows.Forms.DataGridViewButtonColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FormapagoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FormaPago_dateset, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -152,104 +152,28 @@ Partial Class Form1
         '
         Me.DataGridView1.AllowUserToAddRows = False
         Me.DataGridView1.AllowUserToDeleteRows = False
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridView1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.DataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(136, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(220, Byte), Integer))
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DataGridView1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.codigo, Me.cantidad, Me.Desc, Me.precio, Me.Column3, Me.id_productoGrid, Me.Eliminar, Me.sumar, Me.restar})
         Me.DataGridView1.Location = New System.Drawing.Point(7, 284)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersVisible = False
-        Me.DataGridView1.Size = New System.Drawing.Size(456, 147)
+        Me.DataGridView1.RowTemplate.Height = 40
+        Me.DataGridView1.Size = New System.Drawing.Size(456, 148)
         Me.DataGridView1.TabIndex = 0
-        '
-        'codigo
-        '
-        Me.codigo.HeaderText = "codigo"
-        Me.codigo.Name = "codigo"
-        Me.codigo.ReadOnly = True
-        Me.codigo.Visible = False
-        Me.codigo.Width = 50
-        '
-        'cantidad
-        '
-        Me.cantidad.HeaderText = "Cant."
-        Me.cantidad.Name = "cantidad"
-        Me.cantidad.ReadOnly = True
-        Me.cantidad.Width = 50
-        '
-        'Desc
-        '
-        Me.Desc.HeaderText = "Descripcion"
-        Me.Desc.Name = "Desc"
-        Me.Desc.ReadOnly = True
-        Me.Desc.Width = 140
-        '
-        'precio
-        '
-        Me.precio.HeaderText = "Precio"
-        Me.precio.Name = "precio"
-        Me.precio.ReadOnly = True
-        Me.precio.Width = 70
-        '
-        'Column3
-        '
-        Me.Column3.HeaderText = "Valor"
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        Me.Column3.Width = 70
-        '
-        'id_productoGrid
-        '
-        Me.id_productoGrid.HeaderText = "idprod"
-        Me.id_productoGrid.Name = "id_productoGrid"
-        Me.id_productoGrid.ReadOnly = True
-        Me.id_productoGrid.Visible = False
-        '
-        'Eliminar
-        '
-        Me.Eliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
-        Me.Eliminar.HeaderText = "Eliminar"
-        Me.Eliminar.Name = "Eliminar"
-        Me.Eliminar.ReadOnly = True
-        Me.Eliminar.Text = "Eliminar"
-        Me.Eliminar.UseColumnTextForButtonValue = True
-        Me.Eliminar.Width = 67
-        '
-        'sumar
-        '
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.sumar.DefaultCellStyle = DataGridViewCellStyle7
-        Me.sumar.HeaderText = "+"
-        Me.sumar.Name = "sumar"
-        Me.sumar.ReadOnly = True
-        Me.sumar.Text = "+"
-        Me.sumar.UseColumnTextForButtonValue = True
-        Me.sumar.Width = 30
-        '
-        'restar
-        '
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.restar.DefaultCellStyle = DataGridViewCellStyle8
-        Me.restar.HeaderText = "-"
-        Me.restar.Name = "restar"
-        Me.restar.ReadOnly = True
-        Me.restar.Text = "-"
-        Me.restar.UseColumnTextForButtonValue = True
-        Me.restar.Width = 30
         '
         'txt_vuelto
         '
@@ -378,6 +302,7 @@ Partial Class Form1
         Me.Label1.TabIndex = 16
         Me.Label1.Text = "CANTIDAD"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Label1.Visible = False
         '
         'txt_cantidad
         '
@@ -386,6 +311,7 @@ Partial Class Form1
         Me.txt_cantidad.Name = "txt_cantidad"
         Me.txt_cantidad.Size = New System.Drawing.Size(23, 20)
         Me.txt_cantidad.TabIndex = 17
+        Me.txt_cantidad.Visible = False
         '
         'Forma_pagoTableAdapter
         '
@@ -536,7 +462,83 @@ Partial Class Form1
         Me.uic_Observacion.Name = "uic_Observacion"
         Me.uic_Observacion.Size = New System.Drawing.Size(222, 64)
         Me.uic_Observacion.TabIndex = 32
-        Me.uic_Observacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'codigo
+        '
+        Me.codigo.HeaderText = "codigo"
+        Me.codigo.Name = "codigo"
+        Me.codigo.ReadOnly = True
+        Me.codigo.Visible = False
+        Me.codigo.Width = 50
+        '
+        'cantidad
+        '
+        Me.cantidad.HeaderText = "Cant."
+        Me.cantidad.Name = "cantidad"
+        Me.cantidad.ReadOnly = True
+        Me.cantidad.Width = 50
+        '
+        'Desc
+        '
+        Me.Desc.HeaderText = "Descripcion"
+        Me.Desc.Name = "Desc"
+        Me.Desc.ReadOnly = True
+        Me.Desc.Width = 140
+        '
+        'precio
+        '
+        Me.precio.HeaderText = "Precio"
+        Me.precio.Name = "precio"
+        Me.precio.ReadOnly = True
+        Me.precio.Width = 70
+        '
+        'Column3
+        '
+        Me.Column3.HeaderText = "Valor"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        Me.Column3.Width = 70
+        '
+        'id_productoGrid
+        '
+        Me.id_productoGrid.HeaderText = "idprod"
+        Me.id_productoGrid.Name = "id_productoGrid"
+        Me.id_productoGrid.ReadOnly = True
+        Me.id_productoGrid.Visible = False
+        '
+        'Eliminar
+        '
+        Me.Eliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader
+        Me.Eliminar.HeaderText = "Eliminar"
+        Me.Eliminar.Name = "Eliminar"
+        Me.Eliminar.ReadOnly = True
+        Me.Eliminar.Text = "Eliminar"
+        Me.Eliminar.UseColumnTextForButtonValue = True
+        Me.Eliminar.Width = 67
+        '
+        'sumar
+        '
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.sumar.DefaultCellStyle = DataGridViewCellStyle3
+        Me.sumar.HeaderText = "+"
+        Me.sumar.Name = "sumar"
+        Me.sumar.ReadOnly = True
+        Me.sumar.Text = "+"
+        Me.sumar.UseColumnTextForButtonValue = True
+        Me.sumar.Width = 30
+        '
+        'restar
+        '
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.restar.DefaultCellStyle = DataGridViewCellStyle4
+        Me.restar.HeaderText = "-"
+        Me.restar.Name = "restar"
+        Me.restar.ReadOnly = True
+        Me.restar.Text = "-"
+        Me.restar.UseColumnTextForButtonValue = True
+        Me.restar.Width = 30
         '
         'Form1
         '
@@ -612,6 +614,8 @@ Partial Class Form1
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents uic_admCaja As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents uic_Observacion As System.Windows.Forms.TextBox
     Friend WithEvents codigo As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents cantidad As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Desc As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -621,7 +625,5 @@ Partial Class Form1
     Friend WithEvents Eliminar As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents sumar As System.Windows.Forms.DataGridViewButtonColumn
     Friend WithEvents restar As System.Windows.Forms.DataGridViewButtonColumn
-    Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents uic_Observacion As System.Windows.Forms.TextBox
 
 End Class

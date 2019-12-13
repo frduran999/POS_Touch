@@ -10,6 +10,8 @@ Public Class FamiliaProducto
         Lista_impresoras = obc_impresora.lista_impresoras
         cbxImpresora.Items.Clear()
         cbxImpresora.Items.AddRange(Lista_impresoras.ToArray)
+        Me.btn_modificar.Enabled = False
+        Me.btn_eliminar.Enabled = False
         Try
             cbxImpresora.SelectedValue = 0
         Catch ex As Exception
@@ -101,8 +103,6 @@ Public Class FamiliaProducto
         Else
             Me.RadGridView1.DataSource = Nothing
         End If
-
-        Me.FamiliaProductoTableAdapter.Fill(Me.DeliveryDataSet.FamiliaProducto)
     End Sub
     Private Sub ConfiguraGrilla()
         Me.RadGridView1.Columns("CodigoFamilia").IsVisible = False
@@ -131,12 +131,25 @@ Public Class FamiliaProducto
     Private Sub RadGridView1_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles RadGridView1.MouseDoubleClick
         Try
             Linea = Me.RadGridView1.Rows.IndexOf(Me.RadGridView1.CurrentRow)
-            Me.uic_CodigoFamilia.Text = Me.RadGridView1.Rows(Linea).Cells(0).Value
-            Me.uic_FamiliaProducto.Text = Me.RadGridView1.Rows(Linea).Cells(1).Value
-            Me.uic_RutaImagen.Text = Me.RadGridView1.Rows(Linea).Cells(2).Value
-            Me.cbxImpresora.Text = Me.RadGridView1.Rows(Linea).Cells(3).Value
-            Me.btn_modificar.Enabled = True
-            Me.btn_grabar.Enabled = False
+            If Me.RadGridView1.Rows(Linea).Cells(1).Value <> "PROMOCION" Then
+                Me.uic_CodigoFamilia.Text = Me.RadGridView1.Rows(Linea).Cells(0).Value
+                Me.uic_FamiliaProducto.Text = Me.RadGridView1.Rows(Linea).Cells(1).Value
+                Me.uic_RutaImagen.Text = Me.RadGridView1.Rows(Linea).Cells(2).Value
+                Me.cbxImpresora.Text = Me.RadGridView1.Rows(Linea).Cells(3).Value
+                Me.btn_modificar.Enabled = True
+                Me.btn_eliminar.Enabled = True
+                Me.btn_grabar.Enabled = False
+            Else
+                Telerik.WinControls.RadMessageBox.Show("No se puede modificar familia promocion", "Familia")
+                Me.uic_CodigoFamilia.Text = ""
+                Me.uic_FamiliaProducto.Text = ""
+                Me.uic_RutaImagen.Text = ""
+                Me.cbxImpresora.Text = ""
+                Me.btn_modificar.Enabled = False
+                Me.btn_eliminar.Enabled = False
+                Me.btn_grabar.Enabled = True
+            End If
+            
         Catch ex As Exception
         End Try
     End Sub
@@ -266,4 +279,8 @@ Public Class FamiliaProducto
         End Try
         Return rtnvalue
     End Function
+
+    Private Sub RadGridView1_Click(sender As Object, e As EventArgs) Handles RadGridView1.Click
+
+    End Sub
 End Class
