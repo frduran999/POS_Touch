@@ -23,14 +23,14 @@ Partial Class Promocion
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim GridViewTextBoxColumn31 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn32 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn33 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn34 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewTextBoxColumn35 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
-        Dim GridViewCommandColumn7 As Telerik.WinControls.UI.GridViewCommandColumn = New Telerik.WinControls.UI.GridViewCommandColumn()
-        Dim TableViewDefinition13 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
-        Dim TableViewDefinition14 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim GridViewTextBoxColumn1 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn2 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn3 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn4 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewTextBoxColumn5 As Telerik.WinControls.UI.GridViewTextBoxColumn = New Telerik.WinControls.UI.GridViewTextBoxColumn()
+        Dim GridViewCommandColumn1 As Telerik.WinControls.UI.GridViewCommandColumn = New Telerik.WinControls.UI.GridViewCommandColumn()
+        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.uic_Activo = New Telerik.WinControls.UI.RadCheckBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -171,34 +171,34 @@ Partial Class Promocion
         '
         Me.GridOferta.MasterTemplate.AllowAddNewRow = False
         Me.GridOferta.MasterTemplate.AllowColumnReorder = False
-        GridViewTextBoxColumn31.EnableExpressionEditor = False
-        GridViewTextBoxColumn31.HeaderText = "IdProducto"
-        GridViewTextBoxColumn31.IsVisible = False
-        GridViewTextBoxColumn31.Name = "IdProducto"
-        GridViewTextBoxColumn31.Width = 63
-        GridViewTextBoxColumn32.EnableExpressionEditor = False
-        GridViewTextBoxColumn32.HeaderText = "Producto"
-        GridViewTextBoxColumn32.Name = "Producto"
-        GridViewTextBoxColumn32.Width = 190
-        GridViewTextBoxColumn33.EnableExpressionEditor = False
-        GridViewTextBoxColumn33.HeaderText = "Cantidad"
-        GridViewTextBoxColumn33.Name = "Cantidad"
-        GridViewTextBoxColumn33.Width = 80
-        GridViewTextBoxColumn34.EnableExpressionEditor = False
-        GridViewTextBoxColumn34.HeaderText = "Precio"
-        GridViewTextBoxColumn34.IsVisible = False
-        GridViewTextBoxColumn34.Name = "Precio"
-        GridViewTextBoxColumn35.EnableExpressionEditor = False
-        GridViewTextBoxColumn35.HeaderText = "LineaOferta"
-        GridViewTextBoxColumn35.IsVisible = False
-        GridViewTextBoxColumn35.Name = "LineaOferta"
-        GridViewTextBoxColumn35.Width = 47
-        GridViewCommandColumn7.EnableExpressionEditor = False
-        GridViewCommandColumn7.HeaderText = "Eliminar"
-        GridViewCommandColumn7.Name = "Eliminar"
-        GridViewCommandColumn7.Width = 80
-        Me.GridOferta.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn31, GridViewTextBoxColumn32, GridViewTextBoxColumn33, GridViewTextBoxColumn34, GridViewTextBoxColumn35, GridViewCommandColumn7})
-        Me.GridOferta.MasterTemplate.ViewDefinition = TableViewDefinition13
+        GridViewTextBoxColumn1.EnableExpressionEditor = False
+        GridViewTextBoxColumn1.HeaderText = "IdProducto"
+        GridViewTextBoxColumn1.IsVisible = False
+        GridViewTextBoxColumn1.Name = "IdProducto"
+        GridViewTextBoxColumn1.Width = 63
+        GridViewTextBoxColumn2.EnableExpressionEditor = False
+        GridViewTextBoxColumn2.HeaderText = "Producto"
+        GridViewTextBoxColumn2.Name = "Producto"
+        GridViewTextBoxColumn2.Width = 190
+        GridViewTextBoxColumn3.EnableExpressionEditor = False
+        GridViewTextBoxColumn3.HeaderText = "Cantidad"
+        GridViewTextBoxColumn3.Name = "Cantidad"
+        GridViewTextBoxColumn3.Width = 80
+        GridViewTextBoxColumn4.EnableExpressionEditor = False
+        GridViewTextBoxColumn4.HeaderText = "Precio"
+        GridViewTextBoxColumn4.IsVisible = False
+        GridViewTextBoxColumn4.Name = "Precio"
+        GridViewTextBoxColumn5.EnableExpressionEditor = False
+        GridViewTextBoxColumn5.HeaderText = "LineaOferta"
+        GridViewTextBoxColumn5.IsVisible = False
+        GridViewTextBoxColumn5.Name = "LineaOferta"
+        GridViewTextBoxColumn5.Width = 47
+        GridViewCommandColumn1.EnableExpressionEditor = False
+        GridViewCommandColumn1.HeaderText = "Eliminar"
+        GridViewCommandColumn1.Name = "Eliminar"
+        GridViewCommandColumn1.Width = 80
+        Me.GridOferta.MasterTemplate.Columns.AddRange(New Telerik.WinControls.UI.GridViewDataColumn() {GridViewTextBoxColumn1, GridViewTextBoxColumn2, GridViewTextBoxColumn3, GridViewTextBoxColumn4, GridViewTextBoxColumn5, GridViewCommandColumn1})
+        Me.GridOferta.MasterTemplate.ViewDefinition = TableViewDefinition1
         Me.GridOferta.Name = "GridOferta"
         Me.GridOferta.ReadOnly = True
         Me.GridOferta.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -246,7 +246,6 @@ Partial Class Promocion
         Me.btnEliminar.Text = "RadButton3"
         Me.btnEliminar.ThemeName = "Office2010Black"
         Me.ToolTip1.SetToolTip(Me.btnEliminar, "Eliminar Oferta")
-        Me.btnEliminar.Visible = False
         '
         'btnGrabar
         '
@@ -412,7 +411,7 @@ Partial Class Promocion
         '
         Me.GridProductos.MasterTemplate.AllowAddNewRow = False
         Me.GridProductos.MasterTemplate.AllowColumnReorder = False
-        Me.GridProductos.MasterTemplate.ViewDefinition = TableViewDefinition14
+        Me.GridProductos.MasterTemplate.ViewDefinition = TableViewDefinition2
         Me.GridProductos.Name = "GridProductos"
         Me.GridProductos.ReadOnly = True
         Me.GridProductos.RightToLeft = System.Windows.Forms.RightToLeft.No

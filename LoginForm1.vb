@@ -16,6 +16,7 @@ Public Class LoginForm1
         Dim clave As String
         Dim Perfil As Integer
         Dim IdUsuario As Integer
+          Dim Neg As New ProyectoNegocio.AdminCaja
         Try
             IdUsuario = DeliveryDataSet1.Tables("usuarios").Rows(Me.cbo_usuario.SelectedIndex).Item("id")
             Perfil = DeliveryDataSet1.Tables("usuarios").Rows(Me.cbo_usuario.SelectedIndex).Item("Perfil_Id")
@@ -23,36 +24,42 @@ Public Class LoginForm1
             If clave <> Me.PasswordTextBox.Text Then
                 ErrorProvider1.SetError(Me.PasswordTextBox, "Clave no valida")
             Else
-                Select Case (Perfil)
-                    Case 1
-                        Dim frm As New delivery
-                        frm.es_supervisor = True
-                        frm.IdUsuario = IdUsuario
-                        frm.PerfilUsuario = Perfil
-                        Me.Hide()
-                        frm.ShowDialog()
-                    Case 2
-                        delivery.es_supervisor = False
-                        Me.Hide()
-                        Dim frm As New Form1
-                        Dim frmMenu As New delivery
-                        frm.Usuario = IdUsuario
-                        frm.ShowDialog()
-                        frm.Hide()
-                        frmMenu.IdUsuario = IdUsuario
-                        frmMenu.PerfilUsuario = Perfil
-                        frmMenu.ShowDialog()
-                    Case 4
-                        Me.Hide()
-                        Dim frm As New FrmCaja
-                        Dim frmMenu As New delivery
-                        frm.IdUsuario = IdUsuario
-                        frm.ShowDialog()
-                        frm.Hide()
-                        frmMenu.IdUsuario = IdUsuario
-                        frmMenu.PerfilUsuario = Perfil
-                        frmMenu.ShowDialog()
-                End Select
+                Dim vresp As String = Neg.ValidaCaja(IdUsuario)
+                If vresp = "OK" Then
+                    Telerik.WinControls.RadMessageBox.Show(Me, "Usuario Tiene caja Abierta", "Alerta")
+                    Me.ShowDialog()
+                Else
+                    Select Case (Perfil)
+                        Case 1
+                            Dim frm As New delivery
+                            frm.es_supervisor = True
+                            frm.IdUsuario = IdUsuario
+                            frm.PerfilUsuario = Perfil
+                            Me.Hide()
+                            frm.ShowDialog()
+                        Case 2
+                            delivery.es_supervisor = False
+                            Me.Hide()
+                            Dim frm As New Form1
+                            Dim frmMenu As New delivery
+                            frm.Usuario = IdUsuario
+                            frm.ShowDialog()
+                            frm.Hide()
+                            frmMenu.IdUsuario = IdUsuario
+                            frmMenu.PerfilUsuario = Perfil
+                            frmMenu.ShowDialog()
+                        Case 4
+                            Me.Hide()
+                            Dim frm As New FrmCaja
+                            Dim frmMenu As New delivery
+                            frm.IdUsuario = IdUsuario
+                            frm.ShowDialog()
+                            frm.Hide()
+                            frmMenu.IdUsuario = IdUsuario
+                            frmMenu.PerfilUsuario = Perfil
+                            frmMenu.ShowDialog()
+                    End Select
+                End If
                 Me.Hide()
             End If
         Catch ex As Exception

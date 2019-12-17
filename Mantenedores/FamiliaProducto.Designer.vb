@@ -59,7 +59,6 @@ Partial Class FamiliaProducto
         Me.uic_CodigoFamilia.Name = "uic_CodigoFamilia"
         Me.uic_CodigoFamilia.Size = New System.Drawing.Size(46, 20)
         Me.uic_CodigoFamilia.TabIndex = 0
-        Me.uic_CodigoFamilia.Visible = False
         '
         'Label1
         '

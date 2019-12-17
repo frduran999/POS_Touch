@@ -6,7 +6,23 @@ delevery
 </name>
 </assembly>
 <members>
-<member name="T:delevery.dts_Caja.cabeceraDataTable">
+<member name="T:delevery.dtsVentas.RPT_VentasXUsuarioDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:delevery.dtsVentas.RPT_VentasXUsuarioRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:delevery.dtsVentas.RPT_VentasXUsuarioRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:delevery.dtsVentas">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:delevery.dts_Caja.cabeceraDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>

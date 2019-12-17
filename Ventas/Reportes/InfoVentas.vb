@@ -40,17 +40,18 @@ Public Class InfoVentas
     Private Sub Cargar()
         Me.Cursor = Cursors.WaitCursor
         Try
-            Dim Reporte As New RPT_Ventas_X_Usuario
+            'Dim Reporte As New RPT_Ventas_X_Usuario
+            Dim Reporte As New RPT_Ventas_mini
             Dim Param As New ParameterValues
             Dim myDiscreteValue As New ParameterDiscreteValue
-            Dim data As New dts_Ventas
+            Dim data As New dtsVentas
             Dim Neg As New Reporte
             Dim dt As New DataTable
             dt = Neg.RPT_Ventas_X_Usuario(FechaIni, FechaFin, Usuario)
             If dt.Rows.Count > 0 Then
                 For Each item As DataRow In dt.Rows
                     Try
-                        data.RPT_Ventas_X_Usuario.Rows.Add(item(0), item(1), item(2), item(3), item(4), item(5), item(6))
+                        data.RPT_VentasXUsuario.Rows.Add(item(0), item(1), item(2), item(3), item(4), item(5), item(6), item(7), item(8))
                     Catch ex As Exception
                     End Try
                 Next

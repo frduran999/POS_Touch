@@ -131,25 +131,25 @@ Public Class FamiliaProducto
     Private Sub RadGridView1_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles RadGridView1.MouseDoubleClick
         Try
             Linea = Me.RadGridView1.Rows.IndexOf(Me.RadGridView1.CurrentRow)
-            If Me.RadGridView1.Rows(Linea).Cells(1).Value <> "PROMOCION" Then
-                Me.uic_CodigoFamilia.Text = Me.RadGridView1.Rows(Linea).Cells(0).Value
-                Me.uic_FamiliaProducto.Text = Me.RadGridView1.Rows(Linea).Cells(1).Value
-                Me.uic_RutaImagen.Text = Me.RadGridView1.Rows(Linea).Cells(2).Value
-                Me.cbxImpresora.Text = Me.RadGridView1.Rows(Linea).Cells(3).Value
-                Me.btn_modificar.Enabled = True
-                Me.btn_eliminar.Enabled = True
-                Me.btn_grabar.Enabled = False
-            Else
-                Telerik.WinControls.RadMessageBox.Show("No se puede modificar familia promocion", "Familia")
-                Me.uic_CodigoFamilia.Text = ""
-                Me.uic_FamiliaProducto.Text = ""
-                Me.uic_RutaImagen.Text = ""
-                Me.cbxImpresora.Text = ""
-                Me.btn_modificar.Enabled = False
-                Me.btn_eliminar.Enabled = False
-                Me.btn_grabar.Enabled = True
-            End If
-            
+            'If Me.RadGridView1.Rows(Linea).Cells(1).Value <> "PROMOCION" Then
+            Me.uic_CodigoFamilia.Text = Me.RadGridView1.Rows(Linea).Cells(0).Value
+            Me.uic_FamiliaProducto.Text = Me.RadGridView1.Rows(Linea).Cells(1).Value
+            Me.uic_RutaImagen.Text = Me.RadGridView1.Rows(Linea).Cells(2).Value
+            Me.cbxImpresora.Text = Me.RadGridView1.Rows(Linea).Cells(3).Value
+            Me.btn_modificar.Enabled = True
+            Me.btn_eliminar.Enabled = True
+            Me.btn_grabar.Enabled = False
+            'Else
+            'Telerik.WinControls.RadMessageBox.Show("No se puede modificar familia promocion", "Familia")
+            'Me.uic_CodigoFamilia.Text = ""
+            'Me.uic_FamiliaProducto.Text = ""
+            'Me.uic_RutaImagen.Text = ""
+            'Me.cbxImpresora.Text = ""
+            'Me.btn_modificar.Enabled = False
+            'Me.btn_eliminar.Enabled = False
+            'Me.btn_grabar.Enabled = True
+            'End If
+
         Catch ex As Exception
         End Try
     End Sub
