@@ -11,7 +11,7 @@
     <Shape ID="DesignTable:caja" ZOrder="5" X="173" Y="221" Height="162" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="158" />
     <Shape ID="DesignTable:RptTicketFamilia" ZOrder="4" X="666" Y="164" Height="143" Width="163" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="139" />
     <Shape ID="DesignTable:parametros" ZOrder="3" X="0" Y="0" Height="143" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="139" />
-    <Shape ID="DesignTable:Rpt_Boleta" ZOrder="2" X="362" Y="190" Height="219" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="215" />
+    <Shape ID="DesignTable:Rpt_Boleta" ZOrder="2" X="362" Y="190" Height="238" Width="150" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="234" />
   </Shapes>
   <Connectors />
 </DiagramLayout>

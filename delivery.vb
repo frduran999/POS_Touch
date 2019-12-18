@@ -68,12 +68,15 @@ Public Class delivery
 
 
     Private Sub ToolStripButton5_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripButton5.Click
-        'Me.Hide()
-        'Try
-        '    LoginForm1.Show()
-        'Catch ex As Exception
-        'End Try
-
+        Dim Neg As New ProyectoNegocio.AdminCaja
+        Dim vresp As String = Neg.ValidaCaja(IdUsuario)
+        If vresp = "OK" Then
+            Telerik.WinControls.RadMessageBox.Show(Me, "Debe Cerrar Caja", "Alerta")
+        Else
+            Me.Hide()
+            Dim frm As New LoginForm1
+            frm.ShowDialog()
+        End If
     End Sub
 
     Private Sub ToolStripButton4_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
@@ -97,29 +100,28 @@ Public Class delivery
     End Sub
 
     Private Sub DIARIOToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles DIARIOToolStripMenuItem.Click
-        If es_supervisor Then
+        If PerfilUsuario = 4 Or PerfilUsuario = 1 Then
             'diario.ShowDialog()
             Dim frm As New Info_Ventas
-            frm.Show()
+            frm.ShowDialog()
         Else
             MsgBox("Opción disponible solamente para el supervisor", MsgBoxStyle.Information, "Aviso")
         End If
     End Sub
 
     Private Sub ToolStripButton6_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ToolStripButton6.Click
-        If PerfilUsuario = 4 Or PerfilUsuario = 1 Then
-            Dim frmCaja As New FrmCaja
-            frmCaja.IdUsuario = IdUsuario
-            frmCaja.ShowDialog()
-            frmCaja.Hide()
-        Else
-            MsgBox("Opción disponible solamente para el Cajero y Administrador", MsgBoxStyle.Information, "Aviso")
-        End If
-
+        Dim frmCaja As New FrmCaja
+        frmCaja.IdUsuario = IdUsuario
+        frmCaja.ShowDialog()
+        frmCaja.Hide()
     End Sub
 
     Private Sub COMPRASDIARIOToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles COMPRASDIARIOToolStripMenuItem.Click
-        Compras_diario.ShowDialog()
+        If es_supervisor Then
+            Compras_diario.ShowDialog()
+        Else
+            MsgBox("Opción disponible solamente para el supervisor", MsgBoxStyle.Information, "Aviso")
+        End If
     End Sub
 
     Private Sub FamiliaProductosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FamiliaProductosToolStripMenuItem.Click
@@ -132,7 +134,7 @@ Public Class delivery
 
     Private Sub PromocionesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PromocionesToolStripMenuItem.Click
         If es_supervisor Then
-            Promocion.Show()
+            Promocion.ShowDialog()
         Else
             MsgBox("Opción disponible solamente para el supervisor", MsgBoxStyle.Information, "Aviso")
         End If
@@ -179,10 +181,14 @@ Public Class delivery
     End Sub
 
     Private Sub ListadoVentasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListadoVentasToolStripMenuItem.Click
-        Dim frm As New Anula_Imprime
-        frm.Perfil = PerfilUsuario
-        frm.usuario = IdUsuario
-        frm.Show()
+        If es_supervisor Then
+            Dim frm As New Anula_Imprime
+            frm.Perfil = PerfilUsuario
+            frm.usuario = IdUsuario
+            frm.ShowDialog()
+        Else
+            MsgBox("Opción disponible solamente para el supervisor", MsgBoxStyle.Information, "Aviso")
+        End If
     End Sub
 
     Private Sub RespaldoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RespaldoToolStripMenuItem.Click
@@ -202,13 +208,21 @@ Public Class delivery
     End Sub
 
     Private Sub INFORMEPRODUCTOSToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles INFORMEPRODUCTOSToolStripMenuItem.Click
-        Dim frm As New InfoProductos
-        frm.ShowDialog()
+        If es_supervisor Then
+            Dim frm As New InfoProductos
+            frm.ShowDialog()
+        Else
+            MsgBox("Opción disponible solamente para el supervisor", MsgBoxStyle.Information, "Aviso")
+        End If
     End Sub
 
     Private Sub InformeFormaDePagoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InformeFormaDePagoToolStripMenuItem.Click
-        Dim frm As New InfoFpagos
-        frm.showdialog()
+        If es_supervisor Then
+            Dim frm As New InfoFpagos
+            frm.ShowDialog()
+        Else
+            MsgBox("Opción disponible solamente para el supervisor", MsgBoxStyle.Information, "Aviso")
+        End If
     End Sub
 
     Private Sub CierreCajaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CierreCajaToolStripMenuItem.Click

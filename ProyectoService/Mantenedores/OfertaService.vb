@@ -67,4 +67,14 @@
         End If
         Return resp
     End Function
+    Public Function EliminaOferta(IdOferta As Integer) As String
+        Dim resp As String = ""
+        Dim con As New Conexion
+        If con.Conexion Then
+            Dim odac As New dac.myMSSQL(con.con.ConnectionString, 180000)
+            odac.paramQUERY.Add("IdOferta", IdOferta)
+            resp = odac.GetValorNoNull("Oferta_Eliminar")
+        End If
+        Return resp
+    End Function
 End Class

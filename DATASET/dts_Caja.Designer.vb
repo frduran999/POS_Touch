@@ -2076,6 +2076,8 @@ Partial Public Class dts_Caja
 
         Private columnIdUsuario As Global.System.Data.DataColumn
 
+        Private columnEfectivo As Global.System.Data.DataColumn
+
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Sub New()
@@ -2192,6 +2194,14 @@ Partial Public Class dts_Caja
         End Property
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property EfectivoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnEfectivo
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
          Global.System.ComponentModel.Browsable(False)> _
         Public ReadOnly Property Count() As Integer
@@ -2228,9 +2238,9 @@ Partial Public Class dts_Caja
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Overloads Function AddRpt_BoletaRow(ByVal id_doc As Long, ByVal forma_pago As String, ByVal fecha_emision As Date, ByVal total As Long, ByVal descripcion As String, ByVal precio As Long, ByVal totaldetalle As Long, ByVal cantidad As Long, ByVal FolioBoleta As Long, ByVal IdUsuario As Long) As Rpt_BoletaRow
+        Public Overloads Function AddRpt_BoletaRow(ByVal id_doc As Long, ByVal forma_pago As String, ByVal fecha_emision As Date, ByVal total As Long, ByVal descripcion As String, ByVal precio As Long, ByVal totaldetalle As Long, ByVal cantidad As Long, ByVal FolioBoleta As Long, ByVal IdUsuario As Long, ByVal Efectivo As Long) As Rpt_BoletaRow
             Dim rowRpt_BoletaRow As Rpt_BoletaRow = CType(Me.NewRow, Rpt_BoletaRow)
-            Dim columnValuesArray() As Object = New Object() {id_doc, forma_pago, fecha_emision, total, descripcion, precio, totaldetalle, cantidad, FolioBoleta, IdUsuario}
+            Dim columnValuesArray() As Object = New Object() {id_doc, forma_pago, fecha_emision, total, descripcion, precio, totaldetalle, cantidad, FolioBoleta, IdUsuario, Efectivo}
             rowRpt_BoletaRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowRpt_BoletaRow)
             Return rowRpt_BoletaRow
@@ -2263,6 +2273,7 @@ Partial Public Class dts_Caja
             Me.columncantidad = MyBase.Columns("cantidad")
             Me.columnFolioBoleta = MyBase.Columns("FolioBoleta")
             Me.columnIdUsuario = MyBase.Columns("IdUsuario")
+            Me.columnEfectivo = MyBase.Columns("Efectivo")
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -2288,6 +2299,8 @@ Partial Public Class dts_Caja
             MyBase.Columns.Add(Me.columnFolioBoleta)
             Me.columnIdUsuario = New Global.System.Data.DataColumn("IdUsuario", GetType(Long), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnIdUsuario)
+            Me.columnEfectivo = New Global.System.Data.DataColumn("Efectivo", GetType(Long), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnEfectivo)
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -3501,6 +3514,21 @@ Partial Public Class dts_Caja
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property Efectivo() As Long
+            Get
+                Try
+                    Return CType(Me(Me.tableRpt_Boleta.EfectivoColumn), Long)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'Efectivo' in table 'Rpt_Boleta' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Long)
+                Me(Me.tableRpt_Boleta.EfectivoColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Function Isid_docNull() As Boolean
             Return Me.IsNull(Me.tableRpt_Boleta.id_docColumn)
         End Function
@@ -3617,6 +3645,18 @@ Partial Public Class dts_Caja
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Sub SetIdUsuarioNull()
             Me(Me.tableRpt_Boleta.IdUsuarioColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsEfectivoNull() As Boolean
+            Return Me.IsNull(Me.tableRpt_Boleta.EfectivoColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetEfectivoNull()
+            Me(Me.tableRpt_Boleta.EfectivoColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
 

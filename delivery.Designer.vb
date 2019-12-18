@@ -193,6 +193,7 @@ Partial Class delivery
         Me.XxToolStripMenuItem.Name = "XxToolStripMenuItem"
         Me.XxToolStripMenuItem.Size = New System.Drawing.Size(208, 26)
         Me.XxToolStripMenuItem.Text = "Forma Pago"
+        Me.XxToolStripMenuItem.Visible = False
         '
         'FamiliaProductosToolStripMenuItem
         '
