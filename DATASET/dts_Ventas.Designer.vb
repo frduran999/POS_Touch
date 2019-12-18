@@ -367,6 +367,12 @@ Partial Public Class dts_Ventas
 
         Private columnusuario As Global.System.Data.DataColumn
 
+        Private columncantidad As Global.System.Data.DataColumn
+
+        Private columntotallineadetalle As Global.System.Data.DataColumn
+
+        Private columnxx As Global.System.Data.DataColumn
+
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Sub New()
@@ -459,6 +465,30 @@ Partial Public Class dts_Ventas
         End Property
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property cantidadColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columncantidad
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property totallineadetalleColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntotallineadetalle
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public ReadOnly Property xxColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnxx
+            End Get
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"), _
          Global.System.ComponentModel.Browsable(False)> _
         Public ReadOnly Property Count() As Integer
@@ -495,9 +525,9 @@ Partial Public Class dts_Ventas
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
-        Public Overloads Function AddRPT_Ventas_X_UsuarioRow(ByVal id_doc As Long, ByVal forma_pago As String, ByVal fecha_emision As Date, ByVal descripcion As String, ByVal total As Long, ByVal efectivo As Long, ByVal usuario As String) As RPT_Ventas_X_UsuarioRow
+        Public Overloads Function AddRPT_Ventas_X_UsuarioRow(ByVal id_doc As Long, ByVal forma_pago As String, ByVal fecha_emision As Date, ByVal descripcion As String, ByVal total As Long, ByVal efectivo As Long, ByVal usuario As String, ByVal cantidad As Long, ByVal totallineadetalle As Long, ByVal xx As String) As RPT_Ventas_X_UsuarioRow
             Dim rowRPT_Ventas_X_UsuarioRow As RPT_Ventas_X_UsuarioRow = CType(Me.NewRow, RPT_Ventas_X_UsuarioRow)
-            Dim columnValuesArray() As Object = New Object() {id_doc, forma_pago, fecha_emision, descripcion, total, efectivo, usuario}
+            Dim columnValuesArray() As Object = New Object() {id_doc, forma_pago, fecha_emision, descripcion, total, efectivo, usuario, cantidad, totallineadetalle, xx}
             rowRPT_Ventas_X_UsuarioRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowRPT_Ventas_X_UsuarioRow)
             Return rowRPT_Ventas_X_UsuarioRow
@@ -527,6 +557,9 @@ Partial Public Class dts_Ventas
             Me.columntotal = MyBase.Columns("total")
             Me.columnefectivo = MyBase.Columns("efectivo")
             Me.columnusuario = MyBase.Columns("usuario")
+            Me.columncantidad = MyBase.Columns("cantidad")
+            Me.columntotallineadetalle = MyBase.Columns("totallineadetalle")
+            Me.columnxx = MyBase.Columns("xx")
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -546,6 +579,12 @@ Partial Public Class dts_Ventas
             MyBase.Columns.Add(Me.columnefectivo)
             Me.columnusuario = New Global.System.Data.DataColumn("usuario", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnusuario)
+            Me.columncantidad = New Global.System.Data.DataColumn("cantidad", GetType(Long), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columncantidad)
+            Me.columntotallineadetalle = New Global.System.Data.DataColumn("totallineadetalle", GetType(Long), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntotallineadetalle)
+            Me.columnxx = New Global.System.Data.DataColumn("xx", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnxx)
         End Sub
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
@@ -1457,6 +1496,52 @@ Partial Public Class dts_Ventas
 
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property cantidad() As Long
+            Get
+                Try
+                    Return CType(Me(Me.tableRPT_Ventas_X_Usuario.cantidadColumn), Long)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'cantidad' in table 'RPT_Ventas_X_Usuario' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As Long)
+                Me(Me.tableRPT_Ventas_X_Usuario.cantidadColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property totallineadetalle() As Long
+            Get
+                Try
+                    Return CType(Me(Me.tableRPT_Ventas_X_Usuario.totallineadetalleColumn), Long)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'totallineadetalle' in table 'RPT_Ventas_X_Usuario' is DBNul" & _
+                            "l.", e)
+                End Try
+            End Get
+            Set(value As Long)
+                Me(Me.tableRPT_Ventas_X_Usuario.totallineadetalleColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Property xx() As String
+            Get
+                Try
+                    Return CType(Me(Me.tableRPT_Ventas_X_Usuario.xxColumn), String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'xx' in table 'RPT_Ventas_X_Usuario' is DBNull.", e)
+                End Try
+            End Get
+            Set(value As String)
+                Me(Me.tableRPT_Ventas_X_Usuario.xxColumn) = value
+            End Set
+        End Property
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Function Isid_docNull() As Boolean
             Return Me.IsNull(Me.tableRPT_Ventas_X_Usuario.id_docColumn)
         End Function
@@ -1537,6 +1622,42 @@ Partial Public Class dts_Ventas
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
         Public Sub SetusuarioNull()
             Me(Me.tableRPT_Ventas_X_Usuario.usuarioColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IscantidadNull() As Boolean
+            Return Me.IsNull(Me.tableRPT_Ventas_X_Usuario.cantidadColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetcantidadNull()
+            Me(Me.tableRPT_Ventas_X_Usuario.cantidadColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IstotallineadetalleNull() As Boolean
+            Return Me.IsNull(Me.tableRPT_Ventas_X_Usuario.totallineadetalleColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SettotallineadetalleNull()
+            Me(Me.tableRPT_Ventas_X_Usuario.totallineadetalleColumn) = Global.System.Convert.DBNull
+        End Sub
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Function IsxxNull() As Boolean
+            Return Me.IsNull(Me.tableRPT_Ventas_X_Usuario.xxColumn)
+        End Function
+
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(), _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")> _
+        Public Sub SetxxNull()
+            Me(Me.tableRPT_Ventas_X_Usuario.xxColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
 

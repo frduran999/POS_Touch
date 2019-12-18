@@ -4,7 +4,7 @@
         Dim Con As New Conexion
         If Con.Conexion Then
             Try
-                Dim sql As String = "select idOferta Id, NombreOferta nombre from Oferta  order by NombreOferta"
+                Dim sql As String = "select idOferta Id, NombreOferta nombre from Oferta where activo<>3  order by NombreOferta"
                 Con.da = New SqlClient.SqlDataAdapter(sql, Con.con.ConnectionString)
                 Con.da.Fill(dt)
                 Dim row As DataRow = dt.NewRow()

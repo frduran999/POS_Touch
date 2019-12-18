@@ -83,9 +83,9 @@ Partial Class Form1
         Me.FlowLayoutPanel1.AutoScroll = True
         Me.FlowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(252, Byte), Integer), CType(CType(235, Byte), Integer), CType(CType(217, Byte), Integer))
         Me.FlowLayoutPanel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(469, 284)
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(541, 285)
         Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
-        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(634, 248)
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(559, 248)
         Me.FlowLayoutPanel1.TabIndex = 0
         '
         'ImageList1
@@ -172,17 +172,17 @@ Partial Class Form1
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersVisible = False
         Me.DataGridView1.RowTemplate.Height = 40
-        Me.DataGridView1.Size = New System.Drawing.Size(456, 148)
+        Me.DataGridView1.Size = New System.Drawing.Size(528, 107)
         Me.DataGridView1.TabIndex = 0
         '
         'txt_vuelto
         '
         Me.txt_vuelto.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.txt_vuelto.Enabled = False
-        Me.txt_vuelto.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_vuelto.Location = New System.Drawing.Point(323, 503)
+        Me.txt_vuelto.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold)
+        Me.txt_vuelto.Location = New System.Drawing.Point(393, 503)
         Me.txt_vuelto.Name = "txt_vuelto"
-        Me.txt_vuelto.Size = New System.Drawing.Size(91, 21)
+        Me.txt_vuelto.Size = New System.Drawing.Size(122, 24)
         Me.txt_vuelto.TabIndex = 6
         Me.txt_vuelto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -190,10 +190,10 @@ Partial Class Form1
         '
         Me.txt_efectivo.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.txt_efectivo.Enabled = False
-        Me.txt_efectivo.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_efectivo.Location = New System.Drawing.Point(323, 474)
+        Me.txt_efectivo.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold)
+        Me.txt_efectivo.Location = New System.Drawing.Point(393, 464)
         Me.txt_efectivo.Name = "txt_efectivo"
-        Me.txt_efectivo.Size = New System.Drawing.Size(91, 21)
+        Me.txt_efectivo.Size = New System.Drawing.Size(122, 24)
         Me.txt_efectivo.TabIndex = 7
         Me.txt_efectivo.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -201,10 +201,10 @@ Partial Class Form1
         '
         Me.txt_Total.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.txt_Total.Enabled = False
-        Me.txt_Total.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_Total.Location = New System.Drawing.Point(323, 447)
+        Me.txt_Total.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold)
+        Me.txt_Total.Location = New System.Drawing.Point(393, 427)
         Me.txt_Total.Name = "txt_Total"
-        Me.txt_Total.Size = New System.Drawing.Size(91, 21)
+        Me.txt_Total.Size = New System.Drawing.Size(122, 24)
         Me.txt_Total.TabIndex = 8
         Me.txt_Total.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -214,7 +214,7 @@ Partial Class Form1
         Me.cbo_formapago.DataSource = Me.FormapagoBindingSource
         Me.cbo_formapago.DisplayMember = "formapago"
         Me.cbo_formapago.FormattingEnabled = True
-        Me.cbo_formapago.Location = New System.Drawing.Point(423, 438)
+        Me.cbo_formapago.Location = New System.Drawing.Point(401, 393)
         Me.cbo_formapago.Name = "cbo_formapago"
         Me.cbo_formapago.Size = New System.Drawing.Size(21, 21)
         Me.cbo_formapago.TabIndex = 9
@@ -235,8 +235,8 @@ Partial Class Form1
         '
         Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(237, 447)
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold)
+        Me.Label3.Location = New System.Drawing.Point(307, 427)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(80, 23)
         Me.Label3.TabIndex = 12
@@ -247,8 +247,8 @@ Partial Class Form1
         '
         Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(237, 474)
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold)
+        Me.Label4.Location = New System.Drawing.Point(307, 464)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(80, 23)
         Me.Label4.TabIndex = 13
@@ -259,8 +259,8 @@ Partial Class Form1
         '
         Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(237, 503)
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold)
+        Me.Label5.Location = New System.Drawing.Point(307, 503)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(80, 23)
         Me.Label5.TabIndex = 14
@@ -296,7 +296,7 @@ Partial Class Form1
         Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(423, 474)
+        Me.Label1.Location = New System.Drawing.Point(376, 394)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(19, 23)
         Me.Label1.TabIndex = 16
@@ -307,7 +307,7 @@ Partial Class Form1
         'txt_cantidad
         '
         Me.txt_cantidad.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.txt_cantidad.Location = New System.Drawing.Point(419, 505)
+        Me.txt_cantidad.Location = New System.Drawing.Point(347, 394)
         Me.txt_cantidad.Name = "txt_cantidad"
         Me.txt_cantidad.Size = New System.Drawing.Size(23, 20)
         Me.txt_cantidad.TabIndex = 17
@@ -444,10 +444,10 @@ Partial Class Form1
         '
         Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(7, 438)
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Bold)
+        Me.Label2.Location = New System.Drawing.Point(12, 394)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(97, 19)
+        Me.Label2.Size = New System.Drawing.Size(106, 19)
         Me.Label2.TabIndex = 31
         Me.Label2.Text = "Observacion"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -456,11 +456,11 @@ Partial Class Form1
         '
         Me.uic_Observacion.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.uic_Observacion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.uic_Observacion.Location = New System.Drawing.Point(7, 460)
+        Me.uic_Observacion.Location = New System.Drawing.Point(7, 416)
         Me.uic_Observacion.MaxLength = 200
         Me.uic_Observacion.Multiline = True
         Me.uic_Observacion.Name = "uic_Observacion"
-        Me.uic_Observacion.Size = New System.Drawing.Size(222, 64)
+        Me.uic_Observacion.Size = New System.Drawing.Size(294, 117)
         Me.uic_Observacion.TabIndex = 32
         '
         'codigo
@@ -483,21 +483,21 @@ Partial Class Form1
         Me.Desc.HeaderText = "Descripcion"
         Me.Desc.Name = "Desc"
         Me.Desc.ReadOnly = True
-        Me.Desc.Width = 140
+        Me.Desc.Width = 150
         '
         'precio
         '
         Me.precio.HeaderText = "Precio"
         Me.precio.Name = "precio"
         Me.precio.ReadOnly = True
-        Me.precio.Width = 70
+        Me.precio.Width = 80
         '
         'Column3
         '
         Me.Column3.HeaderText = "Valor"
         Me.Column3.Name = "Column3"
         Me.Column3.ReadOnly = True
-        Me.Column3.Width = 70
+        Me.Column3.Width = 80
         '
         'id_productoGrid
         '
@@ -526,7 +526,7 @@ Partial Class Form1
         Me.sumar.ReadOnly = True
         Me.sumar.Text = "+"
         Me.sumar.UseColumnTextForButtonValue = True
-        Me.sumar.Width = 30
+        Me.sumar.Width = 40
         '
         'restar
         '
@@ -538,7 +538,7 @@ Partial Class Form1
         Me.restar.ReadOnly = True
         Me.restar.Text = "-"
         Me.restar.UseColumnTextForButtonValue = True
-        Me.restar.Width = 30
+        Me.restar.Width = 40
         '
         'Form1
         '
@@ -546,7 +546,10 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1222, 563)
         Me.ControlBox = False
+        Me.Controls.Add(Me.txt_cantidad)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.uic_Observacion)
+        Me.Controls.Add(Me.cbo_formapago)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.uic_admCaja)
@@ -557,13 +560,10 @@ Partial Class Form1
         Me.Controls.Add(Me.btn_limpiar)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.FlowLayoutFamilia)
-        Me.Controls.Add(Me.txt_cantidad)
-        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btn_aceptar)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.cbo_formapago)
         Me.Controls.Add(Me.txt_Total)
         Me.Controls.Add(Me.txt_efectivo)
         Me.Controls.Add(Me.txt_vuelto)

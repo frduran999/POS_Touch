@@ -66,7 +66,7 @@ Public Class Rpt_ticket
                 If (dt.Tables(0).Rows.Count > 0) Then
                     For Each item As DataRow In dt.Tables(0).Rows
                         Try
-                            data.Rpt_Boleta.Rows.Add(item(0), item(1), item(2), item(3), item(4), item(5), item(6), item(7), item(8), item(9))
+                            data.Rpt_Boleta.Rows.Add(item(0), item(1), item(2), item(3), item(4), item(5), item(6), item(7), item(8), item(9), item(10))
                         Catch ex As Exception
                             MsgBox(ex.Message & vbCr & ex.StackTrace)
                         End Try
@@ -107,7 +107,7 @@ Public Class Rpt_ticket
                 If (dt.Tables(0).Rows.Count > 0) Then
                     For Each item As DataRow In dt.Tables(0).Rows
                         Try
-                            data.Rpt_Boleta.Rows.Add(item(0), item(1), item(2), item(3), item(4), item(5), item(6), item(7), item(8), item(9))
+                            data.Rpt_Boleta.Rows.Add(item(0), item(1), item(2), item(3), item(4), item(5), item(6), item(7), item(8), item(9), item(10))
                         Catch ex As Exception
                             MsgBox(ex.Message & vbCr & ex.StackTrace)
                         End Try

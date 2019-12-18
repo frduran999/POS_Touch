@@ -33,4 +33,10 @@ Public Class Ofertas
         resp = bsp.BorrarDetalleOferta(IdOferta)
         Return resp
     End Function
+    Public Function EliminaOferta(IdOferta As Integer) As String
+        Dim resp As String = ""
+        Dim bsp As New OfertaService
+        resp = bsp.EliminaOferta(IdOferta)
+        Return resp
+    End Function
 End Class

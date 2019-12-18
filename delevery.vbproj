@@ -133,6 +133,11 @@
     <Compile Include="DATASET\deliveryDataSet1.vb">
       <DependentUpon>deliveryDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DATASET\dtsVentas.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dtsVentas.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DATASET\dts_Caja.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -459,6 +464,12 @@
       <DependentUpon>RPT_VentaProducto.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Ventas\Reportes\RPT_Ventas_mini.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPT_Ventas_mini.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Ventas\Reportes\RPT_Ventas_X_Usuario.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -624,7 +635,11 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ventas\Reportes\RPT_VentaProducto.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>RPT_VentaProducto.vb</LastGenOutput>
+      <LastGenOutput>RPT_VentaProducto1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ventas\Reportes\RPT_Ventas_mini.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPT_Ventas_mini.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventas\Reportes\RPT_Ventas_X_Usuario.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -654,6 +669,17 @@
     </None>
     <None Include="DATASET\deliveryDataSet1.xss">
       <DependentUpon>deliveryDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DATASET\dtsVentas.xsc">
+      <DependentUpon>dtsVentas.xsd</DependentUpon>
+    </None>
+    <None Include="DATASET\dtsVentas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dtsVentas.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="DATASET\dtsVentas.xss">
+      <DependentUpon>dtsVentas.xsd</DependentUpon>
     </None>
     <None Include="DATASET\dts_Caja.xsc">
       <DependentUpon>dts_Caja.xsd</DependentUpon>

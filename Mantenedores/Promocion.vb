@@ -283,4 +283,17 @@ Public Class Promocion
     End Sub
 
     
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        Dim Neg As New ProyectoNegocio.Ofertas
+        Dim IdOFerta As Integer = Me.uic_Oferta.SelectedValue
+        Dim resp As String = ""
+        resp = Neg.EliminaOferta(IdOFerta)
+        If resp = "OK" Then
+            Telerik.WinControls.RadMessageBox.Show("Eliminara registro correctamente", "Elimina oferta")
+            Limpiar()
+            cargacombo()
+        Else
+            Telerik.WinControls.RadMessageBox.Show("A ocurrido un error " & vbCrLf & resp, "Alerta")
+        End If
+    End Sub
 End Class
