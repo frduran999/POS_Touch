@@ -40,8 +40,8 @@ Public Class InfoVentas
     Private Sub Cargar()
         Me.Cursor = Cursors.WaitCursor
         Try
-            'Dim Reporte As New RPT_Ventas_X_Usuario
-            Dim Reporte As New RPT_Ventas_mini
+            Dim Reporte As New RPT_Ventas_X_Usuario
+            'Dim Reporte As New RPT_Ventas_mini
             Dim Param As New ParameterValues
             Dim myDiscreteValue As New ParameterDiscreteValue
             Dim data As New dtsVentas
