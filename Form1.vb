@@ -34,7 +34,8 @@ Public Class Form1
         Dim famili As System.Windows.Forms.Button = sender
         Dim idfamilia As String = sender.name
         'MsgBox(idfamilia)
-        If famili.Text <> "PROMOCION" Then
+        ' If famili.Text <> "PROMOCION" Then
+        If idfamilia <> "23" Then
             Dim productos As DataTable
             Dim sql As String = "SELECT productos.id_producto, productos.descripcion_producto, productos.precio FROM productos INNER JOIN FamiliaProducto ON productos.CodigoFamilia = FamiliaProducto.CodigoFamilia WHERE (productos.CodigoFamilia = '" & idfamilia & "' and productos.Estado = 1)"
             productos = myhelper.ExecuteDataSet(My.Settings.deliveryConnectionString, CommandType.Text, sql, Nothing, 60).Tables(0)
@@ -196,7 +197,7 @@ Public Class Form1
                 Catch ex As Exception
                 End Try
 
-                obcontrol.Controls(0).Text = NFamilia
+                'obcontrol.Controls(0).Text = NFamilia
                 obcontrol.Controls(0).Name = codigoFamilia
                 If dr("FotoNombre").ToString.ToUpper = "SINFOTO.JPG" Then
                     obcontrol.Controls(0).BackgroundImage = My.Resources.SinFoto
