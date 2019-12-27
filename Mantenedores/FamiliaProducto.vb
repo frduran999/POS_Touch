@@ -10,12 +10,14 @@ Public Class FamiliaProducto
         Lista_impresoras = obc_impresora.lista_impresoras
         cbxImpresora.Items.Clear()
         cbxImpresora.Items.AddRange(Lista_impresoras.ToArray)
+        Me.btn_grabar.Enabled = True
         Me.btn_modificar.Enabled = False
         Me.btn_eliminar.Enabled = False
         Try
             cbxImpresora.SelectedValue = 0
         Catch ex As Exception
         End Try
+        Limpiar()
     End Sub
 
     Private Sub FamiliaProducto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -189,8 +191,9 @@ Public Class FamiliaProducto
         Me.uic_FamiliaProducto.Text = ""
         Me.cbxImpresora.Text = ""
         carga_grilla()
-        btn_modificar.Enabled = False
         Me.btn_grabar.Enabled = True
+        Me.btn_modificar.Enabled = False
+        Me.btn_eliminar.Enabled = False
         Me.uic_RutaImagen.Text = ""
         Me.OpenFileDialog1.FileName = Nothing
         Me.OpenFileDialog1.Dispose()
@@ -286,5 +289,9 @@ Public Class FamiliaProducto
 
     Private Sub RadGridView1_Click(sender As Object, e As EventArgs) Handles RadGridView1.Click
 
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Limpiar()
     End Sub
 End Class

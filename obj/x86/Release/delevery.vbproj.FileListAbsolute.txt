@@ -172,3 +172,4 @@ C:\Users\Francisco\Desktop\Programacion\Sistem_Duran\POS\Prueba\POS_Touch\bin\Re
 C:\Users\Francisco\Desktop\Programacion\Sistem_Duran\POS\Prueba\POS_Touch\bin\Release\ProyectoService.pdb
 C:\Users\Francisco\Desktop\Programacion\Sistem_Duran\POS\Prueba\POS_Touch\bin\Release\ProyectoService.xml
 C:\Users\Francisco\Desktop\Programacion\Sistem_Duran\POS\Prueba\POS_Touch\obj\x86\Release\delevery.Rpt_ReporteZ.resources
+D:\Sistem_Duran\POS_Touch\obj\x86\Release\delevery.Rpt_ReporteZ.resources
