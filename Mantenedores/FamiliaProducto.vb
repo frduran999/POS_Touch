@@ -170,15 +170,18 @@ Public Class FamiliaProducto
         resp = neg.ModificarFamilia(Me.uic_CodigoFamilia.Text, Me.uic_FamiliaProducto.Text, Me.cbxImpresora.Text)
         If resp = "OK" Then
             'If Not File.Exists("c:\POS\Imagen\" & Me.uic_CodigoFamilia.Text & ".jpg") Then
-            GrabarFoto(Me.uic_CodigoFamilia.Text)
-            Telerik.WinControls.RadMessageBox.Show(Me, "Registro modificado exitosamente", "Alerta")
-            carga_grilla()
-            Limpiar()
-            'Else
-            '    carga_grilla()
-            'End If
+            If Me.uic_FamiliaProducto.Text <> Me.uic_RutaImagen.Text Then
+                GrabarFoto(Me.uic_CodigoFamilia.Text)
+            End If
+
+        Telerik.WinControls.RadMessageBox.Show(Me, "Registro modificado exitosamente", "Alerta")
+        carga_grilla()
+        Limpiar()
+        'Else
+        '    carga_grilla()
+        'End If
         Else
-            Telerik.WinControls.RadMessageBox.Show(Me, "A ocurrido un error" & vbCrLf & resp, "Alerta")
+        Telerik.WinControls.RadMessageBox.Show(Me, "A ocurrido un error" & vbCrLf & resp, "Alerta")
         End If
     End Sub
     Private Sub Limpiar()
@@ -189,6 +192,7 @@ Public Class FamiliaProducto
         btn_modificar.Enabled = False
         Me.btn_grabar.Enabled = True
         Me.uic_RutaImagen.Text = ""
+        Me.OpenFileDialog1.FileName = Nothing
         Me.OpenFileDialog1.Dispose()
     End Sub
 

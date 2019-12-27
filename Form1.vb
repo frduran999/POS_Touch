@@ -35,6 +35,7 @@ Public Class Form1
         Dim idfamilia As String = sender.name
         'MsgBox(idfamilia)
         ' If famili.Text <> "PROMOCION" Then
+        'If idfamilia <> "23" Then //producci
         If idfamilia <> "23" Then
             Dim productos As DataTable
             Dim sql As String = "SELECT productos.id_producto, productos.descripcion_producto, productos.precio FROM productos INNER JOIN FamiliaProducto ON productos.CodigoFamilia = FamiliaProducto.CodigoFamilia WHERE (productos.CodigoFamilia = '" & idfamilia & "' and productos.Estado = 1)"
@@ -260,6 +261,12 @@ Public Class Form1
         If Me.txt_efectivo.Text = "" Or Me.txt_Total.Text = "0" Then
             MsgBox("Debe Ingresar Monto a Cancelar", vbCritical)
             Exit Sub
+        End If
+
+        If CInt(Me.txt_efectivo.Text) < CInt(Me.txt_Total.Text) Then
+            MsgBox("Debe Ingresar Monto a Cancelar", vbCritical)
+            Exit Sub
+
         End If
 
         Dim dts As New proyectoDTO.ticket

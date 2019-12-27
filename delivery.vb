@@ -243,16 +243,23 @@ Public Class delivery
     End Sub
 
     Private Sub CierreCajaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CierreCajaToolStripMenuItem.Click
+        Dim frm As New Rpt_ReporteZ
+        frm.Fecha = Format(Now, "yyyy-dd-MM")
+        frm.IdUsuario = IdUsuario
+        frm.ShowDialog()
+    End Sub
+
+    Private Sub FolioInternoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FolioInternoToolStripMenuItem.Click
+        Dim frm As New ResetearFolioInterno
+        frm.ShowDialog()
+    End Sub
+
+    Private Sub InformeXToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InformeXToolStripMenuItem.Click
         If PerfilUsuario = 2 Or PerfilUsuario = 1 Then
             Dim frm As New ReporteCierreCaja
             frm.ShowDialog()
         Else
             MsgBox("Opción disponible solamente para el supervisor y vendedor", MsgBoxStyle.Information, "Aviso")
         End If
-    End Sub
-
-    Private Sub FolioInternoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FolioInternoToolStripMenuItem.Click
-        Dim frm As New ResetearFolioInterno
-        frm.ShowDialog()
     End Sub
 End Class
