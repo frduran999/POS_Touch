@@ -90,6 +90,37 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="cajaX" msprop:Generator_TableClassName="cajaXDataTable" msprop:Generator_TableVarName="tablecajaX" msprop:Generator_RowChangedName="cajaXRowChanged" msprop:Generator_TablePropName="cajaX" msprop:Generator_RowDeletingName="cajaXRowDeleting" msprop:Generator_RowChangingName="cajaXRowChanging" msprop:Generator_RowEvHandlerName="cajaXRowChangeEventHandler" msprop:Generator_RowDeletedName="cajaXRowDeleted" msprop:Generator_RowClassName="cajaXRow" msprop:Generator_UserTableName="cajaX" msprop:Generator_RowEvArgName="cajaXRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BoletaInicial" msprop:Generator_ColumnVarNameInTable="columnBoletaInicial" msprop:Generator_ColumnPropNameInRow="BoletaInicial" msprop:Generator_ColumnPropNameInTable="BoletaInicialColumn" msprop:Generator_UserColumnName="BoletaInicial" type="xs:int" minOccurs="0" />
+              <xs:element name="BoletaFinal" msprop:Generator_ColumnVarNameInTable="columnBoletaFinal" msprop:Generator_ColumnPropNameInRow="BoletaFinal" msprop:Generator_ColumnPropNameInTable="BoletaFinalColumn" msprop:Generator_UserColumnName="BoletaFinal" type="xs:int" minOccurs="0" />
+              <xs:element name="VentasDiarias" msprop:Generator_ColumnVarNameInTable="columnVentasDiarias" msprop:Generator_ColumnPropNameInRow="VentasDiarias" msprop:Generator_ColumnPropNameInTable="VentasDiariasColumn" msprop:Generator_UserColumnName="VentasDiarias" type="xs:int" minOccurs="0" />
+              <xs:element name="TotalAcumulado" msprop:Generator_ColumnVarNameInTable="columnTotalAcumulado" msprop:Generator_ColumnPropNameInRow="TotalAcumulado" msprop:Generator_ColumnPropNameInTable="TotalAcumuladoColumn" msprop:Generator_UserColumnName="TotalAcumulado" type="xs:int" minOccurs="0" />
+              <xs:element name="DFEmitidos" msprop:Generator_ColumnVarNameInTable="columnDFEmitidos" msprop:Generator_ColumnPropNameInRow="DFEmitidos" msprop:Generator_ColumnPropNameInTable="DFEmitidosColumn" msprop:Generator_UserColumnName="DFEmitidos" type="xs:int" minOccurs="0" />
+              <xs:element name="TotEfectivo" msprop:Generator_ColumnVarNameInTable="columnTotEfectivo" msprop:Generator_ColumnPropNameInRow="TotEfectivo" msprop:Generator_ColumnPropNameInTable="TotEfectivoColumn" msprop:Generator_UserColumnName="TotEfectivo" type="xs:int" minOccurs="0" />
+              <xs:element name="TotTarjeta" msprop:Generator_ColumnVarNameInTable="columnTotTarjeta" msprop:Generator_ColumnPropNameInRow="TotTarjeta" msprop:Generator_ColumnPropNameInTable="TotTarjetaColumn" msprop:Generator_UserColumnName="TotTarjeta" type="xs:int" minOccurs="0" />
+              <xs:element name="TotDelivery" msprop:Generator_ColumnVarNameInTable="columnTotDelivery" msprop:Generator_ColumnPropNameInRow="TotDelivery" msprop:Generator_ColumnPropNameInTable="TotDeliveryColumn" msprop:Generator_UserColumnName="TotDelivery" type="xs:int" minOccurs="0" />
+              <xs:element name="FechaCierre" msprop:Generator_ColumnVarNameInTable="columnFechaCierre" msprop:Generator_ColumnPropNameInRow="FechaCierre" msprop:Generator_ColumnPropNameInTable="FechaCierreColumn" msprop:Generator_UserColumnName="FechaCierre" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="IdZ" msprop:Generator_ColumnVarNameInTable="columnIdZ" msprop:Generator_ColumnPropNameInRow="IdZ" msprop:Generator_ColumnPropNameInTable="IdZColumn" msprop:Generator_UserColumnName="IdZ" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Rpt_Z" msprop:Generator_TableClassName="Rpt_ZDataTable" msprop:Generator_TableVarName="tableRpt_Z" msprop:Generator_TablePropName="Rpt_Z" msprop:Generator_RowDeletingName="Rpt_ZRowDeleting" msprop:Generator_RowChangingName="Rpt_ZRowChanging" msprop:Generator_RowEvHandlerName="Rpt_ZRowChangeEventHandler" msprop:Generator_RowDeletedName="Rpt_ZRowDeleted" msprop:Generator_UserTableName="Rpt_Z" msprop:Generator_RowChangedName="Rpt_ZRowChanged" msprop:Generator_RowEvArgName="Rpt_ZRowChangeEvent" msprop:Generator_RowClassName="Rpt_ZRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" minOccurs="0" />
+              <xs:element name="Fecha" msprop:Generator_ColumnVarNameInTable="columnFecha" msprop:Generator_ColumnPropNameInRow="Fecha" msprop:Generator_ColumnPropNameInTable="FechaColumn" msprop:Generator_UserColumnName="Fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="BoletaInicial" msprop:Generator_ColumnVarNameInTable="columnBoletaInicial" msprop:Generator_ColumnPropNameInRow="BoletaInicial" msprop:Generator_ColumnPropNameInTable="BoletaInicialColumn" msprop:Generator_UserColumnName="BoletaInicial" type="xs:int" minOccurs="0" />
+              <xs:element name="BoletaFinal" msprop:Generator_ColumnVarNameInTable="columnBoletaFinal" msprop:Generator_ColumnPropNameInRow="BoletaFinal" msprop:Generator_ColumnPropNameInTable="BoletaFinalColumn" msprop:Generator_UserColumnName="BoletaFinal" type="xs:int" minOccurs="0" />
+              <xs:element name="VentasDiarias" msprop:Generator_ColumnVarNameInTable="columnVentasDiarias" msprop:Generator_ColumnPropNameInRow="VentasDiarias" msprop:Generator_ColumnPropNameInTable="VentasDiariasColumn" msprop:Generator_UserColumnName="VentasDiarias" type="xs:int" minOccurs="0" />
+              <xs:element name="TotalAcumulado" msprop:Generator_ColumnVarNameInTable="columnTotalAcumulado" msprop:Generator_ColumnPropNameInRow="TotalAcumulado" msprop:Generator_ColumnPropNameInTable="TotalAcumuladoColumn" msprop:Generator_UserColumnName="TotalAcumulado" type="xs:int" minOccurs="0" />
+              <xs:element name="TotEfectivo" msprop:Generator_ColumnVarNameInTable="columnTotEfectivo" msprop:Generator_ColumnPropNameInRow="TotEfectivo" msprop:Generator_ColumnPropNameInTable="TotEfectivoColumn" msprop:Generator_UserColumnName="TotEfectivo" type="xs:int" minOccurs="0" />
+              <xs:element name="TotTarjeta" msprop:Generator_ColumnVarNameInTable="columnTotTarjeta" msprop:Generator_ColumnPropNameInRow="TotTarjeta" msprop:Generator_ColumnPropNameInTable="TotTarjetaColumn" msprop:Generator_UserColumnName="TotTarjeta" type="xs:int" minOccurs="0" />
+              <xs:element name="TotDelivery" msprop:Generator_ColumnVarNameInTable="columnTotDelivery" msprop:Generator_ColumnPropNameInRow="TotDelivery" msprop:Generator_ColumnPropNameInTable="TotDeliveryColumn" msprop:Generator_UserColumnName="TotDelivery" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>
