@@ -124,6 +124,24 @@
     <Compile Include="Caja\Cierre_Caja.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Caja\Reporte\Rpt_CierreCajaX.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rpt_CierreCajaX.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Caja\Reporte\Rpt_ReporteZ.Designer.vb">
+      <DependentUpon>Rpt_ReporteZ.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Caja\Reporte\Rpt_ReporteZ.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Caja\Reporte\Rpt_Z.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Rpt_Z.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Caja\RetiroCaja.Designer.vb">
       <DependentUpon>RetiroCaja.vb</DependentUpon>
     </Compile>
@@ -452,7 +470,7 @@
     <Compile Include="Ventas\Reportes\Info_Productos.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventas\Reportes\RPT_FormaPago.vb">
+    <Compile Include="ReportesVenta\RPT_FormaPago.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RPT_FormaPago.rpt</DependentUpon>
@@ -486,6 +504,17 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Caja\Cierre_Caja.resx">
       <DependentUpon>Cierre_Caja.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Caja\Reporte\Rpt_CierreCajaX.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Rpt_CierreCajaX.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Caja\Reporte\Rpt_ReporteZ.resx">
+      <DependentUpon>Rpt_ReporteZ.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Caja\Reporte\Rpt_Z.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Rpt_Z.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Caja\RetiroCaja.resx">
       <DependentUpon>RetiroCaja.vb</DependentUpon>
@@ -629,7 +658,7 @@
     <EmbeddedResource Include="Ventas\Reportes\Info_Productos.resx">
       <DependentUpon>Info_Productos.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Ventas\Reportes\RPT_FormaPago.rpt">
+    <EmbeddedResource Include="ReportesVenta\RPT_FormaPago.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>RPT_FormaPago.vb</LastGenOutput>
     </EmbeddedResource>

@@ -32,6 +32,7 @@ Partial Class delivery
         Me.ListadoVentasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.INFORMEPRODUCTOSToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.InformeFormaDePagoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.InformeXToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.CierreCajaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripButton3 = New System.Windows.Forms.ToolStripButton()
         Me.ToolStripDropDownButton2 = New System.Windows.Forms.ToolStripDropDownButton()
@@ -50,7 +51,6 @@ Partial Class delivery
         Me.ToolStripButton5 = New System.Windows.Forms.ToolStripButton()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.uic_versionApp = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.InformeXToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -129,6 +129,12 @@ Partial Class delivery
         Me.InformeFormaDePagoToolStripMenuItem.Name = "InformeFormaDePagoToolStripMenuItem"
         Me.InformeFormaDePagoToolStripMenuItem.Size = New System.Drawing.Size(243, 26)
         Me.InformeFormaDePagoToolStripMenuItem.Text = "Informe Forma de Pago"
+        '
+        'InformeXToolStripMenuItem
+        '
+        Me.InformeXToolStripMenuItem.Name = "InformeXToolStripMenuItem"
+        Me.InformeXToolStripMenuItem.Size = New System.Drawing.Size(243, 26)
+        Me.InformeXToolStripMenuItem.Text = "Informe cierre caja"
         '
         'CierreCajaToolStripMenuItem
         '
@@ -264,12 +270,6 @@ Partial Class delivery
         Me.uic_versionApp.BackColor = System.Drawing.SystemColors.Control
         Me.uic_versionApp.Name = "uic_versionApp"
         Me.uic_versionApp.Size = New System.Drawing.Size(0, 17)
-        '
-        'InformeXToolStripMenuItem
-        '
-        Me.InformeXToolStripMenuItem.Name = "InformeXToolStripMenuItem"
-        Me.InformeXToolStripMenuItem.Size = New System.Drawing.Size(243, 26)
-        Me.InformeXToolStripMenuItem.Text = "Informe X"
         '
         'delivery
         '

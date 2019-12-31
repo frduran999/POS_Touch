@@ -27,6 +27,10 @@ Public Class LoginForm1
                 Dim vresp As String = Neg.ValidaCaja(IdUsuario)
                 If vresp = "OK" Then
                     Telerik.WinControls.RadMessageBox.Show(Me, "Usuario Tiene caja Abierta", "Alerta")
+                    If MessageBox.Show("¿Cerrar Caja?", "Cierre Caja", MessageBoxButtons.OKCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) = DialogResult.OK Then
+                        Neg.CerrarCaja(IdUsuario, "Cierre Caja")
+                        Telerik.WinControls.RadMessageBox.Show(Me, "Cierre con Exito", "Alerta")
+                    End If
                     Me.ShowDialog()
                 Else
                     Select Case (Perfil)

@@ -23,7 +23,7 @@ Partial Class FamiliaProducto
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.uic_CodigoFamilia = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.uic_FamiliaProducto = New System.Windows.Forms.TextBox()
@@ -46,6 +46,7 @@ Partial Class FamiliaProducto
         Me.btn_eliminar = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.cbxImpresora = New System.Windows.Forms.ComboBox()
+        Me.Button2 = New System.Windows.Forms.Button()
         CType(Me.FamiliaProductoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DeliveryDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -55,16 +56,16 @@ Partial Class FamiliaProducto
         '
         'uic_CodigoFamilia
         '
-        Me.uic_CodigoFamilia.Location = New System.Drawing.Point(81, 3)
+        Me.uic_CodigoFamilia.Location = New System.Drawing.Point(59, 5)
         Me.uic_CodigoFamilia.Name = "uic_CodigoFamilia"
-        Me.uic_CodigoFamilia.Size = New System.Drawing.Size(46, 20)
+        Me.uic_CodigoFamilia.Size = New System.Drawing.Size(30, 20)
         Me.uic_CodigoFamilia.TabIndex = 0
         Me.uic_CodigoFamilia.Visible = False
         '
         'Label1
         '
         Me.Label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label1.Location = New System.Drawing.Point(25, 1)
+        Me.Label1.Location = New System.Drawing.Point(12, 3)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(44, 23)
         Me.Label1.TabIndex = 20
@@ -74,7 +75,7 @@ Partial Class FamiliaProducto
         '
         'uic_FamiliaProducto
         '
-        Me.uic_FamiliaProducto.Location = New System.Drawing.Point(81, 22)
+        Me.uic_FamiliaProducto.Location = New System.Drawing.Point(81, 68)
         Me.uic_FamiliaProducto.Name = "uic_FamiliaProducto"
         Me.uic_FamiliaProducto.Size = New System.Drawing.Size(165, 20)
         Me.uic_FamiliaProducto.TabIndex = 1
@@ -82,7 +83,7 @@ Partial Class FamiliaProducto
         'Label2
         '
         Me.Label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label2.Location = New System.Drawing.Point(25, 21)
+        Me.Label2.Location = New System.Drawing.Point(25, 67)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(50, 23)
         Me.Label2.TabIndex = 22
@@ -110,19 +111,19 @@ Partial Class FamiliaProducto
         Me.RadGridView1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.RadGridView1.ForeColor = System.Drawing.SystemColors.ControlText
         Me.RadGridView1.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.RadGridView1.Location = New System.Drawing.Point(25, 121)
+        Me.RadGridView1.Location = New System.Drawing.Point(25, 166)
         '
         '
         '
         Me.RadGridView1.MasterTemplate.AllowAddNewRow = False
         Me.RadGridView1.MasterTemplate.AllowColumnReorder = False
         Me.RadGridView1.MasterTemplate.EnableAlternatingRowColor = True
-        Me.RadGridView1.MasterTemplate.ViewDefinition = TableViewDefinition1
+        Me.RadGridView1.MasterTemplate.ViewDefinition = TableViewDefinition2
         Me.RadGridView1.Name = "RadGridView1"
         Me.RadGridView1.ReadOnly = True
         Me.RadGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.RadGridView1.ShowGroupPanel = False
-        Me.RadGridView1.Size = New System.Drawing.Size(320, 357)
+        Me.RadGridView1.Size = New System.Drawing.Size(320, 312)
         Me.RadGridView1.TabIndex = 25
         Me.RadGridView1.Text = "RadGridView1"
         Me.RadGridView1.ThemeName = "Office2010Black"
@@ -131,7 +132,7 @@ Partial Class FamiliaProducto
         '
         Me.Button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.Button1.Image = Global.delevery.My.Resources.Resources.magnifier
-        Me.Button1.Location = New System.Drawing.Point(370, 45)
+        Me.Button1.Location = New System.Drawing.Point(361, 87)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(32, 32)
         Me.Button1.TabIndex = 28
@@ -143,7 +144,7 @@ Partial Class FamiliaProducto
         '
         Me.btn_modificar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.btn_modificar.Image = Global.delevery.My.Resources.Resources.Modify
-        Me.btn_modificar.Location = New System.Drawing.Point(313, 3)
+        Me.btn_modificar.Location = New System.Drawing.Point(158, 11)
         Me.btn_modificar.Name = "btn_modificar"
         Me.btn_modificar.Size = New System.Drawing.Size(37, 37)
         Me.btn_modificar.TabIndex = 18
@@ -154,9 +155,9 @@ Partial Class FamiliaProducto
         '
         Me.btn_salir.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.btn_salir.Image = Global.delevery.My.Resources.Resources._Exit
-        Me.btn_salir.Location = New System.Drawing.Point(400, 4)
+        Me.btn_salir.Location = New System.Drawing.Point(290, 12)
         Me.btn_salir.Name = "btn_salir"
-        Me.btn_salir.Size = New System.Drawing.Size(32, 37)
+        Me.btn_salir.Size = New System.Drawing.Size(37, 37)
         Me.btn_salir.TabIndex = 3
         Me.ToolTip1.SetToolTip(Me.btn_salir, "Salir")
         Me.btn_salir.UseVisualStyleBackColor = True
@@ -165,7 +166,7 @@ Partial Class FamiliaProducto
         '
         Me.btn_grabar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.btn_grabar.Image = Global.delevery.My.Resources.Resources.disk_blue
-        Me.btn_grabar.Location = New System.Drawing.Point(267, 3)
+        Me.btn_grabar.Location = New System.Drawing.Point(114, 11)
         Me.btn_grabar.Name = "btn_grabar"
         Me.btn_grabar.Size = New System.Drawing.Size(37, 37)
         Me.btn_grabar.TabIndex = 2
@@ -174,7 +175,7 @@ Partial Class FamiliaProducto
         '
         'uic_RutaImagen
         '
-        Me.uic_RutaImagen.Location = New System.Drawing.Point(81, 53)
+        Me.uic_RutaImagen.Location = New System.Drawing.Point(81, 99)
         Me.uic_RutaImagen.Name = "uic_RutaImagen"
         Me.uic_RutaImagen.Size = New System.Drawing.Size(264, 20)
         Me.uic_RutaImagen.TabIndex = 26
@@ -182,7 +183,7 @@ Partial Class FamiliaProducto
         'Label3
         '
         Me.Label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label3.Location = New System.Drawing.Point(25, 50)
+        Me.Label3.Location = New System.Drawing.Point(25, 96)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(50, 23)
         Me.Label3.TabIndex = 27
@@ -206,16 +207,16 @@ Partial Class FamiliaProducto
         '
         Me.btn_eliminar.Anchor = System.Windows.Forms.AnchorStyles.Bottom
         Me.btn_eliminar.Image = Global.delevery.My.Resources.Resources.Delete
-        Me.btn_eliminar.Location = New System.Drawing.Point(359, 4)
+        Me.btn_eliminar.Location = New System.Drawing.Point(202, 12)
         Me.btn_eliminar.Name = "btn_eliminar"
-        Me.btn_eliminar.Size = New System.Drawing.Size(32, 36)
+        Me.btn_eliminar.Size = New System.Drawing.Size(37, 37)
         Me.btn_eliminar.TabIndex = 19
         Me.btn_eliminar.UseVisualStyleBackColor = True
         '
         'Label4
         '
         Me.Label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.Label4.Location = New System.Drawing.Point(25, 79)
+        Me.Label4.Location = New System.Drawing.Point(25, 125)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(50, 23)
         Me.Label4.TabIndex = 30
@@ -225,10 +226,21 @@ Partial Class FamiliaProducto
         'cbxImpresora
         '
         Me.cbxImpresora.FormattingEnabled = True
-        Me.cbxImpresora.Location = New System.Drawing.Point(81, 79)
+        Me.cbxImpresora.Location = New System.Drawing.Point(81, 125)
         Me.cbxImpresora.Name = "cbxImpresora"
         Me.cbxImpresora.Size = New System.Drawing.Size(241, 21)
         Me.cbxImpresora.TabIndex = 31
+        '
+        'Button2
+        '
+        Me.Button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Button2.Image = Global.delevery.My.Resources.Resources.Refresh1
+        Me.Button2.Location = New System.Drawing.Point(246, 12)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(37, 37)
+        Me.Button2.TabIndex = 32
+        Me.ToolTip1.SetToolTip(Me.Button2, "Limpiar")
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'FamiliaProducto
         '
@@ -236,6 +248,7 @@ Partial Class FamiliaProducto
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(440, 485)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.cbxImpresora)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.PictureBox1)
@@ -288,4 +301,5 @@ Partial Class FamiliaProducto
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents cbxImpresora As System.Windows.Forms.ComboBox
+    Friend WithEvents Button2 As System.Windows.Forms.Button
 End Class

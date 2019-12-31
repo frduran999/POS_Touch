@@ -30,3 +30,5 @@ C:\Users\Francisco\Desktop\Programacion\Sistem_Duran\POS\Prueba\POS_Touch\proyec
 C:\Users\Francisco\Desktop\Programacion\Sistem_Duran\POS\Prueba\POS_Touch\proyectoDTO\obj\Debug\proyectoDTO.dll
 C:\Users\Francisco\Desktop\Programacion\Sistem_Duran\POS\Prueba\POS_Touch\proyectoDTO\obj\Debug\proyectoDTO.xml
 C:\Users\Francisco\Desktop\Programacion\Sistem_Duran\POS\Prueba\POS_Touch\proyectoDTO\obj\Debug\proyectoDTO.pdb
+C:\Users\Francisco\Desktop\Programacion\Sistem_Duran\POS\Prueba\POS_Touch\proyectoDTO\obj\Debug\proyectoDTO.vbproj.CoreCompileInputs.cache
+C:\Users\Francisco\Desktop\Programacion\Sistem_Duran\POS\Prueba\POS_Touch\proyectoDTO\obj\Debug\proyectoDTO.vbprojAssemblyReference.cache

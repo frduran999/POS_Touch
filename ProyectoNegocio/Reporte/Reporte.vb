@@ -37,6 +37,18 @@ Public Class Reporte
         dt = b.Rpt_CierreCaja(IdUsuario, IdCaja)
         Return dt
     End Function
+    Public Function Rpt_CierreCajaX(ByVal IdUsuario As Integer, ByVal IdCaja As Integer) As DataTable
+        Dim dt As New DataTable
+        Dim b As New ReporteService
+        dt = b.Rpt_CierreCajaX(IdUsuario, IdCaja)
+        Return dt
+    End Function
+    Public Function Rpt_Z(ByVal IdUsuario As Integer, ByVal FEcha As String) As DataTable
+        Dim dt As New DataTable
+        Dim b As New ReporteService
+        dt = b.Rpt_Z(IdUsuario, FEcha)
+        Return dt
+    End Function
     Public Function Rpt_CierreCajaRevision(ByVal IdUsuario As Integer, ByVal IdCaja As Integer, ByVal fecha As String) As DataSet
         Dim dt As New DataSet
         Dim b As New ReporteService
